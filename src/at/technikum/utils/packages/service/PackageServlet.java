@@ -1,6 +1,5 @@
 package at.technikum.utils.packages.service;
 
-import at.technikum.utils.packages.Package;
 import at.technikum.server.repository.Repository;
 import at.technikum.server.request.Request;
 import at.technikum.server.response.Response;
@@ -8,6 +7,7 @@ import at.technikum.utils.card.cardTypes.CardElement;
 import at.technikum.utils.card.cardTypes.CardName;
 import at.technikum.utils.card.cardTypes.CardType;
 import at.technikum.utils.card.service.CardServices;
+import at.technikum.utils.packages.Package;
 import com.google.gson.*;
 
 import java.util.regex.Pattern;

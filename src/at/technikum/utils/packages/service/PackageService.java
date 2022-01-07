@@ -1,6 +1,5 @@
 package at.technikum.utils.packages.service;
 
-
 import at.technikum.database.AbstractDBTable;
 import at.technikum.utils.card.ICard;
 import at.technikum.utils.card.service.CardServices;
@@ -8,6 +7,8 @@ import at.technikum.utils.cardHolder.service.CardHolderServices;
 import at.technikum.utils.cardHolder.service.ICardHolderServices;
 import at.technikum.utils.packages.IPackage;
 import at.technikum.utils.packages.Package;
+import at.technikum.utils.store.service.IStoreService;
+import at.technikum.utils.store.service.StoreService;
 import lombok.Getter;
 
 import java.sql.ResultSet;
@@ -118,7 +119,7 @@ public class PackageService extends AbstractDBTable implements IPackageService {
         CardServices cardList = new CardServices();
         ICard card;
         ICardHolderServices holder = new CardHolderServices();
-        //IStoreService store = new StoreService(null);
+        IStoreService store = new StoreService(null);
         IPackage pack = Package.builder()
                 .packageID("PK-" + this.tokenSupplier.get())
                 .build();
@@ -130,7 +131,7 @@ public class PackageService extends AbstractDBTable implements IPackageService {
         if (cards != null) {
             if (cards.size() > 0) {
                 this.insert(pack);
-               // store.addPackageToStore(pack.getPackageID(), packagePrice);
+                store.addPackageToStore(pack.getPackageID(), packagePrice);
 
                 for (int i = 0; i < 5; i++) {
                     card = cards.get(    // Liste aller Karten
@@ -191,7 +192,30 @@ public class PackageService extends AbstractDBTable implements IPackageService {
     /*******************************************************************/
     @Override
     public Package insertPackage(Package newPackage) {
-     return null;
+        //System.out.println("#INSERT:");
+
+        ICardHolderServices cardHolderServices = new CardHolderServices();
+        IStoreService storeService = new StoreService(null);
+        String packageID = newPackage.getPackageID();
+
+        /** --> jede einzelene Karte im CardHolder hinzufügen **/
+        for (ICard card : newPackage.getCards()) {
+            cardHolderServices.insertCardToHolder(packageID, card.getCardID(), true);
+        }
+
+        /** --> package im Store hinzufügen **/
+        storeService.addPackageToStore(packageID, newPackage.getPrice());
+
+
+        if (newPackage == null) {
+            return null;
+        }
+        this.parameter = new String[]{
+                newPackage.getPackageID(),
+                "" + formatDate(2)
+        };
+        this.setStatement("INSERT INTO " + this.tableName + "(\"package_id\", \"date\")VALUES(?,?);", this.parameter);
+        return newPackage;
     }
 
     @Override
