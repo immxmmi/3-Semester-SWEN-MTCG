@@ -1,4 +1,4 @@
-package at.technikum.cardHolder;
+package at.technikum.utils.cardHolder;
 
 public interface ICardHolder {
 

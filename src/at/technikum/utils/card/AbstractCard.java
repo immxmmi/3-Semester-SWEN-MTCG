@@ -1,7 +1,7 @@
 package at.technikum.utils.card;
 
 
-import at.technikum.tools.Tools;
+import at.technikum.utils.tools.Tools;
 import at.technikum.utils.card.cardTypes.CardElement;
 import at.technikum.utils.card.cardTypes.CardName;
 import lombok.AllArgsConstructor;

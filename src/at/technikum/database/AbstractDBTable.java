@@ -1,7 +1,7 @@
 package at.technikum.database;
 
 import at.technikum.database.dbConnect.DBConnect;
-import at.technikum.tools.Tools;
+import at.technikum.utils.tools.Tools;
 
 import java.sql.Connection;
 import java.sql.PreparedStatement;

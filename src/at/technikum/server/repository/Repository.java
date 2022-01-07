@@ -2,7 +2,7 @@ package at.technikum.server.repository;
 
 import at.technikum.server.request.Request;
 import at.technikum.server.response.Response;
-import at.technikum.tools.Tools;
+import at.technikum.utils.tools.Tools;
 
 public abstract class Repository extends Tools implements IRepository {
     @Override

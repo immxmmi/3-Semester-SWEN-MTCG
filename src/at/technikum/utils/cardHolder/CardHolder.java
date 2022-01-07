@@ -1,5 +1,5 @@
-package at.technikum.cardHolder;
-import at.technikum.tools.Tools;
+package at.technikum.utils.cardHolder;
+import at.technikum.utils.tools.Tools;
 import com.google.gson.annotations.SerializedName;
 import lombok.Builder;
 import lombok.Getter;

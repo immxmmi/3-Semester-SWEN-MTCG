@@ -2,7 +2,7 @@ package at.technikum.server.response;
 
 
 import at.technikum.server.request.Request;
-import at.technikum.tools.Tools;
+import at.technikum.utils.tools.Tools;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Getter;

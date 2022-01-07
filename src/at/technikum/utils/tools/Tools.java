@@ -1,4 +1,4 @@
-package at.technikum.tools;
+package at.technikum.utils.tools;
 
 
 import java.math.BigInteger;
@@ -10,7 +10,6 @@ import java.time.LocalDate;
 import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
 import java.time.format.FormatStyle;
-import java.util.ArrayList;
 import java.util.Random;
 import java.util.UUID;
 import java.util.function.Supplier;

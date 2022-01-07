@@ -1,6 +1,6 @@
-package at.technikum.cardHolder.service;
+package at.technikum.utils.cardHolder.service;
 
-import at.technikum.cardHolder.ICardHolder;
+import at.technikum.utils.cardHolder.ICardHolder;
 import at.technikum.database.IDBTable;
 import at.technikum.utils.card.ICard;
 import at.technikum.utils.player.IPlayer;

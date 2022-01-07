@@ -1,5 +1,5 @@
 package at.technikum.utils.player;
-import at.technikum.tools.Tools;
+import at.technikum.utils.tools.Tools;
 import com.google.gson.annotations.SerializedName;
 import lombok.Builder;
 import lombok.Getter;

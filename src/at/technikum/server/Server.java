@@ -1,9 +1,7 @@
 package at.technikum.server;
 
-import at.technikum.server.IServer;
-
 import at.technikum.server.socket.Socket;
-import at.technikum.tools.Tools;
+import at.technikum.utils.tools.Tools;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Getter;
