@@ -1,10 +1,12 @@
 package at.technikum.utils.cardHolder.service;
 
-import at.technikum.utils.cardHolder.CardHolder;
-import at.technikum.utils.cardHolder.ICardHolder;
 import at.technikum.database.AbstractDBTable;
 import at.technikum.utils.card.ICard;
 import at.technikum.utils.card.service.CardServices;
+import at.technikum.utils.cardHolder.CardHolder;
+import at.technikum.utils.cardHolder.ICardHolder;
+import at.technikum.utils.packages.service.IPackageService;
+import at.technikum.utils.packages.service.PackageService;
 import at.technikum.utils.player.IPlayer;
 
 import java.sql.ResultSet;
@@ -126,7 +128,6 @@ public class CardHolderServices extends AbstractDBTable implements ICardHolderSe
     @Override
     public void sellPackage(String packageID, String new_holderID) {
 
-        /**
         IPackageService packageService = new PackageService();
 
         //   System.out.println("#PACKAGE STORE");
@@ -153,7 +154,6 @@ public class CardHolderServices extends AbstractDBTable implements ICardHolderSe
         //    System.out.println("PACKAGE SOLD");
         //    System.out.println("NEW PACKAGE");
         //  packageService.CreateDefaultPackages(1);
-         **/
     }
 
     /**
@@ -375,14 +375,13 @@ public class CardHolderServices extends AbstractDBTable implements ICardHolderSe
 
     @Override
     public boolean deleteAllUserCards(IPlayer currentPlayer) {
-        /**
         for (ICard card : currentPlayer.getStack().getStack()) {
             removeCardFromStack(currentPlayer.getUserID(), card.getCardID());
         }
 
         for (ICard card : currentPlayer.getFreeStack().getStack()) {
             removeCardFromStack(currentPlayer.getUserID(), card.getCardID());
-        }**/
+        }
         return true;
     }
 
