@@ -1,6 +1,5 @@
 package at.technikum.utils.player.service;
 
-
 import at.technikum.server.repository.Repository;
 import at.technikum.server.request.Request;
 import at.technikum.server.response.Response;
@@ -28,6 +27,7 @@ import java.util.regex.Pattern;
 
 // https://www.delftstack.com/de/howto/java/java-json-to-object/
 public class PlayerServlet extends Repository {
+
 
     IPlayerService playerService;
     IProfilService playerInfoService;
