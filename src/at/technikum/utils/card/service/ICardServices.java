@@ -1,6 +1,5 @@
 package at.technikum.utils.card.service;
 
-
 import at.technikum.utils.card.ICard;
 import at.technikum.utils.card.cardTypes.CardElement;
 import at.technikum.utils.card.cardTypes.CardName;
@@ -37,7 +36,7 @@ public interface ICardServices {
     CardServices getInstance();
 
     /** --> Funkiton fügt Karte mit Daten zur Datenbank hinzugefügt **/
-    ICard addCardByData(String cardID, CardName cardName, CardType cardTyp, CardElement cardElement, double cardPower);
+    ICard addCardByData(String cardID,CardName cardName, CardType cardTyp, CardElement cardElement, double cardPower);
 
     /** Fügt Karte zur Datenbank hinzu **/
     ICard insert(ICard newCard);

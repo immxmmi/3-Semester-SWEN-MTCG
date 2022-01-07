@@ -59,7 +59,7 @@ public class CardServices extends AbstractDBTable implements ICardServices {
     public void DefaultCards(){
         CardServices card = new CardServices();
         // SPELL
-        card.addCardByData("", CardName.Spell, CardType.SPELL, CardElement.NORMAL,10);
+        card.addCardByData("",CardName.Spell, CardType.SPELL, CardElement.NORMAL,10);
         card.addCardByData("",CardName.RegularSpell, CardType.SPELL, CardElement.NORMAL,10);
         card.addCardByData("",CardName.WaterSpell, CardType.SPELL, CardElement.WATER,10);
         card.addCardByData("",CardName.FireSpell, CardType.SPELL, CardElement.FIRE,10);
@@ -294,13 +294,13 @@ public class CardServices extends AbstractDBTable implements ICardServices {
     /** Fügt Karte zur Datenbank hinzu **/
     public ICard insert(ICard newCard) {
 
-        // System.out.println("#INSERT:");
+       // System.out.println("#INSERT:");
         if (newCard == null){
             return null;
         }
 
         if(getCardById(""+newCard.getCardID()) == null) {
-            // System.out.println("NewCard --> add to Database");
+           // System.out.println("NewCard --> add to Database");
             this.parameter = new String[]{
                     newCard.getCardID(),
                     String.valueOf(newCard.getCardType()),
@@ -317,7 +317,7 @@ public class CardServices extends AbstractDBTable implements ICardServices {
     @Override
     /** Verändert die Karte **/
     public ICard update(ICard currentCard) {
-        // System.out.println("#UPDATE:");
+       // System.out.println("#UPDATE:");
         if(currentCard == null){
             return null;
         }
@@ -341,7 +341,7 @@ public class CardServices extends AbstractDBTable implements ICardServices {
     @Override
     /** Löscht die Karte **/
     public boolean delete(ICard currentCard) {
-        //  System.out.println("#DELETE:");
+      //  System.out.println("#DELETE:");
         this.parameter = new String[]{};
         if(getCardById(currentCard.getCardID()) == null){
             return false;

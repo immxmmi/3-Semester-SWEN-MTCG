@@ -1,9 +1,9 @@
 package at.technikum.utils.card.cardTypes;
 
-
 import at.technikum.utils.card.AbstractCard;
 import lombok.Builder;
 import lombok.Getter;
+
 
 public class MonsterCard extends AbstractCard {
 
