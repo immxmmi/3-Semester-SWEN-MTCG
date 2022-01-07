@@ -1,4 +1,4 @@
-package at.mtcg.utils.server.request;
+package at.technikum.server.request;
 
 import lombok.Builder;
 import lombok.Getter;

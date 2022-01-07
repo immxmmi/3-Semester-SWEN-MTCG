@@ -1,6 +1,5 @@
-package at.mtcg.utils.server.response;
-
-import at.mtcg.utils.server.request.Request;
+package at.technikum.server.response;
+import at.technikum.server.request.Request;
 
 import java.io.BufferedWriter;
 import java.util.Map;

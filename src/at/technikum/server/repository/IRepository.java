@@ -1,7 +1,8 @@
-package at.mtcg.utils.server.repository;
+package at.technikum.server.repository;
 
-import at.mtcg.utils.server.request.Request;
-import at.mtcg.utils.server.response.Response;
+
+import at.technikum.server.request.Request;
+import at.technikum.server.response.Response;
 
 public interface IRepository {
     Response GET(Request request);

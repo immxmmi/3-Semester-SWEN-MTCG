@@ -1,5 +1,6 @@
 package at.technikum.server.socket;
 
+import at.technikum.server.socket.ISocket;
 import lombok.Getter;
 
 import java.io.IOException;

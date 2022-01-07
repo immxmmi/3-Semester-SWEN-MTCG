@@ -1,6 +1,9 @@
+import at.technikum.server.Server;
+
 public class Main {
 
     public static void main(String[] args) {
-	// write your code here
+        Thread service = new Thread((Runnable) new Server(10003, 5, "localhost"));
+        service.start();
     }
 }

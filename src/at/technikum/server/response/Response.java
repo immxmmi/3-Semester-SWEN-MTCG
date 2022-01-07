@@ -1,7 +1,8 @@
-package at.mtcg.utils.server.response;
+package at.technikum.server.response;
 
-import at.mtcg.utils.server.request.Request;
-import at.mtcg.utils.tools.Tools;
+
+import at.technikum.server.request.Request;
+import at.technikum.tools.Tools;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Getter;

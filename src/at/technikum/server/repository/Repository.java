@@ -1,8 +1,8 @@
-package at.mtcg.utils.server.repository;
+package at.technikum.server.repository;
 
-import at.mtcg.utils.server.request.Request;
-import at.mtcg.utils.server.response.Response;
-import at.mtcg.utils.tools.Tools;
+import at.technikum.server.request.Request;
+import at.technikum.server.response.Response;
+import at.technikum.tools.Tools;
 
 public abstract class Repository extends Tools implements IRepository {
     @Override

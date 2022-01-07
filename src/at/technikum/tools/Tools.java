@@ -1,7 +1,5 @@
-package at.mtcg.utils.tools;
+package at.technikum.tools;
 
-import at.mtcg.utils.card.ICard;
-import at.mtcg.utils.card.cardTypes.CardElement;
 
 import java.math.BigInteger;
 import java.nio.charset.StandardCharsets;
@@ -162,6 +160,7 @@ public class Tools {
 
     /*************************************************************/
 
+    /**
     protected void printCards(ArrayList<ICard> stack, String name) {
         int maxNumber = 2;
         int maxType = 8;
@@ -206,7 +205,7 @@ public class Tools {
         System.out.println("|#################################################|");
 
     }
-
+**/
     protected String addSpace(int spaceSize) {
         String space = "";
 
