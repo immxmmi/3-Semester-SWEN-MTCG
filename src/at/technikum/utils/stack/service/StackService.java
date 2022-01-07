@@ -63,7 +63,7 @@ public class StackService extends AbstractDBTable implements IStackService {
         if (currentStack == null) {
             System.out.println(ANSI_RED + "NO STACK" + ANSI_RESET);
         }
-       // printCards(currentStack.getStack(), "stack");
+        printCards(currentStack.getStack(), "stack");
     }
 
 

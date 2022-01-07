@@ -1,4 +1,5 @@
 package at.technikum.utils.stack;
+
 import at.technikum.utils.card.ICard;
 
 import java.util.ArrayList;
