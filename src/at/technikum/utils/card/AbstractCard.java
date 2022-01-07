@@ -8,7 +8,7 @@ import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
-
+import com.google.gson.annotations.SerializedName;
 @NoArgsConstructor
 @AllArgsConstructor
 public abstract class AbstractCard extends Tools implements ICard {
