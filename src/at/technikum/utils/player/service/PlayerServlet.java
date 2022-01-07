@@ -12,6 +12,10 @@ import at.technikum.utils.deck.service.DeckService;
 import at.technikum.utils.deck.service.IDeckService;
 import at.technikum.utils.player.IPlayer;
 import at.technikum.utils.player.Player;
+import at.technikum.utils.profil.IProfil;
+import at.technikum.utils.profil.Profil;
+import at.technikum.utils.profil.service.IProfilService;
+import at.technikum.utils.profil.service.ProfilService;
 import at.technikum.utils.stack.service.IStackService;
 import at.technikum.utils.stack.service.StackService;
 import com.google.gson.Gson;
@@ -25,9 +29,8 @@ import java.util.regex.Pattern;
 // https://www.delftstack.com/de/howto/java/java-json-to-object/
 public class PlayerServlet extends Repository {
 
-
     IPlayerService playerService;
-   // IPlayerInfoService playerInfoService;
+    IProfilService playerInfoService;
     IStackService stackService;
     ICardHolderServices cardHolderServices;
     ICardServices cardServices;
@@ -39,7 +42,7 @@ public class PlayerServlet extends Repository {
         gson = new Gson();
         p = Pattern.compile("/users/([a-zA-Z]+)/?");
         this.playerService = new PlayerService();
-      //  this.playerInfoService = new PlayerInfoService();
+        this.playerInfoService = new ProfilService();
         this.cardHolderServices = new CardHolderServices();
         this.cardServices = new CardServices();
         this.deckService = new DeckService();
@@ -179,7 +182,7 @@ public class PlayerServlet extends Repository {
         }
 
 
-     //   this.playerInfoService.printPlayerInfo(playerInfoService.getInfoByID(currentPlayer.getUserID()));
+        this.playerInfoService.printPlayerInfo(playerInfoService.getInfoByID(currentPlayer.getUserID()));
         System.out.println();
         this.playerService.printPlayerData(currentPlayer);
         System.out.println();
@@ -335,13 +338,13 @@ public class PlayerServlet extends Repository {
 
 
         /** --> Erstellt ein PLAYERINFO Objekt **/
-     //   IPlayerInfo playerInfo = gson.fromJson(request.getBody(), PlayerInfo.class);
-      //  playerInfo.setUserID(currentPlayer.getUserID());
+        IProfil playerInfo = gson.fromJson(request.getBody(), Profil.class);
+        playerInfo.setUserID(currentPlayer.getUserID());
 
 
         /** --> User fügt neue INFO zum ACCOUNT **/
 
-        //playerInfoService.setInfo(playerInfo);
+        playerInfoService.setInfo(playerInfo);
         System.out.println(ANSI_GREEN + "FINISHED" + ANSI_RESET);
         return new Response().statusOK();
     }

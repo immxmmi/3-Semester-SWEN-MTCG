@@ -8,6 +8,7 @@ import lombok.Builder;
 import lombok.Getter;
 import lombok.Setter;
 
+
 @Builder(toBuilder = true)
 public class Player extends Tools implements IPlayer {
 
