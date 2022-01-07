@@ -1,6 +1,6 @@
 package at.technikum.utils.stack;
 
-import at.mtcg.utils.card.ICard;
+import at.technikum.utils.card.ICard;
 
 import java.util.ArrayList;
 
