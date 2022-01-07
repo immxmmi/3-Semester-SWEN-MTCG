@@ -149,7 +149,7 @@ public class DeckService extends AbstractDBTable implements IDeckService {
         if (currentDeck == null) {
             System.out.println(ANSI_RED + "NO DECK" + ANSI_RESET);
         }
-        //printCards((ArrayList) currentDeck.getDeckList(), "deck");
+        printCards((ArrayList) currentDeck.getDeckList(), "deck");
     }
 
     @Override
