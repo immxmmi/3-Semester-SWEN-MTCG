@@ -1,4 +1,5 @@
 package at.technikum.server.response;
+
 import at.technikum.server.request.Request;
 
 import java.io.BufferedWriter;

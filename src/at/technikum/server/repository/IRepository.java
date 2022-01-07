@@ -1,6 +1,5 @@
 package at.technikum.server.repository;
 
-
 import at.technikum.server.request.Request;
 import at.technikum.server.response.Response;
 

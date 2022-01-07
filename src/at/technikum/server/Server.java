@@ -55,7 +55,7 @@ public class Server extends Tools implements IServer, Runnable {
                 // Benachrichtigung, welcher Client sich mit dem Server verbunden hat
                 System.out.println(ANSI_BLUE + "\nNEW CLIENT CONNECTION - IP + PORT " + this.listener.getLocalSocketAddress() + "..." + ANSI_RESET);
                 // ClientSocket wird dem Handler übergeben --> Threading wird auch gleich erstellt
-                Thread currentClient = null;//new Thread(() -> new ServerHandler(clientSocket));
+                Thread currentClient = new Thread(() -> new ServerHandler(clientSocket));
                 // Client wird gestartet
                 currentClient.start();
             }
