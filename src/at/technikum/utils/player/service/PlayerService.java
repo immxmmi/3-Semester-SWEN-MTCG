@@ -1,13 +1,20 @@
 package at.technikum.utils.player.service;
 
 import at.technikum.database.AbstractDBTable;
+import at.technikum.utils.cardHolder.service.CardHolderServices;
+import at.technikum.utils.cardHolder.service.ICardHolderServices;
+import at.technikum.utils.deck.IDeck;
+import at.technikum.utils.deck.service.DeckService;
+import at.technikum.utils.deck.service.IDeckService;
 import at.technikum.utils.player.IPlayer;
 import at.technikum.utils.player.Player;
+import at.technikum.utils.stack.IStack;
+import at.technikum.utils.stack.service.IStackService;
+import at.technikum.utils.stack.service.StackService;
 import lombok.Getter;
 
 import java.sql.ResultSet;
 import java.sql.SQLException;
-
 
 public class PlayerService extends AbstractDBTable implements IPlayerService {
 
@@ -17,10 +24,10 @@ public class PlayerService extends AbstractDBTable implements IPlayerService {
     private String sessionToken = "";
 
 
-    //private ICardHolderServices cardHolderServices;
+    private ICardHolderServices cardHolderServices;
     //private IPlayerInfoService playerInfoService;
-    //private IStackService stackService;
-   // private IDeckService deckService;
+    private IStackService stackService;
+    private IDeckService deckService;
 
     /*******************************************************************/
     /**                          Constructor                          **/
@@ -28,10 +35,10 @@ public class PlayerService extends AbstractDBTable implements IPlayerService {
     public PlayerService() {
 
         this.tableName = "player";
-       // this.cardHolderServices = new CardHolderServices();
-       // this.playerInfoService = new PlayerInfoService();
-       // this.stackService = new StackService();
-       // this.deckService = new DeckService();
+        this.cardHolderServices = new CardHolderServices();
+        //this.playerInfoService = new PlayerInfoService();
+        this.stackService = new StackService();
+        this.deckService = new DeckService();
     }
     /*******************************************************************/
 
@@ -198,17 +205,17 @@ public class PlayerService extends AbstractDBTable implements IPlayerService {
         System.out.println("#       Username: " + ANSI_BLUE + currentPlayer.getUsername() + checkSpace(currentPlayer.getUsername(), maxName) + ANSI_RESET + "#");
         System.out.println("#       Coins: " + ANSI_BLUE + currentPlayer.getCoins() + checkSpace("" + currentPlayer.getCoins(), maxCoins) + ANSI_RESET + "#");
         System.out.println("#       ELO: " + ANSI_BLUE + currentPlayer.getElo() + checkSpace("" + currentPlayer.getElo(), maxElo) + ANSI_RESET + "#");
-      //  System.out.println("#       Stack Size: " + ANSI_BLUE + currentPlayer.getStack().getStack().size() + checkSpace("" + currentPlayer.getStack().getStack().size(), maxStackSize) + ANSI_RESET + "#");
+        System.out.println("#       Stack Size: " + ANSI_BLUE + currentPlayer.getStack().getStack().size() + checkSpace("" + currentPlayer.getStack().getStack().size(), maxStackSize) + ANSI_RESET + "#");
         System.out.println("#                                             #");
         System.out.println("###############################################");
     }
 
     @Override
     public IPlayer loadPlayerStackDeck(IPlayer currentPlayer) {
-   //     IDeck deck = this.deckService.getDeckById(currentPlayer.getUserID());
-   //     IStack stack = this.stackService.loadStack(currentPlayer.getUserID());
-   //     IStack freeStack = this.stackService.loadFreeStack(currentPlayer.getUserID());
-   //     currentPlayer.setStackDeck(stack, freeStack, deck);
+        IDeck deck = this.deckService.getDeckById(currentPlayer.getUserID());
+        IStack stack = this.stackService.loadStack(currentPlayer.getUserID());
+        IStack freeStack = this.stackService.loadFreeStack(currentPlayer.getUserID());
+        currentPlayer.setStackDeck(stack, freeStack, deck);
         return currentPlayer;
     }
 
@@ -304,13 +311,15 @@ public class PlayerService extends AbstractDBTable implements IPlayerService {
         };
         this.setStatement("INSERT INTO " + this.tableName + "(user_id,username,password,user_coins,user_elo,user_online)VALUES(?,?,?,?,?,?);", this.parameter);
 
-     //   IPlayerInfo playerInfo = PlayerInfo.builder()
-      //          .name(newPlayer.getUsername())
-      //          .bio("Welcome " + newPlayer.getUsername())
-      //          .image(":)")
-      //          .build();
+        /**
+        IPlayerInfo playerInfo = PlayerInfo.builder()
+                .name(newPlayer.getUsername())
+                .bio("Welcome " + newPlayer.getUsername())
+                .image(":)")
+                .build();
 
-   //     this.playerInfoService.setInfo(playerInfo);
+        this.playerInfoService.setInfo(playerInfo);
+         **/
         return getPlayerById(newPlayer.getUserID());
     }
 
@@ -368,9 +377,9 @@ public class PlayerService extends AbstractDBTable implements IPlayerService {
         }
 
         this.stopSession(currentPlayer);
-      //  this.playerInfoService.delete(playerInfoService.getInfoByID(currentPlayer.getUserID()));
-     //   this.deckService.delete(deckService.getDeckById(currentPlayer.getUserID()));
-     //   this.cardHolderServices.deleteAllUserCards(currentPlayer);
+        //this.playerInfoService.delete(playerInfoService.getInfoByID(currentPlayer.getUserID()));
+        this.deckService.delete(deckService.getDeckById(currentPlayer.getUserID()));
+        this.cardHolderServices.deleteAllUserCards(currentPlayer);
 
 
         this.parameter = new String[]{};

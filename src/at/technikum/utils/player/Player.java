@@ -1,4 +1,7 @@
 package at.technikum.utils.player;
+
+import at.technikum.utils.deck.IDeck;
+import at.technikum.utils.stack.IStack;
 import at.technikum.utils.tools.Tools;
 import com.google.gson.annotations.SerializedName;
 import lombok.Builder;
@@ -46,7 +49,7 @@ public class Player extends Tools implements IPlayer {
 
     /**
      * --> DECK - STACK
-
+     **/
     @Getter
     @Setter
     @SerializedName("stack")
@@ -61,17 +64,16 @@ public class Player extends Tools implements IPlayer {
     private IDeck deck;
     // private ArrayList<ICard> deck = new ArrayList<>();
 
-     **/
     /**
      * --> SET DECK STACK FREESTACK
      **/
-   /* @Override
+    @Override
     public void setStackDeck(IStack stack, IStack freeStack, IDeck deck) {
         this.stack = stack;
         this.freeStack = freeStack;
         this.deck = deck;
     }
-*/
+
     /**
      * --> AUTH - PW
      **/

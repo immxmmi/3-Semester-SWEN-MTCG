@@ -4,8 +4,16 @@ package at.technikum.utils.player.service;
 import at.technikum.server.repository.Repository;
 import at.technikum.server.request.Request;
 import at.technikum.server.response.Response;
+import at.technikum.utils.card.service.CardServices;
+import at.technikum.utils.card.service.ICardServices;
+import at.technikum.utils.cardHolder.service.CardHolderServices;
+import at.technikum.utils.cardHolder.service.ICardHolderServices;
+import at.technikum.utils.deck.service.DeckService;
+import at.technikum.utils.deck.service.IDeckService;
 import at.technikum.utils.player.IPlayer;
 import at.technikum.utils.player.Player;
+import at.technikum.utils.stack.service.IStackService;
+import at.technikum.utils.stack.service.StackService;
 import com.google.gson.Gson;
 import com.google.gson.JsonArray;
 import com.google.gson.JsonElement;
@@ -19,11 +27,11 @@ public class PlayerServlet extends Repository {
 
 
     IPlayerService playerService;
-    //IPlayerInfoService playerInfoService;
-   // IStackService stackService;
-   // ICardHolderServices cardHolderServices;
-  //  ICardServices cardServices;
-  //  IDeckService deckService;
+   // IPlayerInfoService playerInfoService;
+    IStackService stackService;
+    ICardHolderServices cardHolderServices;
+    ICardServices cardServices;
+    IDeckService deckService;
     Gson gson;
     Pattern p;
 
@@ -32,10 +40,10 @@ public class PlayerServlet extends Repository {
         p = Pattern.compile("/users/([a-zA-Z]+)/?");
         this.playerService = new PlayerService();
       //  this.playerInfoService = new PlayerInfoService();
-    //    this.cardHolderServices = new CardHolderServices();
-     //   this.cardServices = new CardServices();
-     //   this.deckService = new DeckService();
-     //   this.stackService = new StackService();
+        this.cardHolderServices = new CardHolderServices();
+        this.cardServices = new CardServices();
+        this.deckService = new DeckService();
+        this.stackService = new StackService();
     }
 
     /**
@@ -58,8 +66,6 @@ public class PlayerServlet extends Repository {
             System.out.println(ANSI_RED + "USER NOT FOUND" + ANSI_RESET);
             return new Response().statusMethodNotAllowed();
         }
-
-        /**
         if (currentPlayer.getDeck() == null) {
             System.out.println(ANSI_RED + "DECK EMPTY" + ANSI_RESET);
             return new Response().statusMethodNotAllowed();
@@ -67,9 +73,7 @@ public class PlayerServlet extends Repository {
         System.out.println("START");
         this.deckService.printDeck(currentPlayer.getDeck());
         System.out.println(ANSI_GREEN + "LOADING FINISHED!" + ANSI_RESET);
-   **/
         return new Response().statusOK();
-
     }
 
     /**
@@ -99,13 +103,12 @@ public class PlayerServlet extends Repository {
 
         /** --> INSTANCE **/
         IPlayer currentPlayer = this.playerService.getPlayerById(request.getAuth());
-     /**
         if (this.deckService.setNewDeck(newDeck, currentPlayer.getUserID())) {
             System.out.println(ANSI_GREEN + "SET NEW DECK!" + ANSI_RESET);
             return new Response().statusCreated();
         }
         this.deckService.setNewDeck(newDeck, currentPlayer.getUserID());
-**/
+
         System.out.println(ANSI_RED + "SET NEW DECK - ERROR" + ANSI_RESET);
         return new Response().statusMethodNotAllowed();
     }
@@ -137,10 +140,8 @@ public class PlayerServlet extends Repository {
             return new Response().statusMethodNotAllowed();
         }
 
-        /**
         stackService.printStack(currentPlayer.getStack());
-        **/
-         System.out.println(ANSI_GREEN + "LOADING FINISHED!" + ANSI_RESET);
+        System.out.println(ANSI_GREEN + "LOADING FINISHED!" + ANSI_RESET);
         return new Response().statusOK();
     }
 
@@ -182,9 +183,9 @@ public class PlayerServlet extends Repository {
         System.out.println();
         this.playerService.printPlayerData(currentPlayer);
         System.out.println();
-      //  this.stackService.printStack(currentPlayer.getStack());
+        this.stackService.printStack(currentPlayer.getStack());
         System.out.println();
-       // this.deckService.printDeck(currentPlayer.getDeck());
+        this.deckService.printDeck(currentPlayer.getDeck());
 
         System.out.println(ANSI_GREEN + "LOADING FINISHED!" + ANSI_RESET);
         return new Response().statusOK();

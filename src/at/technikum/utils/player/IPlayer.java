@@ -1,5 +1,8 @@
 package at.technikum.utils.player;
 
+import at.technikum.utils.deck.IDeck;
+import at.technikum.utils.stack.IStack;
+
 public interface IPlayer {
 
     String getUserID();
@@ -22,13 +25,13 @@ public interface IPlayer {
 
     void setElo(double elo);
 
-    //IStack getStack();
+    IStack getStack();
 
-    //IStack getFreeStack();
+    IStack getFreeStack();
 
-    //IDeck getDeck();
+    IDeck getDeck();
 
-    //void setStackDeck(IStack stack, IStack freeStack, IDeck deck);
+    void setStackDeck(IStack stack, IStack freeStack, IDeck deck);
 
     boolean authorizePassword(String password);
 
