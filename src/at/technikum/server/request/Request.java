@@ -81,7 +81,7 @@ public class Request implements IRequest {
             }
 
             if (authIndex != -1) {
-                String[] Auth = lines[authIndex].toString().split(": ");
+                String[] Auth = lines[authIndex].toString().split(": Basic ");
                 this.auth = Auth[1].toString().replace("\r", "");
             } else {
                 this.auth = null;

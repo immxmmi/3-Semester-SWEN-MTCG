@@ -1,6 +1,7 @@
 package at.technikum.utils.stack;
 
 import at.technikum.utils.card.ICard;
+import com.google.gson.annotations.SerializedName;
 import lombok.Builder;
 import lombok.Getter;
 import lombok.Setter;
@@ -11,9 +12,11 @@ import java.util.ArrayList;
 public class Stack implements IStack {
     @Getter
     @Setter
-    String userID;
+    @SerializedName("userID")
+    private String userID;
     @Getter
     @Setter
     @Builder.Default
-    ArrayList<ICard> stack = new ArrayList<>();
+    @SerializedName("stack")
+    private ArrayList<ICard> stack = new ArrayList<>();
 }

@@ -46,6 +46,6 @@ public class BattleServlet extends Repository {
         battleLogic.start(currentPlayer.getUserID(),currentPlayer.getUserID());
 
         System.out.println(ANSI_GREEN + "LOADING FINISHED!" + ANSI_RESET);
-        return new Response().statusOK();
+        return new Response().statusOK("test");
     }
 }

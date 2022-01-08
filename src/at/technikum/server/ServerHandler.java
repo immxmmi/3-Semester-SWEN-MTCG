@@ -132,6 +132,9 @@ public class ServerHandler {
             BufferedWriter writer = new BufferedWriter(new OutputStreamWriter(clientSocket.getOutputStream()));
             this.response.write(writer);
 
+
+
+
         } catch (IOException e) {
             e.printStackTrace();
         }

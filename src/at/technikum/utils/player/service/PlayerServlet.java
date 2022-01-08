@@ -7,6 +7,7 @@ import at.technikum.utils.card.service.CardServices;
 import at.technikum.utils.card.service.ICardServices;
 import at.technikum.utils.cardHolder.service.CardHolderServices;
 import at.technikum.utils.cardHolder.service.ICardHolderServices;
+import at.technikum.utils.deck.Deck;
 import at.technikum.utils.deck.service.DeckService;
 import at.technikum.utils.deck.service.IDeckService;
 import at.technikum.utils.player.IPlayer;
@@ -15,6 +16,7 @@ import at.technikum.utils.profil.IProfil;
 import at.technikum.utils.profil.Profil;
 import at.technikum.utils.profil.service.IProfilService;
 import at.technikum.utils.profil.service.ProfilService;
+import at.technikum.utils.stack.Stack;
 import at.technikum.utils.stack.service.IStackService;
 import at.technikum.utils.stack.service.StackService;
 import com.google.gson.Gson;
@@ -76,7 +78,7 @@ public class PlayerServlet extends Repository {
         System.out.println("START");
         this.deckService.printDeck(currentPlayer.getDeck());
         System.out.println(ANSI_GREEN + "LOADING FINISHED!" + ANSI_RESET);
-        return new Response().statusOK();
+        return new Response().statusOK(gson.toJson(currentPlayer.getDeck(), Deck.class));
     }
 
     /**
@@ -108,7 +110,7 @@ public class PlayerServlet extends Repository {
         IPlayer currentPlayer = this.playerService.getPlayerById(request.getAuth());
         if (this.deckService.setNewDeck(newDeck, currentPlayer.getUserID())) {
             System.out.println(ANSI_GREEN + "SET NEW DECK!" + ANSI_RESET);
-            return new Response().statusCreated();
+            return new Response().statusOK(gson.toJson(currentPlayer.getDeck(),Deck.class));
         }
         this.deckService.setNewDeck(newDeck, currentPlayer.getUserID());
 
@@ -145,7 +147,7 @@ public class PlayerServlet extends Repository {
 
         stackService.printStack(currentPlayer.getStack());
         System.out.println(ANSI_GREEN + "LOADING FINISHED!" + ANSI_RESET);
-        return new Response().statusOK();
+        return new Response().statusOK(gson.toJson(currentPlayer.getStack(),Stack.class));
     }
 
 
@@ -154,7 +156,7 @@ public class PlayerServlet extends Repository {
      **/
     @Override
     public Response GET(Request request) {
-        System.out.println("# USER DATA ");
+        System.out.println("# USER Profil ");
         /** --> Wenn REQUEST Leer ist **/
         if (request == null) {
             System.out.println(ANSI_RED + "BAD REQUEST" + ANSI_RESET);
@@ -183,15 +185,9 @@ public class PlayerServlet extends Repository {
 
 
         this.playerInfoService.printPlayerInfo(playerInfoService.getInfoByID(currentPlayer.getUserID()));
-        System.out.println();
-        this.playerService.printPlayerData(currentPlayer);
-        System.out.println();
-        this.stackService.printStack(currentPlayer.getStack());
-        System.out.println();
-        this.deckService.printDeck(currentPlayer.getDeck());
 
         System.out.println(ANSI_GREEN + "LOADING FINISHED!" + ANSI_RESET);
-        return new Response().statusOK();
+        return new Response().statusOK(gson.toJson(currentPlayer,Profil.class));
     }
 
     /**
@@ -215,7 +211,7 @@ public class PlayerServlet extends Repository {
             return new Response().statusMethodNotAllowed();
         }
         /** --> STATUS OK **/
-        return new Response().statusOK();
+        return new Response().statusOK(gson.toJson(currentPlayer,Player.class));
     }
 
     /**
@@ -233,13 +229,14 @@ public class PlayerServlet extends Repository {
         /** --> Erstellt ein Player Objekt **/
         IPlayer newPlayer = gson.fromJson(request.getBody(), Player.class);
         /** --> User versucht sich zu registrieren **/
-        IPlayer currentPlayer = this.playerService.Register("Basic " + newPlayer.getUsername() + "-mtcgToken", newPlayer.getUsername(), newPlayer.getPassword());
+        IPlayer currentPlayer = this.playerService.Register(newPlayer.getUsername() + "-mtcgToken", newPlayer.getUsername(), newPlayer.getPassword());
         /** -->  ERROR - MELDUNG USER SCHON EXISTIERT **/
         if (currentPlayer == null) {
             return new Response().statusMethodNotAllowed();
         }
+
         /** --> STATUS OK **/
-        return new Response().statusOK();
+        return new Response().statusOK(gson.toJson(currentPlayer,Player.class));
     }
 
 
@@ -272,7 +269,7 @@ public class PlayerServlet extends Repository {
         System.out.println("USERNAME: " + currentPlayer.getUsername());
         System.out.println("SCORE: " + currentPlayer.getElo());
         System.out.println(ANSI_GREEN + "LOADING FINISHED!" + ANSI_RESET);
-        return new Response().statusOK();
+        return new Response().statusOK(""); // TODO: 07.01.2022 HighScore Klasse
     }
 
     /**
@@ -304,7 +301,7 @@ public class PlayerServlet extends Repository {
         System.out.println("USERNAME: " + currentPlayer.getUsername());
         System.out.println("STATUS: " + currentPlayer.isStatus());
         System.out.println(ANSI_GREEN + "LOADING FINISHED!" + ANSI_RESET);
-        return new Response().statusOK();
+        return new Response().statusOK("");
     }
 
 
@@ -338,15 +335,15 @@ public class PlayerServlet extends Repository {
 
 
         /** --> Erstellt ein PLAYERINFO Objekt **/
-        IProfil playerInfo = gson.fromJson(request.getBody(), Profil.class);
-        playerInfo.setUserID(currentPlayer.getUserID());
+        IProfil profil = gson.fromJson(request.getBody(), Profil.class);
+        profil.setUserID(currentPlayer.getUserID());
 
 
         /** --> User fügt neue INFO zum ACCOUNT **/
 
-        playerInfoService.setInfo(playerInfo);
+        playerInfoService.setInfo(profil);
         System.out.println(ANSI_GREEN + "FINISHED" + ANSI_RESET);
-        return new Response().statusOK();
+        return new Response().statusOK(gson.toJson(profil,Profil.class));
     }
 
 
@@ -356,7 +353,7 @@ public class PlayerServlet extends Repository {
             System.out.println(ANSI_RED + "BAD REQUEST" + ANSI_RESET);
             return new Response().statusBAD();
         }
-        return new Response().statusOK();
+        return new Response().statusOK("OK");
     }
 
     @Override
@@ -365,6 +362,6 @@ public class PlayerServlet extends Repository {
             System.out.println(ANSI_RED + "BAD REQUEST" + ANSI_RESET);
             return new Response().statusBAD();
         }
-        return new Response().statusOK();
+        return new Response().statusOK("OK");
     }
 }

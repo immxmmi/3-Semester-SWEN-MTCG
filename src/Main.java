@@ -7,7 +7,7 @@ public class Main {
         LoggerStatic loggerStatic = LoggerStatic.getInstance();
         loggerStatic.log("\nStart Game\n");
 
-        Thread service = new Thread((Runnable) new Server(10002, 5, "localhost"));
+        Thread service = new Thread((Runnable) new Server(10001, 5, "localhost"));
         service.start();
     }
 }

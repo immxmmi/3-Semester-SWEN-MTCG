@@ -10,17 +10,26 @@ import java.io.BufferedWriter;
 import java.io.IOException;
 import java.net.InetAddress;
 import java.util.HashMap;
-import java.util.Map;
 
 @Builder
 @AllArgsConstructor
 public class Response extends Tools implements IResponse {
-    String delimiter = " ";
-    String end = "\r\n";
+    private static final String delimiter = "\n";
+    private static final String end = "\r\n";
 
     @Getter
     @Builder.Default
     String version = "HTTP/1.1";
+    @Getter
+    @Builder.Default
+    String server = "localhost";
+    @Getter
+    @Builder.Default
+    String contentTyp = "text/plain; charset=utf-8";
+    @Getter
+    @Builder.Default
+    int contentLength = 0;
+
     @Getter
     @Builder.Default
     int status = 200;
@@ -62,12 +71,12 @@ public class Response extends Tools implements IResponse {
 
         try {
             StringBuilder currentBuffer = new StringBuilder();
-            currentBuffer.append(status);   // Status
-            currentBuffer.append(delimiter); // Trennzeichen
-            currentBuffer.append(reasonPhrase); // OK
-            currentBuffer.append(delimiter); // Trennzeichen
-            currentBuffer.append(end); // END
+            currentBuffer.append(version +" "+ status+" "+ reasonPhrase + "\n");   // Status
+            currentBuffer.append("Content-Type: "+contentTyp+"\n");
+            currentBuffer.append("Content-Length: 37\r\n");
+            //currentBuffer.append(end); // END
 
+            /**
             // HEADER wird zum Buffer hinzugefügt
             for (Map.Entry<String, String> entry : this.header.entrySet()) {
                 currentBuffer.append(entry.getKey());   // KEY wird zum Buffer hinzugefügt
@@ -75,13 +84,15 @@ public class Response extends Tools implements IResponse {
                 currentBuffer.append(entry.getValue()); // VALUE wird zum Buffer hinzugefügt
                 currentBuffer.append(end); // END
             }
+             **/
 
             //END HEADER
-            currentBuffer.append(end);
+           // currentBuffer.append(end);
             //BODY
             if (this.body != null && this.body.length() > 0) {
                 currentBuffer.append(end);
             }
+            System.out.println(currentBuffer.toString());
             writer.write(currentBuffer.toString());
             writer.flush();
         } catch (IOException e) {
@@ -96,13 +107,15 @@ public class Response extends Tools implements IResponse {
     /*******************************************************************/
 
 
+
     // STATUS OK
     @Override
-    public Response statusOK() {
+    public Response statusOK(String body) {
         return Response.builder()
                 .status(200)
+                .header(this.header)
                 .reasonPhrase("OK")
-                .body("OK")
+                .body(body)
                 .build();
     }
 

@@ -1,5 +1,6 @@
 package at.technikum.utils.store;
 
+import com.google.gson.annotations.SerializedName;
 import lombok.Builder;
 import lombok.Getter;
 import lombok.Setter;
@@ -10,20 +11,27 @@ public class Store implements IStore {
 
     @Setter
     @Getter
+    @SerializedName("transactionID")
     private String transactionID;
     @Setter
     @Getter
+    @SerializedName("sellerID")
     private String sellerID;
 
     @Setter
     @Getter
+    @SerializedName("itemID")
     private String itemID;
 
-    @Setter @Getter
+    @Setter
+    @Getter
+    @SerializedName("price")
     private double price;
 
-    @Setter @Getter
-    String timeStamp;
+    @Setter
+    @Getter
+    @SerializedName("timeStamp")
+    private String timeStamp;
 
 
 

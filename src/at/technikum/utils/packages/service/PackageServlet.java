@@ -10,13 +10,11 @@ import at.technikum.utils.card.service.CardServices;
 import at.technikum.utils.packages.Package;
 import com.google.gson.*;
 
-import java.util.regex.Pattern;
-
 public class PackageServlet extends Repository {
 
     PackageService packageService;
     Gson gson;
-    Pattern p;
+
 
     public PackageServlet() {
         gson = new Gson();
@@ -26,8 +24,7 @@ public class PackageServlet extends Repository {
 
     @Override
     public Response GET(Request request) {
-
-        return new Response().statusOK();
+        return new Response().statusOK("");
     }
 
     @Override
@@ -85,7 +82,7 @@ public class PackageServlet extends Repository {
         System.out.println(ANSI_GREEN + "PACKAGE CREATED - OK" + ANSI_RESET);
 
         /** --> STATUS OK **/
-        return new Response().statusOK();
+        return new Response().statusOK(gson.toJson(packageService.getPackageByID(packageID),Package.class));
     }
 
     @Override

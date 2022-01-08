@@ -10,8 +10,9 @@ public interface IResponse {
     // Wenn der Request nicht verfügbar ist
     Response statusNotFound();
 
+
     // Wenn Status OK ist
-    Response statusOK();
+    Response statusOK(String body);
 
     // BAD REQUEST
     Response statusBAD();

@@ -4,7 +4,7 @@ import at.technikum.server.request.Request;
 import at.technikum.server.response.Response;
 import at.technikum.utils.tools.Tools;
 
-public abstract class Repository extends Tools implements IRepository {
+public abstract class Repository extends Tools implements IRepository { // TODO: 07.01.2022 Repository kürzen und IResponse
     @Override
     public Response GET(Request request) {
         return new Response().statusNotFound();

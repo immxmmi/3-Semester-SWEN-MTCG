@@ -322,7 +322,7 @@ public class PlayerService extends AbstractDBTable implements IPlayerService {
                 .image(":)")
                 .build();
 
-        this.playerInfoService.setInfo(playerInfo);
+        //this.playerInfoService.setInfo(playerInfo);
         return getPlayerById(newPlayer.getUserID());
     }
 

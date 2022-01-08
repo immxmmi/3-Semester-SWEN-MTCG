@@ -11,15 +11,15 @@ public class Profil implements IProfil {
     @Getter
     @Setter
     @SerializedName("userID")
-    String userID;
+    private String userID;
     @Getter
     @SerializedName("Name")
-    String name;
+    private String name;
     @Getter
     @SerializedName("Bio")
-    String bio;
+    private String bio;
     @Getter
     @SerializedName("Image")
-    String image;
+    private String image;
 
 }

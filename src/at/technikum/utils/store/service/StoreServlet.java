@@ -8,8 +8,16 @@ import at.technikum.utils.packages.service.PackageService;
 import at.technikum.utils.player.IPlayer;
 import at.technikum.utils.player.service.IPlayerService;
 import at.technikum.utils.player.service.PlayerService;
+import com.google.gson.Gson;
 
 public class StoreServlet extends Repository {
+
+    Gson gson;
+
+    StoreServlet(){
+        this.gson = new Gson();
+    }
+
     @Override
     public Response GET(Request request) {
         return super.GET(request);
@@ -52,7 +60,7 @@ public class StoreServlet extends Repository {
         if (packageService.getPackageByID(packageID) == null) {
             System.out.println(ANSI_GREEN + "PACKAGE SOLD!" + ANSI_RESET);
         }
-        return new Response().statusOK();
+        return new Response().statusOK(gson.toJson("SOLD"));
 
     }
 

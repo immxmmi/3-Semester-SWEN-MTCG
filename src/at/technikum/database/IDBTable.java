@@ -1,6 +1,6 @@
 package at.technikum.database;
 
-public interface IDBTable<T> {
+public interface IDBTable<T> { // TODO: 07.01.2022 fertig
 
     T insert(T item);
 

@@ -12,16 +12,16 @@ import java.util.ArrayList;
 public class Package implements IPackage {
     @Getter
     @SerializedName("packageID")
-    String packageID;
+    private String packageID;
     @Builder.Default
     @Getter
     @Setter
-    ArrayList<ICard> cards = new ArrayList<>();
+    private ArrayList<ICard> cards = new ArrayList<>();
     @Getter
     @Builder.Default
     @SerializedName("price")
-    int price = 5;
+    private int price = 5;
     @Getter
     @SerializedName("date")
-    String date;
+    private String date;
 }

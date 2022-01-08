@@ -5,7 +5,7 @@ import java.sql.DriverManager;
 import java.sql.SQLException;
 
 
-public class DBConnect extends Tools implements Cloneable, IDBConnect {
+public class DBConnect extends Tools implements Cloneable, IDBConnect { // TODO: 07.01.2022 fertig
 
 
     private String databaseName;
