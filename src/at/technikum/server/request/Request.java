@@ -55,7 +55,7 @@ public class Request implements IRequest {
             }
 
             //currentBuffer in einem String speichern
-            //System.out.println(currentBuffer);
+            System.out.println(currentBuffer);
             //Jede Zeile Spliten
             String[] lines = currentBuffer.toString().split("\n");
             int bodyIndex = lines.length - 1;

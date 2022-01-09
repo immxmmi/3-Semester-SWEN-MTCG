@@ -41,7 +41,7 @@ public class PackageServlet extends Repository {
             return new Response().statusBAD("BAD REQUEST");
         }
         /** --> WENN USER NICHT AUTH IST **/
-        if (!request.getAuth().matches("Basic admin-mtcgToken")) {
+        if (!request.getAuth().matches("admin-mtcgToken")) {
             System.out.println(ANSI_RED + "NOT AUTH" + ANSI_RESET);
             return new Response().statusUnAuthorized("NOT AUTH");
         }

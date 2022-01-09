@@ -80,6 +80,9 @@ public class ServerHandler {
             this.route.put("^GET /stats?$", PlayerServlet.class.getDeclaredMethod("STATUS", Request.class));
             // USER - SCORE
             this.route.put("^GET /score?$", PlayerServlet.class.getDeclaredMethod("SCORE", Request.class));
+
+
+
             // this.route.put("^GET /tradings?$", PlayerServlet.class.getDeclaredMethod("DECK", Request.class));
         } catch (NoSuchMethodException e) {
             e.printStackTrace();
