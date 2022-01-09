@@ -125,15 +125,12 @@ public class ServerHandler {
                 }
 
             } else {
-                this.response = this.response.statusBAD();
+                this.response = this.response.statusBAD("BAD REQUEST");
             }
 
 
             BufferedWriter writer = new BufferedWriter(new OutputStreamWriter(clientSocket.getOutputStream()));
             this.response.write(writer);
-
-
-
 
         } catch (IOException e) {
             e.printStackTrace();
@@ -175,4 +172,3 @@ public class ServerHandler {
         return null;
     }
 }
-

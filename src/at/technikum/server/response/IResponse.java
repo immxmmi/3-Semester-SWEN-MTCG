@@ -3,19 +3,18 @@ package at.technikum.server.response;
 import at.technikum.server.request.Request;
 
 import java.io.BufferedWriter;
-import java.util.Map;
 
 // https://stackoverflow.com/questions/19402482/how-can-i-get-the-full-reason-phrase-or-the-raw-response-with-jax-rs
 public interface IResponse {
     // Wenn der Request nicht verfügbar ist
-    Response statusNotFound();
+    Response statusNotFound(String body);
 
 
     // Wenn Status OK ist
     Response statusOK(String body);
 
     // BAD REQUEST
-    Response statusBAD();
+    Response statusBAD(String body);
 
     void write(BufferedWriter writer);
 
@@ -25,19 +24,18 @@ public interface IResponse {
 
     String getReasonPhrase();
 
-    Map<String, String> getHeader();
 
     String getBody();
 
     // BAD REQUEST
-    Response statusUnAuthorized();
+    Response statusUnAuthorized(String body);
 
-    Response statusMethodNotAllowed();
+    Response statusMethodNotAllowed(String body);
 
     // PUT REQUEST
-    Response statusCreated();
+    Response statusCreated(String body);
 
-    Response statusForbidden();
+    Response statusForbidden(String body);
 
     Response requestErrorHandler(Request request, boolean auth, boolean body);
 }

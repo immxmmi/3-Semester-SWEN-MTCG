@@ -32,7 +32,7 @@ public class StoreServlet extends Repository {
         /** --> Wenn REQUEST Leer ist **/
         if (request == null) {
             System.out.println(ANSI_RED + "PACKAGE BUY - ERROR" + ANSI_RESET);
-            return new Response().statusBAD();
+            return new Response().statusBAD("BAD REQUEST");
         }
 
 
@@ -45,15 +45,15 @@ public class StoreServlet extends Repository {
         /** --> User CHECK **/
         IPlayer currentPlayer = playerService.getPlayerById(authKey);
         if (currentPlayer == null) {
-            System.out.println(ANSI_RED + "Kein User mit der ID" + ANSI_RESET);
-            return new Response().statusNotFound();
+            System.out.println(ANSI_RED + "NO USER TOKEN" + ANSI_RESET);
+            return new Response().statusNotFound("NO USER TOKEN");
         }
         /** --> Holt eine Random Package ID **/
         String packageID = packageService.getRandomPackageID();
 
         if (packageID.equals("0")) {
             System.out.println(ANSI_RED + "(NO PACKAGE)" + ANSI_RESET);
-            return new Response().statusMethodNotAllowed();
+            return new Response().statusMethodNotAllowed("(NO PACKAGE)");
         }
         StoreService storeService = new StoreService(currentPlayer);
         storeService.sellPackage(authKey, packageID);

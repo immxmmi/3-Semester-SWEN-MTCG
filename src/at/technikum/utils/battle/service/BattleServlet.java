@@ -32,11 +32,11 @@ public class BattleServlet extends Repository {
         /** -->  ERROR - MELDUNG USER NICHT GEFUNDEN **/
         if (currentPlayer == null) {
             System.out.println(ANSI_RED + "USER NOT FOUND" + ANSI_RESET);
-            return new Response().statusMethodNotAllowed();
+            return new Response().statusMethodNotAllowed("USER NOT FOUND");
         }
         if (currentPlayer.getDeck() == null) {
             System.out.println(ANSI_RED + "DECK EMPTY" + ANSI_RESET);
-            return new Response().statusMethodNotAllowed();
+            return new Response().statusMethodNotAllowed("DECK EMPTY");
         }
 
         System.out.println("START GAME");

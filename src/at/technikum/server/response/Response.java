@@ -8,12 +8,10 @@ import lombok.Getter;
 
 import java.io.BufferedWriter;
 import java.io.IOException;
-import java.net.InetAddress;
-import java.util.HashMap;
 
 @Builder
 @AllArgsConstructor
-public class Response extends Tools implements IResponse {
+public class Response extends Tools implements IResponse{
     private static final String delimiter = "\n";
     private static final String end = "\r\n";
 
@@ -28,6 +26,9 @@ public class Response extends Tools implements IResponse {
     String contentTyp = "text/plain; charset=utf-8";
     @Getter
     @Builder.Default
+    String content = "<!DOCTYPE html><html><body><h1>Hello, World!</h1></body></html>";
+    @Getter
+    @Builder.Default
     int contentLength = 0;
 
     @Getter
@@ -39,9 +40,6 @@ public class Response extends Tools implements IResponse {
 
     @Getter
     @Builder.Default
-    HashMap<String, String> header = new HashMap<>();
-    @Getter
-    @Builder.Default
     String body = "";
 
 
@@ -50,7 +48,6 @@ public class Response extends Tools implements IResponse {
     /*******************************************************************/
 
     public Response() {
-        this.header = new HashMap<>();
         this.version = "HTTP/1.1";
         this.status = 200;
         this.reasonPhrase = "OK";
@@ -61,38 +58,18 @@ public class Response extends Tools implements IResponse {
     @Override
     public void write(BufferedWriter writer) {
 
-        if (!this.header.containsKey("Host")) {
-            try {
-                this.header.put("Host", InetAddress.getLocalHost().getHostName());
-            } catch (IOException e) {
-                e.printStackTrace();
-            }
-        }
-
         try {
+            if(this.body == null){
+                this.body = "";
+            }
             StringBuilder currentBuffer = new StringBuilder();
-            currentBuffer.append(version +" "+ status+" "+ reasonPhrase + "\n");   // Status
-            currentBuffer.append("Content-Type: "+contentTyp+"\n");
-            currentBuffer.append("Content-Length: 37\r\n");
+            currentBuffer.append(version +" "+ status+" "+ reasonPhrase + "\r\n");   // Status
+            currentBuffer.append("Content-Type: "+contentTyp+"\r\n");
+            currentBuffer.append("Content-Length: "+body.length()+"\r\n");
+            currentBuffer.append("\r\n"+body);
             //currentBuffer.append(end); // END
 
-            /**
-            // HEADER wird zum Buffer hinzugefügt
-            for (Map.Entry<String, String> entry : this.header.entrySet()) {
-                currentBuffer.append(entry.getKey());   // KEY wird zum Buffer hinzugefügt
-                currentBuffer.append(": ");             // Trennzeichen
-                currentBuffer.append(entry.getValue()); // VALUE wird zum Buffer hinzugefügt
-                currentBuffer.append(end); // END
-            }
-             **/
-
-            //END HEADER
-           // currentBuffer.append(end);
-            //BODY
-            if (this.body != null && this.body.length() > 0) {
-                currentBuffer.append(end);
-            }
-            System.out.println(currentBuffer.toString());
+            System.out.println(currentBuffer);
             writer.write(currentBuffer.toString());
             writer.flush();
         } catch (IOException e) {
@@ -113,7 +90,6 @@ public class Response extends Tools implements IResponse {
     public Response statusOK(String body) {
         return Response.builder()
                 .status(200)
-                .header(this.header)
                 .reasonPhrase("OK")
                 .body(body)
                 .build();
@@ -121,61 +97,61 @@ public class Response extends Tools implements IResponse {
 
     // BAD REQUEST
     @Override
-    public Response statusBAD() {
+    public Response statusBAD(String body) {
         return Response.builder()
                 .status(400)
                 .reasonPhrase("BAD REQUEST")
-                .body("BAD REQUEST")
+                .body(body)
                 .build();
     }
 
     // NICHT AUTH
     @Override
-    public Response statusUnAuthorized() {
+    public Response statusUnAuthorized(String body) {
         return Response.builder()
                 .status(401)
                 .reasonPhrase("Unauthorized")
-                .body("Unauthorized")
+                .body(body)
                 .build();
     }
 
     // Wenn der Request nicht verfügbar ist
     @Override
-    public Response statusNotFound() {
+    public Response statusNotFound(String body) {
         return Response.builder()
                 .status(404)
                 .reasonPhrase("NOT FOUND")
-                .body("Server kann angeforderte Ressource nicht finden. Dieser Antwort-Code ist wahrscheinlich der bekannteste aufgrund seiner Häufigkeit, mit der er im Web auftritt.")
+                .body(body)
                 .build();
     }
 
     // WENN METHODE NICHT FUNKTIONIERT
     @Override
-    public Response statusMethodNotAllowed() {
+    public Response statusMethodNotAllowed(String body) {
         return Response.builder()
                 .status(405)
                 .reasonPhrase("METHOD NOT ALLOWED")
-                .body("METHOD -- ERROR")
+                .body(body)
                 .build();
     }
 
     // PUT REQUEST
     @Override
-    public Response statusCreated() {
+    public Response statusCreated(String body) {
         return Response.builder()
                 .status(201)
                 .reasonPhrase("Created")
-                .body("PUT -- ")
+                .body(body)
                 .build();
     }
 
     // NICHT ERLAUBT
     @Override
-    public Response statusForbidden() {
+    public Response statusForbidden(String body) {
         return Response.builder()
                 .status(403)
                 .reasonPhrase("Forbidden")
-                .body("Der Client hat keine Zugriffsrechte auf den Inhalt, daher verweigert der Server eine ordnungsgemäße Antwort.")
+                .body(body)
                 .build();
     }
 
@@ -186,20 +162,20 @@ public class Response extends Tools implements IResponse {
         /** --> Wenn REQUEST Leer ist **/
         if (request == null) {
             System.out.println(ANSI_RED + "BAD REQUEST" + ANSI_RESET);
-            return new Response().statusBAD();
+            return new Response().statusBAD("BAD REQUEST");
         }
         /** --> Wenn AUTH Leer ist **/
         if (auth) {
             if (request.getAuth() == null) {
                 System.out.println(ANSI_RED + "NO TOKEN" + ANSI_RESET);
-                return new Response().statusUnAuthorized();
+                return new Response().statusUnAuthorized("NO TOKEN");
             }
         }
         /** --> WENN BODY LEER IST **/
         if (body) {
             if (request.getBody().equals("")) {
                 System.out.println(ANSI_RED + "BODY EMPTY" + ANSI_RESET);
-                return new Response().statusBAD();
+                return new Response().statusBAD("BODY EMPTY");
             }
         }
         return null;

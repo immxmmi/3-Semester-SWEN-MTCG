@@ -33,17 +33,17 @@ public class PackageServlet extends Repository {
         /** --> Wenn REQUEST Leer ist **/
         if (request == null) {
             System.out.println(ANSI_RED + "PACKAGE CREATED - ERROR" + ANSI_RESET);
-            return new Response().statusBAD();
+            return new Response().statusBAD("BAD REQUEST");
         }
         /** --> WENN BODY LEER IST **/
         if (request.getBody().equals("")) {
             System.out.println(ANSI_RED + "PACKAGE CREATED - ERROR" + ANSI_RESET);
-            return new Response().statusBAD();
+            return new Response().statusBAD("BAD REQUEST");
         }
         /** --> WENN USER NICHT AUTH IST **/
         if (!request.getAuth().matches("Basic admin-mtcgToken")) {
             System.out.println(ANSI_RED + "NOT AUTH" + ANSI_RESET);
-            return new Response().statusUnAuthorized();
+            return new Response().statusUnAuthorized("NOT AUTH");
         }
 
         /** --> INSTANCE **/
@@ -76,7 +76,7 @@ public class PackageServlet extends Repository {
         /** -->  ERROR - MELDUNG USER NICHT GEFUNDEN **/
         if (packageService.getPackageByID(packageID) == null) {
             System.out.println(ANSI_RED + "PACKAGE CREATED - ERROR" + ANSI_RESET);
-            return new Response().statusMethodNotAllowed();
+            return new Response().statusMethodNotAllowed("PACKAGE CREATED - ERROR");
         }
 
         System.out.println(ANSI_GREEN + "PACKAGE CREATED - OK" + ANSI_RESET);

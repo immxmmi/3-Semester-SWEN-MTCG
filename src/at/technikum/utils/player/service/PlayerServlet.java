@@ -69,11 +69,11 @@ public class PlayerServlet extends Repository {
         /** -->  ERROR - MELDUNG USER NICHT GEFUNDEN **/
         if (currentPlayer == null) {
             System.out.println(ANSI_RED + "USER NOT FOUND" + ANSI_RESET);
-            return new Response().statusMethodNotAllowed();
+            return new Response().statusMethodNotAllowed("USER NOT FOUND");
         }
         if (currentPlayer.getDeck() == null) {
             System.out.println(ANSI_RED + "DECK EMPTY" + ANSI_RESET);
-            return new Response().statusMethodNotAllowed();
+            return new Response().statusMethodNotAllowed("DECK EMPTY");
         }
         System.out.println("START");
         this.deckService.printDeck(currentPlayer.getDeck());
@@ -115,7 +115,7 @@ public class PlayerServlet extends Repository {
         this.deckService.setNewDeck(newDeck, currentPlayer.getUserID());
 
         System.out.println(ANSI_RED + "SET NEW DECK - ERROR" + ANSI_RESET);
-        return new Response().statusMethodNotAllowed();
+        return new Response().statusMethodNotAllowed("SET NEW DECK - ERROR");
     }
 
 
@@ -127,12 +127,12 @@ public class PlayerServlet extends Repository {
         /** --> Wenn REQUEST Leer ist **/
         if (request == null) {
             System.out.println(ANSI_RED + "BAD REQUEST" + ANSI_RESET);
-            return new Response().statusBAD();
+            return new Response().statusBAD("BAD REQUEST");
         }
         /** --> Wenn AUTH Leer ist **/
         if (request.getAuth() == null) {
             System.out.println(ANSI_RED + "NO TOKEN" + ANSI_RESET);
-            return new Response().statusUnAuthorized();
+            return new Response().statusUnAuthorized("NO TOKEN");
         }
 
         /** --> INSTANCE **/
@@ -142,7 +142,7 @@ public class PlayerServlet extends Repository {
         /** -->  ERROR - MELDUNG USER NICHT GEFUNDEN **/
         if (currentPlayer == null) {
             System.out.println(ANSI_RED + "User NOT FOUND" + ANSI_RESET);
-            return new Response().statusMethodNotAllowed();
+            return new Response().statusMethodNotAllowed("User NOT FOUND");
         }
 
         stackService.printStack(currentPlayer.getStack());
@@ -160,12 +160,12 @@ public class PlayerServlet extends Repository {
         /** --> Wenn REQUEST Leer ist **/
         if (request == null) {
             System.out.println(ANSI_RED + "BAD REQUEST" + ANSI_RESET);
-            return new Response().statusBAD();
+            return new Response().statusBAD("BAD REQUEST");
         }
         /** --> Wenn AUTH Leer ist **/
         if (request.getAuth() == null) {
             System.out.println(ANSI_RED + "NO TOKEN" + ANSI_RESET);
-            return new Response().statusUnAuthorized();
+            return new Response().statusUnAuthorized("NO TOKEN");
         }
 
         /** --> INSTANCE **/
@@ -175,12 +175,12 @@ public class PlayerServlet extends Repository {
         /** -->  ERROR - MELDUNG USER NICHT GEFUNDEN **/
         if (currentPlayer == null) {
             System.out.println(ANSI_RED + "User NOT FOUND" + ANSI_RESET);
-            return new Response().statusMethodNotAllowed();
+            return new Response().statusMethodNotAllowed("User NOT FOUND");
         }
         /** -->  ERROR - MELDUNG USER NICHT AUTH **/
         if (!request.getPath().contains(currentPlayer.getUsername())) {
             System.out.println(ANSI_RED + "User NOT AUTH" + ANSI_RESET);
-            return new Response().statusMethodNotAllowed();
+            return new Response().statusMethodNotAllowed("User NOT AUTH");
         }
 
 
@@ -208,7 +208,7 @@ public class PlayerServlet extends Repository {
         /** -->  ERROR - MELDUNG USER NICHT GEFUNDEN **/
         if (currentPlayer == null) {
             System.out.println(ANSI_RED + "User NOT FOUND" + ANSI_RESET);
-            return new Response().statusMethodNotAllowed();
+            return new Response().statusMethodNotAllowed("User NOT FOUND");
         }
         /** --> STATUS OK **/
         return new Response().statusOK(gson.toJson(currentPlayer,Player.class));
@@ -232,7 +232,7 @@ public class PlayerServlet extends Repository {
         IPlayer currentPlayer = this.playerService.Register(newPlayer.getUsername() + "-mtcgToken", newPlayer.getUsername(), newPlayer.getPassword());
         /** -->  ERROR - MELDUNG USER SCHON EXISTIERT **/
         if (currentPlayer == null) {
-            return new Response().statusMethodNotAllowed();
+            return new Response().statusMethodNotAllowed("User EXIST");
         }
 
         /** --> STATUS OK **/
@@ -248,12 +248,12 @@ public class PlayerServlet extends Repository {
         /** --> Wenn REQUEST Leer ist **/
         if (request == null) {
             System.out.println(ANSI_RED + "BAD REQUEST" + ANSI_RESET);
-            return new Response().statusBAD();
+            return new Response().statusBAD("BAD REQUEST");
         }
         /** --> Wenn AUTH Leer ist **/
         if (request.getAuth() == null) {
             System.out.println(ANSI_RED + "NO TOKEN" + ANSI_RESET);
-            return new Response().statusUnAuthorized();
+            return new Response().statusUnAuthorized("NO TOKEN");
         }
 
         /** --> INSTANCE **/
@@ -263,13 +263,13 @@ public class PlayerServlet extends Repository {
         /** -->  ERROR - MELDUNG USER NICHT GEFUNDEN **/
         if (currentPlayer == null) {
             System.out.println(ANSI_RED + "User NOT FOUND" + ANSI_RESET);
-            return new Response().statusMethodNotAllowed();
+            return new Response().statusMethodNotAllowed("User NOT FOUND");
         }
 
         System.out.println("USERNAME: " + currentPlayer.getUsername());
         System.out.println("SCORE: " + currentPlayer.getElo());
         System.out.println(ANSI_GREEN + "LOADING FINISHED!" + ANSI_RESET);
-        return new Response().statusOK(""); // TODO: 07.01.2022 HighScore Klasse
+        return new Response().statusOK("LOADING FINISHED!"); // TODO: 07.01.2022 HighScore Klasse
     }
 
     /**
@@ -280,12 +280,12 @@ public class PlayerServlet extends Repository {
         /** --> Wenn REQUEST Leer ist **/
         if (request == null) {
             System.out.println(ANSI_RED + "BAD REQUEST" + ANSI_RESET);
-            return new Response().statusBAD();
+            return new Response().statusBAD("BAD REQUEST");
         }
         /** --> Wenn AUTH Leer ist **/
         if (request.getAuth() == null) {
             System.out.println(ANSI_RED + "NO TOKEN" + ANSI_RESET);
-            return new Response().statusUnAuthorized();
+            return new Response().statusUnAuthorized("NO TOKEN");
         }
 
         /** --> INSTANCE **/
@@ -295,13 +295,13 @@ public class PlayerServlet extends Repository {
         /** -->  ERROR - MELDUNG USER NICHT GEFUNDEN **/
         if (currentPlayer == null) {
             System.out.println(ANSI_RED + "User NOT FOUND" + ANSI_RESET);
-            return new Response().statusMethodNotAllowed();
+            return new Response().statusMethodNotAllowed("User NOT FOUND");
         }
 
         System.out.println("USERNAME: " + currentPlayer.getUsername());
         System.out.println("STATUS: " + currentPlayer.isStatus());
         System.out.println(ANSI_GREEN + "LOADING FINISHED!" + ANSI_RESET);
-        return new Response().statusOK("");
+        return new Response().statusOK("LOADING FINISHED!");
     }
 
 
@@ -325,12 +325,12 @@ public class PlayerServlet extends Repository {
         /** -->  ERROR - MELDUNG USER NICHT GEFUNDEN **/
         if (currentPlayer == null) {
             System.out.println(ANSI_RED + "User NOT FOUND" + ANSI_RESET);
-            return new Response().statusMethodNotAllowed();
+            return new Response().statusMethodNotAllowed("User NOT FOUND");
         }
         /** -->  ERROR - MELDUNG USER NICHT AUTH **/
         if (!request.getPath().contains(currentPlayer.getUsername())) {
             System.out.println(ANSI_RED + "User NOT AUTH" + ANSI_RESET);
-            return new Response().statusMethodNotAllowed();
+            return new Response().statusMethodNotAllowed("User NOT AUTH");
         }
 
 
@@ -351,7 +351,7 @@ public class PlayerServlet extends Repository {
     public Response INDEX(Request request) {
         if (request == null) {
             System.out.println(ANSI_RED + "BAD REQUEST" + ANSI_RESET);
-            return new Response().statusBAD();
+            return new Response().statusBAD("BAD REQUEST");
         }
         return new Response().statusOK("OK");
     }
@@ -360,7 +360,7 @@ public class PlayerServlet extends Repository {
     public Response DELETE(Request request) {
         if (request == null) {
             System.out.println(ANSI_RED + "BAD REQUEST" + ANSI_RESET);
-            return new Response().statusBAD();
+            return new Response().statusBAD("BAD REQUEST");
         }
         return new Response().statusOK("OK");
     }
