@@ -8,13 +8,14 @@ import at.technikum.utils.deck.service.DeckService;
 import at.technikum.utils.deck.service.IDeckService;
 import at.technikum.utils.player.IPlayer;
 import at.technikum.utils.player.Player;
-import at.technikum.utils.profil.IProfil;
-import at.technikum.utils.profil.Profil;
-import at.technikum.utils.profil.service.IProfilService;
-import at.technikum.utils.profil.service.ProfilService;
+import at.technikum.database.model.IProfil;
+import at.technikum.database.model.Profil;
+import at.technikum.utils.profil.IProfilService;
+import at.technikum.utils.profil.ProfilService;
 import at.technikum.utils.stack.IStack;
 import at.technikum.utils.stack.service.IStackService;
 import at.technikum.utils.stack.service.StackService;
+import at.technikum.utils.tools.TextColor;
 import lombok.Getter;
 
 import java.sql.ResultSet;
@@ -70,7 +71,7 @@ public class PlayerService extends AbstractDBTable implements IPlayerService {
             }
         } catch (SQLException e) {
 
-            System.out.println(ANSI_RED + "GETOBJECT -ERRROR: " + e + ANSI_RESET);
+            System.out.println(TextColor.ANSI_RED + "GETOBJECT -ERRROR: " + e + TextColor.ANSI_RESET);
             e.printStackTrace();
         }
         this.closeStatement();
@@ -109,7 +110,7 @@ public class PlayerService extends AbstractDBTable implements IPlayerService {
         }
 
         if (getPlayerByUsername(username) != null) {
-            System.out.println(ANSI_RED + "Username exist already" + ANSI_RESET);
+            System.out.println(TextColor.ANSI_RED + "Username exist already" + TextColor.ANSI_RESET);
             return null;
         }
         IPlayer newPlayer = Player.builder()
@@ -125,7 +126,7 @@ public class PlayerService extends AbstractDBTable implements IPlayerService {
      * --> SESSION
      **/
     private boolean startSession(IPlayer newPlayer) {
-        System.out.println(ANSI_GREEN + "#START SESSION:" + ANSI_RESET);
+        System.out.println(TextColor.ANSI_GREEN + "#START SESSION:" + TextColor.ANSI_RESET);
         if (newPlayer == null) {
             return false;
         }
@@ -144,7 +145,7 @@ public class PlayerService extends AbstractDBTable implements IPlayerService {
     }
 
     private boolean stopSession(IPlayer currentPlayer) {
-        System.out.println(ANSI_RED + "#STOP SESSION:" + ANSI_RESET);
+        System.out.println(TextColor.ANSI_RED + "#STOP SESSION:" + TextColor.ANSI_RESET);
         this.parameter = new String[]{};
         if (currentPlayer == null) {
             //    System.out.println(ANSI_RED +"ERROR - NO SESSION" + ANSI_RESET);
@@ -207,10 +208,10 @@ public class PlayerService extends AbstractDBTable implements IPlayerService {
         System.out.println("#                  USER DATA                  #");
         System.out.println("###############################################");
         System.out.println("#                                             #");
-        System.out.println("#       Username: " + ANSI_BLUE + currentPlayer.getUsername() + checkSpace(currentPlayer.getUsername(), maxName) + ANSI_RESET + "#");
-        System.out.println("#       Coins: " + ANSI_BLUE + currentPlayer.getCoins() + checkSpace("" + currentPlayer.getCoins(), maxCoins) + ANSI_RESET + "#");
-        System.out.println("#       ELO: " + ANSI_BLUE + currentPlayer.getElo() + checkSpace("" + currentPlayer.getElo(), maxElo) + ANSI_RESET + "#");
-        System.out.println("#       Stack Size: " + ANSI_BLUE + currentPlayer.getStack().getStack().size() + checkSpace("" + currentPlayer.getStack().getStack().size(), maxStackSize) + ANSI_RESET + "#");
+        System.out.println("#       Username: " + TextColor.ANSI_BLUE + currentPlayer.getUsername() + checkSpace(currentPlayer.getUsername(), maxName) + TextColor.ANSI_RESET + "#");
+        System.out.println("#       Coins: " + TextColor.ANSI_BLUE + currentPlayer.getCoins() + checkSpace("" + currentPlayer.getCoins(), maxCoins) + TextColor.ANSI_RESET + "#");
+        System.out.println("#       ELO: " + TextColor.ANSI_BLUE + currentPlayer.getElo() + checkSpace("" + currentPlayer.getElo(), maxElo) + TextColor.ANSI_RESET + "#");
+        System.out.println("#       Stack Size: " + TextColor.ANSI_BLUE + currentPlayer.getStack().getStack().size() + checkSpace("" + currentPlayer.getStack().getStack().size(), maxStackSize) + TextColor.ANSI_RESET + "#");
         System.out.println("#                                             #");
         System.out.println("###############################################");
     }
@@ -281,7 +282,7 @@ public class PlayerService extends AbstractDBTable implements IPlayerService {
             return null;
         }
         if (getPlayerByUsername(username).authorizePassword(password) == false) {
-            System.out.println(ANSI_RED + "ERROR - Password is wrong! " + ANSI_RESET);
+            System.out.println(TextColor.ANSI_RED + "ERROR - Password is wrong! " + TextColor.ANSI_RESET);
             return null;
         }
         ;

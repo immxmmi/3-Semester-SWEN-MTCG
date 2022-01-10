@@ -8,8 +8,9 @@ import at.technikum.utils.player.IPlayer;
 import at.technikum.utils.player.service.PlayerService;
 import at.technikum.utils.stack.service.IStackService;
 import at.technikum.utils.stack.service.StackService;
-import at.technikum.utils.store.IStore;
-import at.technikum.utils.store.Store;
+import at.technikum.database.model.IStore;
+import at.technikum.database.model.Store;
+import at.technikum.utils.tools.TextColor;
 
 import java.sql.ResultSet;
 import java.sql.SQLException;
@@ -289,7 +290,7 @@ public class StoreService extends AbstractDBTable implements IStoreService {
             System.out.println("ITEM: " + item.getItemID() + " sold to " + currentPlayer.getUsername());
 
         } else {
-            System.out.println(ANSI_RED + "NOT ENOUGH MONEY" + ANSI_RESET);
+            System.out.println(TextColor.ANSI_RED + "NOT ENOUGH MONEY" + TextColor.ANSI_RESET);
             return false;
         }
         this.currentPlayer = this.playerService.reloadAccount(this.currentPlayer);

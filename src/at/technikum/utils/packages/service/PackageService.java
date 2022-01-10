@@ -5,10 +5,11 @@ import at.technikum.utils.card.ICard;
 import at.technikum.utils.card.service.CardServices;
 import at.technikum.utils.cardHolder.service.CardHolderServices;
 import at.technikum.utils.cardHolder.service.ICardHolderServices;
-import at.technikum.utils.packages.IPackage;
-import at.technikum.utils.packages.Package;
+import at.technikum.database.model.IPackage;
+import at.technikum.database.model.Package;
 import at.technikum.utils.store.service.IStoreService;
 import at.technikum.utils.store.service.StoreService;
+import at.technikum.utils.tools.TextColor;
 import lombok.Getter;
 
 import java.sql.ResultSet;
@@ -19,13 +20,16 @@ public class PackageService extends AbstractDBTable implements IPackageService {
 
     static final int packagePrice = 5;
     private static PackageService instance;
+    private CardHolderServices cardHolderServices;
     @Getter
     public Package currentPackage;
+
 
     /*******************************************************************/
     /**                          Constructor                          **/
     /*******************************************************************/
     public PackageService() {
+        this.cardHolderServices = new CardHolderServices();
         this.currentPackage = Package.builder()
                 .packageID("PK-" + this.tokenSupplier.get())
                 .price(5)
@@ -39,10 +43,14 @@ public class PackageService extends AbstractDBTable implements IPackageService {
     /*******************************************************************/
     private Package packageBuilder(ResultSet result) {
 
+        String packageID = "";
+
         try {
             if (result.next()) {
+                packageID = this.result.getString("package_id");
                 Package pack = Package.builder()
-                        .packageID(this.result.getString("package_id"))
+                        .packageID(packageID)
+                        .cards(this.cardHolderServices.loadCardsByHolderID(packageID))
                         .date(this.result.getString("date"))
                         .build();
                 return pack;
@@ -142,10 +150,10 @@ public class PackageService extends AbstractDBTable implements IPackageService {
                 }
 
             } else {
-                System.out.println(ANSI_RED + "NO CARDS" + ANSI_RESET);
+                System.out.println(TextColor.ANSI_RED + "NO CARDS" + TextColor.ANSI_RESET);
             }
         } else {
-            System.out.println(ANSI_RED + "NO CARDS" + ANSI_RESET);
+            System.out.println(TextColor.ANSI_RED + "NO CARDS" + TextColor.ANSI_RESET);
         }
 
 

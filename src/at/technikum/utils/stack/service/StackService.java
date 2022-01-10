@@ -7,6 +7,7 @@ import at.technikum.utils.cardHolder.service.CardHolderServices;
 import at.technikum.utils.cardHolder.service.ICardHolderServices;
 import at.technikum.utils.stack.IStack;
 import at.technikum.utils.stack.Stack;
+import at.technikum.utils.tools.TextColor;
 
 public class StackService extends AbstractDBTable implements IStackService {
     ICardHolderServices cardHolderServices;
@@ -61,7 +62,7 @@ public class StackService extends AbstractDBTable implements IStackService {
     public void printStack(IStack currentStack) {
 
         if (currentStack == null) {
-            System.out.println(ANSI_RED + "NO STACK" + ANSI_RESET);
+            System.out.println(TextColor.ANSI_RED + "NO STACK" + TextColor.ANSI_RESET);
         }
         printCards(currentStack.getStack(), "stack");
     }

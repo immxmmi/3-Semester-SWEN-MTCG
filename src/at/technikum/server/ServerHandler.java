@@ -1,12 +1,15 @@
 package at.technikum.server;
 
-import at.technikum.server.request.Request;
-import at.technikum.server.response.Response;
-import at.technikum.server.socket.Socket;
+import at.technikum.server.utils.request.Request;
+import at.technikum.server.utils.response.IResponse;
+import at.technikum.server.utils.response.IResponseBuilder;
+import at.technikum.server.utils.response.Response;
+import at.technikum.server.utils.response.ResponseBuilder;
+import at.technikum.server.utils.socket.Socket;
 import at.technikum.utils.battle.service.BattleServlet;
-import at.technikum.utils.packages.service.PackageServlet;
-import at.technikum.utils.player.service.PlayerServlet;
-import at.technikum.utils.store.service.StoreServlet;
+import at.technikum.server.control.PackageControl;
+import at.technikum.utils.player.service.PlayerControl;
+import at.technikum.utils.store.service.StoreControl;
 import lombok.Getter;
 
 import java.io.*;
@@ -21,7 +24,9 @@ import java.util.regex.Pattern;
 public class ServerHandler {
 
     @Getter
-    Response response;
+    IResponse response;
+    @Getter
+    IResponseBuilder responseBuilder;
     @Getter
     Request request;
     @Getter
@@ -30,9 +35,10 @@ public class ServerHandler {
     Map<String, Method> route;
 
     public ServerHandler(Socket socket) {
+        this.responseBuilder = new ResponseBuilder();
         this.clientSocket = (Socket) socket;
         this.request = new Request();
-        this.response = new Response();
+        this.response = Response.builder().build();
         this.route = new HashMap<>() {
         };
         handler();
@@ -49,13 +55,13 @@ public class ServerHandler {
     public void routePOST() {
         try {
             //REGISTER
-            this.route.put("^POST /users/?$", PlayerServlet.class.getDeclaredMethod("POST", Request.class));
+            this.route.put("^POST /users/?$", PlayerControl.class.getDeclaredMethod("REGISTER", Request.class));
             //LOGIN
-            this.route.put("^POST /sessions/?$", PlayerServlet.class.getDeclaredMethod("LOGIN", Request.class));
+            this.route.put("^POST /sessions/?$", PlayerControl.class.getDeclaredMethod("LOGIN", Request.class));
             //PACKAGES
-            this.route.put("^POST /packages/?$", PackageServlet.class.getDeclaredMethod("POST", Request.class));
+            this.route.put("^POST /packages/?$", PackageControl.class.getDeclaredMethod("PACKAGE", Request.class));
             //TRANSAKTION - PACKAGES
-            this.route.put("^POST /transactions/packages?$", StoreServlet.class.getDeclaredMethod("POST", Request.class));
+            this.route.put("^POST /transactions/packages?$", StoreControl.class.getDeclaredMethod("TRANSACTION", Request.class));
             // BATTLE - TEST
             this.route.put("^POST /battles?$", BattleServlet.class.getDeclaredMethod("POST", Request.class));
 
@@ -71,15 +77,15 @@ public class ServerHandler {
     public void routeGET() {
         try {
             //CARDS - STACK
-            this.route.put("^GET /cards?$", PlayerServlet.class.getDeclaredMethod("STACK", Request.class));
+            this.route.put("^GET /cards?$", PlayerControl.class.getDeclaredMethod("STACK", Request.class));
             //CARDS - DECK
-            this.route.put("^GET /deck?$", PlayerServlet.class.getDeclaredMethod("DECK", Request.class));
-            // USER - DATA
-            this.route.put("^GET /users/?$", PlayerServlet.class.getDeclaredMethod("GET", Request.class));
+            this.route.put("^GET /deck?$", PlayerControl.class.getDeclaredMethod("DECK", Request.class));
+            // USER - PROFIL
+            this.route.put("^GET /users/?$", PlayerControl.class.getDeclaredMethod("PROFIL", Request.class));
             // USER - STATUS
-            this.route.put("^GET /stats?$", PlayerServlet.class.getDeclaredMethod("STATUS", Request.class));
+            this.route.put("^GET /stats?$", PlayerControl.class.getDeclaredMethod("STATUS", Request.class));
             // USER - SCORE
-            this.route.put("^GET /score?$", PlayerServlet.class.getDeclaredMethod("SCORE", Request.class));
+            this.route.put("^GET /score?$", PlayerControl.class.getDeclaredMethod("SCORE", Request.class));
 
 
 
@@ -89,15 +95,14 @@ public class ServerHandler {
         }
     }
 
-    public void routeDELETE() {
-    }
+    public void routeDELETE() {}
 
     public void routePUT() {
         try {
             //CARDS - DECK
-            this.route.put("^PUT /deck?$", PlayerServlet.class.getDeclaredMethod("SETDECK", Request.class));
+            this.route.put("^PUT /deck?$", PlayerControl.class.getDeclaredMethod("SETDECK", Request.class));
             //USER - DATA
-            this.route.put("^PUT /users/?$", PlayerServlet.class.getDeclaredMethod("PUT", Request.class));
+            this.route.put("^PUT /users/?$", PlayerControl.class.getDeclaredMethod("PUT", Request.class));
 
 
         } catch (NoSuchMethodException e) {
@@ -128,12 +133,12 @@ public class ServerHandler {
                 }
 
             } else {
-                this.response = this.response.statusBAD("BAD REQUEST");
+                this.response = this.responseBuilder.statusBAD("BAD REQUEST");
             }
 
 
             BufferedWriter writer = new BufferedWriter(new OutputStreamWriter(clientSocket.getOutputStream()));
-            this.response.write(writer);
+            this.responseBuilder.write(writer,this.response);
 
         } catch (IOException e) {
             e.printStackTrace();

@@ -10,6 +10,7 @@ import at.technikum.utils.logger.LoggerStatic;
 import at.technikum.utils.player.IPlayer;
 import at.technikum.utils.player.service.IPlayerService;
 import at.technikum.utils.player.service.PlayerService;
+import at.technikum.utils.tools.TextColor;
 import at.technikum.utils.tools.Tools;
 
 import java.util.Collections;
@@ -58,21 +59,21 @@ public class BattleLogic extends Tools implements IBattleLogic{
             ICard WinnerCard = this.rules(deckA.get(i), deckB.get(i));
 
             if (WinnerCard == deckA.get(i)) {
-                System.out.println(ANSI_GREEN + "Winner is Player A" + ANSI_RESET);
+                System.out.println(TextColor.ANSI_GREEN + "Winner is Player A" + TextColor.ANSI_RESET);
                 loggerStatic.log("Winner is Player A");
                 winnerA++;
                 battle.getWinnerList().add(battle.getPlayer1());
             }
 
             if (WinnerCard == deckB.get(i)) {
-                System.out.println(ANSI_GREEN + "Winner is Player B" + ANSI_RESET);
+                System.out.println(TextColor.ANSI_GREEN + "Winner is Player B" + TextColor.ANSI_RESET);
                 loggerStatic.log("Winner is Player B");
                 battle.getWinnerList().add(battle.getPlayer2());
                 winnerB++;
             }
 
             if (WinnerCard == null) {
-                System.out.println(ANSI_WHITE + "The game is a draw" + ANSI_RESET);
+                System.out.println(TextColor.ANSI_WHITE + "The game is a draw" + TextColor.ANSI_RESET);
                 loggerStatic.log("The game is a draw");
             }
 
@@ -83,12 +84,12 @@ public class BattleLogic extends Tools implements IBattleLogic{
 
 
 
-        System.out.println("\n" + ANSI_PURPLE + "WINNER LIST : ");
+        System.out.println("\n" + TextColor.ANSI_PURPLE + "WINNER LIST : ");
         for (int i = 0; i < battle.getWinnerList().size(); i++) {
             System.out.print("#" + i + " ");
             System.out.println(battle.getWinnerList().get(i).getUsername());
         }
-        System.out.print(ANSI_RESET);
+        System.out.print(TextColor.ANSI_RESET);
 
         if(winnerA > winnerB){
 
@@ -107,12 +108,12 @@ public class BattleLogic extends Tools implements IBattleLogic{
     }
 
     private void round(ICard CardA, ICard CardB) {
-        System.out.print(ANSI_BLUE + "PlayerA: ");
+        System.out.print(TextColor.ANSI_BLUE + "PlayerA: ");
         System.out.print(CardA.getCardName() + "(" + CardA.getCardPower() + ")");
         System.out.print(" vs ");
         System.out.print("PlayerB: ");
         System.out.print(CardB.getCardName() + "(" + CardB.getCardPower() + ")");
-        System.out.println(ANSI_RESET);
+        System.out.println(TextColor.ANSI_RESET);
     }
 
     private ICard rules(ICard CardA, ICard CardB) {

@@ -1,6 +1,7 @@
 package at.technikum.server;
 
-import at.technikum.server.socket.Socket;
+import at.technikum.server.utils.socket.Socket;
+import at.technikum.utils.tools.TextColor;
 import at.technikum.utils.tools.Tools;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
@@ -46,14 +47,14 @@ public class Server extends Tools implements IServer, Runnable {
             // Listener initialisiert
             this.listener = new ServerSocket(port, clients, bindAddr);
             // Server wartet auf eine Verbindung
-            System.out.println(ANSI_GREEN + "\nServer -> Listen on IP + PORT " + this.listener.getLocalSocketAddress() + "..." + ANSI_RESET);
+            System.out.println(TextColor.ANSI_GREEN + "\nServer -> Listen on IP + PORT " + this.listener.getLocalSocketAddress() + "..." + TextColor.ANSI_RESET);
 
             // Solange die Verbindung nicht abgebrochen wird können sich Clients verbinden
             while (true) {
                 // Socket für den Client wird erstellt
                 Socket clientSocket = new Socket(this.listener.accept());
                 // Benachrichtigung, welcher Client sich mit dem Server verbunden hat
-                System.out.println(ANSI_BLUE + "\nNEW CLIENT CONNECTION - IP + PORT " + this.listener.getLocalSocketAddress() + "..." + ANSI_RESET);
+                System.out.println(TextColor.ANSI_BLUE + "\nNEW CLIENT CONNECTION - IP + PORT " + this.listener.getLocalSocketAddress() + "..." + TextColor.ANSI_RESET);
                 // ClientSocket wird dem Handler übergeben --> Threading wird auch gleich erstellt
                 Thread currentClient = new Thread(() -> new ServerHandler(clientSocket));
                 // Client wird gestartet
@@ -69,7 +70,7 @@ public class Server extends Tools implements IServer, Runnable {
     @Override
     // Close
     public void closeServer() {
-        System.out.println(ANSI_RED + "\nServer -> Closing on PORT " + listener.getLocalPort() + "..." + ANSI_RESET);
+        System.out.println(TextColor.ANSI_RED + "\nServer -> Closing on PORT " + listener.getLocalPort() + "..." + TextColor.ANSI_RESET);
         try {
             // Listener wird geschlossen
             listener.close();

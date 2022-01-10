@@ -3,6 +3,7 @@ package at.technikum.utils.card.service;
 import at.technikum.database.AbstractDBTable;
 import at.technikum.utils.card.ICard;
 import at.technikum.utils.card.cardTypes.*;
+import at.technikum.utils.tools.TextColor;
 
 import java.sql.ResultSet;
 import java.sql.SQLException;
@@ -311,7 +312,7 @@ public class CardServices extends AbstractDBTable implements ICardServices {
             this.setStatement("INSERT INTO " + this.tableName + "(card_id,card_typ,card_name,card_element,card_power)VALUES(?,?,?,?,?);", this.parameter);
             return getCardById(newCard.getCardID());
         }
-        System.out.println(ANSI_RED +"Card already exist" + ANSI_RESET);
+        System.out.println(TextColor.ANSI_RED +"Card already exist" + TextColor.ANSI_RESET);
         return getCardByName((""+newCard.getCardName()));
     }
     @Override

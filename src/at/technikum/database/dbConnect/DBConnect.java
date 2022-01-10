@@ -1,4 +1,5 @@
 package at.technikum.database.dbConnect;
+import at.technikum.utils.tools.TextColor;
 import at.technikum.utils.tools.Tools;
 import java.sql.Connection;
 import java.sql.DriverManager;
@@ -58,9 +59,9 @@ public class DBConnect extends Tools implements Cloneable, IDBConnect { // TODO:
     private void startConnect() {
         try {
             this.connection = DriverManager.getConnection(this.jdbcURL, this.username, this.password);
-            System.out.println(ANSI_GREEN + "CONNECT DB -- success" + ANSI_RESET);
+            System.out.println(TextColor.ANSI_GREEN + "CONNECT DB -- success" + TextColor.ANSI_RESET);
         } catch (SQLException e) {
-            System.out.println(ANSI_RED + "CONNECT DB -- failed" + ANSI_RESET);
+            System.out.println(TextColor.ANSI_RED + "CONNECT DB -- failed" + TextColor.ANSI_RESET);
             e.printStackTrace();
         }
     }

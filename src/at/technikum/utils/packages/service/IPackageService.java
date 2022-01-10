@@ -1,8 +1,8 @@
 package at.technikum.utils.packages.service;
 
 import at.technikum.database.IDBTable;
-import at.technikum.utils.packages.IPackage;
-import at.technikum.utils.packages.Package;
+import at.technikum.database.model.IPackage;
+import at.technikum.database.model.Package;
 
 import java.util.ArrayList;
 

@@ -1,13 +1,14 @@
 package at.technikum.utils.battle.service;
 
-import at.technikum.server.repository.Repository;
-import at.technikum.server.request.Request;
-import at.technikum.server.response.Response;
+import at.technikum.server.utils.request.Request;
+import at.technikum.server.utils.response.Response;
+import at.technikum.server.utils.response.ResponseBuilder;
 import at.technikum.utils.player.IPlayer;
 import at.technikum.utils.player.service.IPlayerService;
 import at.technikum.utils.player.service.PlayerService;
+import at.technikum.utils.tools.TextColor;
 
-public class BattleServlet extends Repository {
+public class BattleServlet {
 
     IPlayerService playerService;
 
@@ -15,13 +16,12 @@ public class BattleServlet extends Repository {
         this.playerService = new PlayerService();
     }
 
-    @Override
     public Response POST(Request request) {
 
         System.out.println("# LOAD DECK");
 
         /** --> WENN REQUEST LEER IST --> WENN AUTH LEER IST **/
-        Response response = new Response().requestErrorHandler(request, true, false);
+        Response response = new ResponseBuilder().requestErrorHandler(request, true, false);
         if (response != null) {
             return response;
         }
@@ -31,12 +31,12 @@ public class BattleServlet extends Repository {
 
         /** -->  ERROR - MELDUNG USER NICHT GEFUNDEN **/
         if (currentPlayer == null) {
-            System.out.println(ANSI_RED + "USER NOT FOUND" + ANSI_RESET);
-            return new Response().statusMethodNotAllowed("USER NOT FOUND");
+            System.out.println(TextColor.ANSI_RED + "USER NOT FOUND" + TextColor.ANSI_RESET);
+            return new ResponseBuilder().statusMethodNotAllowed("USER NOT FOUND");
         }
         if (currentPlayer.getDeck() == null) {
-            System.out.println(ANSI_RED + "DECK EMPTY" + ANSI_RESET);
-            return new Response().statusMethodNotAllowed("DECK EMPTY");
+            System.out.println(TextColor.ANSI_RED + "DECK EMPTY" + TextColor.ANSI_RESET);
+            return new ResponseBuilder().statusMethodNotAllowed("DECK EMPTY");
         }
 
         System.out.println("START GAME");
@@ -45,7 +45,7 @@ public class BattleServlet extends Repository {
 
         battleLogic.start(currentPlayer.getUserID(),currentPlayer.getUserID());
 
-        System.out.println(ANSI_GREEN + "LOADING FINISHED!" + ANSI_RESET);
-        return new Response().statusOK("test");
+        System.out.println(TextColor.ANSI_GREEN + "LOADING FINISHED!" + TextColor.ANSI_RESET);
+        return new ResponseBuilder().statusOK("test");
     }
 }

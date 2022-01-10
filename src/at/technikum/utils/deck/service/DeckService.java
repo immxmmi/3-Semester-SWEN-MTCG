@@ -9,6 +9,7 @@ import at.technikum.utils.cardHolder.service.ICardHolderServices;
 import at.technikum.utils.deck.Deck;
 import at.technikum.utils.deck.IDeck;
 import at.technikum.utils.player.service.IPlayerService;
+import at.technikum.utils.tools.TextColor;
 
 import java.sql.ResultSet;
 import java.sql.SQLException;
@@ -67,7 +68,7 @@ public class DeckService extends AbstractDBTable implements IDeckService {
             }
         } catch (SQLException e) {
 
-            System.out.println(ANSI_RED + "GETOBJECT -ERRROR: " + e + ANSI_RESET);
+            System.out.println(TextColor.ANSI_RED + "GETOBJECT -ERRROR: " + e + TextColor.ANSI_RESET);
             e.printStackTrace();
         }
         this.closeStatement();
@@ -147,7 +148,7 @@ public class DeckService extends AbstractDBTable implements IDeckService {
     public void printDeck(IDeck currentDeck) {
 
         if (currentDeck == null) {
-            System.out.println(ANSI_RED + "NO DECK" + ANSI_RESET);
+            System.out.println(TextColor.ANSI_RED + "NO DECK" + TextColor.ANSI_RESET);
         }
         printCards((ArrayList) currentDeck.getDeckList(), "deck");
     }

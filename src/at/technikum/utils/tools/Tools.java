@@ -17,18 +17,7 @@ import java.util.Random;
 import java.util.UUID;
 import java.util.function.Supplier;
 
-public class Tools {
-
-    // COLORS
-    public static final String ANSI_RESET = "\u001B[0m";
-    public static final String ANSI_BLACK = "\u001B[30m";
-    public static final String ANSI_RED = "\u001B[31m";
-    public static final String ANSI_GREEN = "\u001B[32m";
-    public static final String ANSI_YELLOW = "\u001B[33m";
-    public static final String ANSI_BLUE = "\u001B[34m";
-    public static final String ANSI_PURPLE = "\u001B[35m";
-    public static final String ANSI_CYAN = "\u001B[36m";
-    public static final String ANSI_WHITE = "\u001B[37m";
+public class Tools extends TextColor{
 
     /**
      * HASH STRING
@@ -182,13 +171,13 @@ public class Tools {
         for (ICard card : stack) {
 
             if (card.getCardElement() == CardElement.WATER) {
-                System.out.print(ANSI_CYAN);
+                System.out.print(TextColor.ANSI_CYAN);
             }
             if (card.getCardElement() == CardElement.FIRE) {
-                System.out.print(ANSI_RED);
+                System.out.print(TextColor.ANSI_RED);
             }
             if (card.getCardElement() == CardElement.NORMAL) {
-                System.out.print(ANSI_RESET);
+                System.out.print(TextColor.ANSI_RESET);
             }
 
             System.out.println(
@@ -199,7 +188,7 @@ public class Tools {
                             "| " + card.getCardPower() + checkSpace("" + card.getCardPower(), maxPower) +
                             " |"
             );
-            System.out.print(ANSI_RESET);
+            System.out.print(TextColor.ANSI_RESET);
             number++;
         }
 

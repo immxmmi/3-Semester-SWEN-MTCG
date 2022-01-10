@@ -8,6 +8,7 @@ import at.technikum.utils.cardHolder.ICardHolder;
 import at.technikum.utils.packages.service.IPackageService;
 import at.technikum.utils.packages.service.PackageService;
 import at.technikum.utils.player.IPlayer;
+import at.technikum.utils.tools.TextColor;
 
 import java.sql.ResultSet;
 import java.sql.SQLException;
@@ -51,7 +52,7 @@ public class CardHolderServices extends AbstractDBTable implements ICardHolderSe
             }
         } catch (SQLException e) {
 
-            System.out.println(ANSI_RED + "GETOBJECT -ERRROR: " + e + ANSI_RESET);
+            System.out.println(TextColor.ANSI_RED + "GETOBJECT -ERRROR: " + e + TextColor.ANSI_RESET);
             e.printStackTrace();
         }
         // this.closeStatement();
