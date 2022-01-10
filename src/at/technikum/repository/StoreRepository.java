@@ -1,273 +1,30 @@
 package at.technikum.repository;
 
-import at.technikum.database.AbstractDBTable;
-import at.technikum.model.IPlayer;
-import at.technikum.model.IStore;
+import at.technikum.model.Player;
 import at.technikum.model.Store;
-import at.technikum.utils.IPrinter;
-import at.technikum.utils.Printer;
 
-import java.sql.ResultSet;
-import java.sql.SQLException;
 import java.util.ArrayList;
-import java.util.Scanner;
 
-public class StoreRepository extends AbstractDBTable implements IStoreRepository {
-    private static final String storeID = "STORE - ST1120";
-    private IPrinter printer;
-    private IPlayer currentPlayer;
-    private PlayerRepository playerRepository = new PlayerRepository();
+public interface StoreRepository {
+    void addItemToStore(String itemID, int price);
 
+    void addItemToStore(String sellerID, String itemID, double price);
 
-    /*******************************************************************/
-    /**                          Constructor                          **/
-    /*******************************************************************/
-    public StoreRepository(IPlayer currentPlayer) {
-        this.currentPlayer = currentPlayer;
-        this.tableName = "store";
-        this.printer = new Printer();
-    }
-    /*******************************************************************/
+    void addPackageToStore(String packageID, double price);
 
+    Player sellPackage(String customerID, String packageID);
 
-    /*******************************************************************/
-    /**                            BUILDER                            **/
-    /*******************************************************************/
-    private IStore transactionBuilder(ResultSet result) {
+    boolean buyItem(Store item);
 
-        try {
-            if (result.next()) {
-                IStore item = Store.builder()
-                        .transactionID(result.getString("transaction_id"))
-                        .sellerID(result.getString("seller_id"))
-                        .itemID(result.getString("item_id"))
-                        .price(convertToDouble(result.getString("price")))
-                        .timeStamp(result.getString("date"))
-                        .build();
+    void changePrice(String transactionID);
 
-                this.closeStatement();
+    void removeTransaction(String transactionID, String sellerID, String itemID);
 
-                return item;
-            }
-        } catch (SQLException e) {
+    ArrayList<Store> getAllTransaction();
 
-            System.out.println("GETOBJECT -ERRROR: " + e);
-            e.printStackTrace();
-        }
-        this.closeStatement();
-        return null;
-    }
-    /*******************************************************************/
+    ArrayList<Store> getAllTransactionByUserID(String sellerID);
 
+    int getPrice();
 
-    /*******************************************************************/
-    /**                              ADD                              **/
-    /*******************************************************************/
-    @Override
-    public void addItemToStore(String itemID, int price) {
-
-        ICardHolderRepository holder = new CardHolderRepository();
-
-        holder.updateLocked(holder.getCardHolder(this.currentPlayer.getUserID(), itemID), true);
-
-        //ICardHolder holder1 = holder.get
-        //holder.updateLocked();
-
-        addItemToStore(this.currentPlayer.getUserID(), itemID, price);
-    }
-    @Override
-    public void addItemToStore(String sellerID, String itemID, double price) {
-        String transactionID = this.tokenSupplier.get();
-
-        this.parameter = new String[]{
-                "T - " + transactionID,
-                sellerID,
-                itemID,
-                "" + price,
-                "" + formatDate(2)
-        };
-
-        this.setStatement(
-                "INSERT INTO store (transaction_id, seller_id, item_id, price , \"date\") values ( ?,?,?,?,?)",
-                this.parameter
-        );
-
-    }
-
-    @Override
-    public void addPackageToStore(String packageID, double price) {
-        addItemToStore(this.storeID, packageID, price);
-    }
-    /*******************************************************************/
-
-
-
-
-    /*******************************************************************/
-    /**                            ACTION                             **/
-    /*******************************************************************/
-    @Override
-    public IPlayer sellPackage(String customerID, String packageID) {
-        PlayerRepository playerRepository = new PlayerRepository();
-        this.currentPlayer = playerRepository.getPlayerById(customerID);
-        buyItem(getItemByItemID(packageID));
-        return this.currentPlayer;
-    }
-
-    @Override
-    public boolean buyItem(IStore item) {
-        ICardHolderRepository holder = new CardHolderRepository();
-
-        if (playerRepository.giveCoins(this.currentPlayer, item.getPrice())) {
-            this.currentPlayer = playerRepository.reloadAccount(this.currentPlayer);
-            if (item.getSellerID().equals(storeID)) {
-                holder.sellPackage(item.getItemID(), this.currentPlayer.getUserID());
-
-            } else {
-                IPlayer seller = this.playerRepository.getPlayerById(item.getSellerID());
-                playerRepository.addCoins(seller, item.getPrice());
-                this.playerRepository.reloadAccount(seller);
-                holder.changeCardHolder(this.currentPlayer.getUserID(), seller.getUserID(), item.getItemID());
-            }
-            deleteByID(item.getTransactionID());
-            System.out.println("ITEM: " + item.getItemID() + " sold to " + currentPlayer.getUsername());
-
-        } else {
-            //System.out.println(TextColor.ANSI_RED + "NOT ENOUGH MONEY" + TextColor.ANSI_RESET);
-            return false;
-        }
-        this.currentPlayer = this.playerRepository.reloadAccount(this.currentPlayer);
-        return true;
-    }
-
-    @Override
-    public void changePrice(String transactionID) {
-        int price = getPrice();
-        this.updatePrice(transactionID, price);
-        System.out.println("PRICE - UPDATE + " + transactionID);
-
-    }
-
-    @Override
-    public void removeTransaction(String transactionID, String sellerID, String itemID) {
-        ICardHolderRepository holder = new CardHolderRepository();
-        holder.updateLocked(holder.getCardHolder(sellerID, itemID), false);
-        deleteByID(transactionID);
-        System.out.println("TRANSACTION - REMOVED " + transactionID);
-    }
-
-    /*******************************************************************/
-
-
-    /*******************************************************************/
-    /**                             GETTER                            **/
-    /*******************************************************************/
-    @Override
-    public ArrayList<IStore> getAllTransaction() {
-        ArrayList<IStore> transactions = new ArrayList<>();
-        this.parameter = new String[]{};
-        this.setStatement("SELECT * FROM " + this.tableName + ";", this.parameter);
-
-        try {
-            while (this.result.next()) {
-                IStore transaction = Store.builder()
-                        .transactionID(result.getString("transaction_id"))
-                        .sellerID(result.getString("seller_id"))
-                        .itemID(result.getString("item_id"))
-                        .price(convertToDouble(result.getString("price")))
-                        .timeStamp(result.getString("date"))
-                        .build();
-                transactions.add(transaction);
-            }
-        } catch (SQLException e) {
-            e.printStackTrace();
-        }
-
-        this.closeStatement();
-        return transactions;
-    }
-    @Override
-    public ArrayList<IStore> getAllTransactionByUserID(String sellerID) {
-        ArrayList<IStore> transactions = new ArrayList<>();
-        this.parameter = new String[]{sellerID};
-        this.setStatement("SELECT * FROM " + this.tableName + " WHERE seller_id = ? ;", this.parameter);
-
-        try {
-            while (this.result.next()) {
-                IStore transaction = Store.builder()
-                        .transactionID(result.getString("transaction_id"))
-                        .sellerID(result.getString("seller_id"))
-                        .itemID(result.getString("item_id"))
-                        .price(convertToDouble(result.getString("price")))
-                        .timeStamp(result.getString("date"))
-                        .build();
-                transactions.add(transaction);
-            }
-        } catch (SQLException e) {
-            e.printStackTrace();
-        }
-
-        this.closeStatement();
-        return transactions;
-    }
-    private IStore getItemByItemID(String packageID) {
-        //IStore item;
-        this.parameter = new String[]{packageID};
-        this.setStatement("SELECT * FROM " + this.tableName + " WHERE item_id = ? ;", this.parameter);
-        return transactionBuilder(this.result);
-    }
-    private IStore getTransactionById(String id) {
-        this.parameter = new String[]{id};
-        this.setStatement(
-                "SELECT * FROM " + this.tableName + " WHERE transaction_id = ? " + ";",
-                this.parameter
-        );
-        return transactionBuilder(this.result);
-    }
-    private IStore getTransactionByUserItem(String sellerID, String itemID) {
-        this.parameter = new String[]{sellerID, itemID};
-        this.setStatement(
-                "SELECT * FROM " + this.tableName + " WHERE seller_id = ? AND item_id=? " + ";",
-                this.parameter
-        );
-        return transactionBuilder(this.result);
-    }
-    @Override
-    public int getPrice() {
-        int price = 0;
-        Scanner input = new Scanner(System.in);
-        System.out.println("SET NEW PRICE");
-        do {
-            price = input.nextInt();
-            if (price < 0) {
-                System.out.println("ERROR - TRY AGAIN");
-            }
-        } while (price < 0);
-        return price;
-    }
-    @Override
-    public String getStoreID() {
-        return storeID;
-    }
-
-    /*******************************************************************/
-
-    /*******************************************************************/
-    /**                     Datenbank - Operatoren                    **/
-    /*******************************************************************/
-    private boolean deleteByID(String transactionID) {
-        // System.out.println("#DELETE ITEM");
-        this.parameter = new String[]{transactionID};
-        this.setStatement("DELETE FROM " + this.tableName + " WHERE transaction_id = ? ;", this.parameter);
-        this.closeStatement();
-        return true;
-    }
-
-    private void updatePrice(String transactionID, int newPrice) {
-        this.parameter = new String[]{"" + newPrice, transactionID};
-        setStatement("UPDATE  \"" + this.tableName + "\" SET  price = ? WHERE  transaction_id= ?;", this.parameter);
-    }
-    /*******************************************************************/
-
-
+    String getStoreID();
 }

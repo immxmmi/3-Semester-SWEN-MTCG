@@ -1,29 +1,29 @@
 package at.technikum.services;
 
-import at.technikum.model.IPlayer;
-import at.technikum.model.IStore;
-import at.technikum.repository.IPlayerRepository;
+import at.technikum.model.Player;
+import at.technikum.model.Store;
 import at.technikum.repository.PlayerRepository;
+import at.technikum.repository.PlayerRepositoryImpl;
 import at.technikum.utils.IPrinter;
 import at.technikum.utils.Printer;
 import at.technikum.utils.card.service.CardServices;
+import at.technikum.repository.CardHolderRepositoryImpl;
 import at.technikum.repository.CardHolderRepository;
-import at.technikum.repository.ICardHolderRepository;
-import at.technikum.repository.IStackRepository;
 import at.technikum.repository.StackRepository;
-import at.technikum.repository.IStoreRepository;
+import at.technikum.repository.StackRepositoryImpl;
+import at.technikum.repository.StoreRepository;
 
 import java.util.ArrayList;
 import java.util.Scanner;
 
 public class StoreServices {
 
-    IPlayer currentPlayer;
-    IPlayerRepository playerRepository;
-    IStoreRepository storeRepository;
+    Player currentPlayer;
+    PlayerRepository playerRepository;
+    StoreRepository storeRepository;
     IPrinter printer;
 
-    public StoreServices(IPlayer currentPlayer) {
+    public StoreServices(Player currentPlayer) {
         this.currentPlayer = currentPlayer;
         this.printer = new Printer();
     }
@@ -31,7 +31,7 @@ public class StoreServices {
     /*******************************************************************/
     /**                           SERVICE                             **/
     /*******************************************************************/
-    public IPlayer StoreMenu() {
+    public Player StoreMenu() {
 
         if (this.currentPlayer == null) {
             System.out.println("NO currentPlayer -- LOGIN");
@@ -69,8 +69,8 @@ public class StoreServices {
         int size = (currentPlayer.getFreeStack().getStack().size()) - 1;
         String cardID;
         String userID = currentPlayer.getUserID();
-        ICardHolderRepository holder = new CardHolderRepository();
-        IStackRepository stackService = new StackRepository();
+        CardHolderRepository holder = new CardHolderRepositoryImpl();
+        StackRepository stackService = new StackRepositoryImpl();
 
 
         System.out.println("|#################################################|");
@@ -123,11 +123,11 @@ public class StoreServices {
         System.out.println("##| count | SELLER              | ITEM              | PRICE | DATE     | ## #");
         System.out.println("#############################################################################");
 
-        PlayerRepository seller = new PlayerRepository();
+        PlayerRepositoryImpl seller = new PlayerRepositoryImpl();
         CardServices card = new CardServices();
         int count = 0;
 
-        for (IStore i : storeRepository.getAllTransaction()) {
+        for (Store i : storeRepository.getAllTransaction()) {
             if (i.getSellerID().equals(storeRepository.getStoreID())) {
 
                 System.out.println(
@@ -179,7 +179,7 @@ public class StoreServices {
     private void itemSetting() {
 
         String sellerID = currentPlayer.getUserID();
-        ArrayList<IStore> transactions = storeRepository.getAllTransactionByUserID(sellerID);
+        ArrayList<Store> transactions = storeRepository.getAllTransactionByUserID(sellerID);
         CardServices card = new CardServices();
         int index;
         int number = 0;
@@ -192,7 +192,7 @@ public class StoreServices {
         System.out.println("|############   ITEM -- SETTINGS   ##############|");
         System.out.println("|#################################################|");
 
-        for (IStore transaction : transactions) {
+        for (Store transaction : transactions) {
             System.out.println("-----------------------------------------------------");
             System.out.println("# number " + number);
             System.out.println(transaction.getTransactionID());

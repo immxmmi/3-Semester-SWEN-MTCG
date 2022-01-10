@@ -1,16 +1,16 @@
 package at.technikum.utils;
 
 import at.technikum.model.IDeck;
-import at.technikum.model.IPlayer;
-import at.technikum.model.IProfil;
-import at.technikum.model.IStack;
+import at.technikum.model.Player;
+import at.technikum.model.Profil;
+import at.technikum.model.Stack;
 
 public interface IPrinter {
-    void printStack(IStack currentStack);
+    void printStack(Stack currentStack);
 
-    void printPlayerInfo(IProfil playerInfo);
+    void printPlayerInfo(Profil playerInfo);
 
     void printDeck(IDeck currentDeck);
 
-    void printPlayerData(IPlayer currentPlayer);
+    void printPlayerData(Player currentPlayer);
 }

@@ -7,9 +7,9 @@ import at.technikum.utils.card.cardTypes.CardElement;
 import at.technikum.utils.card.cardTypes.CardName;
 import at.technikum.utils.card.cardTypes.CardType;
 import at.technikum.utils.logger.LoggerStatic;
-import at.technikum.model.IPlayer;
-import at.technikum.repository.IPlayerRepository;
+import at.technikum.model.Player;
 import at.technikum.repository.PlayerRepository;
+import at.technikum.repository.PlayerRepositoryImpl;
 import at.technikum.utils.tools.TextColor;
 import at.technikum.utils.tools.Tools;
 
@@ -19,13 +19,13 @@ import java.util.List;
 public class BattleLogic extends Tools implements IBattleLogic{
 
     LoggerStatic loggerStatic = LoggerStatic.getInstance();
-    IPlayerRepository playerService = new PlayerRepository();
+    PlayerRepository playerService = new PlayerRepositoryImpl();
 
 
     @Override
     public void start(String userID1, String userID2){
-        IPlayer PlayerA = this.playerService.getPlayerById(userID1);
-        IPlayer PlayerB = this.playerService.getPlayerById(userID2);
+        Player PlayerA = this.playerService.getPlayerById(userID1);
+        Player PlayerB = this.playerService.getPlayerById(userID2);
 
         IBattle battle = Battle.builder()
                 .player1(PlayerA)

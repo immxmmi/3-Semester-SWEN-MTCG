@@ -1,6 +1,6 @@
 package at.technikum.database;
 
-import at.technikum.database.dbConnect.DBConnect;
+import at.technikum.database.dbConnect.DBConnectImpl;
 import at.technikum.utils.tools.Tools;
 
 import java.sql.Connection;
@@ -11,7 +11,7 @@ import java.sql.SQLException;
 
 public abstract class AbstractDBTable extends Tools { // TODO: 07.01.2022 fertig
 
-    protected Connection connection = DBConnect.getInstance().getConnection();
+    protected Connection connection = DBConnectImpl.getInstance().getConnection();
     protected PreparedStatement statement; // STATEMENT --> SQL ABFRAGE
     protected ResultSet result;    // RESULT DER SQL ABFRAGE
     protected String tableName;    // TABELLEN NAME DES SQL BEFEHLS

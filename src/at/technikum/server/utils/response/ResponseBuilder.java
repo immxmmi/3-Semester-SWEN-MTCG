@@ -19,7 +19,7 @@ public class ResponseBuilder implements IResponseBuilder{
             currentBuffer.append(response.getVersion() +" "+ response.getStatus()+" "+ response.getReasonPhrase() + "\r\n");   // Status
             currentBuffer.append("Content-Type: "+response.getContentTyp()+"\r\n");
             currentBuffer.append("Content-Length: "+response.getBody().length()+"\r\n");
-            currentBuffer.append("\r\n"+response.getBody());
+            currentBuffer.append("\r\n"+response.getBody()+"\r\n");
 
             System.out.println(currentBuffer);
 
@@ -35,8 +35,6 @@ public class ResponseBuilder implements IResponseBuilder{
     /*******************************************************************/
     /**                            MESSAGE                            **/
     /*******************************************************************/
-
-
 
     // STATUS OK
     @Override

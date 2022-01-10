@@ -1,25 +1,25 @@
 package at.technikum.services;
 
-import at.technikum.model.IPackage;
 import at.technikum.model.Package;
-import at.technikum.repository.IStoreRepository;
+import at.technikum.model.PackageImpl;
 import at.technikum.repository.StoreRepository;
+import at.technikum.repository.StoreRepositoryImpl;
 import at.technikum.utils.card.ICard;
 import at.technikum.utils.card.service.CardServices;
+import at.technikum.repository.CardHolderRepositoryImpl;
 import at.technikum.repository.CardHolderRepository;
-import at.technikum.repository.ICardHolderRepository;
-import at.technikum.repository.IPackageRepository;
 import at.technikum.repository.PackageRepository;
+import at.technikum.repository.PackageRepositoryImpl;
 import at.technikum.utils.tools.TextColor;
 import at.technikum.utils.tools.Tools;
 
 import java.util.ArrayList;
 
 public class PackageServices extends Tools {
-    IPackageRepository packageRepository;
+    PackageRepository packageRepository;
 
     public PackageServices(){
-        this.packageRepository = new PackageRepository();
+        this.packageRepository = new PackageRepositoryImpl();
     }
 
     /**
@@ -45,9 +45,9 @@ public class PackageServices extends Tools {
         System.out.println("#CREATE NEW PACKAGE");
         CardServices cardList = new CardServices();
         ICard card;
-        ICardHolderRepository holder = new CardHolderRepository();
-        IStoreRepository store = new StoreRepository(null);
-        IPackage pack = Package.builder()
+        CardHolderRepository holder = new CardHolderRepositoryImpl();
+        StoreRepository store = new StoreRepositoryImpl(null);
+        Package pack = PackageImpl.builder()
                 .packageID("PK-" + this.tokenSupplier.get())
                 .build();
 

@@ -1,6 +1,6 @@
 package at.technikum.control;
 
-import at.technikum.model.IPlayer;
+import at.technikum.model.Player;
 import at.technikum.repository.*;
 import at.technikum.server.utils.request.Request;
 import at.technikum.server.utils.response.Response;
@@ -12,14 +12,14 @@ import com.google.gson.JsonObject;
 public class StoreControl {
 
     private Gson gson;
-    private IPackageRepository packageRepository;
-    private IPlayerRepository playerRepository;
+    private PackageRepository packageRepository;
+    private PlayerRepository playerRepository;
 
     public StoreControl(){
 
         this.gson = new Gson();
-        this.packageRepository = new PackageRepository();
-        this.playerRepository = new PlayerRepository();
+        this.packageRepository = new PackageRepositoryImpl();
+        this.playerRepository = new PlayerRepositoryImpl();
     }
 
 
@@ -39,7 +39,7 @@ public class StoreControl {
         /** --> userID der das Package kauft **/
         String authKey = request.getAuth();
         /** --> User CHECK **/
-        IPlayer currentPlayer = this.playerRepository.getPlayerById(authKey);
+        Player currentPlayer = this.playerRepository.getPlayerById(authKey);
         if (currentPlayer == null) {
             System.out.println(TextColor.ANSI_RED + "NO USER TOKEN" + TextColor.ANSI_RESET);
             return new ResponseBuilder().statusNotFound(this.Message("NO USER TOKEN").toString());
@@ -62,8 +62,8 @@ public class StoreControl {
 
         packageID = this.packageRepository.loadPackageIDList().get(0);
 
-        StoreRepository storeRepository = new StoreRepository(currentPlayer);
-        storeRepository.sellPackage(authKey, packageID);
+        StoreRepositoryImpl storeRepositoryImpl = new StoreRepositoryImpl(currentPlayer);
+        storeRepositoryImpl.sellPackage(authKey, packageID);
 
         if (this.packageRepository.getPackageByID(packageID) != null) {
             System.out.println(TextColor.ANSI_RED + "NOT ENOUGH MONEY" + TextColor.ANSI_RESET);

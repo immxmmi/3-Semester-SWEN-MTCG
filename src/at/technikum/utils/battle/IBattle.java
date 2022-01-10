@@ -1,14 +1,14 @@
 package at.technikum.utils.battle;
 
-import at.technikum.model.IPlayer;
+import at.technikum.model.Player;
 
 import java.util.List;
 
 public interface IBattle {
 
-    IPlayer getPlayer1();
+    Player getPlayer1();
 
-    IPlayer getPlayer2();
+    Player getPlayer2();
 
-    List<IPlayer> getWinnerList();
+    List<Player> getWinnerList();
 }

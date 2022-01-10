@@ -1,37 +1,15 @@
 package at.technikum.model;
 
-import com.google.gson.annotations.SerializedName;
-import lombok.Builder;
-import lombok.Getter;
-import lombok.Setter;
+public interface Store {
 
+    String getTransactionID();
 
-@Builder(toBuilder = true)
-public class Store implements IStore {
+    String getSellerID();
 
-    @Setter
-    @Getter
-    @SerializedName("transactionID")
-    private String transactionID;
-    @Setter
-    @Getter
-    @SerializedName("sellerID")
-    private String sellerID;
+    String getItemID();
 
-    @Setter
-    @Getter
-    @SerializedName("itemID")
-    private String itemID;
+    double getPrice();
 
-    @Setter
-    @Getter
-    @SerializedName("price")
-    private double price;
-
-    @Setter
-    @Getter
-    @SerializedName("timeStamp")
-    private String timeStamp;
-
+    String getTimeStamp();
 
 }

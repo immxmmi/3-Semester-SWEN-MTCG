@@ -1,8 +1,6 @@
 package at.technikum.server;
 
-import at.technikum.control.PackageControl;
-import at.technikum.control.PlayerControl;
-import at.technikum.control.StoreControl;
+import at.technikum.control.*;
 import at.technikum.server.utils.request.Request;
 import at.technikum.server.utils.response.IResponse;
 import at.technikum.server.utils.response.IResponseBuilder;
@@ -55,11 +53,11 @@ public class ServerHandler {
     public void routePOST() {
         try {
             //REGISTER
-            this.route.put("^POST /users/?$", PlayerControl.class.getDeclaredMethod("REGISTER", Request.class));
+            this.route.put("^POST /users/?$", PlayerControl.class.getDeclaredMethod("register", Request.class));
             //LOGIN
-            this.route.put("^POST /sessions/?$", PlayerControl.class.getDeclaredMethod("LOGIN", Request.class));
+            this.route.put("^POST /sessions/?$", PlayerControl.class.getDeclaredMethod("login", Request.class));
             //PACKAGES
-            this.route.put("^POST /packages/?$", PackageControl.class.getDeclaredMethod("PACKAGE", Request.class));
+            this.route.put("^POST /packages/?$", PackageControl.class.getDeclaredMethod("POST", Request.class));
             //TRANSAKTION - PACKAGES
             this.route.put("^POST /transactions/packages?$", StoreControl.class.getDeclaredMethod("TRANSACTION", Request.class));
             // BATTLE - TEST
@@ -77,9 +75,9 @@ public class ServerHandler {
     public void routeGET() {
         try {
             //CARDS - STACK
-            this.route.put("^GET /cards?$", PlayerControl.class.getDeclaredMethod("STACK", Request.class));
+            this.route.put("^GET /cards?$", StackControl.class.getDeclaredMethod("STACK", Request.class));
             //CARDS - DECK
-            this.route.put("^GET /deck?$", PlayerControl.class.getDeclaredMethod("DECK", Request.class));
+            this.route.put("^GET /deck?$", DeckControl.class.getDeclaredMethod("deck", Request.class));
             // USER - PROFIL
             this.route.put("^GET /users/?$", PlayerControl.class.getDeclaredMethod("PROFIL", Request.class));
             // USER - STATUS
@@ -100,7 +98,7 @@ public class ServerHandler {
     public void routePUT() {
         try {
             //CARDS - DECK
-            this.route.put("^PUT /deck?$", PlayerControl.class.getDeclaredMethod("SETDECK", Request.class));
+            this.route.put("^PUT /deck?$", DeckControl.class.getDeclaredMethod("setNewDeck", Request.class));
             //USER - DATA
             this.route.put("^PUT /users/?$", PlayerControl.class.getDeclaredMethod("PUT", Request.class));
 

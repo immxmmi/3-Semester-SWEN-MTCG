@@ -3,17 +3,17 @@ package at.technikum.utils.battle.service;
 import at.technikum.server.utils.request.Request;
 import at.technikum.server.utils.response.Response;
 import at.technikum.server.utils.response.ResponseBuilder;
-import at.technikum.model.IPlayer;
-import at.technikum.repository.IPlayerRepository;
+import at.technikum.model.Player;
 import at.technikum.repository.PlayerRepository;
+import at.technikum.repository.PlayerRepositoryImpl;
 import at.technikum.utils.tools.TextColor;
 
 public class BattleServlet {
 
-    IPlayerRepository playerService;
+    PlayerRepository playerService;
 
     public BattleServlet() {
-        this.playerService = new PlayerRepository();
+        this.playerService = new PlayerRepositoryImpl();
     }
 
     public Response POST(Request request) {
@@ -27,7 +27,7 @@ public class BattleServlet {
         }
 
         /** --> INSTANCE **/
-        IPlayer currentPlayer = this.playerService.getPlayerById(request.getAuth());
+        Player currentPlayer = this.playerService.getPlayerById(request.getAuth());
 
         /** -->  ERROR - MELDUNG USER NICHT GEFUNDEN **/
         if (currentPlayer == null) {

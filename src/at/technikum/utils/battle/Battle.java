@@ -1,6 +1,6 @@
 package at.technikum.utils.battle;
 
-import at.technikum.model.IPlayer;
+import at.technikum.model.Player;
 import at.technikum.utils.tools.Tools;
 import lombok.Builder;
 import lombok.Getter;
@@ -14,14 +14,14 @@ public class Battle extends Tools implements IBattle {
 
     @Getter
     @Setter
-    IPlayer player1;
+    Player player1;
     @Getter
     @Setter
-    IPlayer player2;
+    Player player2;
     @Getter
     @Setter
     @Builder.Default
-    List<IPlayer> WinnerList = new ArrayList<>();
+    List<Player> WinnerList = new ArrayList<>();
     @Getter
     @Setter
     @Builder.Default

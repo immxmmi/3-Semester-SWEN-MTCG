@@ -1,9 +1,9 @@
 package at.technikum.utils;
 
 import at.technikum.model.IDeck;
-import at.technikum.model.IPlayer;
-import at.technikum.model.IProfil;
-import at.technikum.model.IStack;
+import at.technikum.model.Player;
+import at.technikum.model.Profil;
+import at.technikum.model.Stack;
 import at.technikum.utils.card.ICard;
 import at.technikum.utils.card.cardTypes.CardElement;
 import at.technikum.utils.tools.TextColor;
@@ -23,7 +23,7 @@ public class Printer extends Tools implements IPrinter{
      * --> PRINT STACK
      **/
     @Override
-    public void printStack(IStack currentStack) {
+    public void printStack(Stack currentStack) {
 
         if (currentStack == null) {
             System.out.println(TextColor.ANSI_RED + "NO STACK" + TextColor.ANSI_RESET);
@@ -77,7 +77,7 @@ public class Printer extends Tools implements IPrinter{
 
     }
     @Override
-    public void printPlayerInfo(IProfil playerInfo) {
+    public void printPlayerInfo(Profil playerInfo) {
         if (playerInfo == null) {
             System.out.println(TextColor.ANSI_RED + "NO PLAYER INFO" + TextColor.ANSI_RESET);
             return;
@@ -105,7 +105,7 @@ public class Printer extends Tools implements IPrinter{
         printCards((ArrayList) currentDeck.getDeckList(), "deck");
     }
     @Override
-    public void printPlayerData(IPlayer currentPlayer) {
+    public void printPlayerData(Player currentPlayer) {
         int maxName = 27;
         int maxCoins = 30;
         int maxElo = 32;

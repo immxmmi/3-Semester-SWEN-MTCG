@@ -1,65 +1,38 @@
 package at.technikum.model;
 
-import at.technikum.utils.tools.Tools;
-import com.google.gson.annotations.SerializedName;
-import lombok.Builder;
-import lombok.Getter;
-import lombok.Setter;
+public interface Player {
 
-@Builder(toBuilder = true)
-public class Player extends Tools implements IPlayer {
+    String getUserID();
 
-    /**
-     * --> USER DATA
-     **/
-    @Setter
-    @Getter
-    @SerializedName("userID")
-    private String userID;
-    @Setter
-    @Getter
-    @SerializedName("Username")
-    private String username;
-    @Setter
-    @Getter
-    @SerializedName("Password")
-    private String password;
-    @Getter
-    @Setter
-    @Builder.Default
-    @SerializedName("coins")
-    private double coins = 20;
-    @Getter
-    @Setter
-    @Builder.Default
-    @SerializedName("elo")
-    private double elo = 100;
-    @Getter
-    @Setter
-    @Builder.Default
-    @SerializedName("status")
-    private boolean status = false;
-    @Getter
-    @Setter
-    @Builder.Default
-    @SerializedName("token")
-    private String token = "";
+    String getUsername();
 
-    /**
-     * --> DECK - STACK
-     **/
-    @Getter
-    @Setter
-    @SerializedName("stack")
-    private IStack stack;
-    @Getter
-    @Setter
-    @SerializedName("freeStack")
-    private IStack freeStack;
-    @Getter
-    @Setter
-    @SerializedName("deck")
-    private IDeck deck;
+    String getPassword();
+
+    double getElo();
+
+    double getCoins();
+
+    boolean isStatus();
+
+    void setStatus(boolean status);
+
+    void setToken(String token);
+
+    void setCoins(double coins);
+
+    void setElo(double elo);
+
+    Stack getStack();
+
+    Stack getFreeStack();
+
+    IDeck getDeck();
+
+    void setStack(Stack stack);
+
+    void setFreeStack(Stack freeStack);
+
+    void setDeck(IDeck deck);
 
 
 }

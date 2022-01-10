@@ -1,30 +1,15 @@
 package at.technikum.model;
 
-import com.google.gson.annotations.SerializedName;
-import lombok.Builder;
-import lombok.Getter;
+public interface CardHolder {
 
-@Builder(toBuilder = true)
-public class CardHolder implements ICardHolder {
+    double getNumber();
 
-    @Getter
-    @SerializedName("cardHolderID")
-    String cardHolderID;
+    String getCardHolderID();
 
-    @Getter
-    @SerializedName("cardID")
-    String cardID;
+    String getCardID();
 
-    @Getter
-    @SerializedName("holderID")
-    String holderID;
+    String getHolderID();
 
-    @Getter
-    @SerializedName("number")
-    double number;
-
-    @Getter
-    @SerializedName("locked")
-    boolean locked;
+    boolean isLocked();
 
 }
