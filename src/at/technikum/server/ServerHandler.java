@@ -1,5 +1,8 @@
 package at.technikum.server;
 
+import at.technikum.control.PackageControl;
+import at.technikum.control.PlayerControl;
+import at.technikum.control.StoreControl;
 import at.technikum.server.utils.request.Request;
 import at.technikum.server.utils.response.IResponse;
 import at.technikum.server.utils.response.IResponseBuilder;
@@ -7,9 +10,6 @@ import at.technikum.server.utils.response.Response;
 import at.technikum.server.utils.response.ResponseBuilder;
 import at.technikum.server.utils.socket.Socket;
 import at.technikum.utils.battle.service.BattleServlet;
-import at.technikum.server.control.PackageControl;
-import at.technikum.utils.player.service.PlayerControl;
-import at.technikum.utils.store.service.StoreControl;
 import lombok.Getter;
 
 import java.io.*;

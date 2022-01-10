@@ -1,6 +1,6 @@
 package at.technikum.utils.battle;
 
-import at.technikum.utils.player.IPlayer;
+import at.technikum.model.IPlayer;
 import at.technikum.utils.tools.Tools;
 import lombok.Builder;
 import lombok.Getter;

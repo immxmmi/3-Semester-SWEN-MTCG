@@ -3,17 +3,17 @@ package at.technikum.utils.battle.service;
 import at.technikum.server.utils.request.Request;
 import at.technikum.server.utils.response.Response;
 import at.technikum.server.utils.response.ResponseBuilder;
-import at.technikum.utils.player.IPlayer;
-import at.technikum.utils.player.service.IPlayerService;
-import at.technikum.utils.player.service.PlayerService;
+import at.technikum.model.IPlayer;
+import at.technikum.repository.IPlayerRepository;
+import at.technikum.repository.PlayerRepository;
 import at.technikum.utils.tools.TextColor;
 
 public class BattleServlet {
 
-    IPlayerService playerService;
+    IPlayerRepository playerService;
 
     public BattleServlet() {
-        this.playerService = new PlayerService();
+        this.playerService = new PlayerRepository();
     }
 
     public Response POST(Request request) {
