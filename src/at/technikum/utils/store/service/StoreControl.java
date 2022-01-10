@@ -59,7 +59,7 @@ public class StoreControl {
         if (packageService.getPackageByID(packageID) == null) {
             System.out.println(TextColor.ANSI_GREEN + "PACKAGE SOLD!" + TextColor.ANSI_RESET);
         }
-        System.out.println("DURCH");
+
         return new ResponseBuilder().statusOK(this.Message("PACKAGE SOLD!").toString());
 
     }
