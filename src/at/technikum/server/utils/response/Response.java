@@ -9,9 +9,6 @@ import lombok.Setter;
 @Builder
 @AllArgsConstructor
 public class Response extends Tools implements IResponse{
-    private static final String delimiter = "\n";
-    private static final String end = "\r\n";
-
     @Getter
     @Builder.Default
     String version = "HTTP/1.1";

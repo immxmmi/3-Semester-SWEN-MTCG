@@ -21,8 +21,6 @@ public class ResponseBuilder implements IResponseBuilder{
             currentBuffer.append("Content-Length: "+response.getBody().length()+"\r\n");
             currentBuffer.append("\r\n"+response.getBody()+"\r\n");
 
-            System.out.println(currentBuffer);
-
             writer.write(currentBuffer.toString());
             writer.flush();
         } catch (IOException e) {

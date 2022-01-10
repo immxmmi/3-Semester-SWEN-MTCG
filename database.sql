@@ -144,10 +144,10 @@ create table "playerInfo"
     image   text
 );
 
-alter table "playerInfo"
+alter table profil
     owner to swe1user;
 
 create unique index playerinfo_user_id_uindex
-    on "playerInfo" (user_id);
+    on profil (user_id);
 
 

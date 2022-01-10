@@ -30,8 +30,8 @@ public class DeckControl extends TextColor {
     /**
      * --> LOAD DECK
      **/
-    public Response deck(Request request) {
-        System.out.println("# LOAD DECK");
+    public Response get(Request request) {
+       // System.out.println("# LOAD DECK");
 
         /** --> WENN REQUEST LEER IST --> WENN AUTH LEER IST **/
         Response response = new ResponseBuilder().requestErrorHandler(request, true, false);
@@ -54,7 +54,7 @@ public class DeckControl extends TextColor {
         this.print.printDeck(currentPlayer.getDeck());
         System.out.println(ANSI_GREEN + "LOADING FINISHED!" + ANSI_RESET);
         /** --> JSON OBJECT **/
-        JsonObject jsonObject = convertDeckToJson(currentPlayer.getDeck(),true,true,true);
+        JsonObject jsonObject = convertDeckToJson(currentPlayer.getDeck(),true,false,false);
         /** --> STATUS OK **/
         return new ResponseBuilder().statusOK(jsonObject.toString());
     }
@@ -63,8 +63,8 @@ public class DeckControl extends TextColor {
     /**
      * --> SET DECK
      **/
-    public Response setNewDeck(Request request) {
-        System.out.println("#NEW DECK ");
+    public Response put(Request request) {
+        //System.out.println("#NEW DECK ");
 
         /** --> WENN REQUEST LEER IST --> WENN BODY LEER IST --> WENN AUTH LEER IST **/
         Response response = new ResponseBuilder().requestErrorHandler(request, true, true);
@@ -89,9 +89,9 @@ public class DeckControl extends TextColor {
         Player currentPlayer = this.playerRepository.getPlayerById(request.getAuth());
         if (this.deckRepository.setNewDeck(newDeck, currentPlayer.getUserID())) {
             currentPlayer = playerRepository.reloadAccount(currentPlayer);
-            System.out.println(ANSI_GREEN + "SET NEW DECK!" + ANSI_RESET);
+          //  System.out.println(ANSI_GREEN + "SET NEW DECK!" + ANSI_RESET);
             /** --> JSON OBJECT **/
-            JsonObject jsonObject = convertDeckToJson(currentPlayer.getDeck(),true,true,true);
+            JsonObject jsonObject = convertDeckToJson(currentPlayer.getDeck(),true,false,false);
             /** --> STATUS OK **/
             return new ResponseBuilder().statusOK(jsonObject.toString());
         }

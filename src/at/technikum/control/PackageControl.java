@@ -24,11 +24,11 @@ public class PackageControl {
 
     public PackageControl() {
         gson = new Gson();
-        this.packageRepository = PackageRepositoryImpl.getInstance();
+        this.packageRepository = new PackageRepositoryImpl();
         this.cardServices = new CardServices();
     }
 
-    public Response POST(Request request) {
+    public Response post(Request request) {
 
         /** --> Wenn REQUEST Leer ist **/
         if (request == null) {
@@ -50,7 +50,7 @@ public class PackageControl {
 
 
         /** --> erstellet ein neues Package **/
-        Package newPackage = PackageRepositoryImpl.getInstance().getCurrentPackage();
+        Package newPackage = new PackageRepositoryImpl().getCurrentPackage();
         /** --> Speichert den BODY in einem String **/
         String jsonString = request.getBody();
         /** --> wandelt den String in JSON-Element um **/
@@ -85,7 +85,7 @@ public class PackageControl {
         System.out.println(TextColor.ANSI_GREEN + "PACKAGE CREATED - OK" + TextColor.ANSI_RESET);
 
         /** --> STATUS OK **/
-        JsonObject packages = convertPackageToJson(currentPackage,true,true,true,true);
+        JsonObject packages = convertPackageToJson(currentPackage,false,false,false,true);
         return new ResponseBuilder().statusOK(packages.toString());
     } // TODO: 10.01.2022 Fertig
 

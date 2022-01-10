@@ -26,12 +26,12 @@ public class StoreControl {
     /**
      * --> Package kaufen
      **/
-    public  Response TRANSACTION(Request request) {
+    public  Response post(Request request) {
 
         /** --> Wenn REQUEST Leer ist **/
         if (request == null) {
             System.out.println(TextColor.ANSI_RED + "PACKAGE BUY - ERROR" + TextColor.ANSI_RESET);
-            return new ResponseBuilder().statusBAD(this.Message("BAD REQUEST").toString());
+            return new ResponseBuilder().statusBAD(this.message("BAD REQUEST").toString());
         }
 
 
@@ -42,7 +42,7 @@ public class StoreControl {
         Player currentPlayer = this.playerRepository.getPlayerById(authKey);
         if (currentPlayer == null) {
             System.out.println(TextColor.ANSI_RED + "NO USER TOKEN" + TextColor.ANSI_RESET);
-            return new ResponseBuilder().statusNotFound(this.Message("NO USER TOKEN").toString());
+            return new ResponseBuilder().statusNotFound(this.message("NO USER TOKEN").toString());
         }
         /** --> Holt eine Random Package ID **/
         /*String packageID = this.packageRepository.getRandomPackageID();
@@ -57,7 +57,7 @@ public class StoreControl {
 
         if(this.packageRepository.loadPackageIDList().size() == 0){
             System.out.println(TextColor.ANSI_RED + "(NO PACKAGE)" + TextColor.ANSI_RESET);
-            return new ResponseBuilder().statusMethodNotAllowed(this.Message("(NO PACKAGE)").toString());
+            return new ResponseBuilder().statusMethodNotAllowed(this.message("(NO PACKAGE)").toString());
         }
 
         packageID = this.packageRepository.loadPackageIDList().get(0);
@@ -67,15 +67,15 @@ public class StoreControl {
 
         if (this.packageRepository.getPackageByID(packageID) != null) {
             System.out.println(TextColor.ANSI_RED + "NOT ENOUGH MONEY" + TextColor.ANSI_RESET);
-            return new ResponseBuilder().statusMethodNotAllowed(this.Message("(NO MONEY)").toString());
+            return new ResponseBuilder().statusMethodNotAllowed(this.message("(NO MONEY)").toString());
         }
 
-        return new ResponseBuilder().statusOK(this.Message("PACKAGE SOLD!").toString());
+        return new ResponseBuilder().statusOK(this.message("PACKAGE SOLD!").toString());
 
     }
 
     /** --> wandelt message String in JSON-Objekt um **/
-    private JsonObject Message(String message){
+    private JsonObject message(String message){
         JsonObject jsonObject = new JsonObject();
         jsonObject.addProperty("Message",message);
         return jsonObject;

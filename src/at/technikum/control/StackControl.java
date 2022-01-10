@@ -33,7 +33,7 @@ public class StackControl extends TextColor {
     /**
      * --> LOAD STACK
      **/
-    public Response STACK(Request request) {
+    public Response get(Request request) {
         System.out.println("# STACK ");
         /** --> Wenn REQUEST Leer ist **/
         if (request == null) {
@@ -60,7 +60,7 @@ public class StackControl extends TextColor {
         System.out.println(ANSI_GREEN + "LOADING FINISHED!" + ANSI_RESET);
 
         /** --> JSON OBJECT **/
-        JsonObject jsonObject = convertStackToJson(currentPlayer.getStack(),true,true);
+        JsonObject jsonObject = convertStackToJson(currentPlayer.getStack(),true,false);
         /** --> STATUS OK **/
         return new ResponseBuilder().statusOK(jsonObject.toString());
     } // TODO: 10.01.2022 Fertig

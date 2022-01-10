@@ -1,15 +1,16 @@
 package at.technikum.repository;
 
 import at.technikum.database.AbstractDBTable;
-import at.technikum.model.Profil;
-import at.technikum.model.ProfilImpl;
 import at.technikum.model.Player;
 import at.technikum.model.PlayerImpl;
+import at.technikum.model.Profil;
+import at.technikum.model.ProfilImpl;
 import at.technikum.utils.tools.TextColor;
 import lombok.Getter;
 
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.util.*;
 
 
 public class PlayerRepositoryImpl extends AbstractDBTable implements PlayerRepository {
@@ -119,7 +120,7 @@ public class PlayerRepositoryImpl extends AbstractDBTable implements PlayerRepos
      * --> SESSION
      **/
     private boolean startSession(Player newPlayer) {
-        System.out.println(TextColor.ANSI_GREEN + "#START SESSION:" + TextColor.ANSI_RESET);
+       // System.out.println(TextColor.ANSI_GREEN + "#START SESSION:" + TextColor.ANSI_RESET);
         if (newPlayer == null) {
             return false;
         }
@@ -138,7 +139,7 @@ public class PlayerRepositoryImpl extends AbstractDBTable implements PlayerRepos
     }
 
     private boolean stopSession(Player currentPlayer) {
-        System.out.println(TextColor.ANSI_RED + "#STOP SESSION:" + TextColor.ANSI_RESET);
+     //   System.out.println(TextColor.ANSI_RED + "#STOP SESSION:" + TextColor.ANSI_RESET);
         this.parameter = new String[]{};
         if (currentPlayer == null) {
             //    System.out.println(ANSI_RED +"ERROR - NO SESSION" + ANSI_RESET);
@@ -168,6 +169,70 @@ public class PlayerRepositoryImpl extends AbstractDBTable implements PlayerRepos
         this.update(currentPlayer);
         return getPlayerById(currentPlayer.getUserID());
     }
+
+
+    @Override
+    public LinkedHashMap<String, Double> getHighScoreList(){
+        HashMap<String,Double> highscore = new HashMap<> ();
+
+        this.parameter = new String[]{};
+        this.setStatement("SELECT * FROM " + this.tableName + " ORDER BY user_elo DESC;", this.parameter);
+
+        try {
+            while (this.result.next()) {
+                Player currentPlayer = PlayerImpl.builder()
+                        .userID(result.getString("user_id"))
+                        .username(result.getString("username"))
+                        .password(result.getString("password"))
+                        .coins(convertToDouble(result.getString("user_coins")))
+                        .elo(convertToDouble(result.getString("user_elo")))
+                        .status(convertToBoolean(result.getString("user_online")))
+                        .build();
+                highscore.put(currentPlayer.getUsername(),currentPlayer.getElo());
+            }
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+
+        this.closeStatement();
+
+        Set<Map.Entry<String, Double>> entries = highscore.entrySet();
+        Comparator<Map.Entry<String, Double>> valueComparator = new Comparator<Map.Entry<String,Double>>() {
+            @Override
+            public int compare(Map.Entry<String, Double> e1, Map.Entry<String, Double> e2) {
+                Double v1 = e1.getValue();
+                Double v2 = e2.getValue();
+                return v1.compareTo(v2);
+            }
+        };
+
+        List<Map.Entry<String, Double>> listOfEntries = new ArrayList<Map.Entry<String, Double>>(entries);
+        Collections.sort(listOfEntries, valueComparator);
+        LinkedHashMap<String, Double> sortedByValue = new LinkedHashMap<String, Double>(listOfEntries.size());
+
+        for(Map.Entry<String, Double> entry : listOfEntries){
+            sortedByValue.put(entry.getKey(), entry.getValue());
+        }
+
+
+        return sortedByValue;
+    }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
     @Override
     public boolean giveCoins(Player currentPlayer, double price) {
@@ -341,7 +406,7 @@ public class PlayerRepositoryImpl extends AbstractDBTable implements PlayerRepos
         }
 
         this.stopSession(currentPlayer);
-        this.playerInfoService.delete(playerInfoService.getInfoByID(currentPlayer.getUserID()));
+        this.playerInfoService.delete(playerInfoService.getProfilByID(currentPlayer.getUserID()));
         this.deckService.delete(deckService.getDeckById(currentPlayer.getUserID()));
         this.cardHolderServices.deleteAllUserCards(currentPlayer);
 
