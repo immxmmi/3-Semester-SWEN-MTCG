@@ -1,9 +1,8 @@
 package at.technikum.repository;
 
-import at.technikum.database.DBTable;
 import at.technikum.model.Stack;
 
-public interface StackRepository extends DBTable<Stack> {
+public interface StackRepository extends Repository<Stack> {
 
 
     Stack addCardToStack(String userID, String cardID);

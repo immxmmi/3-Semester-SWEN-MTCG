@@ -1,10 +1,9 @@
 package at.technikum.repository;
 
-import at.technikum.database.DBTable;
 import at.technikum.model.Player;
 import at.technikum.model.Profil;
 
-public interface ProfilRepository extends DBTable<Profil> {
+public interface ProfilRepository extends Repository<Profil> {
 
     Profil updateProfil(Profil playerInfo);
 

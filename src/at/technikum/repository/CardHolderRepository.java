@@ -1,13 +1,12 @@
 package at.technikum.repository;
 
-import at.technikum.database.DBTable;
 import at.technikum.utils.card.ICard;
 import at.technikum.model.CardHolder;
 import at.technikum.model.Player;
 
 import java.util.ArrayList;
 
-public interface CardHolderRepository extends DBTable<CardHolder> {
+public interface CardHolderRepository extends Repository<CardHolder> {
     /**
      * --> Läd alle Karten aus der Datenbank die dem User gehöhren in einem Array
      **/

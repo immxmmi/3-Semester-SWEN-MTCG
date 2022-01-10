@@ -1,12 +1,11 @@
 package at.technikum.repository;
 
 
-import at.technikum.database.DBTable;
 import at.technikum.model.Player;
 
 import java.util.LinkedHashMap;
 
-public interface PlayerRepository extends DBTable<Player> {
+public interface PlayerRepository extends Repository<Player> {
 
     Player Login(String username, String password);
 

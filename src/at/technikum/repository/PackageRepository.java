@@ -1,11 +1,10 @@
 package at.technikum.repository;
 
-import at.technikum.database.DBTable;
 import at.technikum.model.Package;
 
 import java.util.ArrayList;
 
-public interface PackageRepository extends DBTable<Package> {
+public interface PackageRepository extends Repository<Package> {
 
     Package getCurrentPackage();
 

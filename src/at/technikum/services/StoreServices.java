@@ -4,8 +4,8 @@ import at.technikum.model.Player;
 import at.technikum.model.Store;
 import at.technikum.repository.PlayerRepository;
 import at.technikum.repository.PlayerRepositoryImpl;
-import at.technikum.utils.IPrinter;
 import at.technikum.utils.Printer;
+import at.technikum.utils.PrinterImpl;
 import at.technikum.utils.card.service.CardServices;
 import at.technikum.repository.CardHolderRepositoryImpl;
 import at.technikum.repository.CardHolderRepository;
@@ -21,11 +21,11 @@ public class StoreServices {
     Player currentPlayer;
     PlayerRepository playerRepository;
     StoreRepository storeRepository;
-    IPrinter printer;
+    Printer printer;
 
     public StoreServices(Player currentPlayer) {
         this.currentPlayer = currentPlayer;
-        this.printer = new Printer();
+        this.printer = new PrinterImpl();
     }
 
     /*******************************************************************/

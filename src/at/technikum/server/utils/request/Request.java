@@ -1,101 +1,39 @@
 package at.technikum.server.utils.request;
 
-import lombok.Builder;
-import lombok.Getter;
-
-import java.io.BufferedReader;
-import java.io.IOException;
 import java.util.HashMap;
+import java.util.Map;
 
-// https://www.ionos.at/digitalguide/hosting/hosting-technik/http-request-erklaert/
-// - TEST HEADER
+public interface Request {
 
-// curl -X GET http://localhost:10001/users/kienboec --header "Authorization: Basic kienboec-mtcgToken"
-public class Request implements IRequest {
+    String getHost();
 
-    @Getter
-    @Builder.Default
-    String host = "localhost";
-    @Getter
-    String version;
-    @Getter
-    String method;
-    @Getter
-    String path;
-    @Getter
-    String body;
-    @Getter
-    String auth;
-    @Getter
-    HashMap<String, String> params;
-    @Getter
-    HashMap<String, String> headers;
+    String getVersion();
 
+    String getMethod();
 
-    public Request() {
-        this.params = new HashMap<>();
-        this.headers = new HashMap<>();
-    }
+    String getPath();
 
+    String getBody();
 
-    @Override
-    public void read(BufferedReader reader) {
+    String getAuth();
 
-        try {
+    Map<String, String> getParams();
 
-            StringBuilder currentBuffer = new StringBuilder();
-            int data;
-            int counter = 0; // zählt die Zeilen die es gibt
-            boolean contentReached = false;
+    Map<String, String> getHeaders();
 
-            // Kopiert den ganzen URL in einem BUFFER
-            while ((data = reader.read()) != -1) {
-                currentBuffer.append((char) data);
-                if (!reader.ready()) break;
-            }
+    void setHost(String host);
 
-            //currentBuffer in einem String speichern
-            //Jede Zeile Spliten
-            String[] lines = currentBuffer.toString().split("\n");
-            int bodyIndex = lines.length - 1;
-            String[] Head = lines[0].toString().split(" ");
-            this.method = Head[0].toString().replace("\r", "");
-            ;
-            this.path = Head[1].toString().replace("\r", "");
-            ;
-            this.version = Head[2].toString().replace("\r", "");
-            ;
-            String[] Host = lines[1].toString().split(":");
-            this.host = Host[1].toString().replace("\r", "").replace(" ", "");
-            ;
+    void setVersion(String version);
 
-            int authIndex = -1;
+    void setMethod(String method);
 
-            for (int i = 0; i < bodyIndex; i++) {
-                if (lines[i].contains("Authorization: Basic")) {
-                    authIndex = i;
-                    break;
-                }
-                ;
-            }
+    void setPath(String path);
 
-            if (authIndex != -1) {
-                String[] Auth = lines[authIndex].toString().split(": Basic");
-                this.auth = Auth[1].toString().replace("\r", "").replace(" ","");
-            } else {
-                this.auth = null;
-            }
+    void setBody(String body);
 
+    void setAuth(String auth);
 
-            if (!lines[bodyIndex].matches("/r")) {
-                this.body = lines[bodyIndex].toString().replace("\r", "");
-            } else {
-                this.body = "";
-            }
+    void setParams(HashMap<String, String> params);
 
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
-
-    }
+    void setHeaders(HashMap<String, String> headers);
 }

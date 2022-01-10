@@ -4,8 +4,8 @@ import at.technikum.database.AbstractDBTable;
 import at.technikum.model.Player;
 import at.technikum.model.Store;
 import at.technikum.model.StoreImpl;
-import at.technikum.utils.IPrinter;
 import at.technikum.utils.Printer;
+import at.technikum.utils.PrinterImpl;
 
 import java.sql.ResultSet;
 import java.sql.SQLException;
@@ -14,7 +14,7 @@ import java.util.Scanner;
 
 public class StoreRepositoryImpl extends AbstractDBTable implements StoreRepository {
     private static final String storeID = "STORE - ST1120";
-    private IPrinter printer;
+    private Printer printer;
     private Player currentPlayer;
     private PlayerRepositoryImpl playerRepositoryImpl = new PlayerRepositoryImpl();
 
@@ -25,7 +25,7 @@ public class StoreRepositoryImpl extends AbstractDBTable implements StoreReposit
     public StoreRepositoryImpl(Player currentPlayer) {
         this.currentPlayer = currentPlayer;
         this.tableName = "store";
-        this.printer = new Printer();
+        this.printer = new PrinterImpl();
     }
     /*******************************************************************/
 
