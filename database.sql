@@ -147,4 +147,21 @@ create table profil
 alter table profil
     owner to swe1user;
 
+create table trade
+(
+    trade_id       text not null
+        constraint trading_pk
+            primary key,
+    user_id        text not null,
+    card_id        text not null,
+    card_min_power text not null,
+    card_typ       text not null
+);
+
+alter table trade
+    owner to swe1user;
+
+create unique index trading_trading_id_uindex
+    on trade (trade_id);
+
 

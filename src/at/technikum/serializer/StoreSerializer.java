@@ -23,9 +23,7 @@ public class StoreSerializer extends Repository{
         if (!card){object.remove("card");}
         if(!price){object.remove("price");}
         if(!timeStamp){object.remove("timeStamp");}
-
         return object;
-
     } // TODO: 10.01.2022 Fertig
 
 }

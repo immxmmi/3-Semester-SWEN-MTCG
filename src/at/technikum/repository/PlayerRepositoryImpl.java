@@ -221,19 +221,6 @@ public class PlayerRepositoryImpl extends AbstractDBTable implements PlayerRepos
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
     @Override
     public boolean giveCoins(Player currentPlayer, double price) {
 

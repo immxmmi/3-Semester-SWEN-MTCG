@@ -1,5 +1,6 @@
 package at.technikum.model;
 
+import at.technikum.utils.card.ICard;
 import at.technikum.utils.card.cardTypes.CardType;
 import com.google.gson.annotations.SerializedName;
 import lombok.Builder;
@@ -7,7 +8,7 @@ import lombok.Getter;
 import lombok.Setter;
 
 @Builder (toBuilder = true)
-public class TradeImpl {
+public class TradeImpl implements Trade{
 
     @Setter
     @Getter
@@ -20,8 +21,8 @@ public class TradeImpl {
 
     @Setter
     @Getter
-    @SerializedName("cardID")
-    private String cardID;
+    @SerializedName("card")
+    private ICard card;
 
     @Setter
     @Getter

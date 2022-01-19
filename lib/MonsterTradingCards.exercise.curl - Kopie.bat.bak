@@ -1,5 +1,4 @@
 @echo off
-
 REM --------------------------------------------------
 REM Monster Trading Cards Game
 REM --------------------------------------------------
@@ -9,10 +8,23 @@ echo.
 
 
 REM --------------------------------------------------
-echo 20) trade
-echo check trading deals
-curl -X GET http://localhost:10001/tradings --header "Authorization: Basic kienboec-mtcgToken"
+echo 18) Stats 
+echo kienboec
+curl -X GET http://localhost:10001/stats --header "Authorization: Basic kienboec-mtcgToken"
 echo.
+echo altenhof
+curl -X GET http://localhost:10001/stats --header "Authorization: Basic altenhof-mtcgToken"
+echo.
+echo.
+
+REM --------------------------------------------------
+echo 19) scoreboard
+curl -X GET http://localhost:10001/score --header "Authorization: Basic kienboec-mtcgToken"
+echo.
+echo.
+
+
+
 
 
 REM --------------------------------------------------

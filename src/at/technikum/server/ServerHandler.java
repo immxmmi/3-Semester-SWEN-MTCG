@@ -62,7 +62,7 @@ public class ServerHandler {
             // BATTLE - TEST
             this.route.put("^POST /battles?$", BattleServlet.class.getDeclaredMethod("POST", RequestImpl.class));
             // USER - CREATE TRADING
-            this.route.put("^POST /tradings?$", StoreControl.class.getDeclaredMethod("post", RequestImpl.class));
+            this.route.put("^POST /tradings?$", TradeControl.class.getDeclaredMethod("post", RequestImpl.class));
 
         } catch (NoSuchMethodException e) {
             e.printStackTrace();
@@ -86,7 +86,7 @@ public class ServerHandler {
             // USER - SCORE
             this.route.put("^GET /score?$", PlayerControl.class.getDeclaredMethod("highscore", RequestImpl.class));
             // USER - TRADING LIST
-            this.route.put("^GET /tradings?$", StoreControl.class.getDeclaredMethod("get", RequestImpl.class));
+            this.route.put("^GET /tradings?$", TradeControl.class.getDeclaredMethod("get", RequestImpl.class));
 
         } catch (NoSuchMethodException e) {
             e.printStackTrace();
