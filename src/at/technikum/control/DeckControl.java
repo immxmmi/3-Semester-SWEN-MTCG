@@ -37,7 +37,6 @@ public class DeckControl extends TextColor {
      **/
     public ResponseImpl get(RequestImpl requestImpl) {
        // System.out.println("# LOAD DECK");
-
         /** --> WENN REQUEST LEER IST --> WENN AUTH LEER IST **/
         ResponseImpl responseImpl = new ResponseBuilderImpl().requestErrorHandler(requestImpl, true, false);
         if (responseImpl != null) {
@@ -59,10 +58,43 @@ public class DeckControl extends TextColor {
         this.print.printDeck(currentPlayer.getDeck());
         System.out.println(ANSI_GREEN + "LOADING FINISHED!" + ANSI_RESET);
         /** --> JSON OBJECT **/
-        JsonObject jsonObject = deckSerializer.convertDeckToJson(currentPlayer.getDeck(),true,false,false);
+        JsonObject jsonObject = deckSerializer.convertDeckToJson(currentPlayer.getDeck(),false,true,false);
         /** --> STATUS OK **/
         return new ResponseBuilderImpl().statusOK(jsonObject.toString());
     }
+
+
+
+
+    /** --> LOAD DECK FORMAT **/
+    public ResponseImpl getFormat(RequestImpl requestImpl) {
+        // System.out.println("# LOAD DECK");
+        /** --> WENN REQUEST LEER IST --> WENN AUTH LEER IST **/
+        ResponseImpl responseImpl = new ResponseBuilderImpl().requestErrorHandler(requestImpl, true, false);
+        if (responseImpl != null) {
+            return responseImpl;
+        }
+
+        /** --> INSTANCE **/
+        Player currentPlayer = this.playerRepository.getPlayerById(requestImpl.getAuth());
+
+        /** -->  ERROR - MELDUNG USER NICHT GEFUNDEN **/
+        if (currentPlayer == null) {
+            System.out.println(ANSI_RED + "USER NOT FOUND" + ANSI_RESET);
+            return new ResponseBuilderImpl().statusMethodNotAllowed(deckSerializer.message("USER NOT FOUND").toString());
+        }
+        if (currentPlayer.getDeck() == null) {
+            System.out.println(ANSI_RED + "DECK EMPTY" + ANSI_RESET);
+            return new ResponseBuilderImpl().statusMethodNotAllowed(deckSerializer.message("DECK EMPTY").toString());
+        }
+        this.print.printDeck(currentPlayer.getDeck());
+        System.out.println(ANSI_GREEN + "LOADING FINISHED!" + ANSI_RESET);
+        /** --> JSON OBJECT **/
+        JsonObject jsonObject = deckSerializer.convertDeckToJson(currentPlayer.getDeck(),false,false,true);
+        /** --> STATUS OK **/
+        return new ResponseBuilderImpl().statusOK(jsonObject.toString());
+    }
+
 
 
     /**

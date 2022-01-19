@@ -57,7 +57,7 @@ public class StackControl extends TextColor {
         System.out.println(ANSI_GREEN + "LOADING FINISHED!" + ANSI_RESET);
 
         /** --> JSON OBJECT **/
-        JsonObject jsonObject = stackSerializer.convertStackToJson(currentPlayer.getStack(),true,false);
+        JsonObject jsonObject = stackSerializer.convertStackToJson(currentPlayer.getStack(),false,true);
         /** --> STATUS OK **/
         return new ResponseBuilderImpl().statusOK(jsonObject.toString());
     } // TODO: 10.01.2022 Fertig

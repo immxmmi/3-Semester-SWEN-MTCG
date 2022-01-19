@@ -11,7 +11,7 @@ import lombok.Setter;
 
 @NoArgsConstructor
 @AllArgsConstructor
-public abstract class AbstractCard extends Tools implements ICard {
+public abstract class AbstractCard implements ICard {
 
     @Setter
     @Getter

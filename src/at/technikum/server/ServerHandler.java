@@ -77,6 +77,8 @@ public class ServerHandler {
             this.route.put("^GET /cards?$", StackControl.class.getDeclaredMethod("get", RequestImpl.class));
             //CARDS - DECK
             this.route.put("^GET /deck?$", DeckControl.class.getDeclaredMethod("get", RequestImpl.class));
+            //CARDS - DECK - FORMAT
+            this.route.put("^GET /deck-format$", DeckControl.class.getDeclaredMethod("getFormat", RequestImpl.class));
             // USER - PROFIL
             this.route.put("^GET /users/?$", ProfilControl.class.getDeclaredMethod("get", RequestImpl.class));
             // USER - STATUS
@@ -168,11 +170,16 @@ public class ServerHandler {
                 routeKEY = "PUT /users/";
             }
         }
+        if (routeKEY.contains("/deck?format=plain")) {
+            if (routeKEY.contains("GET")) {
+                routeKEY = "GET /deck-format";
+            }
+        }
 
 
         for (Map.Entry<String, Method> entry : this.route.entrySet()) {
             if (Pattern.matches(entry.getKey(), routeKEY)) {
-            //    System.out.println("KEY GEFUNDEN");
+                //System.out.println("KEY GEFUNDEN");
                 return entry.getValue();
             }
         }

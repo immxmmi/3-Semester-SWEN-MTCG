@@ -123,9 +123,7 @@ public class PlayerControl extends TextColor {
         return new ResponseBuilderImpl().statusOK(player.toString());
     }
 
-    /**
-     * --> SCORE
-     **/
+    /*** --> SCORE**/
     public ResponseImpl highscore(RequestImpl requestImpl) {
         System.out.println("# SCORE ");
         /** --> Wenn REQUEST Leer ist **/

@@ -86,7 +86,7 @@ public class PackageControl {
         System.out.println(TextColor.ANSI_GREEN + "PACKAGE CREATED - OK" + TextColor.ANSI_RESET);
 
         /** --> STATUS OK **/
-        JsonObject packages = packageSerializer.convertPackageToJson(currentPackage,false,false,false,true);
+        JsonObject packages = packageSerializer.convertPackageToJson(currentPackage,true,false,false,false);
         return new ResponseBuilderImpl().statusOK(packages.toString());
     } // TODO: 10.01.2022 Fertig
 
