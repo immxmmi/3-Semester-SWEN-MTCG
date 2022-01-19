@@ -7,6 +7,8 @@ import java.util.ArrayList;
 
 public interface TradeRepository {
 
+    boolean checkTradeOwner(String holderID, Trade trade);
+
     Trade addTrade(String tradeID, String userID, String cardID, CardType cardType, double cardPower);
 
     Trade getTradeByID(String tradeID);

@@ -37,6 +37,7 @@ public class TradeRepositoryImpl extends AbstractDBTable implements TradeReposit
             if (result.next()) {
                 Trade trade = (Trade) TradeImpl.builder()
                         .tradeID(result.getString("trade_id"))
+                        .userID(result.getString("user_id"))
                         .card(cardServices.getCardById(result.getString("card_id")))
                         .cardTyp(CardType.valueOf(result.getString("card_typ")))
                         .minPower(convertToDouble(result.getString("card_min_power")))
@@ -56,14 +57,19 @@ public class TradeRepositoryImpl extends AbstractDBTable implements TradeReposit
     /*******************************************************************/
 
 
-    public boolean checkCardByID(String cardID){
+    private boolean checkCardByID(String cardID){
         if(cardServices.getCardById(cardID) == null){
             return false;
         }
         return true;
     }
-    public CardHolder checkCardHolderByID(String holderID,String cardID){
+    private CardHolder checkCardHolderByID(String holderID,String cardID){
         return cardHolderRepository.getCardHolder(holderID,cardID);
+    }
+
+    @Override
+    public boolean checkTradeOwner(String holderID, Trade trade){
+        return holderID.equals(trade.getUserID());
     }
 
 
@@ -111,6 +117,7 @@ public class TradeRepositoryImpl extends AbstractDBTable implements TradeReposit
                 "SELECT * FROM " + this.tableName + " WHERE trade_id = ? " + ";",
                 this.parameter
         );
+
         return tradeBuilder(this.result);
     }
     @Override
@@ -142,10 +149,9 @@ public class TradeRepositoryImpl extends AbstractDBTable implements TradeReposit
     @Override
     public boolean deleteByID(Trade trade) {
         // System.out.println("#DELETE ITEM");
+
         CardHolder cardHolder = checkCardHolderByID(trade.getUserID(),trade.getCard().getCardID());
-        if(cardHolder == null){
-            return false;
-        }
+        if(cardHolder == null){return false;}
         this.parameter = new String[]{trade.getTradeID()};
         this.setStatement("DELETE FROM " + this.tableName + " WHERE trade_id = ? ;", this.parameter);
         this.closeStatement();

@@ -20,7 +20,8 @@ import com.google.gson.*;
 public class TradeControl {
 
 
-    private PackageRepository packageRepository;
+
+    private CardHolderRepository cardHolderRepository;
     private PlayerRepository playerRepository;
     private TradeSerializer tradeSerializer;
     private TextColor textColor;
@@ -29,7 +30,7 @@ public class TradeControl {
 
     public TradeControl(){
         this.tradeSerializer = new TradeSerializer();
-        this.packageRepository = new PackageRepositoryImpl();
+        this.cardHolderRepository = new CardHolderRepositoryImpl();
         this.playerRepository = new PlayerRepositoryImpl();
         this.textColor = new TextColor();
         this.trade = new TradeRepositoryImpl();
@@ -68,7 +69,7 @@ public class TradeControl {
         return new ResponseBuilderImpl().statusOK(jsonObject.toString());
     }
 
-    /** --> Trading Liste anzeigen **/
+    /** --> Trade erstellen **/
     public ResponseImpl post(RequestImpl requestImpl){
 
         /** --> WENN REQUEST LEER IST --> WENN BODY LEER IST **/
@@ -76,6 +77,7 @@ public class TradeControl {
         if (responseImpl != null) {
             return responseImpl;
         }
+
 
         /** --> userID -> Trading Liste **/
         String userID = requestImpl.getAuth();
@@ -103,6 +105,90 @@ public class TradeControl {
         /** --> STATUS OK **/
         System.out.println(textColor.ANSI_GREEN + "CREATE TRADE SUCCESS" + textColor.ANSI_RESET);
         return new ResponseBuilderImpl().statusOK(tradeSerializer.message("CREATE TRADE SUCCESS").toString());
+    }
+
+    /** --> Trade **/
+    public ResponseImpl trade(RequestImpl requestImpl){
+        /** --> WENN REQUEST LEER IST --> WENN BODY LEER IST **/
+        ResponseImpl responseImpl = new ResponseBuilderImpl().requestErrorHandler(requestImpl, true, true);
+        if (responseImpl != null) {
+            return responseImpl;
+        }
+
+        /** --> userID -> Trading Liste **/
+        String userID = requestImpl.getAuth();
+
+        /** --> User CHECK **/
+        Player currentPlayer = this.playerRepository.getPlayerById(userID);
+        if (currentPlayer == null) {
+            System.out.println(TextColor.ANSI_RED + "NO USER TOKEN" + TextColor.ANSI_RESET);
+            return new ResponseBuilderImpl().statusNotFound(tradeSerializer.message("NO USER TOKEN").toString());
+        }
+
+        /** --> TRADE ID **/
+        String tradeID = "T-" + requestImpl.getPath().split("/tradings/")[1];
+        String cardID = "C-" + requestImpl.getBody().replace("\"","");
+        Trade currentTrade = trade.getTradeByID(tradeID);
+
+        /** --> TRADE CHECK - USER != TRADE OWNER**/
+        if (currentTrade == null) {
+            System.out.println(textColor.ANSI_RED + " TRADE NOT FOUND" + textColor.ANSI_RESET);
+            return new ResponseBuilderImpl().statusNotFound(tradeSerializer.message(" TRADE NOT FOUND").toString());
+        }
+        /** --> TRADE CHECK - USER != TRADE OWNER**/
+        if (trade.checkTradeOwner(userID, currentTrade)) {
+            System.out.println(textColor.ANSI_RED + "NOT POSSIBLE TO TRADE" + textColor.ANSI_RESET);
+            return new ResponseBuilderImpl().statusUnAuthorized(tradeSerializer.message("NOT POSSIBLE TO TRADE").toString());
+        }
+
+        System.out.println(tradeID);
+        System.out.println(currentTrade.getUserID());
+        System.out.println(userID);
+        System.out.println(currentTrade.getCard().getCardID());
+        System.out.println(cardID);
+        cardHolderRepository.switchCardHolder(currentTrade.getUserID(),userID,currentTrade.getCard().getCardID(),cardID);
+
+        System.out.println(textColor.ANSI_GREEN + "TRADE - SUCCESS" + textColor.ANSI_RESET);
+        return new ResponseBuilderImpl().statusNotFound(tradeSerializer.message("TRADE - SUCCESS").toString());
+    }
+
+    /** --> Löscht Trade **/
+    public ResponseImpl delete(RequestImpl requestImpl) {
+
+        /** --> Wenn REQUEST Leer ist **/
+        if (requestImpl == null) {
+            System.out.println(textColor.ANSI_RED + "DELETE - ERROR " + textColor.ANSI_RESET);
+            return new ResponseBuilderImpl().statusBAD(tradeSerializer.message("BAD REQUEST").toString());
+        }
+
+        /** --> userID -> Trading Liste **/
+        String userID = requestImpl.getAuth();
+        /** --> User CHECK **/
+        Player currentPlayer = this.playerRepository.getPlayerById(userID);
+        if (currentPlayer == null) {
+            System.out.println(TextColor.ANSI_RED + "NO USER TOKEN" + TextColor.ANSI_RESET);
+            return new ResponseBuilderImpl().statusNotFound(tradeSerializer.message("NO USER TOKEN").toString());
+        }
+        String tradeID = "T-" + requestImpl.getPath().split("/tradings/")[1];
+
+        Trade currentTrade = trade.getTradeByID(tradeID);
+        if (currentTrade == null) {
+            System.out.println(textColor.ANSI_RED + "DELETE - TRADE NOT FOUND" + textColor.ANSI_RESET);
+            return new ResponseBuilderImpl().statusNotFound(tradeSerializer.message("DELETE - TRADE NOT FOUND").toString());
+        }
+
+
+        if (!trade.checkTradeOwner(userID, currentTrade)) {
+            System.out.println(textColor.ANSI_RED + "UNAUTHORIZED" + textColor.ANSI_RESET);
+            return new ResponseBuilderImpl().statusUnAuthorized(tradeSerializer.message("UNAUTHORIZED").toString());
+        }
+
+        if (trade.deleteByID(currentTrade)) {
+            System.out.println(textColor.ANSI_GREEN + "DELETE - SUCCESS" + textColor.ANSI_RESET);
+            return new ResponseBuilderImpl().statusOK(tradeSerializer.message("DELETE - SUCCESS").toString());
+        }
+        System.out.println(textColor.ANSI_RED + "DELETE - FAILED" + textColor.ANSI_RESET);
+        return new ResponseBuilderImpl().statusNotFound(tradeSerializer.message("DELETE - FAILED").toString());
     }
 
 }

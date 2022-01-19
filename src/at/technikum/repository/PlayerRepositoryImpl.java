@@ -170,7 +170,6 @@ public class PlayerRepositoryImpl extends AbstractDBTable implements PlayerRepos
         return getPlayerById(currentPlayer.getUserID());
     }
 
-
     @Override
     public LinkedHashMap<String, Double> getHighScoreList(){
         HashMap<String,Double> highscore = new HashMap<> ();
@@ -218,9 +217,6 @@ public class PlayerRepositoryImpl extends AbstractDBTable implements PlayerRepos
         return sortedByValue;
     }
 
-
-
-
     @Override
     public boolean giveCoins(Player currentPlayer, double price) {
 
@@ -234,7 +230,6 @@ public class PlayerRepositoryImpl extends AbstractDBTable implements PlayerRepos
         this.reloadAccount(currentPlayer);
         return true;
     }
-
     @Override
     public void addCoins(Player currentPlayer, double coins) {
         double newBudge = currentPlayer.getCoins() + coins;
@@ -242,9 +237,6 @@ public class PlayerRepositoryImpl extends AbstractDBTable implements PlayerRepos
         this.update(currentPlayer);
         this.reloadAccount(currentPlayer);
     }
-
-
-
     @Override
     public Player loadPlayerStackDeck(Player currentPlayer) {
         currentPlayer.setDeck(this.deckService.getDeckById(currentPlayer.getUserID()));

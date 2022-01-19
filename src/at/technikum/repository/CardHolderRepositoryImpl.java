@@ -165,7 +165,7 @@ public class CardHolderRepositoryImpl extends AbstractDBTable implements CardHol
 
         System.out.println("NUMBER DAVOR: " + number);
 
-        if (number == 1) {
+        if (number < 2) {
             delete(this.getCardHolder(old_holderID, cardID));
         } else {
             number--;

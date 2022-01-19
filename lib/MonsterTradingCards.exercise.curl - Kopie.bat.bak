@@ -8,23 +8,17 @@ echo.
 
 
 REM --------------------------------------------------
-echo 18) Stats 
-echo kienboec
-curl -X GET http://localhost:10001/stats --header "Authorization: Basic kienboec-mtcgToken"
-echo.
-echo altenhof
-curl -X GET http://localhost:10001/stats --header "Authorization: Basic altenhof-mtcgToken"
-echo.
-echo.
 
 REM --------------------------------------------------
-echo 19) scoreboard
-curl -X GET http://localhost:10001/score --header "Authorization: Basic kienboec-mtcgToken"
+
+echo try to trade with yourself (should fail)
+curl -X POST http://localhost:10001/tradings/6cd85277-4590-49d4-b0cf-ba0a921faad0 --header "Content-Type: application/json" --header "Authorization: Basic kienboec-mtcgToken" -d "\"4ec8b269-0dfa-4f97-809a-2c63fe2a0025\""
 echo.
+
+
 echo.
-
-
-
+curl -X POST http://localhost:10001/tradings/6cd85277-4590-49d4-b0cf-ba0a921faad0 --header "Content-Type: application/json" --header "Authorization: Basic altenhof-mtcgToken" -d "\"951e886a-0fbf-425d-8df5-af2ee4830d85\""
+echo.
 
 
 REM --------------------------------------------------
@@ -33,3 +27,10 @@ echo end...
 REM this is approx a sleep 
 ping localhost -n 100 >NUL 2>NUL
 @echo on
+
+
+T-6cd85277-4590-49d4-b0cf-ba0a921faad0
+kienboec-mtcgToken
+altenhof-mtcgToken
+C-1cb6ab86-bdb2-47e5-b6e4-68c5ab389334
+C-951e886a-0fbf-425d-8df5-af2ee4830d85

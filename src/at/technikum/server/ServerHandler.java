@@ -41,7 +41,7 @@ public class ServerHandler {
         handler();
     }
 
-    public void setRoutes() {
+    public void setRoutes() throws NoSuchMethodException {
         routePOST();
         routeGET();
         routePUT();
@@ -63,6 +63,9 @@ public class ServerHandler {
             this.route.put("^POST /battles?$", BattleServlet.class.getDeclaredMethod("POST", RequestImpl.class));
             // USER - CREATE TRADING
             this.route.put("^POST /tradings?$", TradeControl.class.getDeclaredMethod("post", RequestImpl.class));
+           // USER - TRADE
+            this.route.put("^POST /tradings/?$", TradeControl.class.getDeclaredMethod("trade", RequestImpl.class));
+
 
         } catch (NoSuchMethodException e) {
             e.printStackTrace();
@@ -93,7 +96,12 @@ public class ServerHandler {
         }
     }
 
-    public void routeDELETE() {}
+    public void routeDELETE() throws NoSuchMethodException {
+
+        // USER - TRADING - DELETE
+        this.route.put("^DELETE /tradings/?$", TradeControl.class.getDeclaredMethod("delete", RequestImpl.class));
+
+    }
 
     public void routePUT() {
         try {
@@ -140,12 +148,12 @@ public class ServerHandler {
             ResponseParser responseParser = new ResponseParser();
             responseParser.write(writer,this.response);
 
-        } catch (IOException e) {
+        } catch (IOException | NoSuchMethodException e) {
             e.printStackTrace();
         }
     }
 
-    public Method startRoute(Request request) {
+    public Method startRoute(Request request) throws NoSuchMethodException {
        // System.out.println("# START - ROUTING");
         if (request.getMethod() == null) {
             return null;
@@ -172,6 +180,14 @@ public class ServerHandler {
         if (routeKEY.contains("/deck?format=plain")) {
             if (routeKEY.contains("GET")) {
                 routeKEY = "GET /deck-format";
+            }
+        }
+        if (routeKEY.contains("/tradings/")) {
+            if (routeKEY.contains("POST")) {
+                routeKEY = "POST /tradings/";
+            }
+            if (routeKEY.contains("DELETE")) {
+                routeKEY = "DELETE /tradings/";
             }
         }
 
