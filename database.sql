@@ -132,12 +132,12 @@ create table session
 alter table session
     owner to swe1user;
 
-create table "playerInfo"
+create table profil
 (
     user_id text not null
-        constraint playerinfo_pk
+        constraint profil_pk
             primary key
-        constraint playerinfo_player_user_id_fk
+        constraint profil_player_user_id_fk
             references player,
     name    text,
     bio     text,
@@ -146,8 +146,5 @@ create table "playerInfo"
 
 alter table profil
     owner to swe1user;
-
-create unique index playerinfo_user_id_uindex
-    on profil (user_id);
 
 
