@@ -9,15 +9,10 @@ echo.
 
 
 REM --------------------------------------------------
-REM --------------------------------------------------
-echo 18) Stats 
-echo kienboec
-curl -X GET http://localhost:10001/stats --header "Authorization: Basic kienboec-mtcgToken"
-echo.
-echo altenhof
-curl -X GET http://localhost:10001/stats --header "Authorization: Basic altenhof-mtcgToken"
-echo.
-echo.
+echo 20) trade
+echo check trading deals
+curl -X POST http://localhost:10001/tradings --header "Content-Type: application/json" --header "Authorization: Basic kienboec-mtcgToken" -d "{\"Id\": \"6cd85277-4590-49d4-b0cf-ba0a921faad0\", \"CardToTrade\": \"1cb6ab86-bdb2-47e5-b6e4-68c5ab389334\", \"Type\": \"monster\", \"MinimumDamage\": 15}"
+
 
 
 

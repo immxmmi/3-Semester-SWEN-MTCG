@@ -25,12 +25,7 @@ public class StoreImpl implements Store {
     @Getter
     @SerializedName("itemID")
     private String itemID;
-
-    @Setter
-    @Getter
-    @SerializedName("card")
-    private ICard card;
-
+    
     @Setter
     @Getter
     @SerializedName("price")
@@ -40,6 +35,5 @@ public class StoreImpl implements Store {
     @Getter
     @SerializedName("timeStamp")
     private String timeStamp;
-
 
 }

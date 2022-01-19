@@ -15,11 +15,12 @@ public class StoreSerializer extends Repository{
     }
 
     /** Wandelt Java Package-Objekt in Json-Objekt um + filtert die einzelnen Elemente **/
-    public JsonObject convertTransactionToJson(Store transaction, boolean transactionID, boolean sellerID, boolean itemID, boolean price, boolean timeStamp){
+    public JsonObject convertTransactionToJson(Store transaction, boolean transactionID, boolean sellerID, boolean itemID, boolean card, boolean price, boolean timeStamp){
         JsonObject object = new JsonParser().parse(gson.toJson(transaction, StoreImpl.class)).getAsJsonObject();
         if(!transactionID){object.remove("transactionID");}
         if(!sellerID){object.remove("sellerID");}
         if(!itemID){object.remove("itemID");}
+        if (!card){object.remove("card");}
         if(!price){object.remove("price");}
         if(!timeStamp){object.remove("timeStamp");}
 

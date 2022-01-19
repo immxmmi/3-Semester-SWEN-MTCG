@@ -9,9 +9,9 @@ echo.
 
 
 REM --------------------------------------------------
-echo 16) scoreboard
-curl -X GET http://localhost:10001/score --header "Authorization: Basic kienboec-mtcgToken"
-echo.
+echo 20) trade
+echo check trading deals
+curl -X GET http://localhost:10001/tradings --header "Authorization: Basic kienboec-mtcgToken"
 echo.
 
 

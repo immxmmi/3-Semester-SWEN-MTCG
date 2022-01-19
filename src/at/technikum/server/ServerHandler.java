@@ -58,11 +58,11 @@ public class ServerHandler {
             //PACKAGES
             this.route.put("^POST /packages/?$", PackageControl.class.getDeclaredMethod("post", RequestImpl.class));
             //TRANSAKTION - PACKAGES
-            this.route.put("^POST /transactions/packages?$", StoreControl.class.getDeclaredMethod("post", RequestImpl.class));
+            this.route.put("^POST /transactions/packages?$", StoreControl.class.getDeclaredMethod("buy", RequestImpl.class));
             // BATTLE - TEST
             this.route.put("^POST /battles?$", BattleServlet.class.getDeclaredMethod("POST", RequestImpl.class));
-
-            //this.route.put("^POST //tradings?$", StoreServlet.class.getDeclaredMethod("POST", Request.class));
+            // USER - CREATE TRADING
+            this.route.put("^POST /tradings?$", StoreControl.class.getDeclaredMethod("post", RequestImpl.class));
 
         } catch (NoSuchMethodException e) {
             e.printStackTrace();
@@ -85,10 +85,9 @@ public class ServerHandler {
             this.route.put("^GET /stats?$", PlayerControl.class.getDeclaredMethod("status", RequestImpl.class));
             // USER - SCORE
             this.route.put("^GET /score?$", PlayerControl.class.getDeclaredMethod("highscore", RequestImpl.class));
+            // USER - TRADING LIST
+            this.route.put("^GET /tradings?$", StoreControl.class.getDeclaredMethod("get", RequestImpl.class));
 
-
-
-            // this.route.put("^GET /tradings?$", PlayerServlet.class.getDeclaredMethod("DECK", Request.class));
         } catch (NoSuchMethodException e) {
             e.printStackTrace();
         }
@@ -179,7 +178,7 @@ public class ServerHandler {
 
         for (Map.Entry<String, Method> entry : this.route.entrySet()) {
             if (Pattern.matches(entry.getKey(), routeKEY)) {
-                //System.out.println("KEY GEFUNDEN");
+                System.out.println("KEY GEFUNDEN");
                 return entry.getValue();
             }
         }

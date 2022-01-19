@@ -7,6 +7,7 @@ import at.technikum.server.utils.request.RequestImpl;
 import at.technikum.server.utils.response.ResponseBuilderImpl;
 import at.technikum.server.utils.response.ResponseImpl;
 import at.technikum.utils.tools.TextColor;
+import com.google.gson.JsonObject;
 
 public class StoreControl{
 
@@ -24,7 +25,7 @@ public class StoreControl{
     /**
      * --> Package kaufen
      **/
-    public ResponseImpl post(RequestImpl requestImpl) {
+    public ResponseImpl buy(RequestImpl requestImpl) {
 
         /** --> Wenn REQUEST Leer ist **/
         if (requestImpl == null) {
@@ -71,32 +72,6 @@ public class StoreControl{
         return new ResponseBuilderImpl().statusOK(storeSerializer.message("PACKAGE SOLD!").toString());
 
     }
-
-    public ResponseImpl get(RequestImpl requestImpl){
-        /** --> Wenn REQUEST Leer ist **/
-        if (requestImpl == null) {
-            System.out.println(TextColor.ANSI_RED + "TRADE - ERROR" + TextColor.ANSI_RESET);
-            return new ResponseBuilderImpl().statusBAD(storeSerializer.message("BAD REQUEST").toString());
-        }
-        /** --> userID -> Trading Liste **/
-        String userID = requestImpl.getAuth();
-
-        /** --> User CHECK **/
-        Player currentPlayer = this.playerRepository.getPlayerById(userID);
-        if (currentPlayer == null) {
-            System.out.println(TextColor.ANSI_RED + "NO USER TOKEN" + TextColor.ANSI_RESET);
-            return new ResponseBuilderImpl().statusNotFound(storeSerializer.message("NO USER TOKEN").toString());
-        }
-
-        StoreRepository store = new StoreRepositoryImpl(currentPlayer);
-
-        store.getAllTransactionByUserID(currentPlayer.getUserID());
-
-        storeSerializer.convertTransactionToJson(store.getAllTransactionByUserID(currentPlayer.getUserID()).get(0),true,false,false,false,false);
-
-        return new ResponseBuilderImpl().statusOK(storeSerializer.message("GET!").toString());
-    }
-
 
 
 

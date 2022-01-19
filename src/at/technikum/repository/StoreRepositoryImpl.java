@@ -44,7 +44,6 @@ public class StoreRepositoryImpl extends AbstractDBTable implements StoreReposit
                         .transactionID(result.getString("transaction_id"))
                         .sellerID(result.getString("seller_id"))
                         .itemID(result.getString("item_id"))
-                        .card(cardServices.getCardById(result.getString("item_id")))
                         .price(convertToDouble(result.getString("price")))
                         .timeStamp(result.getString("date"))
                         .build();
