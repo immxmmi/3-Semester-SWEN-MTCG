@@ -10,6 +10,7 @@ import at.technikum.utils.tools.TextColor;
 import at.technikum.utils.tools.Tools;
 
 import java.util.ArrayList;
+import java.util.LinkedHashMap;
 
 public class PrinterImpl extends Tools implements Printer {
 
@@ -29,6 +30,24 @@ public class PrinterImpl extends Tools implements Printer {
             System.out.println(TextColor.ANSI_RED + "NO STACK" + TextColor.ANSI_RESET);
         }
         printCards(currentStack.getStack(), "stack");
+    }
+
+
+    @Override
+    public void printHighscoreList(LinkedHashMap<String, Double> highscores){
+        if (highscores == null) {
+            System.out.println(TextColor.ANSI_RED + "NO LIST" + TextColor.ANSI_RESET);
+            return;
+        }
+
+        int counter = 1;
+        System.out.println("###############################################");
+        System.out.println("#                 HighScore                   #");
+        System.out.println("###############################################");
+        System.out.println("#                                             #");
+         System.out.println("#       "+ counter +" "+highscores.entrySet());
+        System.out.println("#                                             #");
+        System.out.println("###############################################");
     }
 
     @Override
@@ -95,7 +114,6 @@ public class PrinterImpl extends Tools implements Printer {
         System.out.println("#                                             #");
         System.out.println("###############################################");
     }
-
     @Override
     public void printDeck(IDeck currentDeck) {
 

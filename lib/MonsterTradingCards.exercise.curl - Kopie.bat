@@ -10,15 +10,15 @@ echo.
 
 REM --------------------------------------------------
 REM --------------------------------------------------
-echo 13) show configured deck different representation
+echo 18) Stats 
 echo kienboec
-curl -X GET http://localhost:10001/deck?format=plain --header "Authorization: Basic kienboec-mtcgToken"
-echo.
+curl -X GET http://localhost:10001/stats --header "Authorization: Basic kienboec-mtcgToken"
 echo.
 echo altenhof
-curl -X GET http://localhost:10001/deck?format=plain --header "Authorization: Basic altenhof-mtcgToken"
+curl -X GET http://localhost:10001/stats --header "Authorization: Basic altenhof-mtcgToken"
 echo.
 echo.
+
 
 
 REM --------------------------------------------------

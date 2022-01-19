@@ -12,7 +12,7 @@ public interface StoreRepository {
 
     void addPackageToStore(String packageID, double price);
 
-    Player sellPackage(String customerID, String packageID);
+     Player sellPackage(String customerID, String packageID);
 
     boolean buyItem(Store item);
 

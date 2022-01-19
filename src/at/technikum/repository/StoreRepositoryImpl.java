@@ -6,6 +6,8 @@ import at.technikum.model.Store;
 import at.technikum.model.StoreImpl;
 import at.technikum.utils.Printer;
 import at.technikum.utils.PrinterImpl;
+import at.technikum.utils.card.ICard;
+import at.technikum.utils.card.service.CardServices;
 
 import java.sql.ResultSet;
 import java.sql.SQLException;
@@ -17,6 +19,7 @@ public class StoreRepositoryImpl extends AbstractDBTable implements StoreReposit
     private Printer printer;
     private Player currentPlayer;
     private PlayerRepositoryImpl playerRepositoryImpl = new PlayerRepositoryImpl();
+    private CardServices cardServices = new CardServices();
 
 
     /*******************************************************************/
@@ -41,6 +44,7 @@ public class StoreRepositoryImpl extends AbstractDBTable implements StoreReposit
                         .transactionID(result.getString("transaction_id"))
                         .sellerID(result.getString("seller_id"))
                         .itemID(result.getString("item_id"))
+                        .card(cardServices.getCardById(result.getString("item_id")))
                         .price(convertToDouble(result.getString("price")))
                         .timeStamp(result.getString("date"))
                         .build();
@@ -210,6 +214,10 @@ public class StoreRepositoryImpl extends AbstractDBTable implements StoreReposit
         this.closeStatement();
         return transactions;
     }
+
+
+
+
     private Store getItemByItemID(String packageID) {
         //IStore item;
         this.parameter = new String[]{packageID};

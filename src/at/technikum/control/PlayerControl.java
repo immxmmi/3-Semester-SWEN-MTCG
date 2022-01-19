@@ -146,8 +146,8 @@ public class PlayerControl extends TextColor {
             System.out.println(ANSI_RED + "User NOT FOUND" + ANSI_RESET);
             return new ResponseBuilderImpl().statusMethodNotAllowed("User NOT FOUND");
         }
-
         String list = playerRepository.getHighScoreList().toString();
+        print.printHighscoreList(playerRepository.getHighScoreList());
         System.out.println(ANSI_GREEN + "LOADING FINISHED!" + ANSI_RESET);
         return new ResponseBuilderImpl().statusOK(playerSerializer.message(list).toString()); // TODO: 07.01.2022 HighScore Klasse
     }
