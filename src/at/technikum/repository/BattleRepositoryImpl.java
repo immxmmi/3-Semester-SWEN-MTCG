@@ -72,10 +72,7 @@ public class BattleRepositoryImpl extends AbstractDBTable implements BattleRepos
             return null;
         }
         Battle currentBattle = createBattle(player);
-        if(currentBattle.isSearching()){
-            System.out.println(ANSI_GREEN + "BATTLE - SEARCHING ..." + ANSI_RESET);
-            return null;
-        }
+
         return  currentBattle;
     }
     @Override

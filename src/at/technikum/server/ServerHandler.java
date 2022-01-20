@@ -194,7 +194,7 @@ public class ServerHandler {
 
         for (Map.Entry<String, Method> entry : this.route.entrySet()) {
             if (Pattern.matches(entry.getKey(), routeKEY)) {
-                System.out.println("KEY GEFUNDEN");
+          //      System.out.println("KEY GEFUNDEN");
                 return entry.getValue();
             }
         }
