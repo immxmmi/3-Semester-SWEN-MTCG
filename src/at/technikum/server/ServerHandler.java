@@ -6,7 +6,7 @@ import at.technikum.server.utils.request.RequestImpl;
 import at.technikum.server.utils.request.RequestParser;
 import at.technikum.server.utils.response.*;
 import at.technikum.server.utils.socket.SocketImpl;
-import at.technikum.utils.battle.service.BattleServlet;
+import at.technikum.control.BattleControl;
 import lombok.Getter;
 
 import java.io.*;
@@ -60,7 +60,7 @@ public class ServerHandler {
             //TRANSAKTION - PACKAGES
             this.route.put("^POST /transactions/packages?$", StoreControl.class.getDeclaredMethod("buy", RequestImpl.class));
             // BATTLE - TEST
-            this.route.put("^POST /battles?$", BattleServlet.class.getDeclaredMethod("POST", RequestImpl.class));
+            this.route.put("^POST /battles?$", BattleControl.class.getDeclaredMethod("POST", RequestImpl.class));
             // USER - CREATE TRADING
             this.route.put("^POST /tradings?$", TradeControl.class.getDeclaredMethod("post", RequestImpl.class));
            // USER - TRADE

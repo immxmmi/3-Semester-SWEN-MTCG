@@ -1,111 +1,105 @@
-package at.technikum.utils.battle.service;
+package at.technikum.services;
 
-import at.technikum.utils.battle.Battle;
-import at.technikum.utils.battle.IBattle;
+
+import at.technikum.model.Battle;
+import at.technikum.repository.PlayerRepository;
+import at.technikum.repository.PlayerRepositoryImpl;
 import at.technikum.utils.card.ICard;
 import at.technikum.utils.card.cardTypes.CardElement;
 import at.technikum.utils.card.cardTypes.CardName;
 import at.technikum.utils.card.cardTypes.CardType;
 import at.technikum.utils.logger.LoggerStatic;
-import at.technikum.model.Player;
-import at.technikum.repository.PlayerRepository;
-import at.technikum.repository.PlayerRepositoryImpl;
 import at.technikum.utils.tools.TextColor;
 import at.technikum.utils.tools.Tools;
 
 import java.util.Collections;
 import java.util.List;
 
-public class BattleLogic extends Tools implements IBattleLogic{
+public class BattleLogicImpl extends Tools implements BattleLogic {
 
     LoggerStatic loggerStatic = LoggerStatic.getInstance();
     PlayerRepository playerService = new PlayerRepositoryImpl();
 
 
     @Override
-    public void start(String userID1, String userID2){
-        Player PlayerA = this.playerService.getPlayerById(userID1);
-        Player PlayerB = this.playerService.getPlayerById(userID2);
-
-        IBattle battle = Battle.builder()
-                .player1(PlayerA)
-                .player2(PlayerB)
-                .build();
-
-        BattleLogic battleLogic = new BattleLogic();
-        battleLogic.fight(battle);
-
+    public Battle start(Battle battle){
+        return this.fight(battle);
     }
 
 
-
-
-    private void fight(IBattle battle) {
+    private Battle fight(Battle battle) {
         List<ICard> deckA = battle.getPlayer1().getDeck().getDeckList();
         List<ICard> deckB = battle.getPlayer2().getDeck().getDeckList();
         Collections.shuffle(deckA);
         Collections.shuffle(deckB);
+        ICard cardA;
+        ICard cardB;
+        int randomA;
+        int randomB;
+        int round = 0;
 
-        int winnerA = 0;
-        int winnerB = 0;
-
-
-        int round = 1;
-        for (int i = 0; i < deckA.size(); i++) {
-
+        do{
             loggerStatic.log("ROUND:" + round);
             System.out.println("ROUND: " + round);
-            this.round(deckA.get(i), deckB.get(i));
-            ICard WinnerCard = this.rules(deckA.get(i), deckB.get(i));
+            System.out.println(deckA.size());
+            System.out.println(deckB.size());
+            randomA = randomNumber(0, deckA.size());
+            randomB = randomNumber(0, deckB.size());
+            cardA = deckA.get(randomA);
+            cardB = deckB.get(randomB);
+            this.round(cardA,cardB);
+            ICard WinnerCard = this.rules(cardA,cardB);
 
-            if (WinnerCard == deckA.get(i)) {
-                System.out.println(TextColor.ANSI_GREEN + "Winner is Player A" + TextColor.ANSI_RESET);
+            if (WinnerCard == cardA) {
+              //  System.out.println(TextColor.ANSI_GREEN + "Winner is Player A" + TextColor.ANSI_RESET);
                 loggerStatic.log("Winner is Player A");
-                winnerA++;
-                battle.getWinnerList().add(battle.getPlayer1());
+                deckA.add(cardB);
+                deckB.remove(cardB);
             }
 
-            if (WinnerCard == deckB.get(i)) {
-                System.out.println(TextColor.ANSI_GREEN + "Winner is Player B" + TextColor.ANSI_RESET);
+            if (WinnerCard == cardB) {
+                //System.out.println(TextColor.ANSI_GREEN + "Winner is Player B" + TextColor.ANSI_RESET);
                 loggerStatic.log("Winner is Player B");
-                battle.getWinnerList().add(battle.getPlayer2());
-                winnerB++;
+                deckB.add(cardA);
+                deckA.remove(cardA);
             }
 
             if (WinnerCard == null) {
-                System.out.println(TextColor.ANSI_WHITE + "The game is a draw" + TextColor.ANSI_RESET);
+             //   System.out.println(TextColor.ANSI_WHITE + "The game is a draw" + TextColor.ANSI_RESET);
                 loggerStatic.log("The game is a draw");
             }
+            if (deckA.size() < 1){
+                break;
+            }
+            if(deckB.size() < 1){
+                break;
+            }
+            round ++;
+        }while(round < 100);
 
-            round++;
+        System.out.println("\n" + TextColor.ANSI_PURPLE + "WINNER : ");
 
 
-        }
+        battle.setRound(round);
 
-
-
-        System.out.println("\n" + TextColor.ANSI_PURPLE + "WINNER LIST : ");
-        for (int i = 0; i < battle.getWinnerList().size(); i++) {
-            System.out.print("#" + i + " ");
-            System.out.println(battle.getWinnerList().get(i).getUsername());
-        }
-        System.out.print(TextColor.ANSI_RESET);
-
-        if(winnerA > winnerB){
-
+        if(deckA.size() > deckB.size()){
+            battle.setWinner(battle.getPlayer1());
             battle.getPlayer1().setElo(battle.getPlayer1().getElo()+3);
             battle.getPlayer2().setElo(battle.getPlayer2().getElo()-5);
         }
 
-        if(winnerB > winnerA){
+        if(deckA.size() < deckB.size()){
+            battle.setWinner(battle.getPlayer2());
             battle.getPlayer2().setElo(battle.getPlayer2().getElo()+3);
             battle.getPlayer1().setElo(battle.getPlayer1().getElo()-5);
         }
 
+
         playerService.update(battle.getPlayer1());
         playerService.update(battle.getPlayer2());
-
+        return battle;
     }
+
 
     private void round(ICard CardA, ICard CardB) {
         System.out.print(TextColor.ANSI_BLUE + "PlayerA: ");
