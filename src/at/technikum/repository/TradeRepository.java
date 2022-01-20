@@ -9,6 +9,8 @@ public interface TradeRepository {
 
     boolean checkTradeOwner(String holderID, Trade trade);
 
+    boolean checkTradeRequirement(Trade trade, String cardID);
+
     Trade addTrade(String tradeID, String userID, String cardID, CardType cardType, double cardPower);
 
     Trade getTradeByID(String tradeID);

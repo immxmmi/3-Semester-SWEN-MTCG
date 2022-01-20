@@ -28,7 +28,7 @@ public class BattleControl {
         this.battleSerializer = new BattleSerializer();
     }
 
-    public ResponseImpl POST(RequestImpl requestImpl) throws InterruptedException {
+    public ResponseImpl POST(RequestImpl requestImpl) {
 
         /** --> WENN REQUEST LEER IST --> WENN AUTH LEER IST **/
         ResponseImpl responseImpl = new ResponseBuilderImpl().requestErrorHandler(requestImpl, true, false);

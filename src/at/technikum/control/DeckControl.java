@@ -19,11 +19,13 @@ import com.google.gson.JsonParser;
 
 import java.util.ArrayList;
 
-public class DeckControl extends TextColor {
+public class DeckControl {
+
     DeckRepository deckRepository;
     PlayerRepository playerRepository;
     DeckSerializer deckSerializer;
     Printer print;
+    TextColor textColor;
 
     public DeckControl(){
         this.print = new PrinterImpl();
@@ -48,22 +50,20 @@ public class DeckControl extends TextColor {
 
         /** -->  ERROR - MELDUNG USER NICHT GEFUNDEN **/
         if (currentPlayer == null) {
-            System.out.println(ANSI_RED + "USER NOT FOUND" + ANSI_RESET);
+            System.out.println(textColor.ANSI_RED + "USER NOT FOUND" + textColor.ANSI_RESET);
             return new ResponseBuilderImpl().statusMethodNotAllowed(deckSerializer.message("USER NOT FOUND").toString());
         }
         if (currentPlayer.getDeck() == null) {
-            System.out.println(ANSI_RED + "DECK EMPTY" + ANSI_RESET);
+            System.out.println(textColor.ANSI_RED + "DECK EMPTY" + textColor.ANSI_RESET);
             return new ResponseBuilderImpl().statusMethodNotAllowed(deckSerializer.message("DECK EMPTY").toString());
         }
         this.print.printDeck(currentPlayer.getDeck());
-        System.out.println(ANSI_GREEN + "LOADING FINISHED!" + ANSI_RESET);
+        System.out.println(textColor.ANSI_GREEN + "LOADING FINISHED!" + textColor.ANSI_RESET);
         /** --> JSON OBJECT **/
         JsonObject jsonObject = deckSerializer.convertDeckToJson(currentPlayer.getDeck(),false,true,false);
         /** --> STATUS OK **/
         return new ResponseBuilderImpl().statusOK(jsonObject.toString());
     }
-
-
 
 
     /** --> LOAD DECK FORMAT **/
@@ -80,22 +80,20 @@ public class DeckControl extends TextColor {
 
         /** -->  ERROR - MELDUNG USER NICHT GEFUNDEN **/
         if (currentPlayer == null) {
-            System.out.println(ANSI_RED + "USER NOT FOUND" + ANSI_RESET);
+            System.out.println(textColor.ANSI_RED + "USER NOT FOUND" + textColor.ANSI_RESET);
             return new ResponseBuilderImpl().statusMethodNotAllowed(deckSerializer.message("USER NOT FOUND").toString());
         }
         if (currentPlayer.getDeck() == null) {
-            System.out.println(ANSI_RED + "DECK EMPTY" + ANSI_RESET);
+            System.out.println(textColor.ANSI_RED + "DECK EMPTY" + textColor.ANSI_RESET);
             return new ResponseBuilderImpl().statusMethodNotAllowed(deckSerializer.message("DECK EMPTY").toString());
         }
         this.print.printDeck(currentPlayer.getDeck());
-        System.out.println(ANSI_GREEN + "LOADING FINISHED!" + ANSI_RESET);
+        System.out.println(textColor.ANSI_GREEN + "LOADING FINISHED!" + textColor.ANSI_RESET);
         /** --> JSON OBJECT **/
         JsonObject jsonObject = deckSerializer.convertDeckToJson(currentPlayer.getDeck(),false,false,true);
         /** --> STATUS OK **/
         return new ResponseBuilderImpl().statusOK(jsonObject.toString());
     }
-
-
 
     /**
      * --> SET DECK
@@ -133,7 +131,7 @@ public class DeckControl extends TextColor {
             return new ResponseBuilderImpl().statusOK(jsonObject.toString());
         }
 
-        System.out.println(ANSI_RED + "SET NEW DECK - ERROR" + ANSI_RESET);
+        System.out.println(textColor.ANSI_RED + "SET NEW DECK - ERROR" + textColor.ANSI_RESET);
         return new ResponseBuilderImpl().statusMethodNotAllowed(deckSerializer.message("SET NEW DECK - ERROR").toString());
     }
 

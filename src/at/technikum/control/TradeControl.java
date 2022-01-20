@@ -1,21 +1,18 @@
 package at.technikum.control;
 
-import at.technikum.model.Package;
 import at.technikum.model.Player;
-import at.technikum.model.PlayerImpl;
 import at.technikum.model.Trade;
-import at.technikum.model.TradeImpl;
 import at.technikum.repository.*;
-import at.technikum.serializer.StoreSerializer;
 import at.technikum.serializer.TradeSerializer;
 import at.technikum.server.utils.request.RequestImpl;
 import at.technikum.server.utils.response.ResponseBuilderImpl;
 import at.technikum.server.utils.response.ResponseImpl;
-import at.technikum.utils.card.cardTypes.CardElement;
-import at.technikum.utils.card.cardTypes.CardName;
 import at.technikum.utils.card.cardTypes.CardType;
 import at.technikum.utils.tools.TextColor;
-import com.google.gson.*;
+import com.google.gson.Gson;
+import com.google.gson.JsonElement;
+import com.google.gson.JsonObject;
+import com.google.gson.JsonParser;
 
 public class TradeControl {
 
@@ -141,11 +138,11 @@ public class TradeControl {
             return new ResponseBuilderImpl().statusUnAuthorized(tradeSerializer.message("NOT POSSIBLE TO TRADE").toString());
         }
 
-        System.out.println(tradeID);
-        System.out.println(currentTrade.getUserID());
-        System.out.println(userID);
-        System.out.println(currentTrade.getCard().getCardID());
-        System.out.println(cardID);
+        if (trade.checkTradeRequirement(currentTrade,cardID)) {
+            System.out.println(textColor.ANSI_RED + "NOT POSSIBLE TO TRADE" + textColor.ANSI_RESET);
+            return new ResponseBuilderImpl().statusUnAuthorized(tradeSerializer.message("NOT POSSIBLE TO TRADE").toString());
+        }
+
         cardHolderRepository.switchCardHolder(currentTrade.getUserID(),userID,currentTrade.getCard().getCardID(),cardID);
 
         System.out.println(textColor.ANSI_GREEN + "TRADE - SUCCESS" + textColor.ANSI_RESET);

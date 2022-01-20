@@ -7,7 +7,6 @@ import at.technikum.server.utils.request.RequestImpl;
 import at.technikum.server.utils.response.ResponseBuilderImpl;
 import at.technikum.server.utils.response.ResponseImpl;
 import at.technikum.utils.tools.TextColor;
-import com.google.gson.JsonObject;
 
 public class StoreControl{
 

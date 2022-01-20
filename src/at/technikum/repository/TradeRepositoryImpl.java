@@ -72,6 +72,18 @@ public class TradeRepositoryImpl extends AbstractDBTable implements TradeReposit
         return holderID.equals(trade.getUserID());
     }
 
+    @Override
+    public boolean checkTradeRequirement(Trade trade, String cardID){
+        ICard card = cardServices.getCardById(cardID);
+        if(trade.getMinPower() > card.getCardPower()){
+            return false;
+        }
+        if(trade.getCardTyp() != card.getCardType()){
+            return false;
+        }
+
+        return true;
+    }
 
     /*******************************************************************/
     /**                     Datenbank - Operatoren                    **/
