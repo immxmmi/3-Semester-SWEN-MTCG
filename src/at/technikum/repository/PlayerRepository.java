@@ -28,7 +28,7 @@ public interface PlayerRepository extends Repository<Player> {
 
     PlayerRepositoryImpl getInstance();
 
-    Player getPlayerById(String id);
+    Player getItemById(String id);
 
     Player getPlayerByUsername(String username);
 

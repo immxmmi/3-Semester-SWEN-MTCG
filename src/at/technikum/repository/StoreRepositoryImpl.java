@@ -1,6 +1,6 @@
 package at.technikum.repository;
 
-import at.technikum.net.database.AbstractDBTable;
+import at.technikum.database.AbstractDBTable;
 import at.technikum.model.repository.Player;
 import at.technikum.model.repository.Store;
 import at.technikum.model.StoreImpl;
@@ -111,7 +111,7 @@ public class StoreRepositoryImpl extends AbstractDBTable implements StoreReposit
     @Override
     public Player sellPackage(String customerID, String packageID) {
         PlayerRepositoryImpl playerRepositoryImpl = new PlayerRepositoryImpl();
-        this.currentPlayer = playerRepositoryImpl.getPlayerById(customerID);
+        this.currentPlayer = playerRepositoryImpl.getItemById(customerID);
         buyItem(getItemByItemID(packageID));
         return this.currentPlayer;
     }
@@ -126,7 +126,7 @@ public class StoreRepositoryImpl extends AbstractDBTable implements StoreReposit
                 holder.sellPackage(item.getItemID(), this.currentPlayer.getUserID());
 
             } else {
-                Player seller = this.playerRepositoryImpl.getPlayerById(item.getSellerID());
+                Player seller = this.playerRepositoryImpl.getItemById(item.getSellerID());
                 playerRepositoryImpl.addCoins(seller, item.getPrice());
                 this.playerRepositoryImpl.reloadAccount(seller);
                 holder.changeCardHolder(this.currentPlayer.getUserID(), seller.getUserID(), item.getItemID());

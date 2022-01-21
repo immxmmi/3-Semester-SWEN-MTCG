@@ -1,0 +1,572 @@
+Jän. 21, 2022 4:02:56 AM at.technikum.logger.LoggerStatic log
+INFO: 
+Start SERVER
+
+Jän. 21, 2022 4:03:11 AM at.technikum.logger.LoggerStatic log
+INFO: 
+# REGISTER
+
+Jän. 21, 2022 4:03:11 AM at.technikum.logger.LoggerStatic log
+INFO: 
+ REGISTER SUCCESS
+
+Jän. 21, 2022 4:03:11 AM at.technikum.logger.LoggerStatic log
+INFO: 
+# REGISTER
+
+Jän. 21, 2022 4:03:11 AM at.technikum.logger.LoggerStatic log
+INFO: 
+ REGISTER SUCCESS
+
+Jän. 21, 2022 4:03:11 AM at.technikum.logger.LoggerStatic log
+INFO: 
+# REGISTER
+
+Jän. 21, 2022 4:03:11 AM at.technikum.logger.LoggerStatic log
+INFO: 
+ REGISTER SUCCESS
+
+Jän. 21, 2022 4:03:11 AM at.technikum.logger.LoggerStatic log
+INFO: 
+# REGISTER
+
+Jän. 21, 2022 4:03:11 AM at.technikum.logger.LoggerStatic log
+INFO: 
+# REGISTER
+
+Jän. 21, 2022 4:03:11 AM at.technikum.logger.LoggerStatic log
+INFO: 
+# LOGIN
+
+Jän. 21, 2022 4:03:11 AM at.technikum.logger.LoggerStatic log
+INFO: 
+USER NOT FOUND
+
+Jän. 21, 2022 4:03:11 AM at.technikum.logger.LoggerStatic log
+INFO: 
+# LOGIN
+
+Jän. 21, 2022 4:03:11 AM at.technikum.logger.LoggerStatic log
+INFO: 
+USER NOT FOUND
+
+Jän. 21, 2022 4:03:11 AM at.technikum.logger.LoggerStatic log
+INFO: 
+# LOGIN
+
+Jän. 21, 2022 4:03:11 AM at.technikum.logger.LoggerStatic log
+INFO: 
+USER NOT FOUND
+
+Jän. 21, 2022 4:03:11 AM at.technikum.logger.LoggerStatic log
+INFO: 
+# LOGIN
+
+Jän. 21, 2022 4:03:11 AM at.technikum.logger.LoggerStatic log
+INFO: 
+USER NOT FOUND
+
+Jän. 21, 2022 4:03:12 AM at.technikum.logger.LoggerStatic log
+INFO: 
+CREATE PACKAGE
+
+Jän. 21, 2022 4:03:12 AM at.technikum.logger.LoggerStatic log
+INFO: 
+PACKAGE CREATED - OK
+
+Jän. 21, 2022 4:03:12 AM at.technikum.logger.LoggerStatic log
+INFO: 
+CREATE PACKAGE
+
+Jän. 21, 2022 4:03:12 AM at.technikum.logger.LoggerStatic log
+INFO: 
+PACKAGE CREATED - OK
+
+Jän. 21, 2022 4:03:12 AM at.technikum.logger.LoggerStatic log
+INFO: 
+CREATE PACKAGE
+
+Jän. 21, 2022 4:03:12 AM at.technikum.logger.LoggerStatic log
+INFO: 
+PACKAGE CREATED - OK
+
+Jän. 21, 2022 4:03:12 AM at.technikum.logger.LoggerStatic log
+INFO: 
+CREATE PACKAGE
+
+Jän. 21, 2022 4:03:12 AM at.technikum.logger.LoggerStatic log
+INFO: 
+PACKAGE CREATED - OK
+
+Jän. 21, 2022 4:03:12 AM at.technikum.logger.LoggerStatic log
+INFO: 
+CREATE PACKAGE
+
+Jän. 21, 2022 4:03:12 AM at.technikum.logger.LoggerStatic log
+INFO: 
+PACKAGE CREATED - OK
+
+Jän. 21, 2022 4:03:12 AM at.technikum.logger.LoggerStatic log
+INFO: 
+CREATE PACKAGE
+
+Jän. 21, 2022 4:03:12 AM at.technikum.logger.LoggerStatic log
+INFO: 
+PACKAGE CREATED - OK
+
+Jän. 21, 2022 4:03:12 AM at.technikum.logger.LoggerStatic log
+INFO: 
+# PACKAGE - BUY
+
+Jän. 21, 2022 4:03:12 AM at.technikum.logger.LoggerStatic log
+INFO: 
+PACKAGE SOLD!
+
+Jän. 21, 2022 4:03:12 AM at.technikum.logger.LoggerStatic log
+INFO: 
+# PACKAGE - BUY
+
+Jän. 21, 2022 4:03:13 AM at.technikum.logger.LoggerStatic log
+INFO: 
+PACKAGE SOLD!
+
+Jän. 21, 2022 4:03:13 AM at.technikum.logger.LoggerStatic log
+INFO: 
+# PACKAGE - BUY
+
+Jän. 21, 2022 4:03:13 AM at.technikum.logger.LoggerStatic log
+INFO: 
+PACKAGE SOLD!
+
+Jän. 21, 2022 4:03:13 AM at.technikum.logger.LoggerStatic log
+INFO: 
+# PACKAGE - BUY
+
+Jän. 21, 2022 4:03:14 AM at.technikum.logger.LoggerStatic log
+INFO: 
+PACKAGE SOLD!
+
+Jän. 21, 2022 4:03:14 AM at.technikum.logger.LoggerStatic log
+INFO: 
+# PACKAGE - BUY
+
+Jän. 21, 2022 4:03:14 AM at.technikum.logger.LoggerStatic log
+INFO: 
+(NO MONEY)
+
+Jän. 21, 2022 4:03:14 AM at.technikum.logger.LoggerStatic log
+INFO: 
+# PACKAGE - BUY
+
+Jän. 21, 2022 4:03:14 AM at.technikum.logger.LoggerStatic log
+INFO: 
+PACKAGE SOLD!
+
+Jän. 21, 2022 4:03:14 AM at.technikum.logger.LoggerStatic log
+INFO: 
+# PACKAGE - BUY
+
+Jän. 21, 2022 4:03:15 AM at.technikum.logger.LoggerStatic log
+INFO: 
+PACKAGE SOLD!
+
+Jän. 21, 2022 4:03:15 AM at.technikum.logger.LoggerStatic log
+INFO: 
+# PACKAGE - BUY
+
+Jän. 21, 2022 4:03:15 AM at.technikum.logger.LoggerStatic log
+INFO: 
+(NO PACKAGE)
+
+Jän. 21, 2022 4:03:15 AM at.technikum.logger.LoggerStatic log
+INFO: 
+CREATE PACKAGE
+
+Jän. 21, 2022 4:03:15 AM at.technikum.logger.LoggerStatic log
+INFO: 
+PACKAGE CREATED - OK
+
+Jän. 21, 2022 4:03:15 AM at.technikum.logger.LoggerStatic log
+INFO: 
+CREATE PACKAGE
+
+Jän. 21, 2022 4:03:15 AM at.technikum.logger.LoggerStatic log
+INFO: 
+PACKAGE CREATED - OK
+
+Jän. 21, 2022 4:03:15 AM at.technikum.logger.LoggerStatic log
+INFO: 
+CREATE PACKAGE
+
+Jän. 21, 2022 4:03:15 AM at.technikum.logger.LoggerStatic log
+INFO: 
+PACKAGE CREATED - OK
+
+Jän. 21, 2022 4:03:15 AM at.technikum.logger.LoggerStatic log
+INFO: 
+# PACKAGE - BUY
+
+Jän. 21, 2022 4:03:15 AM at.technikum.logger.LoggerStatic log
+INFO: 
+PACKAGE SOLD!
+
+Jän. 21, 2022 4:03:15 AM at.technikum.logger.LoggerStatic log
+INFO: 
+# PACKAGE - BUY
+
+Jän. 21, 2022 4:03:16 AM at.technikum.logger.LoggerStatic log
+INFO: 
+PACKAGE SOLD!
+
+Jän. 21, 2022 4:03:16 AM at.technikum.logger.LoggerStatic log
+INFO: 
+# PACKAGE - BUY
+
+Jän. 21, 2022 4:03:16 AM at.technikum.logger.LoggerStatic log
+INFO: 
+(NO MONEY)
+
+Jän. 21, 2022 4:03:16 AM at.technikum.logger.LoggerStatic log
+INFO: 
+# STACK
+
+Jän. 21, 2022 4:03:16 AM at.technikum.logger.LoggerStatic log
+INFO: 
+LOADING FINISHED!
+
+Jän. 21, 2022 4:03:16 AM at.technikum.logger.LoggerStatic log
+INFO: 
+# STACK
+
+Jän. 21, 2022 4:03:16 AM at.technikum.logger.LoggerStatic log
+INFO: 
+NO TOKEN
+
+Jän. 21, 2022 4:03:16 AM at.technikum.logger.LoggerStatic log
+INFO: 
+# STACK
+
+Jän. 21, 2022 4:03:16 AM at.technikum.logger.LoggerStatic log
+INFO: 
+LOADING FINISHED!
+
+Jän. 21, 2022 4:03:16 AM at.technikum.logger.LoggerStatic log
+INFO: 
+"# LOAD DECK"
+
+Jän. 21, 2022 4:03:16 AM at.technikum.logger.LoggerStatic log
+INFO: 
+DECK EMPTY
+
+Jän. 21, 2022 4:03:16 AM at.technikum.logger.LoggerStatic log
+INFO: 
+"# LOAD DECK"
+
+Jän. 21, 2022 4:03:16 AM at.technikum.logger.LoggerStatic log
+INFO: 
+DECK EMPTY
+
+Jän. 21, 2022 4:03:16 AM at.technikum.logger.LoggerStatic log
+INFO: 
+## NEW DECK 
+
+Jän. 21, 2022 4:03:17 AM at.technikum.logger.LoggerStatic log
+INFO: 
+SET NEW DECK!
+
+Jän. 21, 2022 4:03:17 AM at.technikum.logger.LoggerStatic log
+INFO: 
+"# LOAD DECK"
+
+Jän. 21, 2022 4:03:17 AM at.technikum.logger.LoggerStatic log
+INFO: 
+"LOADING FINISHED!"
+
+Jän. 21, 2022 4:03:17 AM at.technikum.logger.LoggerStatic log
+INFO: 
+## NEW DECK 
+
+Jän. 21, 2022 4:03:17 AM at.technikum.logger.LoggerStatic log
+INFO: 
+SET NEW DECK!
+
+Jän. 21, 2022 4:03:17 AM at.technikum.logger.LoggerStatic log
+INFO: 
+"# LOAD DECK"
+
+Jän. 21, 2022 4:03:17 AM at.technikum.logger.LoggerStatic log
+INFO: 
+"LOADING FINISHED!"
+
+Jän. 21, 2022 4:03:17 AM at.technikum.logger.LoggerStatic log
+INFO: 
+## NEW DECK 
+
+Jän. 21, 2022 4:03:17 AM at.technikum.logger.LoggerStatic log
+INFO: 
+SET NEW DECK - ERROR
+
+Jän. 21, 2022 4:03:17 AM at.technikum.logger.LoggerStatic log
+INFO: 
+"# LOAD DECK"
+
+Jän. 21, 2022 4:03:17 AM at.technikum.logger.LoggerStatic log
+INFO: 
+"LOADING FINISHED!"
+
+Jän. 21, 2022 4:03:18 AM at.technikum.logger.LoggerStatic log
+INFO: 
+## NEW DECK 
+
+Jän. 21, 2022 4:03:18 AM at.technikum.logger.LoggerStatic log
+INFO: 
+SET NEW DECK - ERROR
+
+Jän. 21, 2022 4:03:18 AM at.technikum.logger.LoggerStatic log
+INFO: 
+"# LOAD DECK"
+
+Jän. 21, 2022 4:03:18 AM at.technikum.logger.LoggerStatic log
+INFO: 
+"LOADING FINISHED!"
+
+Jän. 21, 2022 4:03:18 AM at.technikum.logger.LoggerStatic log
+INFO: 
+"# LOAD DECK"
+
+Jän. 21, 2022 4:03:18 AM at.technikum.logger.LoggerStatic log
+INFO: 
+"LOADING FINISHED!"
+
+Jän. 21, 2022 4:03:18 AM at.technikum.logger.LoggerStatic log
+INFO: 
+LOAD DECK
+
+Jän. 21, 2022 4:03:18 AM at.technikum.logger.LoggerStatic log
+INFO: 
+LOADING FINISHED!
+
+Jän. 21, 2022 4:03:18 AM at.technikum.logger.LoggerStatic log
+INFO: 
+LOAD DECK
+
+Jän. 21, 2022 4:03:18 AM at.technikum.logger.LoggerStatic log
+INFO: 
+LOADING FINISHED!
+
+Jän. 21, 2022 4:03:18 AM at.technikum.logger.LoggerStatic log
+INFO: 
+# Profil 
+
+Jän. 21, 2022 4:03:18 AM at.technikum.logger.LoggerStatic log
+INFO: 
+LOADING FINISHED!
+
+Jän. 21, 2022 4:03:18 AM at.technikum.logger.LoggerStatic log
+INFO: 
+# Profil 
+
+Jän. 21, 2022 4:03:19 AM at.technikum.logger.LoggerStatic log
+INFO: 
+LOADING FINISHED!
+
+Jän. 21, 2022 4:03:19 AM at.technikum.logger.LoggerStatic log
+INFO: 
+# Profil 
+
+Jän. 21, 2022 4:03:19 AM at.technikum.logger.LoggerStatic log
+INFO: 
+LOADING FINISHED!
+
+Jän. 21, 2022 4:03:19 AM at.technikum.logger.LoggerStatic log
+INFO: 
+# Profil 
+
+Jän. 21, 2022 4:03:19 AM at.technikum.logger.LoggerStatic log
+INFO: 
+LOADING FINISHED!
+
+Jän. 21, 2022 4:03:19 AM at.technikum.logger.LoggerStatic log
+INFO: 
+# Profil 
+
+Jän. 21, 2022 4:03:19 AM at.technikum.logger.LoggerStatic log
+INFO: 
+USER NOT AUTH
+
+Jän. 21, 2022 4:03:19 AM at.technikum.logger.LoggerStatic log
+INFO: 
+# Profil 
+
+Jän. 21, 2022 4:03:19 AM at.technikum.logger.LoggerStatic log
+INFO: 
+USER NOT AUTH
+
+Jän. 21, 2022 4:03:20 AM at.technikum.logger.LoggerStatic log
+INFO: 
+# Profil 
+
+Jän. 21, 2022 4:03:20 AM at.technikum.logger.LoggerStatic log
+INFO: 
+USER NOT AUTH
+
+Jän. 21, 2022 4:03:20 AM at.technikum.logger.LoggerStatic log
+INFO: 
+ # STATUS
+
+Jän. 21, 2022 4:03:20 AM at.technikum.logger.LoggerStatic log
+INFO: 
+LOADING FINISHED!
+
+Jän. 21, 2022 4:03:20 AM at.technikum.logger.LoggerStatic log
+INFO: 
+ # STATUS
+
+Jän. 21, 2022 4:03:20 AM at.technikum.logger.LoggerStatic log
+INFO: 
+LOADING FINISHED!
+
+Jän. 21, 2022 4:03:20 AM at.technikum.logger.LoggerStatic log
+INFO: 
+ # SCORE 
+
+Jän. 21, 2022 4:03:20 AM at.technikum.logger.LoggerStatic log
+INFO: 
+LOADING FINISHED!
+
+Jän. 21, 2022 4:03:20 AM at.technikum.logger.LoggerStatic log
+INFO: 
+START GAME
+
+Jän. 21, 2022 4:03:20 AM at.technikum.logger.LoggerStatic log
+INFO: 
+START GAME
+
+Jän. 21, 2022 4:03:21 AM at.technikum.logger.LoggerStatic log
+INFO: 
+BATTLE - SEARCHING ...
+
+Jän. 21, 2022 4:03:21 AM at.technikum.logger.LoggerStatic log
+INFO: 
+BATTLE - SEARCHING ...
+
+Jän. 21, 2022 4:03:30 AM at.technikum.logger.LoggerStatic log
+INFO: 
+ # STATUS
+
+Jän. 21, 2022 4:03:30 AM at.technikum.logger.LoggerStatic log
+INFO: 
+LOADING FINISHED!
+
+Jän. 21, 2022 4:03:30 AM at.technikum.logger.LoggerStatic log
+INFO: 
+ # STATUS
+
+Jän. 21, 2022 4:03:30 AM at.technikum.logger.LoggerStatic log
+INFO: 
+LOADING FINISHED!
+
+Jän. 21, 2022 4:03:30 AM at.technikum.logger.LoggerStatic log
+INFO: 
+ # SCORE 
+
+Jän. 21, 2022 4:03:30 AM at.technikum.logger.LoggerStatic log
+INFO: 
+LOADING FINISHED!
+
+Jän. 21, 2022 4:03:30 AM at.technikum.logger.LoggerStatic log
+INFO: 
+TRADE
+
+Jän. 21, 2022 4:03:30 AM at.technikum.logger.LoggerStatic log
+INFO: 
+NO TRADING
+
+Jän. 21, 2022 4:03:30 AM at.technikum.logger.LoggerStatic log
+INFO: 
+CREATE TRADE SUCCESS
+
+Jän. 21, 2022 4:03:30 AM at.technikum.logger.LoggerStatic log
+INFO: 
+TRADE
+
+Jän. 21, 2022 4:03:30 AM at.technikum.logger.LoggerStatic log
+INFO: 
+LOADING FINISHED!
+
+Jän. 21, 2022 4:03:30 AM at.technikum.logger.LoggerStatic log
+INFO: 
+TRADE
+
+Jän. 21, 2022 4:03:30 AM at.technikum.logger.LoggerStatic log
+INFO: 
+NO TRADING
+
+Jän. 21, 2022 4:03:30 AM at.technikum.logger.LoggerStatic log
+INFO: 
+DELETE
+
+Jän. 21, 2022 4:03:30 AM at.technikum.logger.LoggerStatic log
+INFO: 
+DELETE - SUCCESS
+
+Jän. 21, 2022 4:03:31 AM at.technikum.logger.LoggerStatic log
+INFO: 
+TRADE
+
+Jän. 21, 2022 4:03:31 AM at.technikum.logger.LoggerStatic log
+INFO: 
+NO TRADING
+
+Jän. 21, 2022 4:03:31 AM at.technikum.logger.LoggerStatic log
+INFO: 
+CREATE TRADE SUCCESS
+
+Jän. 21, 2022 4:03:31 AM at.technikum.logger.LoggerStatic log
+INFO: 
+TRADE
+
+Jän. 21, 2022 4:03:31 AM at.technikum.logger.LoggerStatic log
+INFO: 
+LOADING FINISHED!
+
+Jän. 21, 2022 4:03:31 AM at.technikum.logger.LoggerStatic log
+INFO: 
+TRADE
+
+Jän. 21, 2022 4:03:31 AM at.technikum.logger.LoggerStatic log
+INFO: 
+NO TRADING
+
+Jän. 21, 2022 4:03:31 AM at.technikum.logger.LoggerStatic log
+INFO: 
+TRADE
+
+Jän. 21, 2022 4:03:31 AM at.technikum.logger.LoggerStatic log
+INFO: 
+NOT POSSIBLE TO TRADE
+
+Jän. 21, 2022 4:03:31 AM at.technikum.logger.LoggerStatic log
+INFO: 
+TRADE
+
+Jän. 21, 2022 4:03:31 AM at.technikum.logger.LoggerStatic log
+INFO: 
+NOT POSSIBLE TO TRADE
+
+Jän. 21, 2022 4:03:31 AM at.technikum.logger.LoggerStatic log
+INFO: 
+TRADE
+
+Jän. 21, 2022 4:03:31 AM at.technikum.logger.LoggerStatic log
+INFO: 
+LOADING FINISHED!
+
+Jän. 21, 2022 4:03:31 AM at.technikum.logger.LoggerStatic log
+INFO: 
+TRADE
+
+Jän. 21, 2022 4:03:32 AM at.technikum.logger.LoggerStatic log
+INFO: 
+NO TRADING
+

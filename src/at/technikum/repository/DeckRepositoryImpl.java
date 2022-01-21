@@ -1,12 +1,12 @@
 package at.technikum.repository;
 
-import at.technikum.net.database.AbstractDBTable;
+import at.technikum.database.AbstractDBTable;
 import at.technikum.model.DeckImpl;
 import at.technikum.model.repository.IDeck;
 import at.technikum.utils.card.ICard;
 import at.technikum.utils.card.service.CardServices;
 import at.technikum.utils.card.service.ICardServices;
-import at.technikum.utils.tools.TextColor;
+import at.technikum.utils.TextColor;
 
 import java.sql.ResultSet;
 import java.sql.SQLException;
@@ -96,7 +96,7 @@ public class DeckRepositoryImpl extends AbstractDBTable implements DeckRepositor
             return false;
         }
 
-        IDeck oldDeck = getDeckById(holderID);
+        IDeck oldDeck = getItemById(holderID);
         boolean createNewDeck = false;
         if (oldDeck == null) {
             createNewDeck = true;
@@ -140,7 +140,7 @@ public class DeckRepositoryImpl extends AbstractDBTable implements DeckRepositor
     }
 
     @Override
-    public IDeck getDeckById(String userID) {
+    public IDeck getItemById(String userID) {
         this.parameter = new String[]{userID};
 
         this.setStatement(
@@ -165,7 +165,7 @@ public class DeckRepositoryImpl extends AbstractDBTable implements DeckRepositor
 
 
         this.setStatement("INSERT INTO " + this.tableName + "(user_id,card_id_1,card_id_2,card_id_3,card_id_4)VALUES(?,?,?,?,?);", this.parameter);
-        return getDeckById(userID);
+        return getItemById(userID);
     }
 
     @Override
@@ -182,7 +182,7 @@ public class DeckRepositoryImpl extends AbstractDBTable implements DeckRepositor
         };
 
         this.setStatement("UPDATE " + this.tableName + " SET user_id = ?, card_id_1 = ?, card_id_2 = ?,card_id_3 = ?, card_id_4 = ? " + "WHERE user_id = '" + userID + "' ;", this.parameter);
-        return getDeckById(userID);
+        return getItemById(userID);
     }
 
     @Override
@@ -190,7 +190,7 @@ public class DeckRepositoryImpl extends AbstractDBTable implements DeckRepositor
         //System.out.println(ANSI_BLUE + "#DELETE:" + ANSI_RESET);
         this.parameter = new String[]{};
         String userID = item.getUserID();
-        if (getDeckById(userID) == null) {
+        if (getItemById(userID) == null) {
             return false;
         }
         this.setStatement("DELETE FROM " + this.tableName +

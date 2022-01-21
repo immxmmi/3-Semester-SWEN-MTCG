@@ -8,7 +8,7 @@ public interface StackRepository extends Repository<Stack> {
 
     Stack addCardToStack(String userID, String cardID);
 
-    Stack loadStack(String userID);
+    Stack getItemById(String userID);
 
     Stack loadFreeStack(String userID);
 

@@ -1,12 +1,12 @@
 package at.technikum.repository;
 
-import at.technikum.net.database.AbstractDBTable;
+import at.technikum.database.AbstractDBTable;
 import at.technikum.utils.card.ICard;
 import at.technikum.utils.card.service.CardServices;
 import at.technikum.model.CardHolderImpl;
 import at.technikum.model.repository.CardHolder;
 import at.technikum.model.repository.Player;
-import at.technikum.utils.tools.TextColor;
+import at.technikum.utils.TextColor;
 
 import java.sql.ResultSet;
 import java.sql.SQLException;
@@ -257,7 +257,7 @@ public class CardHolderRepositoryImpl extends AbstractDBTable implements CardHol
      * --> Liefert cardHolder Objekt by [cardHolderID]
      **/
     @Override
-    public CardHolder getCardHolderByID(String cardHolderID) {
+    public CardHolder getItemById(String cardHolderID) {
         this.parameter = new String[]{cardHolderID};
         this.setStatement("SELECT  *  FROM \"cardHolder\" WHERE cardHolder_id = ? ;", this.parameter);
         return this.cardHolderBuilder(this.result);
@@ -288,7 +288,7 @@ public class CardHolderRepositoryImpl extends AbstractDBTable implements CardHol
         //  System.out.println("INSERT CARDHOLDER: ");
         this.parameter = new String[]{holder.getCardHolderID(), holder.getHolderID(), holder.getCardID(), "" + holder.getNumber(), "" + holder.isLocked()};
         this.setStatement("INSERT INTO \"" + this.tableName + "\" (\"cardHolder_id\", holder_id, card_id, number, locked) VALUES(?,?,?,?,?);", this.parameter);
-        return getCardHolderByID(holder.getCardHolderID());
+        return getItemById(holder.getCardHolderID());
     }
 
     /**

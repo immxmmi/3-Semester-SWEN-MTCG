@@ -3,7 +3,7 @@ package at.technikum.model;
 import at.technikum.model.repository.IDeck;
 import at.technikum.model.repository.Player;
 import at.technikum.model.repository.Stack;
-import at.technikum.utils.tools.Tools;
+import at.technikum.utils.Tools;
 import com.google.gson.annotations.SerializedName;
 import lombok.Builder;
 import lombok.Getter;

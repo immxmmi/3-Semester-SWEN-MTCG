@@ -10,5 +10,5 @@ public interface DeckRepository extends Repository<IDeck> {
 
     DeckRepositoryImpl getInstance();
 
-    IDeck getDeckById(String userID);
+    IDeck getItemById(String userID);
 }

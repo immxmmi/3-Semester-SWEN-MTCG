@@ -1,6 +1,6 @@
 package at.technikum.repository;
 
-import at.technikum.net.database.AbstractDBTable;
+import at.technikum.database.AbstractDBTable;
 import at.technikum.model.repository.Stack;
 import at.technikum.model.StackImpl;
 import at.technikum.utils.card.service.CardServices;
@@ -27,11 +27,11 @@ public class StackRepositoryImpl extends AbstractDBTable implements StackReposit
     @Override
     public Stack addCardToStack(String userID, String cardID) {
         this.cardHolderServices.insertCardToHolder(userID, cardID, false);
-        return loadStack(userID);
+        return getItemById(userID);
     }
 
     @Override
-    public Stack loadStack(String userID) {
+    public Stack getItemById(String userID) {
 
         Stack currentStack = StackImpl.builder()
                 .userID(userID)

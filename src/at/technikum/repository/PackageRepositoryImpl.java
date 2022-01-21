@@ -1,6 +1,6 @@
 package at.technikum.repository;
 
-import at.technikum.net.database.AbstractDBTable;
+import at.technikum.database.AbstractDBTable;
 import at.technikum.model.repository.Package;
 import at.technikum.model.PackageImpl;
 import at.technikum.utils.card.ICard;
@@ -75,8 +75,8 @@ public class PackageRepositoryImpl extends AbstractDBTable implements PackageRep
         ArrayList<Package> packages = new ArrayList<>();
         ArrayList<String> packagesID = loadPackageIDList();
         for (String i : packagesID) {
-            getPackageByID(i);
-            packages.add(getPackageByID(i));
+            getItemById(i);
+            packages.add(getItemById(i));
         }
         return packages;
     }
@@ -129,7 +129,7 @@ public class PackageRepositoryImpl extends AbstractDBTable implements PackageRep
     }
 
     @Override
-    public Package getPackageByID(String id) {
+    public Package getItemById(String id) {
         this.parameter = new String[]{id};
         this.setStatement(
                 "SELECT * FROM " + this.tableName + " WHERE package_id = ? " + ";",
@@ -202,7 +202,7 @@ public class PackageRepositoryImpl extends AbstractDBTable implements PackageRep
                 , this.parameter
         );
 
-        return getPackageByID(currentPackage.getPackageID());
+        return getItemById(currentPackage.getPackageID());
     }
 
     @Override

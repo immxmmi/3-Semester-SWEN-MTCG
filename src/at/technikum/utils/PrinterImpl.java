@@ -1,13 +1,12 @@
 package at.technikum.utils;
 
+import at.technikum.logger.LoggerStatic;
 import at.technikum.model.repository.IDeck;
 import at.technikum.model.repository.Player;
 import at.technikum.model.repository.Profil;
 import at.technikum.model.repository.Stack;
 import at.technikum.utils.card.ICard;
 import at.technikum.utils.card.cardTypes.CardElement;
-import at.technikum.utils.tools.TextColor;
-import at.technikum.utils.tools.Tools;
 
 import java.util.ArrayList;
 import java.util.LinkedHashMap;
@@ -15,8 +14,9 @@ import java.util.LinkedHashMap;
 public class PrinterImpl extends Tools implements Printer {
 
 
+    LoggerStatic loggerStatic;
     public PrinterImpl(){
-
+        this.loggerStatic = LoggerStatic.getInstance();
     }
 
 
@@ -27,7 +27,8 @@ public class PrinterImpl extends Tools implements Printer {
     public void printStack(Stack currentStack) {
 
         if (currentStack == null) {
-            System.out.println(TextColor.ANSI_RED + "NO STACK" + TextColor.ANSI_RESET);
+            //System.out.println(TextColor.ANSI_RED + "NO STACK" + TextColor.ANSI_RESET);
+            loggerStatic.log("\nNO STACK\n");
         }
         printCards(currentStack.getStack(), "stack");
     }

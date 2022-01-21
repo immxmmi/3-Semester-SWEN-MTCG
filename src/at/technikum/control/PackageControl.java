@@ -1,28 +1,30 @@
 package at.technikum.control;
 
 import at.technikum.control.repository.Post;
+import at.technikum.logger.LoggerStatic;
 import at.technikum.model.repository.Package;
 import at.technikum.repository.PackageRepository;
 import at.technikum.repository.PackageRepositoryImpl;
 import at.technikum.serializer.PackageSerializer;
-import at.technikum.net.server.utils.request.RequestImpl;
-import at.technikum.net.server.utils.response.ResponseBuilderImpl;
-import at.technikum.net.server.utils.response.ResponseImpl;
+import at.technikum.server.utils.request.RequestImpl;
+import at.technikum.server.utils.response.ResponseBuilderImpl;
+import at.technikum.server.utils.response.ResponseImpl;
 import at.technikum.utils.card.cardTypes.CardElement;
 import at.technikum.utils.card.cardTypes.CardName;
 import at.technikum.utils.card.cardTypes.CardType;
 import at.technikum.utils.card.service.CardServices;
-import at.technikum.utils.tools.TextColor;
+import at.technikum.utils.TextColor;
 import com.google.gson.*;
 
 public class PackageControl implements Post {
 
 
     /** --> INSTANCE **/
-    TextColor textColor;
-    CardServices cardServices;
-    PackageRepository packageRepository;
-    PackageSerializer packageSerializer;
+    private TextColor textColor;
+    private CardServices cardServices;
+    private PackageRepository packageRepository;
+    private PackageSerializer packageSerializer;
+    private LoggerStatic loggerStatic;
 
 
     public PackageControl() {
@@ -30,11 +32,13 @@ public class PackageControl implements Post {
         this.packageSerializer = new PackageSerializer();
         this.cardServices = new CardServices();
         this.textColor = new TextColor();
+        this.loggerStatic = LoggerStatic.getInstance();
     }
 
     /** -> CREATE PACKAGE **/
     @Override
     public ResponseImpl post(RequestImpl requestImpl) {
+        loggerStatic.log("\nCREATE PACKAGE\n");
 
         /** --> WENN REQUEST LEER IST --> WENN AUTH LEER IST --> WENN USER NICHT EXISTIERT **/
         ResponseImpl responseImpl = new ResponseBuilderImpl().requestErrorHandler(requestImpl, true, true, true);
@@ -44,6 +48,7 @@ public class PackageControl implements Post {
 
         /** --> WENN USER KEIN ADMIN IST **/
         if (!requestImpl.getAuth().matches("admin-mtcgToken")) {
+            loggerStatic.log("\nNOT AUTH\n");
             System.out.println(this.textColor.ANSI_RED + "NOT AUTH" + this.textColor.ANSI_RESET);
             return new ResponseBuilderImpl().statusUnAuthorized(packageSerializer.message("NOT AUTH").toString());
         }
@@ -73,15 +78,17 @@ public class PackageControl implements Post {
         /** --> neu erstelltes Package in die Datenbank hinzufügen und nach der ID fragn **/
         String packageID = this.packageRepository.insertPackage(newPackage).getPackageID();
 
-        Package currentPackage = this.packageRepository.getPackageByID(packageID);
+        Package currentPackage = this.packageRepository.getItemById(packageID);
 
         /** -->  ERROR - MELDUNG USER NICHT GEFUNDEN **/
         if (currentPackage == null) {
-            System.out.println(this.textColor.ANSI_RED + "PACKAGE CREATED - ERROR" + this.textColor.ANSI_RESET);
+            //System.out.println(this.textColor.ANSI_RED + "PACKAGE CREATED - ERROR" + this.textColor.ANSI_RESET);
+            loggerStatic.log("\nPACKAGE CREATED - ERROR\n");
             return new ResponseBuilderImpl().statusMethodNotAllowed(packageSerializer.message("PACKAGE CREATED - ERROR").toString());
         }
 
-        System.out.println(this.textColor.ANSI_GREEN + "PACKAGE CREATED - OK" + this.textColor.ANSI_RESET);
+        //System.out.println(this.textColor.ANSI_GREEN + "PACKAGE CREATED - OK" + this.textColor.ANSI_RESET);
+        loggerStatic.log("\nPACKAGE CREATED - OK\n");
 
         /** --> STATUS OK **/
         JsonObject packages = this.packageSerializer.convertPackageToJson(currentPackage,true,false,false,false);
