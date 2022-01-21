@@ -1,6 +1,6 @@
 ﻿# 3-Semster-SWEN1-CardGame
  ## Installation
-  - git clone https://github.com/immxmmi/3-Semster-SWEN1-CardGame.git
+  - git clone https://github.com/immxmmi/3-Semester-SWEN-MTCG.git
 
 ## Funkitonen
     - Admin:
