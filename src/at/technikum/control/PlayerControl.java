@@ -5,14 +5,14 @@ import at.technikum.control.repository.Post;
 import at.technikum.logger.LoggerStatic;
 import at.technikum.model.repository.Player;
 import at.technikum.model.PlayerImpl;
-import at.technikum.repository.PlayerRepository;
-import at.technikum.repository.PlayerRepositoryImpl;
-import at.technikum.repository.ProfilRepository;
-import at.technikum.repository.ProfilRepositoryImpl;
+import at.technikum.handler.repository.PlayerHandler;
+import at.technikum.handler.PlayerHandlerImpl;
+import at.technikum.handler.repository.ProfilHandler;
+import at.technikum.handler.ProfilHandlerImpl;
 import at.technikum.serializer.PlayerSerializer;
-import at.technikum.server.utils.request.RequestImpl;
-import at.technikum.server.utils.response.ResponseBuilderImpl;
-import at.technikum.server.utils.response.ResponseImpl;
+import at.technikum.server.request.RequestImpl;
+import at.technikum.server.response.ResponseBuilderImpl;
+import at.technikum.server.response.ResponseImpl;
 import at.technikum.utils.Printer;
 import at.technikum.utils.PrinterImpl;
 import at.technikum.utils.TextColor;
@@ -29,16 +29,16 @@ public class PlayerControl implements Post, Get {
     private Gson gson;
     private Printer print;
     private TextColor textColor;
-    private PlayerRepository playerRepository;
+    private PlayerHandler playerHandler;
     private PlayerSerializer playerSerializer;
-    private ProfilRepository profilRepository;
+    private ProfilHandler profilHandler;
     private LoggerStatic loggerStatic;
 
     public PlayerControl(){
         this.gson = new Gson();
         this.textColor = new TextColor();
-        this.playerRepository = new PlayerRepositoryImpl();
-        this.profilRepository = new ProfilRepositoryImpl();
+        this.playerHandler = new PlayerHandlerImpl();
+        this.profilHandler = new ProfilHandlerImpl();
         this.playerSerializer = new PlayerSerializer();
         this.loggerStatic = LoggerStatic.getInstance();
         p = Pattern.compile("/users/([a-zA-Z]+)/?");
@@ -59,7 +59,7 @@ public class PlayerControl implements Post, Get {
         /** --> Erstellt ein Player Objekt **/
         Player player = gson.fromJson(requestImpl.getBody(), PlayerImpl.class);
         /** --> User versucht sich einzuloggen **/
-        Player currentPlayer = this.playerRepository.Login(player.getUsername(), player.getPassword());
+        Player currentPlayer = this.playerHandler.Login(player.getUsername(), player.getPassword());
 
         /** --> JSON OBJECT **/
         JsonObject jsonObject = playerSerializer.convertPlayerToJson(currentPlayer,true,true,false,false,false,false, false,false,false);
@@ -82,7 +82,7 @@ public class PlayerControl implements Post, Get {
         /** --> Erstellt ein Player Objekt **/
         Player newPlayer = gson.fromJson(requestImpl.getBody(), PlayerImpl.class);
         /** --> User versucht sich zu registrieren **/
-        Player currentPlayer = this.playerRepository.Register(newPlayer.getUsername() + "-mtcgToken", newPlayer.getUsername(), newPlayer.getPassword());
+        Player currentPlayer = this.playerHandler.Register(newPlayer.getUsername() + "-mtcgToken", newPlayer.getUsername(), newPlayer.getPassword());
 
         /** -->  ERROR - MELDUNG USER SCHON EXISTIERT **/
         if (currentPlayer == null) {
@@ -90,7 +90,7 @@ public class PlayerControl implements Post, Get {
         }
 
         /** --> Profil erstellen **/
-        this.profilRepository.createProfil(currentPlayer);
+        this.profilHandler.createProfil(currentPlayer);
         /** --> JSON OPJEKT **/
        JsonObject player = playerSerializer.convertPlayerToJson(currentPlayer,true,true,false,false,false,false,false, false,false);
 
@@ -111,7 +111,7 @@ public class PlayerControl implements Post, Get {
         }
 
         /** --> INSTANCE **/
-        Player currentPlayer = this.playerRepository.getItemById(requestImpl.getAuth());
+        Player currentPlayer = this.playerHandler.getItemById(requestImpl.getAuth());
 
         /** --> JSON OPJEKT **/
         JsonObject player = playerSerializer.convertPlayerToJson(currentPlayer,false,true,false,false,true,false,false, false,false);
@@ -134,8 +134,8 @@ public class PlayerControl implements Post, Get {
         /** --> INSTANCE **/
         //Player currentPlayer = this.playerRepository.getPlayerById(requestImpl.getAuth());
 
-        String list = playerRepository.getHighScoreList().toString();
-        print.printHighscoreList(playerRepository.getHighScoreList());
+        String list = playerHandler.getHighScoreList().toString();
+        print.printHighscoreList(playerHandler.getHighScoreList());
        // System.out.println(this.textColor.ANSI_GREEN + "LOADING FINISHED!" + this.textColor.ANSI_RESET);
         loggerStatic.log("\nLOADING FINISHED!\n");
         return new ResponseBuilderImpl().statusOK(playerSerializer.message(list).toString()); // TODO: 07.01.2022 HighScore Klasse

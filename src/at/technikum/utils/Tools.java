@@ -1,8 +1,7 @@
 package at.technikum.utils;
 
-import at.technikum.utils.TextColor;
-import at.technikum.utils.card.ICard;
-import at.technikum.utils.card.cardTypes.CardElement;
+import at.technikum.model.card.ICard;
+import at.technikum.model.card.cardTypes.CardElement;
 
 import java.math.BigInteger;
 import java.nio.charset.StandardCharsets;

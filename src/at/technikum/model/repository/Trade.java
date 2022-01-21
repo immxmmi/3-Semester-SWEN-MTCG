@@ -1,7 +1,7 @@
 package at.technikum.model.repository;
 
-import at.technikum.utils.card.ICard;
-import at.technikum.utils.card.cardTypes.CardType;
+import at.technikum.model.card.ICard;
+import at.technikum.model.card.cardTypes.CardType;
 
 public interface Trade {
 

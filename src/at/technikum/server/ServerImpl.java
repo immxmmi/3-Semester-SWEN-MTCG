@@ -1,6 +1,6 @@
 package at.technikum.server;
 
-import at.technikum.server.utils.socket.SocketImpl;
+import at.technikum.server.socket.SocketImpl;
 import at.technikum.utils.TextColor;
 import at.technikum.utils.Tools;
 import lombok.AllArgsConstructor;

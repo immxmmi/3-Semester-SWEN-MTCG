@@ -1,7 +1,7 @@
 package at.technikum.control.repository;
 
-import at.technikum.server.utils.request.RequestImpl;
-import at.technikum.server.utils.response.ResponseImpl;
+import at.technikum.server.request.RequestImpl;
+import at.technikum.server.response.ResponseImpl;
 
 public interface Put {
 

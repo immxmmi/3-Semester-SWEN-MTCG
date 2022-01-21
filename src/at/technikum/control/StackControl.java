@@ -3,14 +3,14 @@ package at.technikum.control;
 import at.technikum.control.repository.Get;
 import at.technikum.logger.LoggerStatic;
 import at.technikum.model.repository.Player;
-import at.technikum.repository.PlayerRepository;
-import at.technikum.repository.PlayerRepositoryImpl;
-import at.technikum.repository.StackRepository;
-import at.technikum.repository.StackRepositoryImpl;
+import at.technikum.handler.repository.PlayerHandler;
+import at.technikum.handler.PlayerHandlerImpl;
+import at.technikum.handler.repository.StackHandler;
+import at.technikum.handler.StackHandlerImpl;
 import at.technikum.serializer.StackSerializer;
-import at.technikum.server.utils.request.RequestImpl;
-import at.technikum.server.utils.response.ResponseBuilderImpl;
-import at.technikum.server.utils.response.ResponseImpl;
+import at.technikum.server.request.RequestImpl;
+import at.technikum.server.response.ResponseBuilderImpl;
+import at.technikum.server.response.ResponseImpl;
 import at.technikum.utils.Printer;
 import at.technikum.utils.PrinterImpl;
 import at.technikum.utils.TextColor;
@@ -18,17 +18,17 @@ import com.google.gson.JsonObject;
 
 public class StackControl implements Get {
     private TextColor textColor;
-    private StackRepository stackRepository;
+    private StackHandler stackHandler;
     private StackSerializer stackSerializer;
-    private PlayerRepository playerRepository;
+    private PlayerHandler playerHandler;
     private Printer print;
     private LoggerStatic loggerStatic;
 
     public StackControl(){
         this.textColor = new TextColor();
         this.print = new PrinterImpl();
-        this.playerRepository = new PlayerRepositoryImpl();
-        this.stackRepository = new StackRepositoryImpl();
+        this.playerHandler = new PlayerHandlerImpl();
+        this.stackHandler = new StackHandlerImpl();
         this.stackSerializer = new StackSerializer();
         this.loggerStatic = LoggerStatic.getInstance();
     }
@@ -44,7 +44,7 @@ public class StackControl implements Get {
         }
 
         /** --> INSTANCE **/
-        Player currentPlayer = this.playerRepository.getItemById(requestImpl.getAuth());
+        Player currentPlayer = this.playerHandler.getItemById(requestImpl.getAuth());
 
 
         this.print.printStack(currentPlayer.getStack());

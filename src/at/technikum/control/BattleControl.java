@@ -3,30 +3,30 @@ package at.technikum.control;
 import at.technikum.control.repository.Post;
 import at.technikum.logger.LoggerStatic;
 import at.technikum.model.repository.Battle;
-import at.technikum.repository.BattleRepository;
-import at.technikum.repository.BattleRepositoryImpl;
+import at.technikum.handler.repository.BattleHandler;
+import at.technikum.handler.BattleHandlerImpl;
 import at.technikum.serializer.BattleSerializer;
-import at.technikum.server.utils.request.RequestImpl;
-import at.technikum.server.utils.response.ResponseImpl;
-import at.technikum.server.utils.response.ResponseBuilderImpl;
+import at.technikum.server.request.RequestImpl;
+import at.technikum.server.response.ResponseImpl;
+import at.technikum.server.response.ResponseBuilderImpl;
 import at.technikum.model.repository.Player;
-import at.technikum.repository.PlayerRepository;
-import at.technikum.repository.PlayerRepositoryImpl;
+import at.technikum.handler.repository.PlayerHandler;
+import at.technikum.handler.PlayerHandlerImpl;
 import at.technikum.utils.TextColor;
 import com.google.gson.JsonObject;
 
 public class BattleControl implements Post {
 
     private TextColor textColor;
-    private PlayerRepository playerRepository;
-    private BattleRepository battleRepository;
+    private PlayerHandler playerHandler;
+    private BattleHandler battleHandler;
     private BattleSerializer battleSerializer;
     private LoggerStatic loggerStatic;
 
     public BattleControl() {
         this.textColor = new TextColor();
-        this.playerRepository = new PlayerRepositoryImpl();
-        this.battleRepository = new BattleRepositoryImpl();
+        this.playerHandler = new PlayerHandlerImpl();
+        this.battleHandler = new BattleHandlerImpl();
         this.battleSerializer = new BattleSerializer();
         this.loggerStatic = LoggerStatic.getInstance();
     }
@@ -42,7 +42,7 @@ public class BattleControl implements Post {
         }
 
         /** --> INSTANCE **/
-        Player currentPlayer = this.playerRepository.getItemById(requestImpl.getAuth());
+        Player currentPlayer = this.playerHandler.getItemById(requestImpl.getAuth());
 
         /** --> DECK - EMPTY **/
         if (currentPlayer.getDeck() == null) {
@@ -51,13 +51,13 @@ public class BattleControl implements Post {
             return new ResponseBuilderImpl().statusMethodNotAllowed("DECK EMPTY");
         }
 
-        Battle currentBattle = battleRepository.startBattle(currentPlayer);
+        Battle currentBattle = battleHandler.startBattle(currentPlayer);
         if(currentBattle == null){
             loggerStatic.log("\nBATTLE - SEARCHING ...\n");
             return new ResponseBuilderImpl().statusOK(battleSerializer.message("BATTLE - SEARCHING ...").toString());
         }
 
-        currentBattle = battleRepository.playGame(currentBattle);
+        currentBattle = battleHandler.playGame(currentBattle);
         JsonObject jsonObject = battleSerializer.convertBattleToJson(currentBattle,false,false,false,true,true,false);
 
         //System.out.println(this.textColor.ANSI_GREEN + "LOADING FINISHED!" + this.textColor.ANSI_RESET);

@@ -6,14 +6,14 @@ import at.technikum.logger.LoggerStatic;
 import at.technikum.model.repository.Player;
 import at.technikum.model.repository.Profil;
 import at.technikum.model.ProfilImpl;
-import at.technikum.repository.PlayerRepository;
-import at.technikum.repository.PlayerRepositoryImpl;
-import at.technikum.repository.ProfilRepository;
-import at.technikum.repository.ProfilRepositoryImpl;
+import at.technikum.handler.repository.PlayerHandler;
+import at.technikum.handler.PlayerHandlerImpl;
+import at.technikum.handler.repository.ProfilHandler;
+import at.technikum.handler.ProfilHandlerImpl;
 import at.technikum.serializer.ProfilSerializer;
-import at.technikum.server.utils.request.RequestImpl;
-import at.technikum.server.utils.response.ResponseBuilderImpl;
-import at.technikum.server.utils.response.ResponseImpl;
+import at.technikum.server.request.RequestImpl;
+import at.technikum.server.response.ResponseBuilderImpl;
+import at.technikum.server.response.ResponseImpl;
 import at.technikum.utils.Printer;
 import at.technikum.utils.PrinterImpl;
 import at.technikum.utils.TextColor;
@@ -25,8 +25,8 @@ public class ProfilControl implements Put,Get {
     private Gson gson;
     private Printer print;
     private TextColor textColor;
-    private PlayerRepository playerRepository;
-    private ProfilRepository profilRepository;
+    private PlayerHandler playerHandler;
+    private ProfilHandler profilHandler;
     private ProfilSerializer profilSerializer;
     private LoggerStatic loggerStatic;
 
@@ -34,8 +34,8 @@ public class ProfilControl implements Put,Get {
         this.gson = new Gson();
         this.print = new PrinterImpl();
         this.textColor = new TextColor();
-        this.playerRepository = new PlayerRepositoryImpl();
-        this.profilRepository = new ProfilRepositoryImpl();
+        this.playerHandler = new PlayerHandlerImpl();
+        this.profilHandler = new ProfilHandlerImpl();
         this.profilSerializer = new ProfilSerializer();
         this.loggerStatic = LoggerStatic.getInstance();
     }
@@ -53,7 +53,7 @@ public class ProfilControl implements Put,Get {
 
 
         /** --> INSTANCE **/
-        Player currentPlayer = this.playerRepository.getItemById(requestImpl.getAuth());
+        Player currentPlayer = this.playerHandler.getItemById(requestImpl.getAuth());
 
 
         /** -->  ERROR - MELDUNG USER NICHT AUTH **/
@@ -63,7 +63,7 @@ public class ProfilControl implements Put,Get {
             return new ResponseBuilderImpl().statusMethodNotAllowed(profilSerializer.message("User NOT AUTH").toString());
         }
 
-        Profil currentProfil = profilRepository.getItemById(currentPlayer.getUserID());
+        Profil currentProfil = profilHandler.getItemById(currentPlayer.getUserID());
         this.print.printPlayerInfo(currentProfil);
 
         //System.out.println(this.textColor.ANSI_GREEN + "LOADING FINISHED!" + this.textColor.ANSI_RESET);
@@ -86,7 +86,7 @@ public class ProfilControl implements Put,Get {
         }
 
         /** --> INSTANCE **/
-        Player currentPlayer = this.playerRepository.getItemById(requestImpl.getAuth());
+        Player currentPlayer = this.playerHandler.getItemById(requestImpl.getAuth());
 
         /** -->  ERROR - MELDUNG USER NICHT AUTH **/
         if (!requestImpl.getPath().contains(currentPlayer.getUsername())) {
@@ -101,10 +101,10 @@ public class ProfilControl implements Put,Get {
         profil.setUserID(currentPlayer.getUserID());
 
         /** -->  UPDATE: User fügt neue INFO zum ACCOUNT **/
-        profilRepository.updateProfil(profil);
+        profilHandler.updateProfil(profil);
 
         /** --> läd Profil neu von der Datenbank **/
-        Profil currentProfil = this.profilRepository.getItemById(currentPlayer.getUserID());
+        Profil currentProfil = this.profilHandler.getItemById(currentPlayer.getUserID());
 
         loggerStatic.log("\nLOADING FINISHED! \n");
         System.out.println(this.textColor.ANSI_GREEN + "LOADING FINISHED!" + this.textColor.ANSI_RESET);

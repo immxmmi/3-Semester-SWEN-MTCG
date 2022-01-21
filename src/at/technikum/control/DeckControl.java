@@ -4,14 +4,14 @@ import at.technikum.control.repository.Get;
 import at.technikum.control.repository.Put;
 import at.technikum.logger.LoggerStatic;
 import at.technikum.model.repository.Player;
-import at.technikum.repository.DeckRepository;
-import at.technikum.repository.DeckRepositoryImpl;
-import at.technikum.repository.PlayerRepository;
-import at.technikum.repository.PlayerRepositoryImpl;
+import at.technikum.handler.repository.DeckHandler;
+import at.technikum.handler.DeckHandlerImpl;
+import at.technikum.handler.repository.PlayerHandler;
+import at.technikum.handler.PlayerHandlerImpl;
 import at.technikum.serializer.DeckSerializer;
-import at.technikum.server.utils.request.RequestImpl;
-import at.technikum.server.utils.response.ResponseBuilderImpl;
-import at.technikum.server.utils.response.ResponseImpl;
+import at.technikum.server.request.RequestImpl;
+import at.technikum.server.response.ResponseBuilderImpl;
+import at.technikum.server.response.ResponseImpl;
 import at.technikum.utils.Printer;
 import at.technikum.utils.PrinterImpl;
 import at.technikum.utils.TextColor;
@@ -27,15 +27,15 @@ public class DeckControl implements Get, Put {
     private Printer print;
     private TextColor textColor;
     private DeckSerializer deckSerializer;
-    private DeckRepository deckRepository;
-    private PlayerRepository playerRepository;
+    private DeckHandler deckHandler;
+    private PlayerHandler playerHandler;
     private LoggerStatic loggerStatic;
 
     public DeckControl(){
         this.print = new PrinterImpl();
         this.textColor = new TextColor();
-        this.playerRepository = new PlayerRepositoryImpl();
-        this.deckRepository = new DeckRepositoryImpl();
+        this.playerHandler = new PlayerHandlerImpl();
+        this.deckHandler = new DeckHandlerImpl();
         this.deckSerializer = new DeckSerializer();
         this.loggerStatic = LoggerStatic.getInstance();
     }
@@ -51,7 +51,7 @@ public class DeckControl implements Get, Put {
             return responseImpl;
         }
         /** --> INSTANCE **/
-        Player currentPlayer = this.playerRepository.getItemById(requestImpl.getAuth());
+        Player currentPlayer = this.playerHandler.getItemById(requestImpl.getAuth());
 
         if (currentPlayer.getDeck() == null) {
            // System.out.println(textColor.ANSI_RED + "DECK EMPTY" + textColor.ANSI_RESET);
@@ -78,7 +78,7 @@ public class DeckControl implements Get, Put {
         }
 
         /** --> INSTANCE **/
-        Player currentPlayer = this.playerRepository.getItemById(requestImpl.getAuth());
+        Player currentPlayer = this.playerHandler.getItemById(requestImpl.getAuth());
 
         if (currentPlayer.getDeck() == null) {
             loggerStatic.log("\nDECK EMPTY\n");
@@ -121,11 +121,11 @@ public class DeckControl implements Get, Put {
         }
 
         /** --> INSTANCE **/
-        Player currentPlayer = this.playerRepository.getItemById(requestImpl.getAuth());
+        Player currentPlayer = this.playerHandler.getItemById(requestImpl.getAuth());
 
 
-        if (this.deckRepository.setNewDeck(newDeck, currentPlayer.getUserID())) {
-            currentPlayer = playerRepository.reloadAccount(currentPlayer);
+        if (this.deckHandler.setNewDeck(newDeck, currentPlayer.getUserID())) {
+            currentPlayer = playerHandler.reloadAccount(currentPlayer);
             loggerStatic.log("\nSET NEW DECK!\n");
           //  System.out.println(ANSI_GREEN + "SET NEW DECK!" + ANSI_RESET);
             /** --> JSON OBJECT **/

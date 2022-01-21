@@ -3,16 +3,16 @@ package at.technikum.control;
 import at.technikum.control.repository.Post;
 import at.technikum.logger.LoggerStatic;
 import at.technikum.model.repository.Package;
-import at.technikum.repository.PackageRepository;
-import at.technikum.repository.PackageRepositoryImpl;
+import at.technikum.handler.repository.PackageHandler;
+import at.technikum.handler.PackageHandlerImpl;
 import at.technikum.serializer.PackageSerializer;
-import at.technikum.server.utils.request.RequestImpl;
-import at.technikum.server.utils.response.ResponseBuilderImpl;
-import at.technikum.server.utils.response.ResponseImpl;
-import at.technikum.utils.card.cardTypes.CardElement;
-import at.technikum.utils.card.cardTypes.CardName;
-import at.technikum.utils.card.cardTypes.CardType;
-import at.technikum.utils.card.service.CardServices;
+import at.technikum.server.request.RequestImpl;
+import at.technikum.server.response.ResponseBuilderImpl;
+import at.technikum.server.response.ResponseImpl;
+import at.technikum.model.card.cardTypes.CardElement;
+import at.technikum.model.card.cardTypes.CardName;
+import at.technikum.model.card.cardTypes.CardType;
+import at.technikum.handler.CardServices;
 import at.technikum.utils.TextColor;
 import com.google.gson.*;
 
@@ -22,13 +22,13 @@ public class PackageControl implements Post {
     /** --> INSTANCE **/
     private TextColor textColor;
     private CardServices cardServices;
-    private PackageRepository packageRepository;
+    private PackageHandler packageHandler;
     private PackageSerializer packageSerializer;
     private LoggerStatic loggerStatic;
 
 
     public PackageControl() {
-        this.packageRepository = new PackageRepositoryImpl();
+        this.packageHandler = new PackageHandlerImpl();
         this.packageSerializer = new PackageSerializer();
         this.cardServices = new CardServices();
         this.textColor = new TextColor();
@@ -56,7 +56,7 @@ public class PackageControl implements Post {
 
 
         /** --> erstellet ein neues Package **/
-        Package newPackage = new PackageRepositoryImpl().getCurrentPackage();
+        Package newPackage = new PackageHandlerImpl().getCurrentPackage();
         /** --> Speichert den BODY in einem String **/
         String jsonString = requestImpl.getBody();
         /** --> wandelt den String in JSON-Element um **/
@@ -76,9 +76,9 @@ public class PackageControl implements Post {
         }
 
         /** --> neu erstelltes Package in die Datenbank hinzufügen und nach der ID fragn **/
-        String packageID = this.packageRepository.insertPackage(newPackage).getPackageID();
+        String packageID = this.packageHandler.insertPackage(newPackage).getPackageID();
 
-        Package currentPackage = this.packageRepository.getItemById(packageID);
+        Package currentPackage = this.packageHandler.getItemById(packageID);
 
         /** -->  ERROR - MELDUNG USER NICHT GEFUNDEN **/
         if (currentPackage == null) {

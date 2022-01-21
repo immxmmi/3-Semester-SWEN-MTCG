@@ -1,6 +1,6 @@
 package at.technikum.model.repository;
 
-import at.technikum.utils.card.ICard;
+import at.technikum.model.card.ICard;
 
 import java.util.ArrayList;
 

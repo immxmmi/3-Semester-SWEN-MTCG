@@ -1,14 +1,17 @@
 package at.technikum.control;
 
+import at.technikum.handler.repository.CardHolderHandler;
+import at.technikum.handler.repository.PlayerHandler;
+import at.technikum.handler.repository.TradeHandler;
 import at.technikum.logger.LoggerStatic;
 import at.technikum.model.repository.Player;
 import at.technikum.model.repository.Trade;
-import at.technikum.repository.*;
+import at.technikum.handler.*;
 import at.technikum.serializer.TradeSerializer;
-import at.technikum.server.utils.request.RequestImpl;
-import at.technikum.server.utils.response.ResponseBuilderImpl;
-import at.technikum.server.utils.response.ResponseImpl;
-import at.technikum.utils.card.cardTypes.CardType;
+import at.technikum.server.request.RequestImpl;
+import at.technikum.server.response.ResponseBuilderImpl;
+import at.technikum.server.response.ResponseImpl;
+import at.technikum.model.card.cardTypes.CardType;
 import at.technikum.utils.TextColor;
 import com.google.gson.Gson;
 import com.google.gson.JsonElement;
@@ -17,20 +20,20 @@ import com.google.gson.JsonParser;
 
 public class TradeControl {
 
-    private CardHolderRepository cardHolderRepository;
-    private PlayerRepository playerRepository;
+    private CardHolderHandler cardHolderHandler;
+    private PlayerHandler playerHandler;
     private TradeSerializer tradeSerializer;
     private TextColor textColor;
-    private TradeRepository trade;
+    private TradeHandler trade;
     private LoggerStatic loggerStatic;
     private Gson gson;
 
     public TradeControl(){
         this.tradeSerializer = new TradeSerializer();
-        this.cardHolderRepository = new CardHolderRepositoryImpl();
-        this.playerRepository = new PlayerRepositoryImpl();
+        this.cardHolderHandler = new CardHolderHandlerImpl();
+        this.playerHandler = new PlayerHandlerImpl();
         this.textColor = new TextColor();
-        this.trade = new TradeRepositoryImpl();
+        this.trade = new TradeHandlerImpl();
         this.gson = new Gson();
         this.loggerStatic = LoggerStatic.getInstance();
     }
@@ -47,7 +50,7 @@ public class TradeControl {
         /** --> userID -> Trading Liste **/
         String userID = requestImpl.getAuth();
         /** --> User CHECK **/
-        Player currentPlayer = this.playerRepository.getItemById(userID);
+        Player currentPlayer = this.playerHandler.getItemById(userID);
 
 
         if(trade.getAllTradeByUserID(currentPlayer.getUserID()).size() == 0){
@@ -76,7 +79,7 @@ public class TradeControl {
         String userID = requestImpl.getAuth();
 
         /** --> User CHECK **/
-        Player currentPlayer = this.playerRepository.getItemById(userID);
+        Player currentPlayer = this.playerHandler.getItemById(userID);
 
         /** --> Speichert den BODY in einem String **/
         String jsonString = requestImpl.getBody();
@@ -112,7 +115,7 @@ public class TradeControl {
         String userID = requestImpl.getAuth();
 
         /** --> User CHECK **/
-        Player currentPlayer = this.playerRepository.getItemById(userID);
+        Player currentPlayer = this.playerHandler.getItemById(userID);
 
         /** --> TRADE ID **/
         String tradeID = "T-" + requestImpl.getPath().split("/tradings/")[1];
@@ -139,7 +142,7 @@ public class TradeControl {
             return new ResponseBuilderImpl().statusUnAuthorized(tradeSerializer.message("NOT POSSIBLE TO TRADE").toString());
         }
 
-        cardHolderRepository.switchCardHolder(currentTrade.getUserID(),currentPlayer.getUserID(),currentTrade.getCard().getCardID(),cardID);
+        cardHolderHandler.switchCardHolder(currentTrade.getUserID(),currentPlayer.getUserID(),currentTrade.getCard().getCardID(),cardID);
 
         //System.out.println(textColor.ANSI_GREEN + "TRADE - SUCCESS" + textColor.ANSI_RESET);
         loggerStatic.log("\n TRADE SUCCESS\n");
@@ -158,7 +161,7 @@ public class TradeControl {
         /** --> userID -> Trading Liste **/
         String userID = requestImpl.getAuth();
         /** --> User CHECK **/
-        Player currentPlayer = this.playerRepository.getItemById(userID);
+        Player currentPlayer = this.playerHandler.getItemById(userID);
 
         String tradeID = "T-" + requestImpl.getPath().split("/tradings/")[1];
 

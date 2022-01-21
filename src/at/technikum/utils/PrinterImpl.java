@@ -5,8 +5,8 @@ import at.technikum.model.repository.IDeck;
 import at.technikum.model.repository.Player;
 import at.technikum.model.repository.Profil;
 import at.technikum.model.repository.Stack;
-import at.technikum.utils.card.ICard;
-import at.technikum.utils.card.cardTypes.CardElement;
+import at.technikum.model.card.ICard;
+import at.technikum.model.card.cardTypes.CardElement;
 
 import java.util.ArrayList;
 import java.util.LinkedHashMap;

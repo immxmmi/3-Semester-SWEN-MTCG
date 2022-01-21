@@ -1,11 +1,11 @@
 package at.technikum.server;
 
 import at.technikum.control.*;
-import at.technikum.server.utils.request.Request;
-import at.technikum.server.utils.request.RequestImpl;
-import at.technikum.server.utils.request.RequestParser;
-import at.technikum.server.utils.response.*;
-import at.technikum.server.utils.socket.SocketImpl;
+import at.technikum.server.request.Request;
+import at.technikum.server.request.RequestImpl;
+import at.technikum.server.request.RequestParser;
+import at.technikum.server.response.*;
+import at.technikum.server.socket.SocketImpl;
 import at.technikum.control.BattleControl;
 import lombok.Getter;
 

@@ -1,26 +1,28 @@
 package at.technikum.control;
 
 import at.technikum.control.repository.Post;
+import at.technikum.handler.repository.PackageHandler;
+import at.technikum.handler.repository.PlayerHandler;
+import at.technikum.handler.repository.StoreHandler;
 import at.technikum.logger.LoggerStatic;
 import at.technikum.model.repository.Player;
-import at.technikum.repository.*;
+import at.technikum.handler.*;
 import at.technikum.serializer.StoreSerializer;
-import at.technikum.server.utils.request.RequestImpl;
-import at.technikum.server.utils.response.ResponseBuilderImpl;
-import at.technikum.server.utils.response.ResponseImpl;
-import at.technikum.utils.TextColor;
+import at.technikum.server.request.RequestImpl;
+import at.technikum.server.response.ResponseBuilderImpl;
+import at.technikum.server.response.ResponseImpl;
 
 public class StoreControl implements Post {
 
-    private PackageRepository packageRepository;
-    private PlayerRepository playerRepository;
+    private PackageHandler packageHandler;
+    private PlayerHandler playerHandler;
     private StoreSerializer storeSerializer;
     private LoggerStatic loggerStatic;
 
     public StoreControl(){
         this.storeSerializer = new StoreSerializer();
-        this.packageRepository = new PackageRepositoryImpl();
-        this.playerRepository = new PlayerRepositoryImpl();
+        this.packageHandler = new PackageHandlerImpl();
+        this.playerHandler = new PlayerHandlerImpl();
         this.loggerStatic = LoggerStatic.getInstance();
     }
 
@@ -38,7 +40,7 @@ public class StoreControl implements Post {
         /** --> userID der das Package kauft **/
         String authKey = requestImpl.getAuth();
         /** --> User CHECK **/
-        Player currentPlayer = this.playerRepository.getItemById(authKey);
+        Player currentPlayer = this.playerHandler.getItemById(authKey);
 
         /** --> Holt eine Random Package ID **/
         /*String packageID = this.packageRepository.getRandomPackageID();
@@ -51,18 +53,18 @@ public class StoreControl implements Post {
         /** --> Holt Packages nach der Reihe **/
         String packageID = "";
 
-        if(this.packageRepository.loadPackageIDList().size() == 0){
+        if(this.packageHandler.loadPackageIDList().size() == 0){
             //System.out.println(TextColor.ANSI_RED + "(NO PACKAGE)" + TextColor.ANSI_RESET);
             loggerStatic.log("\n(NO PACKAGE)\n");
             return new ResponseBuilderImpl().statusMethodNotAllowed(storeSerializer.message("(NO PACKAGE)").toString());
         }
 
-        packageID = this.packageRepository.loadPackageIDList().get(0);
+        packageID = this.packageHandler.loadPackageIDList().get(0);
 
-        StoreRepository store = new StoreRepositoryImpl(currentPlayer);
+        StoreHandler store = new StoreHandlerImpl(currentPlayer);
         store.sellPackage(authKey, packageID);
 
-        if (this.packageRepository.getItemById(packageID) != null) {
+        if (this.packageHandler.getItemById(packageID) != null) {
             //System.out.println(TextColor.ANSI_RED + "NOT ENOUGH MONEY" + TextColor.ANSI_RESET);
             loggerStatic.log("\n(NO MONEY)\n");
             return new ResponseBuilderImpl().statusMethodNotAllowed(storeSerializer.message("(NO MONEY)").toString());
