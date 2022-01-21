@@ -1,5 +1,6 @@
 package at.technikum.model;
 
+import at.technikum.model.repository.Package;
 import at.technikum.utils.card.ICard;
 import com.google.gson.annotations.SerializedName;
 import lombok.Builder;

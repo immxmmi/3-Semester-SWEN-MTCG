@@ -1,9 +1,9 @@
 package at.technikum.utils;
 
-import at.technikum.model.IDeck;
-import at.technikum.model.Player;
-import at.technikum.model.Profil;
-import at.technikum.model.Stack;
+import at.technikum.model.repository.IDeck;
+import at.technikum.model.repository.Player;
+import at.technikum.model.repository.Profil;
+import at.technikum.model.repository.Stack;
 
 import java.util.LinkedHashMap;
 

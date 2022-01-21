@@ -1,11 +1,11 @@
 package at.technikum.serializer;
 
-import at.technikum.model.Package;
+import at.technikum.model.repository.Package;
 import at.technikum.model.PackageImpl;
 import com.google.gson.JsonObject;
 import com.google.gson.JsonParser;
 
-public class PackageSerializer extends Repository{
+public class PackageSerializer extends AbstractSerializer {
     public PackageSerializer() {
     }
 

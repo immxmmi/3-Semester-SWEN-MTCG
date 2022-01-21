@@ -1,11 +1,11 @@
 package at.technikum.serializer;
 
-import at.technikum.model.Profil;
+import at.technikum.model.repository.Profil;
 import at.technikum.model.ProfilImpl;
 import com.google.gson.JsonObject;
 import com.google.gson.JsonParser;
 
-public class ProfilSerializer extends Repository {
+public class ProfilSerializer extends AbstractSerializer {
 
     public ProfilSerializer(){}
 

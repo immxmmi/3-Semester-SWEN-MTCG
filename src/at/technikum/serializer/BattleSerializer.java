@@ -1,17 +1,10 @@
 package at.technikum.serializer;
 
-import at.technikum.model.Battle;
-import at.technikum.model.DeckImpl;
-import at.technikum.model.IDeck;
-import at.technikum.model.Player;
+import at.technikum.model.repository.Battle;
 import com.google.gson.JsonObject;
 import com.google.gson.JsonParser;
-import com.google.gson.annotations.SerializedName;
-import lombok.Builder;
-import lombok.Getter;
-import lombok.Setter;
 
-public class BattleSerializer extends Repository {
+public class BattleSerializer extends AbstractSerializer {
     public BattleSerializer() {
     }
 

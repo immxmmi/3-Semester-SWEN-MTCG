@@ -1,7 +1,7 @@
 package at.technikum.services;
 
 
-import at.technikum.model.Battle;
+import at.technikum.model.repository.Battle;
 import at.technikum.repository.PlayerRepository;
 import at.technikum.repository.PlayerRepositoryImpl;
 import at.technikum.utils.card.ICard;

@@ -1,11 +1,11 @@
 package at.technikum.serializer;
 
-import at.technikum.model.Stack;
+import at.technikum.model.repository.Stack;
 import at.technikum.model.StackImpl;
 import com.google.gson.JsonObject;
 import com.google.gson.JsonParser;
 
-public class StackSerializer extends Repository{
+public class StackSerializer extends AbstractSerializer {
     public StackSerializer() {
     }
 

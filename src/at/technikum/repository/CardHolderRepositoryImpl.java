@@ -1,11 +1,11 @@
 package at.technikum.repository;
 
-import at.technikum.database.AbstractDBTable;
+import at.technikum.net.database.AbstractDBTable;
 import at.technikum.utils.card.ICard;
 import at.technikum.utils.card.service.CardServices;
 import at.technikum.model.CardHolderImpl;
-import at.technikum.model.CardHolder;
-import at.technikum.model.Player;
+import at.technikum.model.repository.CardHolder;
+import at.technikum.model.repository.Player;
 import at.technikum.utils.tools.TextColor;
 
 import java.sql.ResultSet;

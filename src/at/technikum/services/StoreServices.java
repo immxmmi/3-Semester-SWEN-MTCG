@@ -1,7 +1,7 @@
 package at.technikum.services;
 
-import at.technikum.model.Player;
-import at.technikum.model.Store;
+import at.technikum.model.repository.Player;
+import at.technikum.model.repository.Store;
 import at.technikum.repository.PlayerRepository;
 import at.technikum.repository.PlayerRepositoryImpl;
 import at.technikum.utils.Printer;

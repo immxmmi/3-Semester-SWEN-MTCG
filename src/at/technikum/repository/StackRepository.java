@@ -1,6 +1,7 @@
 package at.technikum.repository;
 
-import at.technikum.model.Stack;
+import at.technikum.model.repository.Stack;
+import at.technikum.repository.util.Repository;
 
 public interface StackRepository extends Repository<Stack> {
 

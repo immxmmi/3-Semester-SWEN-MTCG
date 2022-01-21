@@ -1,18 +1,11 @@
 package at.technikum.serializer;
 
-import at.technikum.model.Store;
-import at.technikum.model.StoreImpl;
-import at.technikum.model.Trade;
+import at.technikum.model.repository.Trade;
 import at.technikum.model.TradeImpl;
-import at.technikum.utils.card.ICard;
-import at.technikum.utils.card.cardTypes.CardType;
 import com.google.gson.JsonObject;
 import com.google.gson.JsonParser;
-import com.google.gson.annotations.SerializedName;
-import lombok.Getter;
-import lombok.Setter;
 
-public class TradeSerializer extends Repository{
+public class TradeSerializer extends AbstractSerializer {
 
     /** Wandelt Java Package-Objekt in Json-Objekt um + filtert die einzelnen Elemente **/
     public JsonObject convertTradeToJson(Trade trade, boolean tradeID, boolean userID, boolean card, boolean minPower, boolean cardTyp){

@@ -1,7 +1,8 @@
 package at.technikum.repository;
 
-import at.technikum.model.Player;
-import at.technikum.model.Profil;
+import at.technikum.model.repository.Player;
+import at.technikum.model.repository.Profil;
+import at.technikum.repository.util.Repository;
 
 public interface ProfilRepository extends Repository<Profil> {
 

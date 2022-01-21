@@ -1,21 +1,21 @@
 package at.technikum.repository;
 
-import at.technikum.database.AbstractDBTable;
+import at.technikum.model.repository.Battle;
+import at.technikum.model.repository.Player;
+import at.technikum.net.database.AbstractDBTable;
 import at.technikum.model.*;
+import at.technikum.repository.util.Repository;
 import at.technikum.services.BattleLogic;
 import at.technikum.services.BattleLogicImpl;
-import at.technikum.utils.card.service.CardServices;
 
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.ArrayList;
 
-public class BattleRepositoryImpl extends AbstractDBTable implements BattleRepository {
+public class BattleRepositoryImpl extends AbstractDBTable implements BattleRepository, Repository<Battle> {
 
-    private CardServices cardServices = new CardServices();
-    private BattleLogic battleLogic = new BattleLogicImpl();
+
     private PlayerRepository playerRepository = new PlayerRepositoryImpl();
-    private CardHolderRepository cardHolderRepository = new CardHolderRepositoryImpl();
 
     /*******************************************************************/
     /**                          Constructor                          **/
@@ -24,8 +24,6 @@ public class BattleRepositoryImpl extends AbstractDBTable implements BattleRepos
         this.tableName = "battle";
     }
     /*******************************************************************/
-
-
 
     /*******************************************************************/
     /**                            BUILDER                            **/
@@ -58,12 +56,9 @@ public class BattleRepositoryImpl extends AbstractDBTable implements BattleRepos
     }
     /*******************************************************************/
 
-
-    private Battle checkSearching(Player player){
-        this.parameter = new String[]{player.getUserID(),"true"};
-        this.setStatement("SELECT * FROM " + this.tableName + " WHERE player1 = ? AND searching = ? ;", this.parameter);
-        return battleBuilder(this.result);
-    }
+    /*******************************************************************/
+    /**                            ACTION                             **/
+    /*******************************************************************/
 
     @Override
     public Battle startBattle(Player player) {
@@ -78,7 +73,7 @@ public class BattleRepositoryImpl extends AbstractDBTable implements BattleRepos
     @Override
     public Battle playGame(Battle currentBattle){
         BattleLogic battleLogic = new BattleLogicImpl();
-        return updateBattle(battleLogic.start(currentBattle));
+        return update(battleLogic.start(currentBattle));
     }
     private Battle createBattle(Player player) {
         if(getAllActiveBattle().size() > 0){
@@ -87,7 +82,7 @@ public class BattleRepositoryImpl extends AbstractDBTable implements BattleRepos
                     Battle updateBattle =  getAllActiveBattle().get(i);
                     updateBattle.setPlayer2(player);
                     updateBattle.setSearching(false);
-                    return updateBattle(updateBattle);
+                    return update(updateBattle);
                 }
             }
         }
@@ -97,19 +92,20 @@ public class BattleRepositoryImpl extends AbstractDBTable implements BattleRepos
                 .searching(true)
                 .build();
 
-        return insertBattle(newBattle);
+        return insert(newBattle);
     }
+    private Battle checkSearching(Player player){
+        this.parameter = new String[]{player.getUserID(),"true"};
+        this.setStatement("SELECT * FROM " + this.tableName + " WHERE player1 = ? AND searching = ? ;", this.parameter);
+        return battleBuilder(this.result);
+    }
+
+    /*******************************************************************/
 
     /*******************************************************************/
     /**                     Datenbank - Operatoren                    **/
     /*******************************************************************/
-    @Override
-    public Battle getBattleByID(String battleID){
-        this.parameter = new String[]{battleID};
-        this.setStatement("SELECT * FROM " + this.tableName + " WHERE battle_id = ? ;", this.parameter);
 
-        return battleBuilder(this.result);
-    }
     private ArrayList<Battle> getAllActiveBattle() {
         ArrayList<Battle> battles = new ArrayList<>();
         this.parameter = new String[]{"true"};
@@ -143,7 +139,15 @@ public class BattleRepositoryImpl extends AbstractDBTable implements BattleRepos
         this.closeStatement();
         return battles;
     }
-    private Battle insertBattle(Battle newBattle){
+    @Override
+    public Battle getItemById(String battleID){
+        this.parameter = new String[]{battleID};
+        this.setStatement("SELECT * FROM " + this.tableName + " WHERE battle_id = ? ;", this.parameter);
+
+        return battleBuilder(this.result);
+    }
+    @Override
+    public Battle insert(Battle newBattle){
         this.parameter = new String[]{
                 "B-"+this.tokenSupplier.get(),
                 newBattle.getPlayer1().getUserID(),
@@ -156,23 +160,25 @@ public class BattleRepositoryImpl extends AbstractDBTable implements BattleRepos
                 "INSERT INTO "+this.tableName+" (battle_id, player1, player2, round , winner, searching) values ( ?,?,?,?,?,?)",
                 this.parameter
         );
-        return getBattleByID(newBattle.getBattleID());
+        return this.getItemById(newBattle.getBattleID());
     }
-    private boolean deleteByID(Battle battle) {
-        // System.out.println("#DELETE ITEM");
-        this.parameter = new String[]{battle.getBattleID()};
-        this.setStatement("DELETE FROM " + this.tableName + " WHERE battle_id = ? ;", this.parameter);
-        this.closeStatement();
-        return true;
-    }
-    private Battle updateBattle(Battle newBattle) {
+    @Override
+    public Battle update(Battle newBattle) {
         String winner = "noWinner";
         if(newBattle.getWinner() != null){
             winner = newBattle.getWinner().getUserID();
         }
         this.parameter = new String[]{newBattle.getPlayer2().getUserID(),""+newBattle.getRound(),winner,""+newBattle.isSearching(), newBattle.getBattleID()};
         setStatement("UPDATE  \"" + this.tableName + "\" SET  player2 = ?, round = ?, winner = ?, searching = ? WHERE  battle_id= ?;", this.parameter);
-        return  getBattleByID(newBattle.getBattleID());
+        return  this.getItemById(newBattle.getBattleID());
+    }
+    @Override
+    public boolean delete(Battle battle) {
+        // System.out.println("#DELETE ITEM");
+        this.parameter = new String[]{battle.getBattleID()};
+        this.setStatement("DELETE FROM " + this.tableName + " WHERE battle_id = ? ;", this.parameter);
+        this.closeStatement();
+        return true;
     }
 
     /*******************************************************************/

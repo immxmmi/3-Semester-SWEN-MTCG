@@ -1,16 +1,11 @@
 package at.technikum.serializer;
 
-import at.technikum.model.Stack;
-import at.technikum.model.StackImpl;
-import at.technikum.model.Store;
+import at.technikum.model.repository.Store;
 import at.technikum.model.StoreImpl;
 import com.google.gson.JsonObject;
 import com.google.gson.JsonParser;
-import com.google.gson.annotations.SerializedName;
-import lombok.Getter;
-import lombok.Setter;
 
-public class StoreSerializer extends Repository{
+public class StoreSerializer extends AbstractSerializer {
     public StoreSerializer() {
     }
 

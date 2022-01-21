@@ -1,49 +1,46 @@
 package at.technikum.control;
 
-import at.technikum.model.Battle;
-import at.technikum.model.BattleImpl;
+import at.technikum.control.repository.Post;
+import at.technikum.model.repository.Battle;
 import at.technikum.repository.BattleRepository;
 import at.technikum.repository.BattleRepositoryImpl;
 import at.technikum.serializer.BattleSerializer;
-import at.technikum.server.utils.request.RequestImpl;
-import at.technikum.server.utils.response.ResponseImpl;
-import at.technikum.server.utils.response.ResponseBuilderImpl;
-import at.technikum.model.Player;
+import at.technikum.net.server.utils.request.RequestImpl;
+import at.technikum.net.server.utils.response.ResponseImpl;
+import at.technikum.net.server.utils.response.ResponseBuilderImpl;
+import at.technikum.model.repository.Player;
 import at.technikum.repository.PlayerRepository;
 import at.technikum.repository.PlayerRepositoryImpl;
 import at.technikum.utils.tools.TextColor;
 import com.google.gson.JsonObject;
 
-public class BattleControl {
+public class BattleControl implements Post {
 
-    PlayerRepository playerService;
+    TextColor textColor;
+    PlayerRepository playerRepository;
     BattleRepository battleRepository;
     BattleSerializer battleSerializer;
 
     public BattleControl() {
-
-        this.playerService = new PlayerRepositoryImpl();
+        this.textColor = new TextColor();
+        this.playerRepository = new PlayerRepositoryImpl();
         this.battleRepository = new BattleRepositoryImpl();
-        this.battleSerializer = new BattleSerializer();
         this.battleSerializer = new BattleSerializer();
     }
 
-    public ResponseImpl POST(RequestImpl requestImpl) {
+    /** START - Battle **/
+    public ResponseImpl post(RequestImpl requestImpl) {
 
-        /** --> WENN REQUEST LEER IST --> WENN AUTH LEER IST **/
-        ResponseImpl responseImpl = new ResponseBuilderImpl().requestErrorHandler(requestImpl, true, false);
+        /** --> WENN REQUEST LEER IST --> WENN AUTH LEER IST --> WENN USER NICHT EXISTIERT **/
+        ResponseImpl responseImpl = new ResponseBuilderImpl().requestErrorHandler(requestImpl, true, false, true);
         if (responseImpl != null) {
             return responseImpl;
         }
 
         /** --> INSTANCE **/
-        Player currentPlayer = this.playerService.getPlayerById(requestImpl.getAuth());
+        Player currentPlayer = this.playerRepository.getPlayerById(requestImpl.getAuth());
 
-        /** -->  ERROR - MELDUNG USER NICHT GEFUNDEN **/
-        if (currentPlayer == null) {
-            System.out.println(TextColor.ANSI_RED + "USER NOT FOUND" + TextColor.ANSI_RESET);
-            return new ResponseBuilderImpl().statusMethodNotAllowed("USER NOT FOUND");
-        }
+        /** --> DECK - EMPTY **/
         if (currentPlayer.getDeck() == null) {
             System.out.println(TextColor.ANSI_RED + "DECK EMPTY" + TextColor.ANSI_RESET);
             return new ResponseBuilderImpl().statusMethodNotAllowed("DECK EMPTY");
@@ -58,16 +55,8 @@ public class BattleControl {
         currentBattle = battleRepository.playGame(currentBattle);
         JsonObject jsonObject = battleSerializer.convertBattleToJson(currentBattle,false,false,false,true,true,false);
 
-        System.out.println(TextColor.ANSI_GREEN + "LOADING FINISHED!" + TextColor.ANSI_RESET);
+        System.out.println(this.textColor.ANSI_GREEN + "LOADING FINISHED!" + this.textColor.ANSI_RESET);
         return new ResponseBuilderImpl().statusOK(jsonObject.toString());
     }
-
-
-
-
-
-
-
-
 
 }

@@ -1,6 +1,6 @@
 package at.technikum.utils.card.service;
 
-import at.technikum.database.AbstractDBTable;
+import at.technikum.net.database.AbstractDBTable;
 import at.technikum.utils.card.ICard;
 import at.technikum.utils.card.cardTypes.*;
 import at.technikum.utils.tools.TextColor;

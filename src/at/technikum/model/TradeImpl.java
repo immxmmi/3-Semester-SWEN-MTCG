@@ -1,5 +1,6 @@
 package at.technikum.model;
 
+import at.technikum.model.repository.Trade;
 import at.technikum.utils.card.ICard;
 import at.technikum.utils.card.cardTypes.CardType;
 import com.google.gson.annotations.SerializedName;
@@ -8,7 +9,7 @@ import lombok.Getter;
 import lombok.Setter;
 
 @Builder (toBuilder = true)
-public class TradeImpl implements Trade{
+public class TradeImpl implements Trade {
 
     @Setter
     @Getter

@@ -1,11 +1,11 @@
 package at.technikum.serializer;
 
 import at.technikum.model.DeckImpl;
-import at.technikum.model.IDeck;
+import at.technikum.model.repository.IDeck;
 import com.google.gson.JsonObject;
 import com.google.gson.JsonParser;
 
-public class DeckSerializer extends Repository{
+public class DeckSerializer extends AbstractSerializer {
     public DeckSerializer() {
     }
 

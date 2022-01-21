@@ -1,6 +1,7 @@
 package at.technikum.repository;
 
-import at.technikum.model.Package;
+import at.technikum.model.repository.Package;
+import at.technikum.repository.util.Repository;
 
 import java.util.ArrayList;
 

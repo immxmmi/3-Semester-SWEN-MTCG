@@ -1,8 +1,9 @@
 package at.technikum.repository;
 
+import at.technikum.repository.util.Repository;
 import at.technikum.utils.card.ICard;
-import at.technikum.model.CardHolder;
-import at.technikum.model.Player;
+import at.technikum.model.repository.CardHolder;
+import at.technikum.model.repository.Player;
 
 import java.util.ArrayList;
 
@@ -49,5 +50,4 @@ public interface CardHolderRepository extends Repository<CardHolder> {
 
     void removeCardFromStack(String holderID, String cardID);
 
-    //  void deleteHolderByID(String packageID);
 }

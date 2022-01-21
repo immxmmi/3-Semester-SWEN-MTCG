@@ -1,6 +1,6 @@
 package at.technikum.repository;
 
-import at.technikum.model.Trade;
+import at.technikum.model.repository.Trade;
 import at.technikum.utils.card.cardTypes.CardType;
 
 import java.util.ArrayList;

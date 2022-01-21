@@ -1,12 +1,13 @@
 package at.technikum.control;
 
-import at.technikum.model.Package;
+import at.technikum.control.repository.Post;
+import at.technikum.model.repository.Package;
 import at.technikum.repository.PackageRepository;
 import at.technikum.repository.PackageRepositoryImpl;
 import at.technikum.serializer.PackageSerializer;
-import at.technikum.server.utils.request.RequestImpl;
-import at.technikum.server.utils.response.ResponseBuilderImpl;
-import at.technikum.server.utils.response.ResponseImpl;
+import at.technikum.net.server.utils.request.RequestImpl;
+import at.technikum.net.server.utils.response.ResponseBuilderImpl;
+import at.technikum.net.server.utils.response.ResponseImpl;
 import at.technikum.utils.card.cardTypes.CardElement;
 import at.technikum.utils.card.cardTypes.CardName;
 import at.technikum.utils.card.cardTypes.CardType;
@@ -14,37 +15,36 @@ import at.technikum.utils.card.service.CardServices;
 import at.technikum.utils.tools.TextColor;
 import com.google.gson.*;
 
-public class PackageControl {
+public class PackageControl implements Post {
 
 
     /** --> INSTANCE **/
+    TextColor textColor;
+    CardServices cardServices;
     PackageRepository packageRepository;
     PackageSerializer packageSerializer;
-    CardServices cardServices;
 
 
     public PackageControl() {
         this.packageRepository = new PackageRepositoryImpl();
         this.packageSerializer = new PackageSerializer();
         this.cardServices = new CardServices();
+        this.textColor = new TextColor();
     }
 
+    /** -> CREATE PACKAGE **/
+    @Override
     public ResponseImpl post(RequestImpl requestImpl) {
 
-        /** --> Wenn REQUEST Leer ist **/
-        if (requestImpl == null) {
-            System.out.println(TextColor.ANSI_RED + "PACKAGE CREATED - ERROR" + TextColor.ANSI_RESET);
-            return new ResponseBuilderImpl().statusBAD(packageSerializer.message("BAD REQUEST").toString());
-        }
-        /** --> WENN BODY LEER IST **/
-        if (requestImpl.getBody().equals("")) {
-            System.out.println(TextColor.ANSI_RED + "PACKAGE CREATED - ERROR" + TextColor.ANSI_RESET);
-            return new ResponseBuilderImpl().statusBAD(packageSerializer.message("BAD REQUEST").toString());
+        /** --> WENN REQUEST LEER IST --> WENN AUTH LEER IST --> WENN USER NICHT EXISTIERT **/
+        ResponseImpl responseImpl = new ResponseBuilderImpl().requestErrorHandler(requestImpl, true, true, true);
+        if (responseImpl != null) {
+            return responseImpl;
         }
 
-        /** --> WENN USER NICHT AUTH IST **/
+        /** --> WENN USER KEIN ADMIN IST **/
         if (!requestImpl.getAuth().matches("admin-mtcgToken")) {
-            System.out.println(TextColor.ANSI_RED + "NOT AUTH" + TextColor.ANSI_RESET);
+            System.out.println(this.textColor.ANSI_RED + "NOT AUTH" + this.textColor.ANSI_RESET);
             return new ResponseBuilderImpl().statusUnAuthorized(packageSerializer.message("NOT AUTH").toString());
         }
 
@@ -70,25 +70,23 @@ public class PackageControl {
             newPackage.getCards().add(this.cardServices.addCardByData(cardID, cardName, cardType, cardElement, cardPower));
         }
 
-
-
         /** --> neu erstelltes Package in die Datenbank hinzufügen und nach der ID fragn **/
-        String packageID = packageRepository.insertPackage(newPackage).getPackageID();
+        String packageID = this.packageRepository.insertPackage(newPackage).getPackageID();
 
-        Package currentPackage = packageRepository.getPackageByID(packageID);
+        Package currentPackage = this.packageRepository.getPackageByID(packageID);
 
         /** -->  ERROR - MELDUNG USER NICHT GEFUNDEN **/
         if (currentPackage == null) {
-            System.out.println(TextColor.ANSI_RED + "PACKAGE CREATED - ERROR" + TextColor.ANSI_RESET);
+            System.out.println(this.textColor.ANSI_RED + "PACKAGE CREATED - ERROR" + this.textColor.ANSI_RESET);
             return new ResponseBuilderImpl().statusMethodNotAllowed(packageSerializer.message("PACKAGE CREATED - ERROR").toString());
         }
 
-        System.out.println(TextColor.ANSI_GREEN + "PACKAGE CREATED - OK" + TextColor.ANSI_RESET);
+        System.out.println(this.textColor.ANSI_GREEN + "PACKAGE CREATED - OK" + this.textColor.ANSI_RESET);
 
         /** --> STATUS OK **/
-        JsonObject packages = packageSerializer.convertPackageToJson(currentPackage,true,false,false,false);
-        return new ResponseBuilderImpl().statusOK(packages.toString());
-    } // TODO: 10.01.2022 Fertig
+        JsonObject packages = this.packageSerializer.convertPackageToJson(currentPackage,true,false,false,false);
+        return new ResponseBuilderImpl().statusCreated(packages.toString());
+    }
 
 
 }

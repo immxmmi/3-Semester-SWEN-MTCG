@@ -1,8 +1,8 @@
 package at.technikum.repository;
 
-import at.technikum.database.AbstractDBTable;
-import at.technikum.model.Player;
-import at.technikum.model.Profil;
+import at.technikum.net.database.AbstractDBTable;
+import at.technikum.model.repository.Player;
+import at.technikum.model.repository.Profil;
 import at.technikum.model.ProfilImpl;
 import at.technikum.utils.tools.TextColor;
 

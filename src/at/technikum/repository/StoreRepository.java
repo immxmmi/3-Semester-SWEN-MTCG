@@ -1,7 +1,7 @@
 package at.technikum.repository;
 
-import at.technikum.model.Player;
-import at.technikum.model.Store;
+import at.technikum.model.repository.Player;
+import at.technikum.model.repository.Store;
 
 import java.util.ArrayList;
 

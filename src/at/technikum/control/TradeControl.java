@@ -1,12 +1,12 @@
 package at.technikum.control;
 
-import at.technikum.model.Player;
-import at.technikum.model.Trade;
+import at.technikum.model.repository.Player;
+import at.technikum.model.repository.Trade;
 import at.technikum.repository.*;
 import at.technikum.serializer.TradeSerializer;
-import at.technikum.server.utils.request.RequestImpl;
-import at.technikum.server.utils.response.ResponseBuilderImpl;
-import at.technikum.server.utils.response.ResponseImpl;
+import at.technikum.net.server.utils.request.RequestImpl;
+import at.technikum.net.server.utils.response.ResponseBuilderImpl;
+import at.technikum.net.server.utils.response.ResponseImpl;
 import at.technikum.utils.card.cardTypes.CardType;
 import at.technikum.utils.tools.TextColor;
 import com.google.gson.Gson;
@@ -15,8 +15,6 @@ import com.google.gson.JsonObject;
 import com.google.gson.JsonParser;
 
 public class TradeControl {
-
-
 
     private CardHolderRepository cardHolderRepository;
     private PlayerRepository playerRepository;
@@ -33,9 +31,6 @@ public class TradeControl {
         this.trade = new TradeRepositoryImpl();
         this.gson = new Gson();
     }
-
-
-
 
     /** --> Trading Liste anzeigen **/
     public ResponseImpl get(RequestImpl requestImpl){
@@ -69,22 +64,18 @@ public class TradeControl {
     /** --> Trade erstellen **/
     public ResponseImpl post(RequestImpl requestImpl){
 
-        /** --> WENN REQUEST LEER IST --> WENN BODY LEER IST **/
-        ResponseImpl responseImpl = new ResponseBuilderImpl().requestErrorHandler(requestImpl, true, true);
+        /** --> WENN REQUEST LEER IST --> WENN AUTH LEER IST --> WENN USER NICHT EXISTIERT **/
+        ResponseImpl responseImpl = new ResponseBuilderImpl().requestErrorHandler(requestImpl, true, true, true);
         if (responseImpl != null) {
             return responseImpl;
         }
-
 
         /** --> userID -> Trading Liste **/
         String userID = requestImpl.getAuth();
 
         /** --> User CHECK **/
         Player currentPlayer = this.playerRepository.getPlayerById(userID);
-        if (currentPlayer == null) {
-            System.out.println(textColor.ANSI_RED + "NO USER TOKEN" + textColor.ANSI_RESET);
-            return new ResponseBuilderImpl().statusNotFound(tradeSerializer.message("NO USER TOKEN").toString());
-        }
+
         /** --> Speichert den BODY in einem String **/
         String jsonString = requestImpl.getBody();
         /** --> wandelt den String in JSON-Element um **/
@@ -101,13 +92,14 @@ public class TradeControl {
 
         /** --> STATUS OK **/
         System.out.println(textColor.ANSI_GREEN + "CREATE TRADE SUCCESS" + textColor.ANSI_RESET);
-        return new ResponseBuilderImpl().statusOK(tradeSerializer.message("CREATE TRADE SUCCESS").toString());
+        return new ResponseBuilderImpl().statusCreated(tradeSerializer.message("CREATE TRADE SUCCESS").toString());
     }
 
     /** --> Trade **/
     public ResponseImpl trade(RequestImpl requestImpl){
-        /** --> WENN REQUEST LEER IST --> WENN BODY LEER IST **/
-        ResponseImpl responseImpl = new ResponseBuilderImpl().requestErrorHandler(requestImpl, true, true);
+
+        /** --> WENN REQUEST LEER IST --> WENN AUTH LEER IST --> WENN USER NICHT EXISTIERT **/
+        ResponseImpl responseImpl = new ResponseBuilderImpl().requestErrorHandler(requestImpl, true, true, true);
         if (responseImpl != null) {
             return responseImpl;
         }
@@ -117,10 +109,6 @@ public class TradeControl {
 
         /** --> User CHECK **/
         Player currentPlayer = this.playerRepository.getPlayerById(userID);
-        if (currentPlayer == null) {
-            System.out.println(TextColor.ANSI_RED + "NO USER TOKEN" + TextColor.ANSI_RESET);
-            return new ResponseBuilderImpl().statusNotFound(tradeSerializer.message("NO USER TOKEN").toString());
-        }
 
         /** --> TRADE ID **/
         String tradeID = "T-" + requestImpl.getPath().split("/tradings/")[1];
@@ -132,6 +120,7 @@ public class TradeControl {
             System.out.println(textColor.ANSI_RED + " TRADE NOT FOUND" + textColor.ANSI_RESET);
             return new ResponseBuilderImpl().statusNotFound(tradeSerializer.message(" TRADE NOT FOUND").toString());
         }
+
         /** --> TRADE CHECK - USER != TRADE OWNER**/
         if (trade.checkTradeOwner(userID, currentTrade)) {
             System.out.println(textColor.ANSI_RED + "NOT POSSIBLE TO TRADE" + textColor.ANSI_RESET);
@@ -143,29 +132,26 @@ public class TradeControl {
             return new ResponseBuilderImpl().statusUnAuthorized(tradeSerializer.message("NOT POSSIBLE TO TRADE").toString());
         }
 
-        cardHolderRepository.switchCardHolder(currentTrade.getUserID(),userID,currentTrade.getCard().getCardID(),cardID);
+        cardHolderRepository.switchCardHolder(currentTrade.getUserID(),currentPlayer.getUserID(),currentTrade.getCard().getCardID(),cardID);
 
         System.out.println(textColor.ANSI_GREEN + "TRADE - SUCCESS" + textColor.ANSI_RESET);
-        return new ResponseBuilderImpl().statusNotFound(tradeSerializer.message("TRADE - SUCCESS").toString());
+        return new ResponseBuilderImpl().statusOK(tradeSerializer.message("TRADE - SUCCESS").toString());
     }
 
     /** --> Löscht Trade **/
     public ResponseImpl delete(RequestImpl requestImpl) {
 
-        /** --> Wenn REQUEST Leer ist **/
-        if (requestImpl == null) {
-            System.out.println(textColor.ANSI_RED + "DELETE - ERROR " + textColor.ANSI_RESET);
-            return new ResponseBuilderImpl().statusBAD(tradeSerializer.message("BAD REQUEST").toString());
+        /** --> WENN REQUEST LEER IST --> WENN AUTH LEER IST --> WENN USER NICHT EXISTIERT **/
+        ResponseImpl responseImpl = new ResponseBuilderImpl().requestErrorHandler(requestImpl, true, false, true);
+        if (responseImpl != null) {
+            return responseImpl;
         }
 
         /** --> userID -> Trading Liste **/
         String userID = requestImpl.getAuth();
         /** --> User CHECK **/
         Player currentPlayer = this.playerRepository.getPlayerById(userID);
-        if (currentPlayer == null) {
-            System.out.println(TextColor.ANSI_RED + "NO USER TOKEN" + TextColor.ANSI_RESET);
-            return new ResponseBuilderImpl().statusNotFound(tradeSerializer.message("NO USER TOKEN").toString());
-        }
+
         String tradeID = "T-" + requestImpl.getPath().split("/tradings/")[1];
 
         Trade currentTrade = trade.getTradeByID(tradeID);
@@ -175,7 +161,7 @@ public class TradeControl {
         }
 
 
-        if (!trade.checkTradeOwner(userID, currentTrade)) {
+        if (!trade.checkTradeOwner(currentPlayer.getUserID(), currentTrade)) {
             System.out.println(textColor.ANSI_RED + "UNAUTHORIZED" + textColor.ANSI_RESET);
             return new ResponseBuilderImpl().statusUnAuthorized(tradeSerializer.message("UNAUTHORIZED").toString());
         }

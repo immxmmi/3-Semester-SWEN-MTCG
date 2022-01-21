@@ -1,7 +1,7 @@
 package at.technikum.repository;
 
-import at.technikum.database.AbstractDBTable;
-import at.technikum.model.Package;
+import at.technikum.net.database.AbstractDBTable;
+import at.technikum.model.repository.Package;
 import at.technikum.model.PackageImpl;
 import at.technikum.utils.card.ICard;
 

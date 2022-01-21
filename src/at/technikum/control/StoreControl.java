@@ -1,14 +1,15 @@
 package at.technikum.control;
 
-import at.technikum.model.Player;
+import at.technikum.control.repository.Post;
+import at.technikum.model.repository.Player;
 import at.technikum.repository.*;
 import at.technikum.serializer.StoreSerializer;
-import at.technikum.server.utils.request.RequestImpl;
-import at.technikum.server.utils.response.ResponseBuilderImpl;
-import at.technikum.server.utils.response.ResponseImpl;
+import at.technikum.net.server.utils.request.RequestImpl;
+import at.technikum.net.server.utils.response.ResponseBuilderImpl;
+import at.technikum.net.server.utils.response.ResponseImpl;
 import at.technikum.utils.tools.TextColor;
 
-public class StoreControl{
+public class StoreControl implements Post {
 
     private PackageRepository packageRepository;
     private PlayerRepository playerRepository;
@@ -21,27 +22,21 @@ public class StoreControl{
     }
 
 
-    /**
-     * --> Package kaufen
-     **/
-    public ResponseImpl buy(RequestImpl requestImpl) {
+    /*** --> Package kaufen **/
+    public ResponseImpl post(RequestImpl requestImpl) {
 
-        /** --> Wenn REQUEST Leer ist **/
-        if (requestImpl == null) {
-            System.out.println(TextColor.ANSI_RED + "PACKAGE BUY - ERROR" + TextColor.ANSI_RESET);
-            return new ResponseBuilderImpl().statusBAD(storeSerializer.message("BAD REQUEST").toString());
+        /** --> WENN REQUEST LEER IST --> WENN AUTH LEER IST --> WENN USER NICHT EXISTIERT **/
+        ResponseImpl responseImpl = new ResponseBuilderImpl().requestErrorHandler(requestImpl, true, false, true);
+        if (responseImpl != null) {
+            return responseImpl;
         }
-
 
 
         /** --> userID der das Package kauft **/
         String authKey = requestImpl.getAuth();
         /** --> User CHECK **/
         Player currentPlayer = this.playerRepository.getPlayerById(authKey);
-        if (currentPlayer == null) {
-            System.out.println(TextColor.ANSI_RED + "NO USER TOKEN" + TextColor.ANSI_RESET);
-            return new ResponseBuilderImpl().statusNotFound(storeSerializer.message("NO USER TOKEN").toString());
-        }
+
         /** --> Holt eine Random Package ID **/
         /*String packageID = this.packageRepository.getRandomPackageID();
         if (packageID.equals("0")) {

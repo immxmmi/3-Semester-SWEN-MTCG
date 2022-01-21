@@ -1,12 +1,14 @@
 package at.technikum.model;
 
+import at.technikum.model.repository.Battle;
+import at.technikum.model.repository.Player;
 import com.google.gson.annotations.SerializedName;
 import lombok.Builder;
 import lombok.Getter;
 import lombok.Setter;
 
 @Builder (toBuilder = true)
-public class BattleImpl implements Battle{
+public class BattleImpl implements Battle {
 
     @Getter
     @Setter

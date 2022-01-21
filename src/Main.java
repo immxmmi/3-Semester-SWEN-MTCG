@@ -1,4 +1,4 @@
-import at.technikum.server.ServerImpl;
+import at.technikum.net.server.ServerImpl;
 import at.technikum.utils.logger.LoggerStatic;
 
 public class Main {

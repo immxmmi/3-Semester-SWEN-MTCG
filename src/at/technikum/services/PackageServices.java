@@ -1,6 +1,6 @@
 package at.technikum.services;
 
-import at.technikum.model.Package;
+import at.technikum.model.repository.Package;
 import at.technikum.model.PackageImpl;
 import at.technikum.repository.StoreRepository;
 import at.technikum.repository.StoreRepositoryImpl;

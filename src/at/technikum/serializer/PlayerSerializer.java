@@ -1,11 +1,11 @@
 package at.technikum.serializer;
 
-import at.technikum.model.Player;
+import at.technikum.model.repository.Player;
 import at.technikum.model.PlayerImpl;
 import com.google.gson.JsonObject;
 import com.google.gson.JsonParser;
 
-public class PlayerSerializer extends Repository{
+public class PlayerSerializer extends AbstractSerializer {
     public PlayerSerializer() {
     }
 

@@ -1,7 +1,7 @@
 package at.technikum.repository;
 
-import at.technikum.database.AbstractDBTable;
-import at.technikum.model.Stack;
+import at.technikum.net.database.AbstractDBTable;
+import at.technikum.model.repository.Stack;
 import at.technikum.model.StackImpl;
 import at.technikum.utils.card.service.CardServices;
 import at.technikum.utils.card.service.ICardServices;

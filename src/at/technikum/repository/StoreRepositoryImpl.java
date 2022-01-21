@@ -1,12 +1,11 @@
 package at.technikum.repository;
 
-import at.technikum.database.AbstractDBTable;
-import at.technikum.model.Player;
-import at.technikum.model.Store;
+import at.technikum.net.database.AbstractDBTable;
+import at.technikum.model.repository.Player;
+import at.technikum.model.repository.Store;
 import at.technikum.model.StoreImpl;
 import at.technikum.utils.Printer;
 import at.technikum.utils.PrinterImpl;
-import at.technikum.utils.card.ICard;
 import at.technikum.utils.card.service.CardServices;
 
 import java.sql.ResultSet;
