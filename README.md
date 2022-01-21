@@ -73,7 +73,7 @@
 
 ## Starten
     - 1.Schritt: Git
-       -  git clone https://github.com/immxmmi/card.git
+       -  git clone https://github.com/immxmmi/3-Semester-SWEN-MTCG.git
        
     - 2.Schritt: Datenbank Einrichten - Postgres
        * Um das Spiel zum laufen zu bringen wird eine Datenbank benötigt.
@@ -88,7 +88,7 @@
         
     - 3.Schritt: Server starten
         - Klasse Main - function main() ausführen.
-        - Server hört STANDART auf den Port:10001 IP: 127.0.0.1 oder localhost max 5 Client können sich verbinden.
+        - Server hört auf den Port:10001 IP: 127.0.0.1 oder localhost max 5 Client können sich verbinden.
         - Es ist möglich den PORT IP und CLIENT anzahl zu verändern im main  
 
  
