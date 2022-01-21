@@ -164,4 +164,22 @@ alter table trade
 create unique index trading_trading_id_uindex
     on trade (trade_id);
 
+create table battle
+(
+    battle_id text not null
+        constraint battle_pk
+            primary key,
+    player1   text not null,
+    player2   text,
+    round     text,
+    winner    text,
+    searching text
+);
+
+alter table battle
+    owner to swe1user;
+
+create unique index battle_battle_id_uindex
+    on battle (battle_id);
+
 
