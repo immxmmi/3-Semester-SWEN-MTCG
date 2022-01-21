@@ -96,7 +96,7 @@ public class PlayerControl implements Post, Get {
 
         /** --> STATUS OK **/
         loggerStatic.log("\n REGISTER SUCCESS\n");
-        return new ResponseBuilderImpl().statusOK(player.toString());
+        return new ResponseBuilderImpl().statusCreated(player.toString());
     }
 
     /*** --> STATUS**/
