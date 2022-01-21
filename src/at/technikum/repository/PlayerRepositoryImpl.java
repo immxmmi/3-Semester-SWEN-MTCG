@@ -1,11 +1,11 @@
 package at.technikum.repository;
 
-import at.technikum.net.database.AbstractDBTable;
+import at.technikum.database.AbstractDBTable;
 import at.technikum.model.repository.Player;
 import at.technikum.model.PlayerImpl;
 import at.technikum.model.repository.Profil;
 import at.technikum.model.ProfilImpl;
-import at.technikum.utils.tools.TextColor;
+import at.technikum.utils.TextColor;
 import lombok.Getter;
 
 import java.sql.ResultSet;
@@ -167,7 +167,7 @@ public class PlayerRepositoryImpl extends AbstractDBTable implements PlayerRepos
     @Override
     public Player reloadAccount(Player currentPlayer) {
         this.update(currentPlayer);
-        return getPlayerById(currentPlayer.getUserID());
+        return this.getItemById(currentPlayer.getUserID());
     }
 
     @Override
@@ -239,8 +239,8 @@ public class PlayerRepositoryImpl extends AbstractDBTable implements PlayerRepos
     }
     @Override
     public Player loadPlayerStackDeck(Player currentPlayer) {
-        currentPlayer.setDeck(this.deckService.getDeckById(currentPlayer.getUserID()));
-        currentPlayer.setStack(this.stackService.loadStack(currentPlayer.getUserID()));
+        currentPlayer.setDeck(this.deckService.getItemById(currentPlayer.getUserID()));
+        currentPlayer.setStack(this.stackService.getItemById(currentPlayer.getUserID()));
         currentPlayer.setFreeStack(this.stackService.loadFreeStack(currentPlayer.getUserID()));
         return currentPlayer;
     }
@@ -278,7 +278,7 @@ public class PlayerRepositoryImpl extends AbstractDBTable implements PlayerRepos
     }
 
     @Override
-    public Player getPlayerById(String id) {
+    public Player getItemById(String id) {
         this.parameter = new String[]{id};
         this.setStatement(
                 "SELECT * FROM " + this.tableName + " WHERE user_id = ? " + ";",
@@ -328,7 +328,7 @@ public class PlayerRepositoryImpl extends AbstractDBTable implements PlayerRepos
                 .build();
 
         //this.playerInfoService.setInfo(playerInfo);
-        return getPlayerById(newPlayer.getUserID());
+        return this.getItemById(newPlayer.getUserID());
     }
 
     @Override
@@ -355,7 +355,7 @@ public class PlayerRepositoryImpl extends AbstractDBTable implements PlayerRepos
                 , this.parameter
         );
 
-        return getPlayerById(currentPlayer.getUserID());
+        return this.getItemById(currentPlayer.getUserID());
     }
 
     @Override
@@ -363,7 +363,7 @@ public class PlayerRepositoryImpl extends AbstractDBTable implements PlayerRepos
     public boolean delete(Player currentPlayer) {
         //System.out.println(ANSI_BLUE + "#DELETE:" + ANSI_RESET);
         this.parameter = new String[]{};
-        if (getPlayerById(currentPlayer.getUserID()) == null) {
+        if (this.getItemById(currentPlayer.getUserID()) == null) {
             return false;
         }
         stopSession(currentPlayer);
@@ -378,15 +378,15 @@ public class PlayerRepositoryImpl extends AbstractDBTable implements PlayerRepos
         // System.out.println("#DELETE:");
         Player currentPlayer;
         this.parameter = new String[]{};
-        if (getPlayerById(userID) == null) {
+        if (this.getItemById(userID) == null) {
             return false;
         } else {
-            currentPlayer = getPlayerById(userID);
+            currentPlayer = this.getItemById(userID);
         }
 
         this.stopSession(currentPlayer);
-        this.playerInfoService.delete(playerInfoService.getProfilByID(currentPlayer.getUserID()));
-        this.deckService.delete(deckService.getDeckById(currentPlayer.getUserID()));
+        this.playerInfoService.delete(playerInfoService.getItemById(currentPlayer.getUserID()));
+        this.deckService.delete(deckService.getItemById(currentPlayer.getUserID()));
         this.cardHolderServices.deleteAllUserCards(currentPlayer);
 
 

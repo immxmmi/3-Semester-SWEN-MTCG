@@ -10,5 +10,5 @@ public interface ProfilRepository extends Repository<Profil> {
 
     boolean createProfil(Player currentPlayer);
 
-    Profil getProfilByID(String userID);
+    Profil getItemById(String userID);
 }

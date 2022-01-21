@@ -38,7 +38,7 @@ public interface CardHolderRepository extends Repository<CardHolder> {
 
     CardHolder getCardHolder(String holderID, String cardID);
 
-    CardHolder getCardHolderByID(String cardHolderID);
+    CardHolder getItemById(String cardHolderID);
 
     CardHolderRepositoryImpl getInstance();
 

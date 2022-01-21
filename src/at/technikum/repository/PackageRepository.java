@@ -18,7 +18,7 @@ public interface PackageRepository extends Repository<Package> {
 
     String getRandomPackageID();
 
-    Package getPackageByID(String id);
+    Package getItemById(String id);
 
     Package insertPackage(Package newPackage);
 

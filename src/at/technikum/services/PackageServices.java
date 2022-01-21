@@ -10,8 +10,8 @@ import at.technikum.repository.CardHolderRepositoryImpl;
 import at.technikum.repository.CardHolderRepository;
 import at.technikum.repository.PackageRepository;
 import at.technikum.repository.PackageRepositoryImpl;
-import at.technikum.utils.tools.TextColor;
-import at.technikum.utils.tools.Tools;
+import at.technikum.utils.TextColor;
+import at.technikum.utils.Tools;
 
 import java.util.ArrayList;
 

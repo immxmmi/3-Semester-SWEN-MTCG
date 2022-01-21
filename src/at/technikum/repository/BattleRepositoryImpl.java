@@ -2,7 +2,7 @@ package at.technikum.repository;
 
 import at.technikum.model.repository.Battle;
 import at.technikum.model.repository.Player;
-import at.technikum.net.database.AbstractDBTable;
+import at.technikum.database.AbstractDBTable;
 import at.technikum.model.*;
 import at.technikum.repository.util.Repository;
 import at.technikum.services.BattleLogic;
@@ -33,13 +33,13 @@ public class BattleRepositoryImpl extends AbstractDBTable implements BattleRepos
             if (result.next()) {
                 Player player2 = null;
                 if(!result.getString("player2").equals("null")){
-                    player2 = playerRepository.getPlayerById(result.getString("player2"));
+                    player2 = playerRepository.getItemById(result.getString("player2"));
                 }
                 Battle battle = BattleImpl.builder()
                         .battleID(result.getString("battle_id"))
-                        .player1(playerRepository.getPlayerById(result.getString("player1")))
+                        .player1(playerRepository.getItemById(result.getString("player1")))
                         .player2(player2)
-                        .winner(playerRepository.getPlayerById(result.getString("winner")))
+                        .winner(playerRepository.getItemById(result.getString("winner")))
                         .round(convertToInt(result.getString("round")))
                         .searching(convertToBoolean(result.getString("searching")))
                         .build();
@@ -114,12 +114,12 @@ public class BattleRepositoryImpl extends AbstractDBTable implements BattleRepos
         try {
             while (this.result.next()) {
                 String battleID = result.getString("battle_id");
-                Player player1 = playerRepository.getPlayerById(result.getString("player1"));
+                Player player1 = playerRepository.getItemById(result.getString("player1"));
                 Player player2 = null;
                 if(!result.getString("player2").equals("null")){
-                    player2 = playerRepository.getPlayerById(result.getString("player2"));
+                    player2 = playerRepository.getItemById(result.getString("player2"));
                 }
-                Player winner = playerRepository.getPlayerById(result.getString("winner"));
+                Player winner = playerRepository.getItemById(result.getString("winner"));
                 int round = convertToInt(result.getString("round"));
                 Boolean searching = convertToBoolean(result.getString("searching"));
 

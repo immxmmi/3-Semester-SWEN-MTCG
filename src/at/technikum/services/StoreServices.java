@@ -145,7 +145,7 @@ public class StoreServices {
 
                 System.out.println(
                         "##|" + count +
-                                "|" + seller.getPlayerById(i.getSellerID()).getUsername() + "               " +
+                                "|" + seller.getItemById(i.getSellerID()).getUsername() + "               " +
                                 "|" + card.getCardById(i.getItemID()).getCardName() + "               " +
                                 "|   " + i.getPrice() + "   " +
                                 //"|"+i.getTimeStamp()+"      |"

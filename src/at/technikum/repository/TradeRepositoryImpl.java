@@ -2,7 +2,7 @@ package at.technikum.repository;
 
 import at.technikum.model.repository.CardHolder;
 import at.technikum.model.repository.Trade;
-import at.technikum.net.database.AbstractDBTable;
+import at.technikum.database.AbstractDBTable;
 import at.technikum.model.*;
 import at.technikum.utils.card.ICard;
 import at.technikum.utils.card.cardTypes.CardType;

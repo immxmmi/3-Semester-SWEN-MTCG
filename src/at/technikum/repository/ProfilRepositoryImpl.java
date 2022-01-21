@@ -1,10 +1,10 @@
 package at.technikum.repository;
 
-import at.technikum.net.database.AbstractDBTable;
+import at.technikum.database.AbstractDBTable;
 import at.technikum.model.repository.Player;
 import at.technikum.model.repository.Profil;
 import at.technikum.model.ProfilImpl;
-import at.technikum.utils.tools.TextColor;
+import at.technikum.utils.TextColor;
 
 import java.sql.ResultSet;
 import java.sql.SQLException;
@@ -52,18 +52,18 @@ public class ProfilRepositoryImpl extends AbstractDBTable implements ProfilRepos
 
     @Override
     public Profil updateProfil(Profil playerInfo) {
-        if (this.getProfilByID(playerInfo.getUserID()) == null) {
+        if (this.getItemById(playerInfo.getUserID()) == null) {
             this.insert(playerInfo);
         } else {
             this.update(playerInfo);
         }
-        return getProfilByID(playerInfo.getUserID());
+        return getItemById(playerInfo.getUserID());
     }
 
     @Override
     public boolean createProfil(Player currentPlayer){
         PlayerRepository playerRepository = new PlayerRepositoryImpl();
-        if(playerRepository.getPlayerById(currentPlayer.getUserID()) == null){
+        if(playerRepository.getItemById(currentPlayer.getUserID()) == null){
             return false;
         }
         Profil profil = ProfilImpl.builder()
@@ -79,7 +79,7 @@ public class ProfilRepositoryImpl extends AbstractDBTable implements ProfilRepos
      * GET PLAYER INFO BY ID
      **/
     @Override
-    public Profil getProfilByID(String userID) {
+    public Profil getItemById(String userID) {
         this.parameter = new String[]{userID};
         this.setStatement(
                 "SELECT * FROM " + this.tableName + " WHERE user_id = ? " + ";",
@@ -105,7 +105,7 @@ public class ProfilRepositoryImpl extends AbstractDBTable implements ProfilRepos
         };
         this.setStatement("INSERT INTO " + this.tableName + " (user_id,name,bio,image)VALUES(?,?,?,?);", this.parameter);
 
-        return getProfilByID(item.getUserID());
+        return getItemById(item.getUserID());
     }
 
     /**
@@ -131,7 +131,7 @@ public class ProfilRepositoryImpl extends AbstractDBTable implements ProfilRepos
                 , this.parameter
         );
 
-        return getProfilByID(item.getUserID());
+        return getItemById(item.getUserID());
     }
 
     /**
@@ -141,7 +141,7 @@ public class ProfilRepositoryImpl extends AbstractDBTable implements ProfilRepos
     public boolean delete(Profil item) {
         //System.out.println(ANSI_BLUE + "#DELETE:" + ANSI_RESET);
         this.parameter = new String[]{};
-        if (getProfilByID(item.getUserID()) == null) {
+        if (getItemById(item.getUserID()) == null) {
             return false;
         }
         this.setStatement("DELETE FROM " + this.tableName +

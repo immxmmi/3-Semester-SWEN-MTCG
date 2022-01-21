@@ -8,9 +8,9 @@ import at.technikum.utils.card.ICard;
 import at.technikum.utils.card.cardTypes.CardElement;
 import at.technikum.utils.card.cardTypes.CardName;
 import at.technikum.utils.card.cardTypes.CardType;
-import at.technikum.utils.logger.LoggerStatic;
-import at.technikum.utils.tools.TextColor;
-import at.technikum.utils.tools.Tools;
+import at.technikum.logger.LoggerStatic;
+import at.technikum.utils.TextColor;
+import at.technikum.utils.Tools;
 
 import java.util.Collections;
 import java.util.List;

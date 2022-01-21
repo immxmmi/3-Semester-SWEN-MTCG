@@ -6,8 +6,6 @@ import at.technikum.model.repository.Profil;
 import at.technikum.model.repository.Stack;
 import at.technikum.utils.card.ICard;
 import at.technikum.utils.card.cardTypes.CardElement;
-import at.technikum.utils.tools.TextColor;
-import at.technikum.utils.tools.Tools;
 
 import java.util.ArrayList;
 import java.util.LinkedHashMap;

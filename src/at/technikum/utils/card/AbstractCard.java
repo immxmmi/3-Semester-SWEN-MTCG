@@ -2,7 +2,6 @@ package at.technikum.utils.card;
 
 import at.technikum.utils.card.cardTypes.CardElement;
 import at.technikum.utils.card.cardTypes.CardName;
-import at.technikum.utils.tools.Tools;
 import com.google.gson.annotations.SerializedName;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
