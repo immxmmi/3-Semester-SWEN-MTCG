@@ -17,7 +17,7 @@ public class TradeHandlerImpl extends AbstractDBTable implements TradeHandler {
 
 
 
-    private CardServices cardServices = new CardServices();
+    private CardHandler cardHandler = new CardHandler();
     private CardHolderHandler cardHolderHandler = new CardHolderHandlerImpl();
 
     /*******************************************************************/
@@ -40,7 +40,7 @@ public class TradeHandlerImpl extends AbstractDBTable implements TradeHandler {
                 Trade trade = (Trade) TradeImpl.builder()
                         .tradeID(result.getString("trade_id"))
                         .userID(result.getString("user_id"))
-                        .card(cardServices.getCardById(result.getString("card_id")))
+                        .card(cardHandler.getCardById(result.getString("card_id")))
                         .cardTyp(CardType.valueOf(result.getString("card_typ")))
                         .minPower(convertToDouble(result.getString("card_min_power")))
                         .build();
@@ -60,7 +60,7 @@ public class TradeHandlerImpl extends AbstractDBTable implements TradeHandler {
 
 
     private boolean checkCardByID(String cardID){
-        if(cardServices.getCardById(cardID) == null){
+        if(cardHandler.getCardById(cardID) == null){
             return false;
         }
         return true;
@@ -76,7 +76,7 @@ public class TradeHandlerImpl extends AbstractDBTable implements TradeHandler {
 
     @Override
     public boolean checkTradeRequirement(Trade trade, String cardID){
-        ICard card = cardServices.getCardById(cardID);
+        ICard card = cardHandler.getCardById(cardID);
         if(trade.getMinPower() > card.getCardPower()){
             return false;
         }
@@ -143,7 +143,7 @@ public class TradeHandlerImpl extends AbstractDBTable implements TradeHandler {
         try {
             while (this.result.next()) {
                String tradeID = result.getString("trade_id");
-               ICard card = cardServices.getCardById(result.getString("card_id"));
+               ICard card = cardHandler.getCardById(result.getString("card_id"));
                CardType cardType = CardType.valueOf(result.getString("card_typ"));
                Double minPower = convertToDouble(result.getString("card_min_power"));
                Trade trade = TradeImpl.builder()

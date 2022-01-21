@@ -2,6 +2,7 @@ package at.technikum.handler;
 
 import at.technikum.database.AbstractDBTable;
 import at.technikum.handler.repository.*;
+import at.technikum.logger.LoggerStatic;
 import at.technikum.model.repository.Player;
 import at.technikum.model.PlayerImpl;
 import at.technikum.model.repository.Profil;
@@ -21,11 +22,11 @@ public class PlayerHandlerImpl extends AbstractDBTable implements PlayerHandler 
     public static Player currentPlayer;
     private String sessionToken = "";
 
-
     private CardHolderHandler cardHolderServices;
     private ProfilHandler playerInfoService;
     private StackHandler stackService;
     private DeckHandler deckService;
+    private LoggerStatic loggerStatic;
 
     /*******************************************************************/
     /**                          Constructor                          **/
@@ -37,6 +38,7 @@ public class PlayerHandlerImpl extends AbstractDBTable implements PlayerHandler 
         this.playerInfoService = new ProfilHandlerImpl();
         this.stackService = new StackHandlerImpl();
         this.deckService = new DeckHandlerImpl();
+        this.loggerStatic = LoggerStatic.getInstance();
     }
     /*******************************************************************/
 
@@ -82,7 +84,8 @@ public class PlayerHandlerImpl extends AbstractDBTable implements PlayerHandler 
 
         if (this.currentPlayer != null) {
             if(authorizePassword(this.currentPlayer.getPassword(),password) == false){
-                    System.out.println(TextColor.ANSI_RED + "ERROR - Password is wrong! " + TextColor.ANSI_RESET);
+                loggerStatic.log("ERROR - Password is wrong! ");
+                   // System.out.println(TextColor.ANSI_RED + "ERROR - Password is wrong! " + TextColor.ANSI_RESET);
                 return null;
             }
 
@@ -105,7 +108,8 @@ public class PlayerHandlerImpl extends AbstractDBTable implements PlayerHandler 
             id = "U-" + this.tokenSupplier.get();
         }
         if (getPlayerByUsername(username) != null) {
-            System.out.println(TextColor.ANSI_RED + "Username exist already" + TextColor.ANSI_RESET);
+            loggerStatic.log("Username exist already");
+            //System.out.println(TextColor.ANSI_RED + "Username exist already" + TextColor.ANSI_RESET);
             return null;
         }
         Player newPlayer = PlayerImpl.builder()

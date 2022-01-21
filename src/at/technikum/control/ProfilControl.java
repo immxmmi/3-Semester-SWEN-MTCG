@@ -107,7 +107,7 @@ public class ProfilControl implements Put,Get {
         Profil currentProfil = this.profilHandler.getItemById(currentPlayer.getUserID());
 
         loggerStatic.log("\nLOADING FINISHED! \n");
-        System.out.println(this.textColor.ANSI_GREEN + "LOADING FINISHED!" + this.textColor.ANSI_RESET);
+        //System.out.println(this.textColor.ANSI_GREEN + "LOADING FINISHED!" + this.textColor.ANSI_RESET);
         /** --> JSON OBJECT **/
         JsonObject jsonObject = profilSerializer.convertProfilToJson(currentProfil,true,true,true,true);
         /** --> STATUS OK **/

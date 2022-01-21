@@ -12,7 +12,7 @@ import at.technikum.server.response.ResponseImpl;
 import at.technikum.model.card.cardTypes.CardElement;
 import at.technikum.model.card.cardTypes.CardName;
 import at.technikum.model.card.cardTypes.CardType;
-import at.technikum.handler.CardServices;
+import at.technikum.handler.CardHandler;
 import at.technikum.utils.TextColor;
 import com.google.gson.*;
 
@@ -21,7 +21,7 @@ public class PackageControl implements Post {
 
     /** --> INSTANCE **/
     private TextColor textColor;
-    private CardServices cardServices;
+    private CardHandler cardHandler;
     private PackageHandler packageHandler;
     private PackageSerializer packageSerializer;
     private LoggerStatic loggerStatic;
@@ -30,7 +30,7 @@ public class PackageControl implements Post {
     public PackageControl() {
         this.packageHandler = new PackageHandlerImpl();
         this.packageSerializer = new PackageSerializer();
-        this.cardServices = new CardServices();
+        this.cardHandler = new CardHandler();
         this.textColor = new TextColor();
         this.loggerStatic = LoggerStatic.getInstance();
     }
@@ -69,10 +69,10 @@ public class PackageControl implements Post {
             JsonObject cardObject = element.getAsJsonObject();
             String cardID = "C-" + cardObject.get("Id").getAsString();
             CardName cardName = CardName.valueOf(cardObject.get("Name").getAsString());
-            CardElement cardElement = this.cardServices.filterCardElement(cardName);
-            CardType cardType = this.cardServices.filterCardType(cardName);
+            CardElement cardElement = this.cardHandler.filterCardElement(cardName);
+            CardType cardType = this.cardHandler.filterCardType(cardName);
             float cardPower = cardObject.get("Damage").getAsFloat();
-            newPackage.getCards().add(this.cardServices.addCardByData(cardID, cardName, cardType, cardElement, cardPower));
+            newPackage.getCards().add(this.cardHandler.addCardByData(cardID, cardName, cardType, cardElement, cardPower));
         }
 
         /** --> neu erstelltes Package in die Datenbank hinzufügen und nach der ID fragn **/

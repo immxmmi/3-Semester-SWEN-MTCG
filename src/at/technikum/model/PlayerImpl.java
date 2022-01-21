@@ -1,6 +1,6 @@
 package at.technikum.model;
 
-import at.technikum.model.repository.IDeck;
+import at.technikum.model.repository.Deck;
 import at.technikum.model.repository.Player;
 import at.technikum.model.repository.Stack;
 import at.technikum.utils.Tools;
@@ -62,7 +62,7 @@ public class PlayerImpl extends Tools implements Player {
     @Getter
     @Setter
     @SerializedName("deck")
-    private IDeck deck;
+    private Deck deck;
 
 
 }

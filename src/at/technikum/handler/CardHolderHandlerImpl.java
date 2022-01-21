@@ -71,7 +71,7 @@ public class CardHolderHandlerImpl extends AbstractDBTable implements CardHolder
     public ArrayList<ICard> loadCardsByHolderID(String holderID) {
         this.parameter = new String[]{holderID};
         ArrayList<ICard> cards = new ArrayList<>();
-        CardServices card = new CardServices();
+        CardHandler card = new CardHandler();
 
         this.setStatement("SELECT  *  FROM \"cardHolder\" WHERE holder_id = ? ;", this.parameter);
 
@@ -97,7 +97,7 @@ public class CardHolderHandlerImpl extends AbstractDBTable implements CardHolder
     public ArrayList<ICard> loadUnlockedCardsByHolderID(String holderID) {
         this.parameter = new String[]{holderID, "" + false};
         ArrayList<ICard> cards = new ArrayList<>();
-        CardServices card = new CardServices();
+        CardHandler card = new CardHandler();
 
         this.setStatement("SELECT  *  FROM \"cardHolder\" WHERE holder_id = ? AND locked = ? ;", this.parameter);
 

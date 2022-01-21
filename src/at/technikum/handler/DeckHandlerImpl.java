@@ -4,7 +4,7 @@ import at.technikum.database.AbstractDBTable;
 import at.technikum.handler.repository.CardHolderHandler;
 import at.technikum.handler.repository.DeckHandler;
 import at.technikum.model.DeckImpl;
-import at.technikum.model.repository.IDeck;
+import at.technikum.model.repository.Deck;
 import at.technikum.model.card.ICard;
 import at.technikum.utils.TextColor;
 
@@ -16,7 +16,7 @@ import java.util.List;
 public class DeckHandlerImpl extends AbstractDBTable implements DeckHandler {
 
     CardHolderHandler cardHolderServices;
-    ICardServices cardServices;
+    ICardHandler cardServices;
     private static DeckHandlerImpl instance;
 
     /*******************************************************************/
@@ -25,7 +25,7 @@ public class DeckHandlerImpl extends AbstractDBTable implements DeckHandler {
     public DeckHandlerImpl() {
         this.tableName = "deck";
         this.cardHolderServices = new CardHolderHandlerImpl();
-        this.cardServices = new CardServices();
+        this.cardServices = new CardHandler();
     }
     /*******************************************************************/
 
@@ -33,7 +33,7 @@ public class DeckHandlerImpl extends AbstractDBTable implements DeckHandler {
     /*******************************************************************/
     /**                            Builder                            **/
     /*******************************************************************/
-    private IDeck deckBuilder(ResultSet result) {
+    private Deck deckBuilder(ResultSet result) {
         try {
             if (result.next()) {
                 ArrayList<String> currentCardIDs = new ArrayList<>();
@@ -51,7 +51,7 @@ public class DeckHandlerImpl extends AbstractDBTable implements DeckHandler {
                 currentDeck.add(this.cardServices.getCardById(currentCardIDs.get(3)));
 
 
-                IDeck deck = DeckImpl.builder()
+                Deck deck = DeckImpl.builder()
                         .userID(userID)
                         .deckList(currentDeck)
                         .cardIDs(currentCardIDs)
@@ -96,13 +96,13 @@ public class DeckHandlerImpl extends AbstractDBTable implements DeckHandler {
             return false;
         }
 
-        IDeck oldDeck = getItemById(holderID);
+        Deck oldDeck = getItemById(holderID);
         boolean createNewDeck = false;
         if (oldDeck == null) {
             createNewDeck = true;
         }
 
-        IDeck currentDeck = DeckImpl.builder()
+        Deck currentDeck = DeckImpl.builder()
                 .userID(holderID)
                 .cardIDs(newDeck)
                 .build();
@@ -122,7 +122,7 @@ public class DeckHandlerImpl extends AbstractDBTable implements DeckHandler {
         return true;
     }
 
-    private void lockeCards(ArrayList<String> newDeck, IDeck oldDeck) {
+    private void lockeCards(ArrayList<String> newDeck, Deck oldDeck) {
         for (int i = 0; i < newDeck.size(); i++) {
             if (oldDeck != null) {
                 this.cardHolderServices.updateLocked(this.cardHolderServices.getCardHolder(oldDeck.getUserID(), oldDeck.getDeckList().get(i).getCardID()), false);
@@ -140,7 +140,7 @@ public class DeckHandlerImpl extends AbstractDBTable implements DeckHandler {
     }
 
     @Override
-    public IDeck getItemById(String userID) {
+    public Deck getItemById(String userID) {
         this.parameter = new String[]{userID};
 
         this.setStatement(
@@ -151,7 +151,7 @@ public class DeckHandlerImpl extends AbstractDBTable implements DeckHandler {
     }
 
     @Override
-    public IDeck insert(IDeck item) {
+    public Deck insert(Deck item) {
 
         String userID = item.getUserID();
 
@@ -169,7 +169,7 @@ public class DeckHandlerImpl extends AbstractDBTable implements DeckHandler {
     }
 
     @Override
-    public IDeck update(IDeck item) {
+    public Deck update(Deck item) {
 
         String userID = item.getUserID();
 
@@ -186,7 +186,7 @@ public class DeckHandlerImpl extends AbstractDBTable implements DeckHandler {
     }
 
     @Override
-    public boolean delete(IDeck item) {
+    public boolean delete(Deck item) {
         //System.out.println(ANSI_BLUE + "#DELETE:" + ANSI_RESET);
         this.parameter = new String[]{};
         String userID = item.getUserID();

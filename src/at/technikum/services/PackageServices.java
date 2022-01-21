@@ -5,7 +5,7 @@ import at.technikum.model.PackageImpl;
 import at.technikum.handler.repository.StoreHandler;
 import at.technikum.handler.StoreHandlerImpl;
 import at.technikum.model.card.ICard;
-import at.technikum.handler.CardServices;
+import at.technikum.handler.CardHandler;
 import at.technikum.handler.CardHolderHandlerImpl;
 import at.technikum.handler.repository.CardHolderHandler;
 import at.technikum.handler.repository.PackageHandler;
@@ -43,7 +43,7 @@ public class PackageServices extends Tools {
     /*******************************************************************/
     private void PackageFactory() {
         System.out.println("#CREATE NEW PACKAGE");
-        CardServices cardList = new CardServices();
+        CardHandler cardList = new CardHandler();
         ICard card;
         CardHolderHandler holder = new CardHolderHandlerImpl();
         StoreHandler store = new StoreHandlerImpl(null);

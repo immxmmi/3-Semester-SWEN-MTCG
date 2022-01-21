@@ -1,6 +1,6 @@
 package at.technikum.model;
 
-import at.technikum.model.repository.IDeck;
+import at.technikum.model.repository.Deck;
 import at.technikum.model.card.ICard;
 import com.google.gson.annotations.SerializedName;
 import lombok.Builder;
@@ -11,7 +11,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 @Builder(toBuilder = true)
-public class DeckImpl implements IDeck {
+public class DeckImpl implements Deck {
     @Getter
     @Setter
     @SerializedName("userID")

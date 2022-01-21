@@ -40,9 +40,7 @@ public class BattleLogicImpl extends Tools implements BattleLogic {
 
         do{
             loggerStatic.log("ROUND:" + round);
-            System.out.println("ROUND: " + round);
-            System.out.println(deckA.size());
-            System.out.println(deckB.size());
+            //System.out.println("ROUND: " + round);
             randomA = randomNumber(0, deckA.size());
             randomB = randomNumber(0, deckB.size());
             cardA = deckA.get(randomA);
@@ -77,7 +75,7 @@ public class BattleLogicImpl extends Tools implements BattleLogic {
             round ++;
         }while(round < 100);
 
-        System.out.println("\n" + TextColor.ANSI_PURPLE + "WINNER : ");
+
 
 
         battle.setRound(round);
@@ -95,6 +93,9 @@ public class BattleLogicImpl extends Tools implements BattleLogic {
         }
 
 
+        //System.out.println("\n" + TextColor.ANSI_PURPLE + "WINNER : " + battle.getWinner());
+        loggerStatic.log("\nWINNER : " + battle.getWinner());
+
         playerService.update(battle.getPlayer1());
         playerService.update(battle.getPlayer2());
         return battle;
@@ -102,74 +103,78 @@ public class BattleLogicImpl extends Tools implements BattleLogic {
 
 
     private void round(ICard CardA, ICard CardB) {
+        String msg = "PlayerA: " + CardA.getCardName() + "(" + CardA.getCardPower() + ")" + "VS PlayerB: " + CardB.getCardName() + "(" + CardB.getCardPower() + ")";
+        loggerStatic.log(msg);
+                /**
         System.out.print(TextColor.ANSI_BLUE + "PlayerA: ");
         System.out.print(CardA.getCardName() + "(" + CardA.getCardPower() + ")");
         System.out.print(" vs ");
         System.out.print("PlayerB: ");
         System.out.print(CardB.getCardName() + "(" + CardB.getCardPower() + ")");
         System.out.println(TextColor.ANSI_RESET);
+                 **/
     }
 
     private ICard rules(ICard CardA, ICard CardB) {
 
 
         if(CardA.getCardName() == CardName.Dragon && CardB.getCardName() == CardName.Goblin){
-            System.out.println("Goblins are too afraid of Dragons to attack.");
+            //System.out.println("Goblins are too afraid of Dragons to attack.");
             loggerStatic.log("Goblins are too afraid of Dragons to attack.");
             return CardA;
         }
         if(CardB.getCardName() == CardName.Dragon && CardA.getCardName() == CardName.Goblin){
-            System.out.println("Goblins are too afraid of Dragons to attack.");
+            //System.out.println("Goblins are too afraid of Dragons to attack.");
             loggerStatic.log("Goblins are too afraid of Dragons to attack.");
             return CardB;
         }
 
         if(CardA.getCardName() == CardName.Wizzard && CardB.getCardName() == CardName.Ork){
-            System.out.println("Wizzard can control Orks so they are not able to damage them.");
+            //System.out.println("Wizzard can control Orks so they are not able to damage them.");
             loggerStatic.log("Wizzard can control Orks so they are not able to damage them.");
             return CardA;
         }
         if(CardB.getCardName() == CardName.Wizzard && CardA.getCardName() == CardName.Ork){
-            System.out.println("Wizzard can control Orks so they are not able to damage them.");
+            //System.out.println("Wizzard can control Orks so they are not able to damage them.");
             loggerStatic.log("Wizzard can control Orks so they are not able to damage them.");
             return CardB;
         }
 
         if(CardA.getCardName() == CardName.Kraken && CardB.getCardType() == CardType.SPELL){
-            System.out.println("The Kraken is immune against spells.");
+            //System.out.println("The Kraken is immune against spells.");
             loggerStatic.log("The Kraken is immune against spells.");
             return CardA;
         }
         if(CardB.getCardName() == CardName.Kraken && CardA.getCardType() == CardType.SPELL){
-            System.out.println("The Kraken is immune against spells.");
+            //System.out.println("The Kraken is immune against spells.");
             loggerStatic.log("The Kraken is immune against spells.");
             return CardB;
         }
 
         if(CardA.getCardName() == CardName.FireElf && CardB.getCardName() == CardName.Dragon){
-            System.out.println("The FireElves know Dragons since they were little and can evade their attacks.");
+            //System.out.println("The FireElves know Dragons since they were little and can evade their attacks.");
             loggerStatic.log("The FireElves know Dragons since they were little and can evade their attacks.");
             return CardA;
         }
         if(CardB.getCardName() == CardName.FireElf && CardA.getCardName() == CardName.Dragon){
-            System.out.println("The FireElves know Dragons since they were little and can evade their attacks.");
+            //System.out.println("The FireElves know Dragons since they were little and can evade their attacks.");
             loggerStatic.log("The FireElves know Dragons since they were little and can evade their attacks.");
             return CardB;
         }
 
         if(CardA.getCardName() == CardName.WaterSpell && CardB.getCardName() == CardName.Knight){
-            System.out.println("The armor of Knights is so heavy that WaterSpells make them drown them instantly.");
+            //System.out.println("The armor of Knights is so heavy that WaterSpells make them drown them instantly.");
             loggerStatic.log("The armor of Knights is so heavy that WaterSpells make them drown them instantly.");
             return CardA;
         }
         if(CardB.getCardName() == CardName.WaterSpell && CardA.getCardName() == CardName.Knight){
-            System.out.println("The armor of Knights is so heavy that WaterSpells make them drown them instantly.");
+            //System.out.println("The armor of Knights is so heavy that WaterSpells make them drown them instantly.");
             loggerStatic.log("The armor of Knights is so heavy that WaterSpells make them drown them instantly.");
             return CardB;
         }
 
         if(CardA.getCardElement() == CardElement.WATER && CardB.getCardElement() == CardElement.FIRE){
-            System.out.println("water -> fire");
+            //System.out.println("water -> fire");
             loggerStatic.log("water -> fire");
             if((CardA.getCardPower()*2) > (CardB.getCardPower()/2)){
                 return CardA;
@@ -180,7 +185,7 @@ public class BattleLogicImpl extends Tools implements BattleLogic {
             return null;
         }
         if(CardB.getCardElement() == CardElement.WATER && CardA.getCardElement() == CardElement.FIRE){
-            System.out.println("water -> fire");
+            //System.out.println("water -> fire");
             loggerStatic.log("water -> fire");
             if((CardB.getCardPower()*2) > (CardA.getCardPower()/2)){
                 return CardB;
@@ -192,24 +197,24 @@ public class BattleLogicImpl extends Tools implements BattleLogic {
         }
 
         if(CardA.getCardElement() == CardElement.NORMAL && CardB.getCardElement() == CardElement.WATER){
-            System.out.println("normal -> water");
+            //System.out.println("normal -> water");
             loggerStatic.log("normal -> water");
             return CardA;
         }
         if(CardB.getCardElement() == CardElement.NORMAL && CardA.getCardElement() == CardElement.WATER){
-            System.out.println("normal -> water");
+            //System.out.println("normal -> water");
             loggerStatic.log("normal -> water");
             return CardB;
         }
 
 
         if(CardA.getCardElement() == CardElement.FIRE && CardB.getCardElement() == CardElement.NORMAL){
-            System.out.println("fire -> normal");
+            //System.out.println("fire -> normal");
             loggerStatic.log("fire -> normal");
             return CardA;
         }
         if(CardB.getCardElement() == CardElement.FIRE && CardA.getCardElement() == CardElement.NORMAL){
-            System.out.println("fire -> normal");
+            //System.out.println("fire -> normal");
             loggerStatic.log("fire -> normal");
             return CardB;
         }

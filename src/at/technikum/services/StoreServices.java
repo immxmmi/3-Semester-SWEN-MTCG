@@ -6,7 +6,7 @@ import at.technikum.handler.repository.PlayerHandler;
 import at.technikum.handler.PlayerHandlerImpl;
 import at.technikum.utils.Printer;
 import at.technikum.utils.PrinterImpl;
-import at.technikum.handler.CardServices;
+import at.technikum.handler.CardHandler;
 import at.technikum.handler.CardHolderHandlerImpl;
 import at.technikum.handler.repository.CardHolderHandler;
 import at.technikum.handler.repository.StackHandler;
@@ -124,7 +124,7 @@ public class StoreServices {
         System.out.println("#############################################################################");
 
         PlayerHandlerImpl seller = new PlayerHandlerImpl();
-        CardServices card = new CardServices();
+        CardHandler card = new CardHandler();
         int count = 0;
 
         for (Store i : storeHandler.getAllTransaction()) {
@@ -180,7 +180,7 @@ public class StoreServices {
 
         String sellerID = currentPlayer.getUserID();
         ArrayList<Store> transactions = storeHandler.getAllTransactionByUserID(sellerID);
-        CardServices card = new CardServices();
+        CardHandler card = new CardHandler();
         int index;
         int number = 0;
         int size = (transactions.size() - 1);

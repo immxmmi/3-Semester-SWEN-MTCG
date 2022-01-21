@@ -5,7 +5,7 @@ import at.technikum.model.card.ICard;
 import java.util.ArrayList;
 import java.util.List;
 
-public interface IDeck {
+public interface Deck {
     String getUserID();
 
     List<ICard> getDeckList();

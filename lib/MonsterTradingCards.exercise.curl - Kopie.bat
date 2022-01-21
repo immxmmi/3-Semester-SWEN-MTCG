@@ -9,19 +9,19 @@ echo.
 
 
 REM --------------------------------------------------
-echo 17) battle
-start /b "kienboec battle" curl -X POST http://localhost:10002/battles --header "Authorization: Basic kienboec-mtcgToken"
+REM --------------------------------------------------
+echo 2) Login Users
+curl -X POST http://localhost:10001/sessions --header "Content-Type: application/json" -d "{\"Username\":\"kienboec\", \"Password\":\"daniel\"}"
+echo.
+curl -X POST http://localhost:10001/sessions --header "Content-Type: application/json" -d "{\"Username\":\"altenhof\", \"Password\":\"markus\"}"
+echo.
+curl -X POST http://localhost:10001/sessions --header "Content-Type: application/json" -d "{\"Username\":\"admin\",    \"Password\":\"istrator\"}"
+echo.
+
+echo should fail:
+curl -X POST http://localhost:10001/sessions --header "Content-Type: application/json" -d "{\"Username\":\"kienboec\", \"Password\":\"different\"}"
 echo.
 echo.
-start /b "altenhof battle" curl -X POST http://localhost:10002/battles --header "Authorization: Basic altenhof-mtcgToken"
-ping localhost -n 10 >NUL 2>NUL
-
-
-
-
-
-
-
 
 
 REM --------------------------------------------------

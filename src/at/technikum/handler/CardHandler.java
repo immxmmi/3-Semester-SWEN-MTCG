@@ -1,9 +1,9 @@
 package at.technikum.handler;
 
 import at.technikum.database.AbstractDBTable;
+import at.technikum.logger.LoggerStatic;
 import at.technikum.model.card.ICard;
 import at.technikum.model.card.cardTypes.*;
-import at.technikum.utils.TextColor;
 
 import java.sql.ResultSet;
 import java.sql.SQLException;
@@ -11,9 +11,10 @@ import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Scanner;
 
-public class CardServices extends AbstractDBTable implements ICardServices {
+public class CardHandler extends AbstractDBTable implements ICardHandler {
 
-    private static CardServices instance;
+    private static CardHandler instance;
+    private LoggerStatic loggerStatic;
 
     /*******************************************************************/
     /**                          Constructor                          **/
@@ -21,8 +22,9 @@ public class CardServices extends AbstractDBTable implements ICardServices {
     /** Constructor **
      *  tableName --> Name der Tabelle in der Datenbank
      */
-    public CardServices(){
+    public CardHandler(){
         this.tableName = "card";
+        this.loggerStatic = LoggerStatic.getInstance();
     }
     /*******************************************************************/
 
@@ -58,7 +60,7 @@ public class CardServices extends AbstractDBTable implements ICardServices {
     /** --> erstellt Default Karten **/
     @Override
     public void DefaultCards(){
-        CardServices card = new CardServices();
+        CardHandler card = new CardHandler();
         // SPELL
         card.addCardByData("",CardName.Spell, CardType.SPELL, CardElement.NORMAL,10);
         card.addCardByData("",CardName.RegularSpell, CardType.SPELL, CardElement.NORMAL,10);
@@ -235,11 +237,11 @@ public class CardServices extends AbstractDBTable implements ICardServices {
     }
 
     @Override
-    public CardServices getInstance() {
-        if (CardServices.instance == null) {
-            CardServices.instance = new CardServices();
+    public CardHandler getInstance() {
+        if (CardHandler.instance == null) {
+            CardHandler.instance = new CardHandler();
         }
-        return CardServices.instance;
+        return CardHandler.instance;
     }
 
     /*******************************************************************/
@@ -312,7 +314,9 @@ public class CardServices extends AbstractDBTable implements ICardServices {
             this.setStatement("INSERT INTO " + this.tableName + "(card_id,card_typ,card_name,card_element,card_power)VALUES(?,?,?,?,?);", this.parameter);
             return getCardById(newCard.getCardID());
         }
-        System.out.println(TextColor.ANSI_RED +"Card already exist" + TextColor.ANSI_RESET);
+        loggerStatic.log("Card already exist");
+        //System.out.println(TextColor.ANSI_RED +"Card already exist" + TextColor.ANSI_RESET);
+
         return getCardByName((""+newCard.getCardName()));
     }
     @Override

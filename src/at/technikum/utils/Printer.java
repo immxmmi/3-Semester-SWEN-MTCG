@@ -1,6 +1,6 @@
 package at.technikum.utils;
 
-import at.technikum.model.repository.IDeck;
+import at.technikum.model.repository.Deck;
 import at.technikum.model.repository.Player;
 import at.technikum.model.repository.Profil;
 import at.technikum.model.repository.Stack;
@@ -14,7 +14,7 @@ public interface Printer {
 
     void printPlayerInfo(Profil playerInfo);
 
-    void printDeck(IDeck currentDeck);
+    void printDeck(Deck currentDeck);
 
     void printPlayerData(Player currentPlayer);
 }

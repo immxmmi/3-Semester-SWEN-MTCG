@@ -8,7 +8,7 @@ import at.technikum.model.card.cardTypes.CardType;
 import java.util.ArrayList;
 import java.util.HashMap;
 
-public interface ICardServices {
+public interface ICardHandler {
     /** --> wandelt getAllCards in ArrayListen um **/
     ArrayList<ICard> getAllCardsList();
 
@@ -33,7 +33,7 @@ public interface ICardServices {
     /** --> Filtert aus dem Namen das Element heraus **/
     CardElement filterCardElement(CardName cardName);
 
-    CardServices getInstance();
+    CardHandler getInstance();
 
     /** --> Funkiton fügt Karte mit Daten zur Datenbank hinzugefügt **/
     ICard addCardByData(String cardID,CardName cardName, CardType cardTyp, CardElement cardElement, double cardPower);

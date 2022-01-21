@@ -8,7 +8,7 @@ import at.technikum.model.StackImpl;
 
 public class StackHandlerImpl extends AbstractDBTable implements StackHandler {
     CardHolderHandler cardHolderServices;
-    ICardServices cardServices;
+    ICardHandler cardServices;
 
     /*******************************************************************/
     /**                          Constructor                          **/
@@ -16,7 +16,7 @@ public class StackHandlerImpl extends AbstractDBTable implements StackHandler {
     public StackHandlerImpl() {
         this.tableName = "holder";
         this.cardHolderServices = new CardHolderHandlerImpl();
-        this.cardServices = new CardServices();
+        this.cardServices = new CardHandler();
     }
     /*******************************************************************/
 

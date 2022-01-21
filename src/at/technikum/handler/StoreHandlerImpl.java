@@ -19,7 +19,7 @@ public class StoreHandlerImpl extends AbstractDBTable implements StoreHandler {
     private Printer printer;
     private Player currentPlayer;
     private PlayerHandlerImpl playerRepositoryImpl = new PlayerHandlerImpl();
-    private CardServices cardServices = new CardServices();
+    private CardHandler cardHandler = new CardHandler();
 
 
     /*******************************************************************/

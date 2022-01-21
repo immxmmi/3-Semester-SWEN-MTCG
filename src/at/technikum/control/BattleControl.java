@@ -57,11 +57,16 @@ public class BattleControl implements Post {
             return new ResponseBuilderImpl().statusOK(battleSerializer.message("BATTLE - SEARCHING ...").toString());
         }
 
-        currentBattle = battleHandler.playGame(currentBattle);
-        JsonObject jsonObject = battleSerializer.convertBattleToJson(currentBattle,false,false,false,true,true,false);
+        loggerStatic.log("\n................................. " + currentBattle.getPlayer2());
+        loggerStatic.log("\n. PLAYER 1 : " + currentBattle.getPlayer1());
+        loggerStatic.log("\n. PLAYER 2 : " + currentBattle.getPlayer2());
+        loggerStatic.log("\n................................. \n" + currentBattle.getPlayer2());
 
+        currentBattle = battleHandler.playGame(currentBattle);
+
+        JsonObject jsonObject = battleSerializer.convertBattleToJson(currentBattle,false,true,true,true,true,false);
         //System.out.println(this.textColor.ANSI_GREEN + "LOADING FINISHED!" + this.textColor.ANSI_RESET);
-        loggerStatic.log("\nLOADING FINISHED!\n");
+        loggerStatic.log("\nGAME ENDE \n");
         return new ResponseBuilderImpl().statusOK(jsonObject.toString());
     }
 

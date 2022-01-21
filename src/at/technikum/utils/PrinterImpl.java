@@ -1,7 +1,7 @@
 package at.technikum.utils;
 
 import at.technikum.logger.LoggerStatic;
-import at.technikum.model.repository.IDeck;
+import at.technikum.model.repository.Deck;
 import at.technikum.model.repository.Player;
 import at.technikum.model.repository.Profil;
 import at.technikum.model.repository.Stack;
@@ -116,7 +116,7 @@ public class PrinterImpl extends Tools implements Printer {
         System.out.println("###############################################");
     }
     @Override
-    public void printDeck(IDeck currentDeck) {
+    public void printDeck(Deck currentDeck) {
 
         if (currentDeck == null) {
             System.out.println(TextColor.ANSI_RED + "NO DECK" + TextColor.ANSI_RESET);

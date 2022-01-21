@@ -26,13 +26,13 @@ public interface Player {
 
     Stack getFreeStack();
 
-    IDeck getDeck();
+    Deck getDeck();
 
     void setStack(Stack stack);
 
     void setFreeStack(Stack freeStack);
 
-    void setDeck(IDeck deck);
+    void setDeck(Deck deck);
 
 
 }
