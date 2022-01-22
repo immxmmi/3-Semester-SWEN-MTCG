@@ -1,10 +1,10 @@
 package at.technikum.model.card.cardTypes;
 
-import at.technikum.model.card.AbstractCard;
+import at.technikum.model.card.AbstractCardImpl;
 import lombok.Builder;
 import lombok.Getter;
 
-public class SpellCard extends AbstractCard {
+public class SpellCardImpl extends AbstractCardImpl {
 
     /**
      * • water -> fire
@@ -20,7 +20,7 @@ public class SpellCard extends AbstractCard {
     CardType cardType;
 
     @Builder
-    public SpellCard(String cardID, CardType cardTyp, CardName cardName, double cardPower, CardElement cardElement) {
+    public SpellCardImpl(String cardID, CardType cardTyp, CardName cardName, double cardPower, CardElement cardElement) {
         super(cardID, cardName, cardPower, cardElement);
         this.cardType = cardTyp;
     }

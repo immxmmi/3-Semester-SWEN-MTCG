@@ -4,7 +4,7 @@ import at.technikum.model.card.cardTypes.CardElement;
 import at.technikum.model.card.cardTypes.CardName;
 import at.technikum.model.card.cardTypes.CardType;
 
-public interface ICard {
+public interface Card {
 
     String getCardID();
 

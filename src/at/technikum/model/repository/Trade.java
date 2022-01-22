@@ -1,6 +1,6 @@
 package at.technikum.model.repository;
 
-import at.technikum.model.card.ICard;
+import at.technikum.model.card.Card;
 import at.technikum.model.card.cardTypes.CardType;
 
 public interface Trade {
@@ -9,7 +9,7 @@ public interface Trade {
 
     String getUserID();
 
-    ICard getCard();
+    Card getCard();
 
     double getMinPower();
 

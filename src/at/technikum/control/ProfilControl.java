@@ -15,7 +15,6 @@ import at.technikum.server.request.RequestImpl;
 import at.technikum.server.response.ResponseBuilderImpl;
 import at.technikum.server.response.ResponseImpl;
 import at.technikum.utils.Printer;
-import at.technikum.utils.PrinterImpl;
 import at.technikum.utils.TextColor;
 import com.google.gson.Gson;
 import com.google.gson.JsonObject;
@@ -32,7 +31,7 @@ public class ProfilControl implements Put,Get {
 
     public ProfilControl(){
         this.gson = new Gson();
-        this.print = new PrinterImpl();
+        this.print = new Printer();
         this.textColor = new TextColor();
         this.playerHandler = new PlayerHandlerImpl();
         this.profilHandler = new ProfilHandlerImpl();

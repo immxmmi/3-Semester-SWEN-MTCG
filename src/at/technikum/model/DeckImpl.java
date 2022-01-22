@@ -1,7 +1,7 @@
 package at.technikum.model;
 
 import at.technikum.model.repository.Deck;
-import at.technikum.model.card.ICard;
+import at.technikum.model.card.Card;
 import com.google.gson.annotations.SerializedName;
 import lombok.Builder;
 import lombok.Getter;
@@ -20,7 +20,7 @@ public class DeckImpl implements Deck {
     @Setter
     @Builder.Default
     @SerializedName("deck")
-    List<ICard> deckList = new ArrayList<>();
+    List<Card> deckList = new ArrayList<>();
     @Getter
     @Setter
     @Builder.Default

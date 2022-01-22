@@ -10,7 +10,7 @@ import lombok.Setter;
 
 @NoArgsConstructor
 @AllArgsConstructor
-public abstract class AbstractCard implements ICard {
+public abstract class AbstractCardImpl implements Card {
 
     @Setter
     @Getter

@@ -7,7 +7,6 @@ import at.technikum.model.repository.Player;
 import at.technikum.model.repository.Store;
 import at.technikum.model.StoreImpl;
 import at.technikum.utils.Printer;
-import at.technikum.utils.PrinterImpl;
 
 import java.sql.ResultSet;
 import java.sql.SQLException;
@@ -19,7 +18,7 @@ public class StoreHandlerImpl extends AbstractDBTable implements StoreHandler {
     private Printer printer;
     private Player currentPlayer;
     private PlayerHandlerImpl playerRepositoryImpl = new PlayerHandlerImpl();
-    private CardHandler cardHandler = new CardHandler();
+    private CardHandlerImpl cardHandlerImpl = new CardHandlerImpl();
 
 
     /*******************************************************************/
@@ -28,7 +27,7 @@ public class StoreHandlerImpl extends AbstractDBTable implements StoreHandler {
     public StoreHandlerImpl(Player currentPlayer) {
         this.currentPlayer = currentPlayer;
         this.tableName = "store";
-        this.printer = new PrinterImpl();
+        this.printer = new Printer();
     }
     /*******************************************************************/
 

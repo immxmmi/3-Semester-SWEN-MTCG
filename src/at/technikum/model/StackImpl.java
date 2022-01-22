@@ -1,7 +1,7 @@
 package at.technikum.model;
 
 import at.technikum.model.repository.Stack;
-import at.technikum.model.card.ICard;
+import at.technikum.model.card.Card;
 import com.google.gson.annotations.SerializedName;
 import lombok.Builder;
 import lombok.Getter;
@@ -19,5 +19,5 @@ public class StackImpl implements Stack {
     @Setter
     @Builder.Default
     @SerializedName("stack")
-    private ArrayList<ICard> stack = new ArrayList<>();
+    private ArrayList<Card> stack = new ArrayList<>();
 }

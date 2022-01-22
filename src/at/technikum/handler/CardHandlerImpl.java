@@ -1,8 +1,9 @@
 package at.technikum.handler;
 
 import at.technikum.database.AbstractDBTable;
+import at.technikum.handler.repository.CardHandler;
 import at.technikum.logger.LoggerStatic;
-import at.technikum.model.card.ICard;
+import at.technikum.model.card.Card;
 import at.technikum.model.card.cardTypes.*;
 
 import java.sql.ResultSet;
@@ -11,9 +12,9 @@ import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Scanner;
 
-public class CardHandler extends AbstractDBTable implements ICardHandler {
+public class CardHandlerImpl extends AbstractDBTable implements CardHandler {
 
-    private static CardHandler instance;
+    private static CardHandlerImpl instance;
     private LoggerStatic loggerStatic;
 
     /*******************************************************************/
@@ -22,7 +23,7 @@ public class CardHandler extends AbstractDBTable implements ICardHandler {
     /** Constructor **
      *  tableName --> Name der Tabelle in der Datenbank
      */
-    public CardHandler(){
+    public CardHandlerImpl(){
         this.tableName = "card";
         this.loggerStatic = LoggerStatic.getInstance();
     }
@@ -60,7 +61,7 @@ public class CardHandler extends AbstractDBTable implements ICardHandler {
     /** --> erstellt Default Karten **/
     @Override
     public void DefaultCards(){
-        CardHandler card = new CardHandler();
+        CardHandlerImpl card = new CardHandlerImpl();
         // SPELL
         card.addCardByData("",CardName.Spell, CardType.SPELL, CardElement.NORMAL,10);
         card.addCardByData("",CardName.RegularSpell, CardType.SPELL, CardElement.NORMAL,10);
@@ -110,13 +111,13 @@ public class CardHandler extends AbstractDBTable implements ICardHandler {
     /*******************************************************************/
     /** builderCard **/
     @Override
-    public ICard cardBuilder(String cardID, String cardName, CardType cardTyp, String cardElement, String cardPower){
+    public Card cardBuilder(String cardID, String cardName, CardType cardTyp, String cardElement, String cardPower){
 
-        ICard card;
+        Card card;
 
         switch (cardTyp) {
             case MONSTER:
-                card = MonsterCard.builder()
+                card = MonsterCardImpl.builder()
                         .cardID(cardID)
                         .cardTyp(CardType.MONSTER)
                         .cardName(CardName.valueOf(cardName))
@@ -125,7 +126,7 @@ public class CardHandler extends AbstractDBTable implements ICardHandler {
                         .build();
                 return card;
             case SPELL:
-                card = SpellCard.builder()
+                card = SpellCardImpl.builder()
                         .cardID(cardID)
                         .cardTyp(CardType.SPELL)
                         .cardName(CardName.valueOf(cardName))
@@ -138,13 +139,13 @@ public class CardHandler extends AbstractDBTable implements ICardHandler {
         return null;
     }
     /** Liefert eine Karte aus der Datenbank **/
-    private ICard cardBuilder(ResultSet result) {
+    private Card cardBuilder(ResultSet result) {
 
         if (result == null){
             return null;
         }
 
-        ICard card = null;
+        Card card = null;
 
         try {
             if(result.next()) {
@@ -171,16 +172,16 @@ public class CardHandler extends AbstractDBTable implements ICardHandler {
     /*******************************************************************/
     @Override
     /** --> wandelt getAllCards in ArrayListen um **/
-    public ArrayList<ICard> getAllCardsList(){
-        ArrayList<ICard> arrayListCards = new ArrayList<>();
-        for (ICard i : this.getAllCards(null,null,false).keySet()) {
+    public ArrayList<Card> getAllCardsList(){
+        ArrayList<Card> arrayListCards = new ArrayList<>();
+        for (Card i : this.getAllCards(null,null,false).keySet()) {
             arrayListCards.add(i);
         }
         return arrayListCards;
     }
     @Override
     /** Liefert eine Karte mithilfe --> ID aus der Datenbank **/
-    public ICard getCardById(String cardID) {
+    public Card getCardById(String cardID) {
         this.parameter = new String[] {cardID};
         this.setStatement(
                 "SELECT * FROM " + this.tableName + " WHERE card_id = ? "+";",
@@ -190,7 +191,7 @@ public class CardHandler extends AbstractDBTable implements ICardHandler {
     }
     @Override
     /** Liefert eine Karte mithilfe --> Name aus der Datenbank **/
-    public ICard getCardByName(String cardName) {
+    public Card getCardByName(String cardName) {
         this.parameter = new String[] {cardName};
         this.setStatement(
                 "SELECT * FROM " + this.tableName + " WHERE card_name = ? "+";",
@@ -200,8 +201,8 @@ public class CardHandler extends AbstractDBTable implements ICardHandler {
     }
     @Override
     /** --> Listet alle Karten in einer HashMap <Karten, KartenName> **/
-    public HashMap<ICard, CardName>  getAllCards(String attribute, String value, boolean filter) {
-        HashMap<ICard, CardName>  cards = new HashMap<>();
+    public HashMap<Card, CardName>  getAllCards(String attribute, String value, boolean filter) {
+        HashMap<Card, CardName>  cards = new HashMap<>();
 
         if(filter) {
             this.parameter = new String[] {value};
@@ -214,7 +215,7 @@ public class CardHandler extends AbstractDBTable implements ICardHandler {
             this.parameter = new String[] {};
             this.setStatement("SELECT * FROM " + this.tableName + ";", this.parameter);
         }
-        ICard card;
+        Card card;
 
         try {
             while (this.result.next()) {
@@ -237,11 +238,11 @@ public class CardHandler extends AbstractDBTable implements ICardHandler {
     }
 
     @Override
-    public CardHandler getInstance() {
-        if (CardHandler.instance == null) {
-            CardHandler.instance = new CardHandler();
+    public CardHandlerImpl getInstance() {
+        if (CardHandlerImpl.instance == null) {
+            CardHandlerImpl.instance = new CardHandlerImpl();
         }
-        return CardHandler.instance;
+        return CardHandlerImpl.instance;
     }
 
     /*******************************************************************/
@@ -252,15 +253,15 @@ public class CardHandler extends AbstractDBTable implements ICardHandler {
     /*******************************************************************/
     @Override
     /** --> Funkiton fügt Karte mit Daten zur Datenbank hinzugefügt **/
-    public ICard addCardByData(String cardID,CardName cardName, CardType cardTyp, CardElement cardElement, double cardPower){
-        ICard card;
+    public Card addCardByData(String cardID, CardName cardName, CardType cardTyp, CardElement cardElement, double cardPower){
+        Card card;
 
         if(cardID == ""){
             cardID = "C-"+this.tokenSupplier.get();
         }
         switch (cardTyp){
             case MONSTER -> {
-                card = MonsterCard.builder()
+                card = MonsterCardImpl.builder()
                         .cardID(cardID)
                         .cardName(cardName)
                         .cardTyp(CardType.MONSTER)
@@ -271,7 +272,7 @@ public class CardHandler extends AbstractDBTable implements ICardHandler {
                 return card;
             }
             case SPELL -> {
-                card = SpellCard.builder()
+                card = SpellCardImpl.builder()
                         .cardID(cardID)
                         .cardName(cardName)
                         .cardTyp(CardType.SPELL)
@@ -295,7 +296,7 @@ public class CardHandler extends AbstractDBTable implements ICardHandler {
     /*******************************************************************/
     @Override
     /** Fügt Karte zur Datenbank hinzu **/
-    public ICard insert(ICard newCard) {
+    public Card insert(Card newCard) {
 
        // System.out.println("#INSERT:");
         if (newCard == null){
@@ -321,7 +322,7 @@ public class CardHandler extends AbstractDBTable implements ICardHandler {
     }
     @Override
     /** Verändert die Karte **/
-    public ICard update(ICard currentCard) {
+    public Card update(Card currentCard) {
        // System.out.println("#UPDATE:");
         if(currentCard == null){
             return null;
@@ -345,7 +346,7 @@ public class CardHandler extends AbstractDBTable implements ICardHandler {
     }
     @Override
     /** Löscht die Karte **/
-    public boolean delete(ICard currentCard) {
+    public boolean delete(Card currentCard) {
       //  System.out.println("#DELETE:");
         this.parameter = new String[]{};
         if(getCardById(currentCard.getCardID()) == null){

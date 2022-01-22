@@ -4,12 +4,11 @@ package at.technikum.logic;
 import at.technikum.model.repository.Battle;
 import at.technikum.handler.repository.PlayerHandler;
 import at.technikum.handler.PlayerHandlerImpl;
-import at.technikum.model.card.ICard;
+import at.technikum.model.card.Card;
 import at.technikum.model.card.cardTypes.CardElement;
 import at.technikum.model.card.cardTypes.CardName;
 import at.technikum.model.card.cardTypes.CardType;
 import at.technikum.logger.LoggerStatic;
-import at.technikum.utils.TextColor;
 import at.technikum.utils.Tools;
 
 import java.util.Collections;
@@ -28,12 +27,12 @@ public class BattleLogicImpl extends Tools implements BattleLogic {
 
 
     private Battle fight(Battle battle) {
-        List<ICard> deckA = battle.getPlayer1().getDeck().getDeckList();
-        List<ICard> deckB = battle.getPlayer2().getDeck().getDeckList();
+        List<Card> deckA = battle.getPlayer1().getDeck().getDeckList();
+        List<Card> deckB = battle.getPlayer2().getDeck().getDeckList();
         Collections.shuffle(deckA);
         Collections.shuffle(deckB);
-        ICard cardA;
-        ICard cardB;
+        Card cardA;
+        Card cardB;
         int randomA;
         int randomB;
         int round = 0;
@@ -46,7 +45,7 @@ public class BattleLogicImpl extends Tools implements BattleLogic {
             cardA = deckA.get(randomA);
             cardB = deckB.get(randomB);
             this.round(cardA,cardB);
-            ICard WinnerCard = this.rules(cardA,cardB);
+            Card WinnerCard = this.rules(cardA,cardB);
 
             if (WinnerCard == cardA) {
               //  System.out.println(TextColor.ANSI_GREEN + "Winner is Player A" + TextColor.ANSI_RESET);
@@ -94,7 +93,11 @@ public class BattleLogicImpl extends Tools implements BattleLogic {
 
 
         //System.out.println("\n" + TextColor.ANSI_PURPLE + "WINNER : " + battle.getWinner());
-        loggerStatic.log("\nWINNER : " + battle.getWinner());
+        if(battle.getWinner() == null){
+         loggerStatic.log("\nWINNER : NO Winner");
+        }else{
+            loggerStatic.log("\nWINNER : " + battle.getWinner());
+        }
 
         playerService.update(battle.getPlayer1());
         playerService.update(battle.getPlayer2());
@@ -102,7 +105,7 @@ public class BattleLogicImpl extends Tools implements BattleLogic {
     }
 
 
-    private void round(ICard CardA, ICard CardB) {
+    private void round(Card CardA, Card CardB) {
         String msg = "PlayerA: " + CardA.getCardName() + "(" + CardA.getCardPower() + ")" + "VS PlayerB: " + CardB.getCardName() + "(" + CardB.getCardPower() + ")";
         loggerStatic.log(msg);
                 /**
@@ -115,7 +118,7 @@ public class BattleLogicImpl extends Tools implements BattleLogic {
                  **/
     }
 
-    private ICard rules(ICard CardA, ICard CardB) {
+    private Card rules(Card CardA, Card CardB) {
 
 
         if(CardA.getCardName() == CardName.Dragon && CardB.getCardName() == CardName.Goblin){

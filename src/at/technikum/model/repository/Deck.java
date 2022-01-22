@@ -1,6 +1,6 @@
 package at.technikum.model.repository;
 
-import at.technikum.model.card.ICard;
+import at.technikum.model.card.Card;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -8,7 +8,7 @@ import java.util.List;
 public interface Deck {
     String getUserID();
 
-    List<ICard> getDeckList();
+    List<Card> getDeckList();
 
     ArrayList<String> getCardIDs();
 

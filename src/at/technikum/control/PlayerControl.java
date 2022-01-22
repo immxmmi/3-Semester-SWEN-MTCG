@@ -14,7 +14,6 @@ import at.technikum.server.request.RequestImpl;
 import at.technikum.server.response.ResponseBuilderImpl;
 import at.technikum.server.response.ResponseImpl;
 import at.technikum.utils.Printer;
-import at.technikum.utils.PrinterImpl;
 import at.technikum.utils.TextColor;
 import com.google.gson.Gson;
 import com.google.gson.JsonObject;
@@ -42,7 +41,7 @@ public class PlayerControl implements Post, Get {
         this.playerSerializer = new PlayerSerializer();
         this.loggerStatic = LoggerStatic.getInstance();
         p = Pattern.compile("/users/([a-zA-Z]+)/?");
-        this.print = new PrinterImpl();
+        this.print = new Printer();
     }
 
     /*** --> LOGIN **/
@@ -51,7 +50,7 @@ public class PlayerControl implements Post, Get {
        // System.out.println("# LOGIN ");
         loggerStatic.log("\n# LOGIN\n");
         /** --> WENN REQUEST LEER IST --> WENN AUTH LEER IST --> WENN USER NICHT EXISTIERT **/
-        ResponseImpl responseImpl = new ResponseBuilderImpl().requestErrorHandler(requestImpl, false, true, true);
+        ResponseImpl responseImpl = new ResponseBuilderImpl().requestErrorHandler(requestImpl, false, true, false);
         if (responseImpl != null) {
             return responseImpl;
         }
@@ -60,6 +59,12 @@ public class PlayerControl implements Post, Get {
         Player player = gson.fromJson(requestImpl.getBody(), PlayerImpl.class);
         /** --> User versucht sich einzuloggen **/
         Player currentPlayer = this.playerHandler.Login(player.getUsername(), player.getPassword());
+        /** User wird gecheckt **/
+        if (currentPlayer == null) {
+            //System.out.println(TextColor.ANSI_RED + "USER NOT FOUND" + TextColor.ANSI_RESET);
+            loggerStatic.log("\nUSER NOT FOUND\n");
+            return new ResponseBuilderImpl().statusMethodNotAllowed("USER NOT FOUND");
+        }
 
         /** --> JSON OBJECT **/
         JsonObject jsonObject = playerSerializer.convertPlayerToJson(currentPlayer,true,true,false,false,false,false, false,false,false);

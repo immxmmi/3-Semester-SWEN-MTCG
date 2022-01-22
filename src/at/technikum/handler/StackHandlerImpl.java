@@ -1,6 +1,7 @@
 package at.technikum.handler;
 
 import at.technikum.database.AbstractDBTable;
+import at.technikum.handler.repository.CardHandler;
 import at.technikum.handler.repository.CardHolderHandler;
 import at.technikum.handler.repository.StackHandler;
 import at.technikum.model.repository.Stack;
@@ -8,7 +9,7 @@ import at.technikum.model.StackImpl;
 
 public class StackHandlerImpl extends AbstractDBTable implements StackHandler {
     CardHolderHandler cardHolderServices;
-    ICardHandler cardServices;
+    CardHandler cardServices;
 
     /*******************************************************************/
     /**                          Constructor                          **/
@@ -16,7 +17,7 @@ public class StackHandlerImpl extends AbstractDBTable implements StackHandler {
     public StackHandlerImpl() {
         this.tableName = "holder";
         this.cardHolderServices = new CardHolderHandlerImpl();
-        this.cardServices = new CardHandler();
+        this.cardServices = new CardHandlerImpl();
     }
     /*******************************************************************/
 

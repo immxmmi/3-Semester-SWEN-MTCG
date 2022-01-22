@@ -1,7 +1,7 @@
 package at.technikum.handler.repository;
 
 import at.technikum.handler.CardHolderHandlerImpl;
-import at.technikum.model.card.ICard;
+import at.technikum.model.card.Card;
 import at.technikum.model.repository.CardHolder;
 import at.technikum.model.repository.Player;
 
@@ -11,12 +11,12 @@ public interface CardHolderHandler extends Repository<CardHolder> {
     /**
      * --> Läd alle Karten aus der Datenbank die dem User gehöhren in einem Array
      **/
-    ArrayList<ICard> loadCardsByHolderID(String holderID);
+    ArrayList<Card> loadCardsByHolderID(String holderID);
 
     /**
      * --> Läd alle freien Karten aus der Datenbank die dem User gehöhren in einem Array
      **/
-    ArrayList<ICard> loadUnlockedCardsByHolderID(String holderID);
+    ArrayList<Card> loadUnlockedCardsByHolderID(String holderID);
 
     /**
      * --> dient zum Verkauf eines Packages an einem User

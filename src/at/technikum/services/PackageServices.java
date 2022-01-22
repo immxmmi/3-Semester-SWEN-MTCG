@@ -4,8 +4,8 @@ import at.technikum.model.repository.Package;
 import at.technikum.model.PackageImpl;
 import at.technikum.handler.repository.StoreHandler;
 import at.technikum.handler.StoreHandlerImpl;
-import at.technikum.model.card.ICard;
-import at.technikum.handler.CardHandler;
+import at.technikum.model.card.Card;
+import at.technikum.handler.CardHandlerImpl;
 import at.technikum.handler.CardHolderHandlerImpl;
 import at.technikum.handler.repository.CardHolderHandler;
 import at.technikum.handler.repository.PackageHandler;
@@ -43,15 +43,15 @@ public class PackageServices extends Tools {
     /*******************************************************************/
     private void PackageFactory() {
         System.out.println("#CREATE NEW PACKAGE");
-        CardHandler cardList = new CardHandler();
-        ICard card;
+        CardHandlerImpl cardList = new CardHandlerImpl();
+        Card card;
         CardHolderHandler holder = new CardHolderHandlerImpl();
         StoreHandler store = new StoreHandlerImpl(null);
         Package pack = PackageImpl.builder()
                 .packageID("PK-" + this.tokenSupplier.get())
                 .build();
 
-        ArrayList<ICard> cards = cardList.getAllCardsList();
+        ArrayList<Card> cards = cardList.getAllCardsList();
 
 
         // Fügt Package zur Datenbank hinzu

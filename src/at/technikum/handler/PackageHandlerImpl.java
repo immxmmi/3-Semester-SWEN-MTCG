@@ -6,7 +6,7 @@ import at.technikum.handler.repository.PackageHandler;
 import at.technikum.handler.repository.StoreHandler;
 import at.technikum.model.repository.Package;
 import at.technikum.model.PackageImpl;
-import at.technikum.model.card.ICard;
+import at.technikum.model.card.Card;
 
 import java.sql.ResultSet;
 import java.sql.SQLException;
@@ -155,7 +155,7 @@ public class PackageHandlerImpl extends AbstractDBTable implements PackageHandle
         String packageID = newPackage.getPackageID();
 
         /** --> jede einzelene Karte im CardHolder hinzufügen **/
-        for (ICard card : newPackage.getCards()) {
+        for (Card card : newPackage.getCards()) {
             cardHolderServices.insertCardToHolder(packageID, card.getCardID(), true);
         }
 

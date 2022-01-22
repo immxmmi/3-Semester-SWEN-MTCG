@@ -74,6 +74,11 @@ public class BattleHandlerImpl extends AbstractDBTable implements BattleHandler,
     }
     @Override
     public Battle playGame(Battle currentBattle){
+        try {
+            Thread.sleep(1000);
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        }
         BattleLogic battleLogic = new BattleLogicImpl();
         update(battleLogic.start(currentBattle));
         return getItemById(currentBattle.getBattleID());

@@ -64,7 +64,7 @@ public class BattleControl implements Post {
 
         currentBattle = battleHandler.playGame(currentBattle);
 
-        JsonObject jsonObject = battleSerializer.convertBattleToJson(currentBattle,false,true,true,true,true,false);
+        JsonObject jsonObject = battleSerializer.convertBattleToJson(currentBattle,true,false,false,false,false,false);
         //System.out.println(this.textColor.ANSI_GREEN + "LOADING FINISHED!" + this.textColor.ANSI_RESET);
         loggerStatic.log("\nGAME ENDE \n");
         return new ResponseBuilderImpl().statusOK(jsonObject.toString());

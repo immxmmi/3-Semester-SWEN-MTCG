@@ -3,7 +3,7 @@ package at.technikum.handler;
 import at.technikum.database.AbstractDBTable;
 import at.technikum.handler.repository.CardHolderHandler;
 import at.technikum.handler.repository.PackageHandler;
-import at.technikum.model.card.ICard;
+import at.technikum.model.card.Card;
 import at.technikum.model.CardHolderImpl;
 import at.technikum.model.repository.CardHolder;
 import at.technikum.model.repository.Player;
@@ -68,10 +68,10 @@ public class CardHolderHandlerImpl extends AbstractDBTable implements CardHolder
      * --> Läd alle Karten aus der Datenbank die dem User gehöhren in einem Array
      **/
     @Override
-    public ArrayList<ICard> loadCardsByHolderID(String holderID) {
+    public ArrayList<Card> loadCardsByHolderID(String holderID) {
         this.parameter = new String[]{holderID};
-        ArrayList<ICard> cards = new ArrayList<>();
-        CardHandler card = new CardHandler();
+        ArrayList<Card> cards = new ArrayList<>();
+        CardHandlerImpl card = new CardHandlerImpl();
 
         this.setStatement("SELECT  *  FROM \"cardHolder\" WHERE holder_id = ? ;", this.parameter);
 
@@ -94,10 +94,10 @@ public class CardHolderHandlerImpl extends AbstractDBTable implements CardHolder
      * --> Läd alle freien Karten aus der Datenbank die dem User gehöhren in einem Array
      **/
     @Override
-    public ArrayList<ICard> loadUnlockedCardsByHolderID(String holderID) {
+    public ArrayList<Card> loadUnlockedCardsByHolderID(String holderID) {
         this.parameter = new String[]{holderID, "" + false};
-        ArrayList<ICard> cards = new ArrayList<>();
-        CardHandler card = new CardHandler();
+        ArrayList<Card> cards = new ArrayList<>();
+        CardHandlerImpl card = new CardHandlerImpl();
 
         this.setStatement("SELECT  *  FROM \"cardHolder\" WHERE holder_id = ? AND locked = ? ;", this.parameter);
 
@@ -363,11 +363,11 @@ public class CardHolderHandlerImpl extends AbstractDBTable implements CardHolder
 
     @Override
     public boolean deleteAllUserCards(Player currentPlayer) {
-        for (ICard card : currentPlayer.getStack().getStack()) {
+        for (Card card : currentPlayer.getStack().getStack()) {
             removeCardFromStack(currentPlayer.getUserID(), card.getCardID());
         }
 
-        for (ICard card : currentPlayer.getFreeStack().getStack()) {
+        for (Card card : currentPlayer.getFreeStack().getStack()) {
             removeCardFromStack(currentPlayer.getUserID(), card.getCardID());
         }
         return true;

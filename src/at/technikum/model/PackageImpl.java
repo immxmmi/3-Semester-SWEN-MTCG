@@ -1,7 +1,7 @@
 package at.technikum.model;
 
 import at.technikum.model.repository.Package;
-import at.technikum.model.card.ICard;
+import at.technikum.model.card.Card;
 import com.google.gson.annotations.SerializedName;
 import lombok.Builder;
 import lombok.Getter;
@@ -18,7 +18,7 @@ public class PackageImpl implements Package {
     @Getter
     @Setter
     @SerializedName("cards")
-    private ArrayList<ICard> cards = new ArrayList<>();
+    private ArrayList<Card> cards = new ArrayList<>();
     @Getter
     @Builder.Default
     @SerializedName("price")

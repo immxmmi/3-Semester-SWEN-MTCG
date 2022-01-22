@@ -1,11 +1,11 @@
 package at.technikum.model.card.cardTypes;
 
-import at.technikum.model.card.AbstractCard;
+import at.technikum.model.card.AbstractCardImpl;
 import lombok.Builder;
 import lombok.Getter;
 
 
-public class MonsterCard extends AbstractCard {
+public class MonsterCardImpl extends AbstractCardImpl {
 
     /**
      * Goblins are too afraid of Dragons to attack.
@@ -18,7 +18,7 @@ public class MonsterCard extends AbstractCard {
     CardType cardType;
 
     @Builder
-    public MonsterCard(String cardID, CardType cardTyp, CardName cardName, double cardPower, CardElement cardElement) {
+    public MonsterCardImpl(String cardID, CardType cardTyp, CardName cardName, double cardPower, CardElement cardElement) {
         super(cardID, cardName, cardPower, cardElement);
         this.cardType = cardTyp;
     }

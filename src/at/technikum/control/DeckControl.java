@@ -13,7 +13,6 @@ import at.technikum.server.request.RequestImpl;
 import at.technikum.server.response.ResponseBuilderImpl;
 import at.technikum.server.response.ResponseImpl;
 import at.technikum.utils.Printer;
-import at.technikum.utils.PrinterImpl;
 import at.technikum.utils.TextColor;
 import com.google.gson.JsonArray;
 import com.google.gson.JsonElement;
@@ -32,7 +31,7 @@ public class DeckControl implements Get, Put {
     private LoggerStatic loggerStatic;
 
     public DeckControl(){
-        this.print = new PrinterImpl();
+        this.print = new Printer();
         this.textColor = new TextColor();
         this.playerHandler = new PlayerHandlerImpl();
         this.deckHandler = new DeckHandlerImpl();

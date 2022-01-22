@@ -1,6 +1,6 @@
 package at.technikum.utils;
 
-import at.technikum.model.card.ICard;
+import at.technikum.model.card.Card;
 import at.technikum.model.card.cardTypes.CardElement;
 
 import java.math.BigInteger;
@@ -151,7 +151,7 @@ public class Tools extends TextColor {
 
     /*************************************************************/
 
-    protected void printCards(ArrayList<ICard> stack, String name) {
+    protected void printCards(ArrayList<Card> stack, String name) {
         int maxNumber = 2;
         int maxType = 8;
         int maxName = 12;
@@ -168,7 +168,7 @@ public class Tools extends TextColor {
         System.out.println("| # " + checkSpace("# ", maxNumber) + "| TYPE " + checkSpace("TYPE ", maxType) + "| NAME " + checkSpace("NAME ", maxName) + "| ELEMENT " + checkSpace("ELEMENT ", maxElement) + "| POWER |");
 
 
-        for (ICard card : stack) {
+        for (Card card : stack) {
 
             if (card.getCardElement() == CardElement.WATER) {
                 System.out.print(TextColor.ANSI_CYAN);

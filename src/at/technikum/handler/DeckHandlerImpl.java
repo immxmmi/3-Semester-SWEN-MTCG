@@ -1,11 +1,12 @@
 package at.technikum.handler;
 
 import at.technikum.database.AbstractDBTable;
+import at.technikum.handler.repository.CardHandler;
 import at.technikum.handler.repository.CardHolderHandler;
 import at.technikum.handler.repository.DeckHandler;
 import at.technikum.model.DeckImpl;
 import at.technikum.model.repository.Deck;
-import at.technikum.model.card.ICard;
+import at.technikum.model.card.Card;
 import at.technikum.utils.TextColor;
 
 import java.sql.ResultSet;
@@ -16,7 +17,7 @@ import java.util.List;
 public class DeckHandlerImpl extends AbstractDBTable implements DeckHandler {
 
     CardHolderHandler cardHolderServices;
-    ICardHandler cardServices;
+    CardHandler cardServices;
     private static DeckHandlerImpl instance;
 
     /*******************************************************************/
@@ -25,7 +26,7 @@ public class DeckHandlerImpl extends AbstractDBTable implements DeckHandler {
     public DeckHandlerImpl() {
         this.tableName = "deck";
         this.cardHolderServices = new CardHolderHandlerImpl();
-        this.cardServices = new CardHandler();
+        this.cardServices = new CardHandlerImpl();
     }
     /*******************************************************************/
 
@@ -37,7 +38,7 @@ public class DeckHandlerImpl extends AbstractDBTable implements DeckHandler {
         try {
             if (result.next()) {
                 ArrayList<String> currentCardIDs = new ArrayList<>();
-                List<ICard> currentDeck = new ArrayList<>();
+                List<Card> currentDeck = new ArrayList<>();
                 String userID = result.getString("user_id");
 
                 currentCardIDs.add(result.getString("card_id_1"));

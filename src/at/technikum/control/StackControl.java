@@ -12,7 +12,6 @@ import at.technikum.server.request.RequestImpl;
 import at.technikum.server.response.ResponseBuilderImpl;
 import at.technikum.server.response.ResponseImpl;
 import at.technikum.utils.Printer;
-import at.technikum.utils.PrinterImpl;
 import at.technikum.utils.TextColor;
 import com.google.gson.JsonObject;
 
@@ -26,7 +25,7 @@ public class StackControl implements Get {
 
     public StackControl(){
         this.textColor = new TextColor();
-        this.print = new PrinterImpl();
+        this.print = new Printer();
         this.playerHandler = new PlayerHandlerImpl();
         this.stackHandler = new StackHandlerImpl();
         this.stackSerializer = new StackSerializer();

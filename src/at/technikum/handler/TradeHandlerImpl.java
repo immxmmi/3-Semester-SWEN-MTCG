@@ -6,7 +6,7 @@ import at.technikum.model.repository.CardHolder;
 import at.technikum.model.repository.Trade;
 import at.technikum.database.AbstractDBTable;
 import at.technikum.model.*;
-import at.technikum.model.card.ICard;
+import at.technikum.model.card.Card;
 import at.technikum.model.card.cardTypes.CardType;
 
 import java.sql.ResultSet;
@@ -17,7 +17,7 @@ public class TradeHandlerImpl extends AbstractDBTable implements TradeHandler {
 
 
 
-    private CardHandler cardHandler = new CardHandler();
+    private CardHandlerImpl cardHandlerImpl = new CardHandlerImpl();
     private CardHolderHandler cardHolderHandler = new CardHolderHandlerImpl();
 
     /*******************************************************************/
@@ -40,7 +40,7 @@ public class TradeHandlerImpl extends AbstractDBTable implements TradeHandler {
                 Trade trade = (Trade) TradeImpl.builder()
                         .tradeID(result.getString("trade_id"))
                         .userID(result.getString("user_id"))
-                        .card(cardHandler.getCardById(result.getString("card_id")))
+                        .card(cardHandlerImpl.getCardById(result.getString("card_id")))
                         .cardTyp(CardType.valueOf(result.getString("card_typ")))
                         .minPower(convertToDouble(result.getString("card_min_power")))
                         .build();
@@ -60,7 +60,7 @@ public class TradeHandlerImpl extends AbstractDBTable implements TradeHandler {
 
 
     private boolean checkCardByID(String cardID){
-        if(cardHandler.getCardById(cardID) == null){
+        if(cardHandlerImpl.getCardById(cardID) == null){
             return false;
         }
         return true;
@@ -76,7 +76,7 @@ public class TradeHandlerImpl extends AbstractDBTable implements TradeHandler {
 
     @Override
     public boolean checkTradeRequirement(Trade trade, String cardID){
-        ICard card = cardHandler.getCardById(cardID);
+        Card card = cardHandlerImpl.getCardById(cardID);
         if(trade.getMinPower() > card.getCardPower()){
             return false;
         }
@@ -143,7 +143,7 @@ public class TradeHandlerImpl extends AbstractDBTable implements TradeHandler {
         try {
             while (this.result.next()) {
                String tradeID = result.getString("trade_id");
-               ICard card = cardHandler.getCardById(result.getString("card_id"));
+               Card card = cardHandlerImpl.getCardById(result.getString("card_id"));
                CardType cardType = CardType.valueOf(result.getString("card_typ"));
                Double minPower = convertToDouble(result.getString("card_min_power"));
                Trade trade = TradeImpl.builder()

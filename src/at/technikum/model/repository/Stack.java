@@ -1,11 +1,11 @@
 package at.technikum.model.repository;
 
-import at.technikum.model.card.ICard;
+import at.technikum.model.card.Card;
 
 import java.util.ArrayList;
 
 public interface Stack {
     String getUserID();
 
-    ArrayList<ICard> getStack();
+    ArrayList<Card> getStack();
 }
