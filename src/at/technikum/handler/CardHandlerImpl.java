@@ -94,7 +94,7 @@ public class CardHandlerImpl extends AbstractDBTable implements CardHandler {
         card.addCardByData("",CardName.FireElf, CardType.MONSTER, CardElement.FIRE,10);
 
         //
-        card.addCardByData("",CardName.Wizzard, CardType.MONSTER, CardElement.NORMAL,10);
+        card.addCardByData("",CardName.Wizard, CardType.MONSTER, CardElement.NORMAL,10);
         card.addCardByData("",CardName.WaterWizzard, CardType.MONSTER, CardElement.WATER,10);
         card.addCardByData("",CardName.FireWizzard, CardType.MONSTER, CardElement.FIRE,10);
 

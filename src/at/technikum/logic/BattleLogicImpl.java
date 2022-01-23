@@ -118,7 +118,7 @@ public class BattleLogicImpl extends Tools implements BattleLogic {
                  **/
     }
 
-    private Card rules(Card CardA, Card CardB) {
+    public Card rules(Card CardA, Card CardB) {
 
 
         if(CardA.getCardName() == CardName.Dragon && CardB.getCardName() == CardName.Goblin){
@@ -126,18 +126,20 @@ public class BattleLogicImpl extends Tools implements BattleLogic {
             loggerStatic.log("Goblins are too afraid of Dragons to attack.");
             return CardA;
         }
+
+
         if(CardB.getCardName() == CardName.Dragon && CardA.getCardName() == CardName.Goblin){
             //System.out.println("Goblins are too afraid of Dragons to attack.");
             loggerStatic.log("Goblins are too afraid of Dragons to attack.");
             return CardB;
         }
 
-        if(CardA.getCardName() == CardName.Wizzard && CardB.getCardName() == CardName.Ork){
+        if(CardA.getCardName() == CardName.Wizard && CardB.getCardName() == CardName.Ork){
             //System.out.println("Wizzard can control Orks so they are not able to damage them.");
             loggerStatic.log("Wizzard can control Orks so they are not able to damage them.");
             return CardA;
         }
-        if(CardB.getCardName() == CardName.Wizzard && CardA.getCardName() == CardName.Ork){
+        if(CardB.getCardName() == CardName.Wizard && CardA.getCardName() == CardName.Ork){
             //System.out.println("Wizzard can control Orks so they are not able to damage them.");
             loggerStatic.log("Wizzard can control Orks so they are not able to damage them.");
             return CardB;

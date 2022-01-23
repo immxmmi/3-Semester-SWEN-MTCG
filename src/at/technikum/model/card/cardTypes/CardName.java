@@ -5,7 +5,7 @@ public enum CardName {
     RegularSpell,
     Goblin,
     Dragon,
-    Wizzard,
+    Wizard,
     Ork,
     Knight,
     Kraken,

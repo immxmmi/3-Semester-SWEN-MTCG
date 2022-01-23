@@ -24,4 +24,8 @@ public class SpellCardImpl extends AbstractCardImpl {
         super(cardID, cardName, cardPower, cardElement);
         this.cardType = cardTyp;
     }
+
+    public SpellCardImpl(){
+        this.cardType = CardType.SPELL;
+    }
 }

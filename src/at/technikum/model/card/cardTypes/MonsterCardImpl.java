@@ -3,6 +3,7 @@ package at.technikum.model.card.cardTypes;
 import at.technikum.model.card.AbstractCardImpl;
 import lombok.Builder;
 import lombok.Getter;
+import net.bytebuddy.implementation.bind.annotation.Default;
 
 
 public class MonsterCardImpl extends AbstractCardImpl {
@@ -15,12 +16,17 @@ public class MonsterCardImpl extends AbstractCardImpl {
      * • The FireElves know Dragons since they were little and can evade their attacks.
      */
     @Getter
-    CardType cardType;
+    @Builder.Default
+    CardType cardType = CardType.MONSTER;
 
     @Builder
     public MonsterCardImpl(String cardID, CardType cardTyp, CardName cardName, double cardPower, CardElement cardElement) {
         super(cardID, cardName, cardPower, cardElement);
         this.cardType = cardTyp;
+    }
+
+    public MonsterCardImpl() {
+        this.cardType = CardType.MONSTER;
     }
 
 }

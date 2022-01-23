@@ -61,7 +61,7 @@ public class PlayerControl implements Post, Get {
         Player currentPlayer = this.playerHandler.Login(player.getUsername(), player.getPassword());
         /** User wird gecheckt **/
         if (currentPlayer == null) {
-            //System.out.println(TextColor.ANSI_RED + "USER NOT FOUND" + TextColor.ANSI_RESET);
+            //System.out.println(textColor.ANSI_RED + "USER NOT FOUND" + textColor.ANSI_RESET);
             loggerStatic.log("\nUSER NOT FOUND\n");
             return new ResponseBuilderImpl().statusMethodNotAllowed("USER NOT FOUND");
         }
