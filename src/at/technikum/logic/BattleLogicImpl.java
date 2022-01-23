@@ -1,14 +1,14 @@
 package at.technikum.logic;
 
 
-import at.technikum.model.repository.Battle;
-import at.technikum.handler.repository.PlayerHandler;
 import at.technikum.handler.PlayerHandlerImpl;
+import at.technikum.handler.repository.PlayerHandler;
+import at.technikum.logger.LoggerStatic;
 import at.technikum.model.card.Card;
 import at.technikum.model.card.cardTypes.CardElement;
 import at.technikum.model.card.cardTypes.CardName;
 import at.technikum.model.card.cardTypes.CardType;
-import at.technikum.logger.LoggerStatic;
+import at.technikum.model.repository.Battle;
 import at.technikum.utils.Tools;
 
 import java.util.Collections;

@@ -6,7 +6,6 @@ import at.technikum.server.request.RequestImpl;
 import at.technikum.server.request.RequestParser;
 import at.technikum.server.response.*;
 import at.technikum.server.socket.SocketImpl;
-import at.technikum.control.BattleControl;
 import lombok.Getter;
 
 import java.io.*;

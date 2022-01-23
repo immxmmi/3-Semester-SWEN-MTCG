@@ -1,12 +1,12 @@
 package at.technikum.control;
 
 import at.technikum.control.repository.Get;
+import at.technikum.handler.PlayerHandlerImpl;
+import at.technikum.handler.StackHandlerImpl;
+import at.technikum.handler.repository.PlayerHandler;
+import at.technikum.handler.repository.StackHandler;
 import at.technikum.logger.LoggerStatic;
 import at.technikum.model.repository.Player;
-import at.technikum.handler.repository.PlayerHandler;
-import at.technikum.handler.PlayerHandlerImpl;
-import at.technikum.handler.repository.StackHandler;
-import at.technikum.handler.StackHandlerImpl;
 import at.technikum.serializer.StackSerializer;
 import at.technikum.server.request.RequestImpl;
 import at.technikum.server.response.ResponseBuilderImpl;

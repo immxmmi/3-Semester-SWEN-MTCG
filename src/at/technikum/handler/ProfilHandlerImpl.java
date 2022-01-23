@@ -3,9 +3,9 @@ package at.technikum.handler;
 import at.technikum.database.AbstractDBTable;
 import at.technikum.handler.repository.PlayerHandler;
 import at.technikum.handler.repository.ProfilHandler;
+import at.technikum.model.ProfilImpl;
 import at.technikum.model.repository.Player;
 import at.technikum.model.repository.Profil;
-import at.technikum.model.ProfilImpl;
 import at.technikum.utils.TextColor;
 
 import java.sql.ResultSet;

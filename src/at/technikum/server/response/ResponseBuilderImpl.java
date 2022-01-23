@@ -1,10 +1,10 @@
 package at.technikum.server.response;
 
+import at.technikum.handler.PlayerHandlerImpl;
+import at.technikum.handler.repository.PlayerHandler;
 import at.technikum.logger.LoggerStatic;
 import at.technikum.model.repository.Player;
 import at.technikum.server.request.RequestImpl;
-import at.technikum.handler.repository.PlayerHandler;
-import at.technikum.handler.PlayerHandlerImpl;
 import com.google.gson.JsonObject;
 
 public class ResponseBuilderImpl implements ResponseBuilder {

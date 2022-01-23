@@ -1,13 +1,13 @@
 package at.technikum.handler;
 
+import at.technikum.database.AbstractDBTable;
 import at.technikum.handler.repository.CardHolderHandler;
 import at.technikum.handler.repository.TradeHandler;
-import at.technikum.model.repository.CardHolder;
-import at.technikum.model.repository.Trade;
-import at.technikum.database.AbstractDBTable;
-import at.technikum.model.*;
+import at.technikum.model.TradeImpl;
 import at.technikum.model.card.Card;
 import at.technikum.model.card.cardTypes.CardType;
+import at.technikum.model.repository.CardHolder;
+import at.technikum.model.repository.Trade;
 
 import java.sql.ResultSet;
 import java.sql.SQLException;

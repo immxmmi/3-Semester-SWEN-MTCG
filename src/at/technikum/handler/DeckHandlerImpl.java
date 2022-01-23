@@ -5,8 +5,8 @@ import at.technikum.handler.repository.CardHandler;
 import at.technikum.handler.repository.CardHolderHandler;
 import at.technikum.handler.repository.DeckHandler;
 import at.technikum.model.DeckImpl;
-import at.technikum.model.repository.Deck;
 import at.technikum.model.card.Card;
+import at.technikum.model.repository.Deck;
 import at.technikum.utils.TextColor;
 
 import java.sql.ResultSet;

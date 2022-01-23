@@ -1,16 +1,16 @@
 package at.technikum.services;
 
-import at.technikum.model.repository.Player;
-import at.technikum.model.repository.Store;
-import at.technikum.handler.repository.PlayerHandler;
-import at.technikum.handler.PlayerHandlerImpl;
-import at.technikum.utils.Printer;
 import at.technikum.handler.CardHandlerImpl;
 import at.technikum.handler.CardHolderHandlerImpl;
-import at.technikum.handler.repository.CardHolderHandler;
-import at.technikum.handler.repository.StackHandler;
+import at.technikum.handler.PlayerHandlerImpl;
 import at.technikum.handler.StackHandlerImpl;
+import at.technikum.handler.repository.CardHolderHandler;
+import at.technikum.handler.repository.PlayerHandler;
+import at.technikum.handler.repository.StackHandler;
 import at.technikum.handler.repository.StoreHandler;
+import at.technikum.model.repository.Player;
+import at.technikum.model.repository.Store;
+import at.technikum.utils.Printer;
 
 import java.util.ArrayList;
 import java.util.Scanner;

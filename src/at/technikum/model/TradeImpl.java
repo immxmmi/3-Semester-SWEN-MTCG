@@ -1,8 +1,8 @@
 package at.technikum.model;
 
-import at.technikum.model.repository.Trade;
 import at.technikum.model.card.Card;
 import at.technikum.model.card.cardTypes.CardType;
+import at.technikum.model.repository.Trade;
 import com.google.gson.annotations.SerializedName;
 import lombok.Builder;
 import lombok.Getter;

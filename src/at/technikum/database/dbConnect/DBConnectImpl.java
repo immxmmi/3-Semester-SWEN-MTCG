@@ -1,6 +1,8 @@
 package at.technikum.database.dbConnect;
+
 import at.technikum.utils.TextColor;
 import at.technikum.utils.Tools;
+
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.SQLException;

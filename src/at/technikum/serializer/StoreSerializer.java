@@ -1,7 +1,7 @@
 package at.technikum.serializer;
 
-import at.technikum.model.repository.Store;
 import at.technikum.model.StoreImpl;
+import at.technikum.model.repository.Store;
 import com.google.gson.JsonObject;
 import com.google.gson.JsonParser;
 

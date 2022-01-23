@@ -3,7 +3,6 @@ package at.technikum.model.card.cardTypes;
 import at.technikum.model.card.AbstractCardImpl;
 import lombok.Builder;
 import lombok.Getter;
-import net.bytebuddy.implementation.bind.annotation.Default;
 
 
 public class MonsterCardImpl extends AbstractCardImpl {

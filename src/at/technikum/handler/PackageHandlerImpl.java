@@ -4,9 +4,9 @@ import at.technikum.database.AbstractDBTable;
 import at.technikum.handler.repository.CardHolderHandler;
 import at.technikum.handler.repository.PackageHandler;
 import at.technikum.handler.repository.StoreHandler;
-import at.technikum.model.repository.Package;
 import at.technikum.model.PackageImpl;
 import at.technikum.model.card.Card;
+import at.technikum.model.repository.Package;
 
 import java.sql.ResultSet;
 import java.sql.SQLException;

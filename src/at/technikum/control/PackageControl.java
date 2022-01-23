@@ -1,20 +1,23 @@
 package at.technikum.control;
 
 import at.technikum.control.repository.Post;
-import at.technikum.logger.LoggerStatic;
-import at.technikum.model.repository.Package;
-import at.technikum.handler.repository.PackageHandler;
+import at.technikum.handler.CardHandlerImpl;
 import at.technikum.handler.PackageHandlerImpl;
+import at.technikum.handler.repository.PackageHandler;
+import at.technikum.logger.LoggerStatic;
+import at.technikum.model.card.cardTypes.CardElement;
+import at.technikum.model.card.cardTypes.CardName;
+import at.technikum.model.card.cardTypes.CardType;
+import at.technikum.model.repository.Package;
 import at.technikum.serializer.PackageSerializer;
 import at.technikum.server.request.RequestImpl;
 import at.technikum.server.response.ResponseBuilderImpl;
 import at.technikum.server.response.ResponseImpl;
-import at.technikum.model.card.cardTypes.CardElement;
-import at.technikum.model.card.cardTypes.CardName;
-import at.technikum.model.card.cardTypes.CardType;
-import at.technikum.handler.CardHandlerImpl;
 import at.technikum.utils.TextColor;
-import com.google.gson.*;
+import com.google.gson.JsonArray;
+import com.google.gson.JsonElement;
+import com.google.gson.JsonObject;
+import com.google.gson.JsonParser;
 
 public class PackageControl implements Post {
 

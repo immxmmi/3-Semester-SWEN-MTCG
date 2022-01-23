@@ -4,8 +4,8 @@ import at.technikum.database.AbstractDBTable;
 import at.technikum.handler.repository.CardHandler;
 import at.technikum.handler.repository.CardHolderHandler;
 import at.technikum.handler.repository.StackHandler;
-import at.technikum.model.repository.Stack;
 import at.technikum.model.StackImpl;
+import at.technikum.model.repository.Stack;
 
 public class StackHandlerImpl extends AbstractDBTable implements StackHandler {
     CardHolderHandler cardHolderServices;

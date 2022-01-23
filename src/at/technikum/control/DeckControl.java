@@ -2,12 +2,12 @@ package at.technikum.control;
 
 import at.technikum.control.repository.Get;
 import at.technikum.control.repository.Put;
+import at.technikum.handler.DeckHandlerImpl;
+import at.technikum.handler.PlayerHandlerImpl;
+import at.technikum.handler.repository.DeckHandler;
+import at.technikum.handler.repository.PlayerHandler;
 import at.technikum.logger.LoggerStatic;
 import at.technikum.model.repository.Player;
-import at.technikum.handler.repository.DeckHandler;
-import at.technikum.handler.DeckHandlerImpl;
-import at.technikum.handler.repository.PlayerHandler;
-import at.technikum.handler.PlayerHandlerImpl;
 import at.technikum.serializer.DeckSerializer;
 import at.technikum.server.request.RequestImpl;
 import at.technikum.server.response.ResponseBuilderImpl;

@@ -3,9 +3,9 @@ package at.technikum.handler;
 import at.technikum.database.AbstractDBTable;
 import at.technikum.handler.repository.CardHolderHandler;
 import at.technikum.handler.repository.StoreHandler;
+import at.technikum.model.StoreImpl;
 import at.technikum.model.repository.Player;
 import at.technikum.model.repository.Store;
-import at.technikum.model.StoreImpl;
 import at.technikum.utils.Printer;
 
 import java.sql.ResultSet;

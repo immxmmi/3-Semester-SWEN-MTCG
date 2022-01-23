@@ -1,7 +1,7 @@
 package at.technikum.serializer;
 
-import at.technikum.model.repository.Player;
 import at.technikum.model.PlayerImpl;
+import at.technikum.model.repository.Player;
 import com.google.gson.JsonObject;
 import com.google.gson.JsonParser;
 

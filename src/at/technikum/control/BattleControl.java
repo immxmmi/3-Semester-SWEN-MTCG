@@ -1,17 +1,17 @@
 package at.technikum.control;
 
 import at.technikum.control.repository.Post;
+import at.technikum.handler.BattleHandlerImpl;
+import at.technikum.handler.PlayerHandlerImpl;
+import at.technikum.handler.repository.BattleHandler;
+import at.technikum.handler.repository.PlayerHandler;
 import at.technikum.logger.LoggerStatic;
 import at.technikum.model.repository.Battle;
-import at.technikum.handler.repository.BattleHandler;
-import at.technikum.handler.BattleHandlerImpl;
+import at.technikum.model.repository.Player;
 import at.technikum.serializer.BattleSerializer;
 import at.technikum.server.request.RequestImpl;
-import at.technikum.server.response.ResponseImpl;
 import at.technikum.server.response.ResponseBuilderImpl;
-import at.technikum.model.repository.Player;
-import at.technikum.handler.repository.PlayerHandler;
-import at.technikum.handler.PlayerHandlerImpl;
+import at.technikum.server.response.ResponseImpl;
 import at.technikum.utils.TextColor;
 import com.google.gson.JsonObject;
 

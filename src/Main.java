@@ -1,5 +1,5 @@
-import at.technikum.server.ServerImpl;
 import at.technikum.logger.LoggerStatic;
+import at.technikum.server.ServerImpl;
 
 public class Main {
 
