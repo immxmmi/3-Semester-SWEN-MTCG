@@ -1,4 +1,4 @@
-package test.card;
+package at.technikum.test;
 
 import at.technikum.model.card.Card;
 import at.technikum.model.card.cardTypes.CardType;

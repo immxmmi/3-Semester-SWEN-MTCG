@@ -58,7 +58,7 @@ public class PlayerControl implements Post, Get {
         /** --> Erstellt ein Player Objekt **/
         Player player = gson.fromJson(requestImpl.getBody(), PlayerImpl.class);
         /** --> User versucht sich einzuloggen **/
-        Player currentPlayer = this.playerHandler.Login(player.getUsername(), player.getPassword());
+        Player currentPlayer = this.playerHandler.login(player.getUsername(), player.getPassword());
         /** User wird gecheckt **/
         if (currentPlayer == null) {
             //System.out.println(textColor.ANSI_RED + "USER NOT FOUND" + textColor.ANSI_RESET);
@@ -87,7 +87,7 @@ public class PlayerControl implements Post, Get {
         /** --> Erstellt ein Player Objekt **/
         Player newPlayer = gson.fromJson(requestImpl.getBody(), PlayerImpl.class);
         /** --> User versucht sich zu registrieren **/
-        Player currentPlayer = this.playerHandler.Register(newPlayer.getUsername() + "-mtcgToken", newPlayer.getUsername(), newPlayer.getPassword());
+        Player currentPlayer = this.playerHandler.register(newPlayer.getUsername() + "-mtcgToken", newPlayer.getUsername(), newPlayer.getPassword());
 
         /** -->  ERROR - MELDUNG USER SCHON EXISTIERT **/
         if (currentPlayer == null) {

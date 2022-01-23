@@ -78,7 +78,7 @@ public class PlayerHandlerImpl extends AbstractDBTable implements PlayerHandler 
     /**                        LOGIN/REGISTER                         **/
     /*******************************************************************/
     @Override
-    public Player Login(String username, String password) {
+    public Player login(String username, String password) {
 
         this.currentPlayer = this.getPlayerByUsername(username);
 
@@ -96,14 +96,14 @@ public class PlayerHandlerImpl extends AbstractDBTable implements PlayerHandler 
     }
 
     @Override
-    public void Logout(Player currentPlayer) {
+    public void logout(Player currentPlayer) {
         if (currentPlayer != null) {
             this.stopSession(currentPlayer);
         }
     }
 
     @Override
-    public Player Register(String id, String username, String password) {
+    public Player register(String id, String username, String password) {
         if (id == "") {
             id = "U-" + this.tokenSupplier.get();
         }
@@ -367,13 +367,19 @@ public class PlayerHandlerImpl extends AbstractDBTable implements PlayerHandler 
     /** DELETE CURRENT PLAYER **/
     public boolean delete(Player currentPlayer) {
         //System.out.println(ANSI_BLUE + "#DELETE:" + ANSI_RESET);
-        this.parameter = new String[]{};
         if (this.getItemById(currentPlayer.getUserID()) == null) {
             return false;
         }
+        this.parameter = new String[]{
+                currentPlayer.getUserID(),
+        };
+
+
+
+
         stopSession(currentPlayer);
         this.setStatement("DELETE FROM " + this.tableName +
-                        " WHERE user_id = '" + currentPlayer.getUserID() + "';"
+                        " WHERE user_id = ? ;"
                 , this.parameter);
         return true;
     }

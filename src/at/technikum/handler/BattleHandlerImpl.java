@@ -156,10 +156,14 @@ public class BattleHandlerImpl extends AbstractDBTable implements BattleHandler,
     }
     @Override
     public Battle insert(Battle newBattle){
+        String player2Id = "null";
+        if(newBattle.getPlayer2() != null){
+            player2Id = newBattle.getPlayer2().getUserID();
+        }
         this.parameter = new String[]{
                 "B-"+this.tokenSupplier.get(),
                 newBattle.getPlayer1().getUserID(),
-                "null",
+                player2Id,
                 ""+newBattle.getRound(),
                 "noWinner",
                 ""+newBattle.isSearching()

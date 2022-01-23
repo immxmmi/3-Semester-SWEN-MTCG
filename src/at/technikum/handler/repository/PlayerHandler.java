@@ -8,11 +8,11 @@ import java.util.LinkedHashMap;
 
 public interface PlayerHandler extends Repository<Player> {
 
-    Player Login(String username, String password);
+    Player login(String username, String password);
 
-    void Logout(Player currentPlayer);
+    void logout(Player currentPlayer);
 
-    Player Register(String id, String username, String password);
+    Player register(String id, String username, String password);
 
     Player reloadAccount(Player currentPlayer);
 

@@ -11,7 +11,8 @@ import java.sql.SQLException;
 
 public abstract class AbstractDBTable extends Tools { // TODO: 07.01.2022 fertig
 
-    protected Connection connection = DBConnectImpl.getInstance().getConnection();
+    protected Connection connection = DBConnectImpl.getInstance().getConnection(); // BESTEHENDE VERBINDUNG WIRD VERWENDET
+    //protected Connection connection = (Connection) new DBConnectImpl(); // ERSTELLT IMMER EINE NEUE VERBINDUNG
     protected PreparedStatement statement; // STATEMENT --> SQL ABFRAGE
     protected ResultSet result;    // RESULT DER SQL ABFRAGE
     protected String tableName;    // TABELLEN NAME DES SQL BEFEHLS

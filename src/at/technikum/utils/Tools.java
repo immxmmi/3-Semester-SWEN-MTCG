@@ -42,7 +42,7 @@ public class Tools extends TextColor {
         return hexString.toString();
     }
 
-    protected String hashString(String text) {
+    public String hashString(String text) {
 
         try {
             return toHexString(getSHA(text));

@@ -1,4 +1,4 @@
-package test.battle;
+package at.technikum.test;
 
 import at.technikum.logic.BattleLogicImpl;
 import at.technikum.model.card.Card;
