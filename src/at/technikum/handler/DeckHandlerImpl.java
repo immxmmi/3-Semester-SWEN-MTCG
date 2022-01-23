@@ -74,7 +74,7 @@ public class DeckHandlerImpl extends AbstractDBTable implements DeckHandler {
     /*******************************************************************/
 
 
-    private boolean checkDeck(ArrayList<String> newDeck, String holderID) {
+    public boolean checkDeck(ArrayList<String> newDeck, String holderID) {
         CardHolderHandler cardHolderServices = new CardHolderHandlerImpl();
         for (int i = 0; i < newDeck.size(); i++) {
             if (cardHolderServices.getCardHolder(holderID, newDeck.get(1)) == null) {
@@ -189,13 +189,16 @@ public class DeckHandlerImpl extends AbstractDBTable implements DeckHandler {
     @Override
     public boolean delete(Deck item) {
         //System.out.println(ANSI_BLUE + "#DELETE:" + ANSI_RESET);
-        this.parameter = new String[]{};
         String userID = item.getUserID();
         if (getItemById(userID) == null) {
             return false;
         }
+        this.parameter = new String[]{
+                item.getUserID()
+        };
+
         this.setStatement("DELETE FROM " + this.tableName +
-                        " WHERE user_id = '" + userID + "';"
+                        " WHERE user_id = ? ;"
                 , this.parameter);
         return true;
     }

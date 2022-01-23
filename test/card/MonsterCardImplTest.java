@@ -1,4 +1,4 @@
-package at.technikum.test;
+package card;
 
 import at.technikum.model.card.Card;
 import at.technikum.model.card.cardTypes.CardType;
@@ -9,6 +9,7 @@ import org.mockito.Mock;
 
 import static org.junit.jupiter.api.Assertions.*;
 
+@DisplayName("MonsterCard")
 class MonsterCardImplTest {
 
     @Mock

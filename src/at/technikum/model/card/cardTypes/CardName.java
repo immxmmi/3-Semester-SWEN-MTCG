@@ -21,7 +21,7 @@ public enum CardName {
     FireSpell,
     WaterGoblin,
     WaterDragon,
-    WaterWizzard,
+    WaterWizard,
     WaterOrk,
     WaterKnight,
     WaterKraken,

@@ -1,4 +1,4 @@
-package at.technikum.test;
+package player;
 
 import at.technikum.handler.CardHandlerImpl;
 import at.technikum.handler.CardHolderHandlerImpl;
@@ -13,12 +13,13 @@ import at.technikum.model.card.cardTypes.CardType;
 import at.technikum.model.card.cardTypes.MonsterCardImpl;
 import at.technikum.model.repository.Player;
 import at.technikum.utils.Tools;
+import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 import org.mockito.Mock;
 
-import static org.junit.jupiter.api.Assertions.assertEquals;
-import static org.junit.jupiter.api.Assertions.assertNotNull;
+import static org.junit.jupiter.api.Assertions.*;
 
+@DisplayName("PlayerHandler")
 class PlayerHandlerImplTest {
 
     @Mock
@@ -68,8 +69,6 @@ class PlayerHandlerImplTest {
         assertEquals(player.getCoins(),currentCoins - 1);
         delete(player);
     }
-
-
     @Test
     void register() {
         Player player = createTestUser("register");
@@ -103,6 +102,15 @@ class PlayerHandlerImplTest {
         assertEquals(player.isStatus(),false);
 
         delete(player);
+    }
+
+    @Test
+    void authorizePassword() {
+        Tools tools = new Tools();
+        String password = "test";
+        String hashedPassword = tools.hashString(password);
+        assertTrue(playerHandler.authorizePassword(hashedPassword,password));
+        assertFalse(playerHandler.authorizePassword("pwTest",password));
     }
 
 

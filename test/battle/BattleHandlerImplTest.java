@@ -1,4 +1,4 @@
-package at.technikum.test;
+package battle;
 
 import at.technikum.handler.BattleHandlerImpl;
 import at.technikum.model.BattleImpl;
@@ -9,6 +9,7 @@ import at.technikum.model.card.cardTypes.*;
 import at.technikum.model.repository.Battle;
 import at.technikum.model.repository.Deck;
 import at.technikum.model.repository.Player;
+import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 import org.mockito.Mock;
 
@@ -17,6 +18,7 @@ import java.util.ArrayList;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertNotNull;
 
+@DisplayName("BattleHandler")
 class BattleHandlerImplTest {
 
     @Mock

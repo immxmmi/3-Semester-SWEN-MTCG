@@ -10,7 +10,6 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.HashMap;
-import java.util.Scanner;
 
 public class CardHandlerImpl extends AbstractDBTable implements CardHandler {
 
@@ -95,7 +94,7 @@ public class CardHandlerImpl extends AbstractDBTable implements CardHandler {
 
         //
         card.addCardByData("",CardName.Wizard, CardType.MONSTER, CardElement.NORMAL,10);
-        card.addCardByData("",CardName.WaterWizzard, CardType.MONSTER, CardElement.WATER,10);
+        card.addCardByData("",CardName.WaterWizard, CardType.MONSTER, CardElement.WATER,10);
         card.addCardByData("",CardName.FireWizzard, CardType.MONSTER, CardElement.FIRE,10);
 
         //
@@ -348,25 +347,17 @@ public class CardHandlerImpl extends AbstractDBTable implements CardHandler {
     /** Löscht die Karte **/
     public boolean delete(Card currentCard) {
       //  System.out.println("#DELETE:");
-        this.parameter = new String[]{};
         if(getCardById(currentCard.getCardID()) == null){
             return false;
         }
-        Scanner myObj = new Scanner(System.in);
-        System.out.println("Are you sure you want to delete (Y/N)?");
-        System.out.println("ID: '"+currentCard.getCardID()+"'");
-        System.out.println("cardName: '"+currentCard.getCardName()+"'");
-        System.out.println("cardTyp: '"+currentCard.getCardType()+"'");
-        System.out.println("cardElement: '"+currentCard.getCardElement()+"'");
-        System.out.println("cardPower: '"+currentCard.getCardPower()+"'");
-        String input = myObj.nextLine();
-        if(input.equals("y") || input.equals("Y")) {
+        this.parameter = new String[]{
+                currentCard.getCardID()
+        };
+
             this.setStatement("DELETE FROM " + this.tableName +
-                            " WHERE card_id = '" + currentCard.getCardID() + "';"
+                            " WHERE card_id = ? ;"
                     , this.parameter);
-        }else{
-            return false;
-        }
+
         return true;
     }
     /*******************************************************************/

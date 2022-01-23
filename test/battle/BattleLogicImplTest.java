@@ -1,4 +1,4 @@
-package at.technikum.test;
+package battle;
 
 import at.technikum.logic.BattleLogicImpl;
 import at.technikum.model.card.Card;
@@ -10,6 +10,7 @@ import org.mockito.Mock;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertNotNull;
 
+@DisplayName("BattleLogic")
 class BattleLogicImplTest {
 
     @Mock
