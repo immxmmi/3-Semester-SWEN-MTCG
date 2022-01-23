@@ -2,12 +2,12 @@ package card;
 
 import at.technikum.model.card.Card;
 import at.technikum.model.card.cardTypes.CardType;
-import at.technikum.model.card.cardTypes.MonsterCardImpl;
 import at.technikum.model.card.cardTypes.SpellCardImpl;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 
-import static org.junit.jupiter.api.Assertions.*;
+import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertNotNull;
 
 @DisplayName("SpellCard")
 class SpellCardImplTest {

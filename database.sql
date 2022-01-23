@@ -84,18 +84,17 @@ create unique index store_transaction_id_uindex
 
 create table deck
 (
-    user_id    text not null
+    user_id   text not null
         constraint deck_pk
             primary key
         constraint deck_player_user_id_fk
             references player,
-    card_id_1  text not null
+    card_id_1 text not null
         constraint deck_card_card_id_fk
             references card,
-    card_id_2  text not null,
-    card_id_3  text not null,
-    card_id_4  text not null,
-    new_column integer
+    card_id_2 text not null,
+    card_id_3 text not null,
+    card_id_4 text not null
 );
 
 alter table deck

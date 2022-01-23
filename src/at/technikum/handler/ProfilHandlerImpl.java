@@ -53,13 +53,13 @@ public class ProfilHandlerImpl extends AbstractDBTable implements ProfilHandler 
     /*******************************************************************/
 
     @Override
-    public Profil updateProfil(Profil playerInfo) {
-        if (this.getItemById(playerInfo.getUserID()) == null) {
-            this.insert(playerInfo);
+    public Profil updateProfil(Profil profil) {
+        if (this.getItemById(profil.getUserID()) == null) {
+            this.insert(profil);
         } else {
-            this.update(playerInfo);
+            this.update(profil);
         }
-        return getItemById(playerInfo.getUserID());
+        return getItemById(profil.getUserID());
     }
 
     @Override
@@ -122,14 +122,15 @@ public class ProfilHandlerImpl extends AbstractDBTable implements ProfilHandler 
         this.parameter = new String[]{
                 "" + item.getName(),
                 "" + item.getBio(),
-                "" + item.getImage()
+                "" + item.getImage(),
+                item.getUserID()
         };
 
 
         this.setStatement(
                 "UPDATE " + this.tableName +
                         " SET name = ?, bio = ?, image = ? " +
-                        "WHERE user_id = '" + item.getUserID() + "' ;"
+                        "WHERE user_id = ? ;"
                 , this.parameter
         );
 
@@ -142,12 +143,14 @@ public class ProfilHandlerImpl extends AbstractDBTable implements ProfilHandler 
     @Override
     public boolean delete(Profil item) {
         //System.out.println(ANSI_BLUE + "#DELETE:" + ANSI_RESET);
-        this.parameter = new String[]{};
         if (getItemById(item.getUserID()) == null) {
             return false;
         }
+        this.parameter = new String[]{
+                item.getUserID()
+        };
         this.setStatement("DELETE FROM " + this.tableName +
-                        " WHERE user_id = '" + item.getUserID() + "';"
+                        " WHERE user_id = ? ;"
                 , this.parameter);
         return true;
     }

@@ -6,7 +6,6 @@ import at.technikum.handler.DeckHandlerImpl;
 import at.technikum.handler.PlayerHandlerImpl;
 import at.technikum.handler.repository.CardHandler;
 import at.technikum.handler.repository.CardHolderHandler;
-import at.technikum.handler.repository.DeckHandler;
 import at.technikum.handler.repository.PlayerHandler;
 import at.technikum.model.DeckImpl;
 import at.technikum.model.PlayerImpl;
@@ -80,14 +79,23 @@ class DeckHandlerImplTest {
     @Test
     void getItemById() {
         Deck deck = TestDeck();
-        deck = deckHandler.getItemById(deck.getUserID());
-        assertNotNull(deck);
+        deckHandler.setNewDeck(deck.getCardIDs(),deck.getUserID());
+        assertNotNull(deckHandler.getItemById(deck.getUserID()));
+        assertNull(deckHandler.getItemById("TestFalse"));
+        delete(deck.getUserID(),deck.getDeckList(),deck);
+    }
+
+    @Test
+    void checkDeck() {
+        Deck deck = TestDeck();
+        assertNotNull(deck.getCardIDs());
+        assertNotNull(deck.getUserID());
+        assertTrue(deckHandler.checkDeck(deck.getCardIDs(),deck.getUserID()));
         delete(deck.getUserID(),deck.getDeckList(),deck);
     }
 
 
-    @Test
-    void delete(String playerID, List<Card> cards, Deck deck) {
+    private void delete(String playerID, List<Card> cards, Deck deck) {
         PlayerHandler playerHandler = new PlayerHandlerImpl();
         CardHandler cardHandler = new CardHandlerImpl();
         CardHolderHandler cardHolderHandler = new CardHolderHandlerImpl();
@@ -108,12 +116,5 @@ class DeckHandlerImplTest {
 
     }
 
-    @Test
-    void checkDeck() {
-        Deck deck = TestDeck();
-        assertNotNull(deck.getCardIDs());
-        assertNotNull(deck.getUserID());
-        deckHandler.checkDeck(deck.getCardIDs(),deck.getUserID());
-        
-    }
+
 }
