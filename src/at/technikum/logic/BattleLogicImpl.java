@@ -96,7 +96,7 @@ public class BattleLogicImpl extends Tools implements BattleLogic {
         if(battle.getWinner() == null){
          loggerStatic.log("\nWINNER : NO Winner");
         }else{
-            loggerStatic.log("\nWINNER : " + battle.getWinner());
+            loggerStatic.log("\nWINNER : " + battle.getWinner().getUsername());
         }
 
         playerService.update(battle.getPlayer1());

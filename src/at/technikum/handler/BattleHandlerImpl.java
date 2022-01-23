@@ -151,17 +151,17 @@ public class BattleHandlerImpl extends AbstractDBTable implements BattleHandler,
     public Battle getItemById(String battleID){
         this.parameter = new String[]{battleID};
         this.setStatement("SELECT * FROM " + this.tableName + " WHERE battle_id = ? ;", this.parameter);
-
         return battleBuilder(this.result);
     }
     @Override
     public Battle insert(Battle newBattle){
         String player2Id = "null";
+        newBattle.setBattleID("B-"+this.tokenSupplier.get());
         if(newBattle.getPlayer2() != null){
             player2Id = newBattle.getPlayer2().getUserID();
         }
         this.parameter = new String[]{
-                "B-"+this.tokenSupplier.get(),
+                newBattle.getBattleID(),
                 newBattle.getPlayer1().getUserID(),
                 player2Id,
                 ""+newBattle.getRound(),

@@ -48,37 +48,35 @@ class StackHandlerImplTest {
         cardHandler.addCardByData(id, CardName.Dragon, CardType.MONSTER, CardElement.NORMAL,200.00);
         return cardHandler.getCardById(id);
     }
-    private Stack TestStack(){
-        Player player = getTestUser();
-        CardHolderHandler cardHolderHandler = new CardHolderHandlerImpl();
-        ArrayList<Card> cards = new ArrayList<>();
 
-        for(int i = 0; i < 10; i++){
-            cardHolderHandler.insertCardToHolder(player.getUserID(),"test"+i,false);
-            cards.add(createTestCard("test"+i));
-        }
-
-        return StackImpl.builder()
-                .userID(player.getUserID())
-                .stack(cards)
-                .build();
-    }
     @Test
     void addCardToStack() {
         Player player = getTestUser();
-        stackHandler.addCardToStack(createTestCard("StackA").getCardID(),player.getUserID());
-        stackHandler.addCardToStack(createTestCard("StackB").getCardID(),player.getUserID());
-        stackHandler.addCardToStack(createTestCard("StackC").getCardID(),player.getUserID());
-        stackHandler.addCardToStack(createTestCard("StackD").getCardID(),player.getUserID());
-        assertNotNull(stackHandler.getItemById(player.getUserID()).getStack());
+        Stack stack = stackHandler.getItemById(player.getUserID());
+        stackHandler.addCardToStack(stack.getUserID(),createTestCard("StackA").getCardID());
+        stackHandler.addCardToStack(stack.getUserID(),createTestCard("StackB").getCardID());
+        stackHandler.addCardToStack(stack.getUserID(),createTestCard("StackC").getCardID());
+        stackHandler.addCardToStack(stack.getUserID(),createTestCard("StackD").getCardID());
+        stack = stackHandler.getItemById(stack.getUserID());
+        assertEquals(stack.getStack().size(),4);
+        delete(stack);
     }
 
-    @Test
-    void getItemById() {
-    }
+    private void delete(Stack stack) {
+        PlayerHandler playerHandler = new PlayerHandlerImpl();
+        CardHandler cardHandler = new CardHandlerImpl();
+        CardHolderHandler cardHolderHandler = new CardHolderHandlerImpl();
+        assertNotNull(stack);
 
-    @Test
-    void delete(Stack stack) {
-        stackHandler.delete(stack);
+        for(Card card : stack.getStack()){
+            assertNotNull(card);
+            cardHolderHandler.removeCardFromStack(stack.getUserID(),card.getCardID());
+            cardHandler.delete(card);
+        }
+
+        Player player = playerHandler.getItemById(stack.getUserID());
+        assertNotNull(player);
+        playerHandler.delete(player);
+
     }
 }

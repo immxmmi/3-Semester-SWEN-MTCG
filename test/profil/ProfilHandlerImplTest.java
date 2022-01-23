@@ -34,7 +34,6 @@ class ProfilHandlerImplTest {
     }
 
 
-
     @Test
     void updateProfil() {
         Player player = getTestUser(createTestUser("Profil"));
@@ -67,8 +66,8 @@ class ProfilHandlerImplTest {
     }
 
 
-    @Test
-    void delete(Profil profil) {
+    private void delete(Profil profil) {
+        assertNotNull(profil);
         PlayerHandler playerHandler = new PlayerHandlerImpl();
         profilHandler.delete(profil);
         playerHandler.delete(playerHandler.getItemById(profil.getUserID()));

@@ -39,12 +39,6 @@ class PlayerHandlerImplTest {
     }
 
 
-    private Card createTestCard(){
-        CardHandler cardHandler = new CardHandlerImpl();
-        cardHandler.addCardByData("TEST",CardName.Dragon,CardType.MONSTER,CardElement.NORMAL,200.00);
-        return cardHandler.getCardById("TEST");
-    }
-
     @Test
     void addCoins(){
         Player player = createTestUser("addCoins");

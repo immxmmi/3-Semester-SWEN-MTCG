@@ -80,8 +80,14 @@ public class StackHandlerImpl extends AbstractDBTable implements StackHandler {
     public boolean delete(Stack item) {
         //System.out.println(ANSI_BLUE + "#DELETE:" + ANSI_RESET);
 
+        if (getItemById(item.getUserID()) == null) {
+            return false;
+        }
+        this.parameter = new String[]{
+                item.getUserID()
+        };
         this.setStatement("DELETE FROM " + this.tableName +
-                        " WHERE user_id = '" + 2 + "';"
+                        " WHERE user_id = ? ;"
                 , this.parameter);
         return true;
     }

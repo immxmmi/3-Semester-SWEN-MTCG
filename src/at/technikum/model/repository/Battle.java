@@ -13,6 +13,7 @@ public interface Battle {
 
     boolean isSearching();
 
+    void setBattleID(String battleID);
     void setPlayer2(Player player2);
 
     void setRound(int round);
