@@ -4,20 +4,15 @@ import at.technikum.handler.*;
 import at.technikum.handler.repository.CardHandler;
 import at.technikum.handler.repository.CardHolderHandler;
 import at.technikum.handler.repository.PlayerHandler;
-import at.technikum.model.DeckImpl;
 import at.technikum.model.PlayerImpl;
-import at.technikum.model.StackImpl;
 import at.technikum.model.card.Card;
 import at.technikum.model.card.cardTypes.CardElement;
 import at.technikum.model.card.cardTypes.CardName;
 import at.technikum.model.card.cardTypes.CardType;
-import at.technikum.model.repository.Deck;
 import at.technikum.model.repository.Player;
 import at.technikum.model.repository.Stack;
 import org.junit.jupiter.api.Test;
 import org.mockito.Mock;
-
-import java.util.ArrayList;
 
 import static org.junit.jupiter.api.Assertions.*;
 
@@ -46,7 +41,7 @@ class StackHandlerImplTest {
     private Card createTestCard(String id){
         CardHandler cardHandler = new CardHandlerImpl();
         cardHandler.addCardByData(id, CardName.Dragon, CardType.MONSTER, CardElement.NORMAL,200.00);
-        return cardHandler.getCardById(id);
+        return cardHandler.getItemById(id);
     }
 
     @Test

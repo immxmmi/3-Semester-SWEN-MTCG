@@ -1,6 +1,7 @@
 package at.technikum.database;
 
 import at.technikum.database.dbConnect.DBConnectImpl;
+import at.technikum.utils.TextColor;
 import at.technikum.utils.Tools;
 
 import java.sql.Connection;
@@ -8,8 +9,8 @@ import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 
-
-public abstract class AbstractDBTable extends Tools { // TODO: 07.01.2022 fertig
+// TODO: 07.01.2022 fertig
+public abstract class AbstractDBTable {
 
     protected Connection connection = DBConnectImpl.getInstance().getConnection(); // BESTEHENDE VERBINDUNG WIRD VERWENDET
     //protected Connection connection = (Connection) new DBConnectImpl(); // ERSTELLT IMMER EINE NEUE VERBINDUNG
@@ -17,6 +18,8 @@ public abstract class AbstractDBTable extends Tools { // TODO: 07.01.2022 fertig
     protected ResultSet result;    // RESULT DER SQL ABFRAGE
     protected String tableName;    // TABELLEN NAME DES SQL BEFEHLS
     protected String[] parameter;  // PARAMETER FÜR DIE SQL ABFRAGE
+    protected Tools tools = new Tools();
+    protected TextColor textColor = new TextColor();
 
 
     /*******************************************************************/

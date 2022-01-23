@@ -1,6 +1,20 @@
 ﻿# 3-Semster-SWEN1-CardGame
  ## Installation
   - git clone https://github.com/immxmmi/3-Semester-SWEN-MTCG.git
+  - docker pull immxmmi/3-semester-swen-mtcg
+  -  Server starten
+      - Klasse Main - function main() ausführen.
+      - Server hört auf den Port:10001 IP: 127.0.0.1 oder localhost max 5 Client können sich verbinden.
+      - Es ist möglich den PORT IP und CLIENT anzahl zu verändern im main
+      
+## Ressourcen
+   - im Ordner res befinden sich:
+     - Test-Script
+     - Datenbank - SQL Code
+     - Datenbank - Diagramm
+     - UML - Diagramm
+     - History
+   
 
 ## Funkitonen
     - Admin:
@@ -71,7 +85,7 @@
          PlayerA: RegularSpell (10 Damage) vs PlayerB: WaterGoblin (10 Damage) => 10 vs 10 > 20 vs 05 => Knight wins
          PlayerA: RegularSpell (10 Damage) vs PlayerB: Knight (15 Damage) => 10 vs 15 -> 10 vs 15 => Knight wins 
 
-## Starten
+## Ausführliche Installation
     - 1.Schritt: Git
        -  git clone https://github.com/immxmmi/3-Semester-SWEN-MTCG.git
        

@@ -7,7 +7,8 @@ import at.technikum.model.repository.Player;
 
 import java.util.ArrayList;
 
-public interface CardHolderHandler extends Repository<CardHolder> {
+// TODO: 23.01.2022 Fertig 
+public interface CardHolderHandler {
     /**
      * --> Läd alle Karten aus der Datenbank die dem User gehöhren in einem Array
      **/

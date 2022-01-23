@@ -48,7 +48,7 @@ class DeckHandlerImplTest {
     private Card createTestCard(String id){
         CardHandler cardHandler = new CardHandlerImpl();
         cardHandler.addCardByData(id, CardName.Dragon, CardType.MONSTER, CardElement.NORMAL,200.00);
-        return cardHandler.getCardById(id);
+        return cardHandler.getItemById(id);
     }
     private Deck TestDeck(){
         Player player = getTestUser();

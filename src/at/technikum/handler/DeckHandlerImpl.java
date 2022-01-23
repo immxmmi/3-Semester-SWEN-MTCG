@@ -4,6 +4,7 @@ import at.technikum.database.AbstractDBTable;
 import at.technikum.handler.repository.CardHandler;
 import at.technikum.handler.repository.CardHolderHandler;
 import at.technikum.handler.repository.DeckHandler;
+import at.technikum.handler.repository.Repository;
 import at.technikum.model.DeckImpl;
 import at.technikum.model.card.Card;
 import at.technikum.model.repository.Deck;
@@ -14,7 +15,8 @@ import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.List;
 
-public class DeckHandlerImpl extends AbstractDBTable implements DeckHandler {
+// TODO: 23.01.2022 Fertig
+public class DeckHandlerImpl extends AbstractDBTable implements DeckHandler, Repository<Deck> {
 
     CardHolderHandler cardHolderServices;
     CardHandler cardServices;
@@ -46,10 +48,10 @@ public class DeckHandlerImpl extends AbstractDBTable implements DeckHandler {
                 currentCardIDs.add(result.getString("card_id_3"));
                 currentCardIDs.add(result.getString("card_id_4"));
 
-                currentDeck.add(this.cardServices.getCardById(currentCardIDs.get(0)));
-                currentDeck.add(this.cardServices.getCardById(currentCardIDs.get(1)));
-                currentDeck.add(this.cardServices.getCardById(currentCardIDs.get(2)));
-                currentDeck.add(this.cardServices.getCardById(currentCardIDs.get(3)));
+                currentDeck.add(this.cardServices.getItemById(currentCardIDs.get(0)));
+                currentDeck.add(this.cardServices.getItemById(currentCardIDs.get(1)));
+                currentDeck.add(this.cardServices.getItemById(currentCardIDs.get(2)));
+                currentDeck.add(this.cardServices.getItemById(currentCardIDs.get(3)));
 
 
                 Deck deck = DeckImpl.builder()
@@ -74,6 +76,7 @@ public class DeckHandlerImpl extends AbstractDBTable implements DeckHandler {
     /*******************************************************************/
 
 
+    /** überprüft ob die Karten dem User gehören**/
     public boolean checkDeck(ArrayList<String> newDeck, String holderID) {
         CardHolderHandler cardHolderServices = new CardHolderHandlerImpl();
         for (int i = 0; i < newDeck.size(); i++) {

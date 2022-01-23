@@ -57,9 +57,9 @@ public class BattleControl implements Post {
             return new ResponseBuilderImpl().statusOK(battleSerializer.message("BATTLE - SEARCHING ...").toString());
         }
 
-        loggerStatic.log("\n................................. " + currentBattle.getPlayer2());
-        loggerStatic.log("\n. PLAYER 1 : " + currentBattle.getPlayer1());
-        loggerStatic.log("\n. PLAYER 2 : " + currentBattle.getPlayer2());
+        loggerStatic.log("\n.................................\n" + currentBattle.getPlayer2());
+        loggerStatic.log("\n. PLAYER 1 : " + currentBattle.getPlayer1().getUsername());
+        loggerStatic.log("\n. PLAYER 2 : " + currentBattle.getPlayer2().getUsername());
         loggerStatic.log("\n................................. \n" + currentBattle.getPlayer2());
 
         currentBattle = battleHandler.playGame(currentBattle);

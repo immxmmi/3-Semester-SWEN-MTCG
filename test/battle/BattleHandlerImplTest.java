@@ -53,7 +53,7 @@ class BattleHandlerImplTest {
     private Card insertTestCard(String id,Card card){
         CardHandler cardHandler = new CardHandlerImpl();
         cardHandler.addCardByData(id, card.getCardName(), card.getCardType(), card.getCardElement(), card.getCardPower());
-        return cardHandler.getCardById(id);
+        return cardHandler.getItemById(id);
     }
     private Player createTestUser(String letter){
         return PlayerImpl.builder()
@@ -146,6 +146,7 @@ class BattleHandlerImplTest {
         assertNotNull(battle.getPlayer1());
         assertNotNull(battle.getPlayer2());
         battle = insert(battle);
+        assertNotNull(battle);
         battle =  battleHandler.playGame(battle);
         assertFalse(battle.isSearching());
         assertNotEquals(battle.getRound(),0);
@@ -157,7 +158,6 @@ class BattleHandlerImplTest {
     private Battle insert(Battle testBattle) {
         assertNotNull(testBattle);
         Battle battle = battleHandler.insert(testBattle);
-        assertNotNull(battle);
         return battle;
     }
     private void delete(Battle battle) {

@@ -12,6 +12,7 @@ import java.util.List;
 
 @Builder(toBuilder = true)
 public class DeckImpl implements Deck {
+
     @Getter
     @Setter
     @SerializedName("userID")

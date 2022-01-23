@@ -14,8 +14,8 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.*;
 
-
-public class PlayerHandlerImpl extends AbstractDBTable implements PlayerHandler {
+// TODO: 23.01.2022 Fertig 
+public class PlayerHandlerImpl extends AbstractDBTable implements PlayerHandler, Repository<Player> {
 
     @Getter
     private static PlayerHandlerImpl instance;
@@ -54,9 +54,9 @@ public class PlayerHandlerImpl extends AbstractDBTable implements PlayerHandler 
                         .userID(result.getString("user_id"))
                         .username(result.getString("username"))
                         .password(result.getString("password"))
-                        .coins(convertToDouble(result.getString("user_coins")))
-                        .elo(convertToDouble(result.getString("user_elo")))
-                        .status(convertToBoolean(result.getString("user_online")))
+                        .coins( this.tools.convertToDouble(result.getString("user_coins")))
+                        .elo( this.tools.convertToDouble(result.getString("user_elo")))
+                        .status( this.tools.convertToBoolean(result.getString("user_online")))
                         .build();
                 player = loadPlayerStackDeck(player);
 
@@ -105,7 +105,7 @@ public class PlayerHandlerImpl extends AbstractDBTable implements PlayerHandler 
     @Override
     public Player register(String id, String username, String password) {
         if (id == "") {
-            id = "U-" + this.tokenSupplier.get();
+            id = "U-" +  this.tools.tokenSupplier.get();
         }
         if (getPlayerByUsername(username) != null) {
             loggerStatic.log("Username exist already");
@@ -115,7 +115,7 @@ public class PlayerHandlerImpl extends AbstractDBTable implements PlayerHandler 
         Player newPlayer = PlayerImpl.builder()
                 .userID(id)
                 .username(username)
-                .password(hashString(password))
+                .password( this.tools.hashString(password))
                 .build();
         this.currentPlayer = this.insert(newPlayer);
         return this.currentPlayer;
@@ -129,12 +129,12 @@ public class PlayerHandlerImpl extends AbstractDBTable implements PlayerHandler 
         if (newPlayer == null) {
             return false;
         }
-        this.sessionToken = ("ON-" + this.tokenSupplier.get());
+        this.sessionToken = ("ON-" +  this.tools.tokenSupplier.get());
 
         this.parameter = new String[]{
                 "" + this.sessionToken,
                 "" + newPlayer.getUserID(),
-                "" + formatDate(0)
+                "" +  this.tools.formatDate(0)
         };
 
         this.setStatement("INSERT INTO session (session_id, user_id,date)VALUES(?,?,?);", this.parameter);
@@ -188,9 +188,9 @@ public class PlayerHandlerImpl extends AbstractDBTable implements PlayerHandler 
                         .userID(result.getString("user_id"))
                         .username(result.getString("username"))
                         .password(result.getString("password"))
-                        .coins(convertToDouble(result.getString("user_coins")))
-                        .elo(convertToDouble(result.getString("user_elo")))
-                        .status(convertToBoolean(result.getString("user_online")))
+                        .coins( this.tools.convertToDouble(result.getString("user_coins")))
+                        .elo( this.tools.convertToDouble(result.getString("user_elo")))
+                        .status( this.tools.convertToBoolean(result.getString("user_online")))
                         .build();
                 highscore.put(currentPlayer.getUsername(),currentPlayer.getElo());
             }
@@ -260,10 +260,9 @@ public class PlayerHandlerImpl extends AbstractDBTable implements PlayerHandler 
     /*******************************************************************/
     /**                             ADD                               **/
     /*******************************************************************/
-    @Override
-    public boolean addCardToUser(String userID, String cardID) {
+    private boolean addCardToUser(String userID, String cardID) {
         System.out.println("#INSERT CARD");
-        String cardHolderID = this.tokenSupplier.get();
+        String cardHolderID =  this.tools.tokenSupplier.get();
         this.parameter = new String[]{cardHolderID, userID, cardID, "false", "false", "0", "0", "1"};
         this.setStatement("INSERT INTO \"cardHolder\" (\"cardHolder_id\", user_id, card_id, user_stack, user_deck, number_stack, number_deck, number) VALUES(?,?,?,?,?,?,?,?);", this.parameter);
         return true;
@@ -281,16 +280,7 @@ public class PlayerHandlerImpl extends AbstractDBTable implements PlayerHandler 
         }
         return PlayerHandlerImpl.instance;
     }
-
-    @Override
-    public Player getItemById(String id) {
-        this.parameter = new String[]{id};
-        this.setStatement(
-                "SELECT * FROM " + this.tableName + " WHERE user_id = ? " + ";",
-                this.parameter
-        );
-        return playerBuilder(this.result);
-    }
+    
 
     @Override
     public Player getPlayerByUsername(String username) {
@@ -308,7 +298,16 @@ public class PlayerHandlerImpl extends AbstractDBTable implements PlayerHandler 
     /*******************************************************************/
     /**                     Datenbank - Operatoren                    **/
     /*******************************************************************/
-
+    @Override
+    public Player getItemById(String id) {
+        this.parameter = new String[]{id};
+        this.setStatement(
+                "SELECT * FROM " + this.tableName + " WHERE user_id = ? " + ";",
+                this.parameter
+        );
+        return playerBuilder(this.result);
+    }
+    
     @Override
     /** INSERT NEW PLAYER **/
     public Player insert(Player newPlayer) {
@@ -383,8 +382,6 @@ public class PlayerHandlerImpl extends AbstractDBTable implements PlayerHandler 
                 , this.parameter);
         return true;
     }
-
-    @Override
     public boolean deleteByID(String userID) {
         // System.out.println("#DELETE:");
         Player currentPlayer;
@@ -414,7 +411,7 @@ public class PlayerHandlerImpl extends AbstractDBTable implements PlayerHandler 
 
     /** AUTH-PW **/
     public boolean authorizePassword(String hashedPassword, String password) {
-        return hashedPassword.equals(hashString(password));
+        return hashedPassword.equals( this.tools.hashString(password));
     }
 
 }

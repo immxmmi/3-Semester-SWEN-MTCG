@@ -79,7 +79,7 @@ public class PackageControl implements Post {
         }
 
         /** --> neu erstelltes Package in die Datenbank hinzufügen und nach der ID fragn **/
-        String packageID = this.packageHandler.insertPackage(newPackage).getPackageID();
+        String packageID = this.packageHandler.insert(newPackage).getPackageID();
 
         Package currentPackage = this.packageHandler.getItemById(packageID);
 

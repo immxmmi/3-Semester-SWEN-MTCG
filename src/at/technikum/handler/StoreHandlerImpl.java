@@ -43,7 +43,7 @@ public class StoreHandlerImpl extends AbstractDBTable implements StoreHandler {
                         .transactionID(result.getString("transaction_id"))
                         .sellerID(result.getString("seller_id"))
                         .itemID(result.getString("item_id"))
-                        .price(convertToDouble(result.getString("price")))
+                        .price(this.tools.convertToDouble(result.getString("price")))
                         .timeStamp(result.getString("date"))
                         .build();
 
@@ -79,14 +79,14 @@ public class StoreHandlerImpl extends AbstractDBTable implements StoreHandler {
     }
     @Override
     public void addItemToStore(String sellerID, String itemID, double price) {
-        String transactionID = this.tokenSupplier.get();
+        String transactionID = this.tools.tokenSupplier.get();
 
         this.parameter = new String[]{
                 "T - " + transactionID,
                 sellerID,
                 itemID,
                 "" + price,
-                "" + formatDate(2)
+                "" + this.tools.formatDate(2)
         };
 
         this.setStatement(
@@ -176,7 +176,7 @@ public class StoreHandlerImpl extends AbstractDBTable implements StoreHandler {
                         .transactionID(result.getString("transaction_id"))
                         .sellerID(result.getString("seller_id"))
                         .itemID(result.getString("item_id"))
-                        .price(convertToDouble(result.getString("price")))
+                        .price(this.tools.convertToDouble(result.getString("price")))
                         .timeStamp(result.getString("date"))
                         .build();
                 transactions.add(transaction);
@@ -200,7 +200,7 @@ public class StoreHandlerImpl extends AbstractDBTable implements StoreHandler {
                         .transactionID(result.getString("transaction_id"))
                         .sellerID(result.getString("seller_id"))
                         .itemID(result.getString("item_id"))
-                        .price(convertToDouble(result.getString("price")))
+                        .price(this.tools.convertToDouble(result.getString("price")))
                         .timeStamp(result.getString("date"))
                         .build();
                 transactions.add(transaction);

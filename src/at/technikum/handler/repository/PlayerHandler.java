@@ -6,7 +6,7 @@ import at.technikum.model.repository.Player;
 
 import java.util.LinkedHashMap;
 
-public interface PlayerHandler extends Repository<Player> {
+public interface PlayerHandler {
 
     Player login(String username, String password);
 
@@ -24,7 +24,7 @@ public interface PlayerHandler extends Repository<Player> {
 
     Player loadPlayerStackDeck(Player currentPlayer);
 
-    boolean addCardToUser(String userID, String cardID);
+    boolean delete(Player currentPlayer);
 
     PlayerHandlerImpl getInstance();
 
@@ -32,5 +32,5 @@ public interface PlayerHandler extends Repository<Player> {
 
     Player getPlayerByUsername(String username);
 
-    boolean deleteByID(String userID);
+    Player update(Player currentPlayer);
 }

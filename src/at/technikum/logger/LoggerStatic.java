@@ -18,7 +18,7 @@ public final class LoggerStatic {
     private LoggerStatic(){
         FileHandler history = null;
         try{
-            history = new FileHandler("history.log",true);
+            history = new FileHandler("./res/history/history.log",true);
             SimpleFormatter formatter = new SimpleFormatter();
             history.setFormatter(formatter);
 

@@ -1,8 +1,10 @@
 package at.technikum.handler;
 
 import at.technikum.database.AbstractDBTable;
+import at.technikum.handler.repository.CardHandler;
 import at.technikum.handler.repository.CardHolderHandler;
 import at.technikum.handler.repository.PackageHandler;
+import at.technikum.handler.repository.Repository;
 import at.technikum.model.CardHolderImpl;
 import at.technikum.model.card.Card;
 import at.technikum.model.repository.CardHolder;
@@ -13,7 +15,7 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.ArrayList;
 
-public class CardHolderHandlerImpl extends AbstractDBTable implements CardHolderHandler {
+public class CardHolderHandlerImpl extends AbstractDBTable implements CardHolderHandler, Repository<CardHolder> {
 
     private static CardHolderHandlerImpl instance;
 
@@ -41,9 +43,9 @@ public class CardHolderHandlerImpl extends AbstractDBTable implements CardHolder
                 CardHolder holder = CardHolderImpl.builder()
                         .cardHolderID(this.result.getString("cardHolder_id"))
                         .cardID(this.result.getString("card_id"))
-                        .number(this.convertToDouble(this.result.getString("number")))
+                        .number( this.tools.convertToDouble(this.result.getString("number")))
                         .holderID("holder_id")
-                        .locked(convertToBoolean(this.result.getString("locked")))
+                        .locked( this.tools.convertToBoolean(this.result.getString("locked")))
                         .build();
                 // this.closeStatement();
 
@@ -78,8 +80,8 @@ public class CardHolderHandlerImpl extends AbstractDBTable implements CardHolder
         try {
             while (this.result.next()) {
 
-                for (int i = 0; i < convertToDouble(this.result.getString("number")); i++) {
-                    cards.add(card.getCardById(result.getString("card_id")));
+                for (int i = 0; i <  this.tools.convertToDouble(this.result.getString("number")); i++) {
+                    cards.add(card.getItemById(result.getString("card_id")));
                 }
             }
 
@@ -104,8 +106,8 @@ public class CardHolderHandlerImpl extends AbstractDBTable implements CardHolder
         try {
             while (this.result.next()) {
 
-                for (int i = 0; i < convertToDouble(this.result.getString("number")); i++) {
-                    cards.add(card.getCardById(result.getString("card_id")));
+                for (int i = 0; i <  this.tools.convertToDouble(this.result.getString("number")); i++) {
+                    cards.add(card.getItemById(result.getString("card_id")));
                 }
             }
 
@@ -136,7 +138,7 @@ public class CardHolderHandlerImpl extends AbstractDBTable implements CardHolder
         ResultSet first_result = this.result;
         try {
             while (first_result.next()) {
-                for (int i = 0; i < this.convertToDouble(first_result.getString("number")); i++) {
+                for (int i = 0; i <  this.tools.convertToDouble(first_result.getString("number")); i++) {
                     insertCardToHolder(new_holderID, first_result.getString("card_id"), false);
                 }
                 ;
@@ -298,7 +300,7 @@ public class CardHolderHandlerImpl extends AbstractDBTable implements CardHolder
     @Override
     public void insertCardToHolder(String holderID, String cardID, boolean locked) {
         //  System.out.println("#INSERT CARD TO HOLDER");
-        String cardHolderID = "H-" + this.tokenSupplier.get();
+        String cardHolderID = "H-" +  this.tools.tokenSupplier.get();
         double number = getCardHolderNumber(holderID, cardID, locked);
 
         if (number == 0) {

@@ -1,14 +1,14 @@
 package at.technikum.handler;
 
-import at.technikum.database.AbstractDBTable;
 import at.technikum.handler.repository.BattleHandler;
 import at.technikum.handler.repository.PlayerHandler;
+import at.technikum.model.repository.Battle;
+import at.technikum.model.repository.Player;
+import at.technikum.database.AbstractDBTable;
+import at.technikum.model.*;
 import at.technikum.handler.repository.Repository;
 import at.technikum.logic.BattleLogic;
 import at.technikum.logic.BattleLogicImpl;
-import at.technikum.model.BattleImpl;
-import at.technikum.model.repository.Battle;
-import at.technikum.model.repository.Player;
 
 import java.sql.ResultSet;
 import java.sql.SQLException;
@@ -42,8 +42,8 @@ public class BattleHandlerImpl extends AbstractDBTable implements BattleHandler,
                         .player1(playerHandler.getItemById(result.getString("player1")))
                         .player2(player2)
                         .winner(playerHandler.getItemById(result.getString("winner")))
-                        .round(convertToInt(result.getString("round")))
-                        .searching(convertToBoolean(result.getString("searching")))
+                        .round(this.tools.convertToInt(result.getString("round")))
+                        .searching(this.tools.convertToBoolean(result.getString("searching")))
                         .build();
                 this.closeStatement();
                 return battle;
@@ -65,7 +65,7 @@ public class BattleHandlerImpl extends AbstractDBTable implements BattleHandler,
     @Override
     public Battle startBattle(Player player) {
         if(checkSearching(player) != null){
-            System.out.println(ANSI_GREEN + "BATTLE - SEARCHING ..." + ANSI_RESET);
+            System.out.println(this.textColor.ANSI_GREEN + "BATTLE - SEARCHING ..." + this.textColor.ANSI_RESET);
             return null;
         }
         Battle currentBattle = createBattle(player);
@@ -128,8 +128,8 @@ public class BattleHandlerImpl extends AbstractDBTable implements BattleHandler,
                     player2 = playerHandler.getItemById(result.getString("player2"));
                 }
                 Player winner = playerHandler.getItemById(result.getString("winner"));
-                int round = convertToInt(result.getString("round"));
-                Boolean searching = convertToBoolean(result.getString("searching"));
+                int round = this.tools.convertToInt(result.getString("round"));
+                Boolean searching = this.tools.convertToBoolean(result.getString("searching"));
 
                 Battle battle = BattleImpl.builder()
                         .battleID(battleID)
@@ -151,19 +151,15 @@ public class BattleHandlerImpl extends AbstractDBTable implements BattleHandler,
     public Battle getItemById(String battleID){
         this.parameter = new String[]{battleID};
         this.setStatement("SELECT * FROM " + this.tableName + " WHERE battle_id = ? ;", this.parameter);
+
         return battleBuilder(this.result);
     }
     @Override
     public Battle insert(Battle newBattle){
-        String player2Id = "null";
-        newBattle.setBattleID("B-"+this.tokenSupplier.get());
-        if(newBattle.getPlayer2() != null){
-            player2Id = newBattle.getPlayer2().getUserID();
-        }
         this.parameter = new String[]{
-                newBattle.getBattleID(),
+                "B-"+this.tools.tokenSupplier.get(),
                 newBattle.getPlayer1().getUserID(),
-                player2Id,
+                "null",
                 ""+newBattle.getRound(),
                 "noWinner",
                 ""+newBattle.isSearching()

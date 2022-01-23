@@ -3,11 +3,12 @@ package at.technikum.handler;
 import at.technikum.database.AbstractDBTable;
 import at.technikum.handler.repository.CardHandler;
 import at.technikum.handler.repository.CardHolderHandler;
+import at.technikum.handler.repository.Repository;
 import at.technikum.handler.repository.StackHandler;
 import at.technikum.model.StackImpl;
 import at.technikum.model.repository.Stack;
 
-public class StackHandlerImpl extends AbstractDBTable implements StackHandler {
+public class StackHandlerImpl extends AbstractDBTable implements StackHandler, Repository<Stack> {
     CardHolderHandler cardHolderServices;
     CardHandler cardServices;
 
@@ -31,15 +32,6 @@ public class StackHandlerImpl extends AbstractDBTable implements StackHandler {
         return getItemById(userID);
     }
 
-    @Override
-    public Stack getItemById(String userID) {
-
-        Stack currentStack = StackImpl.builder()
-                .userID(userID)
-                .stack(this.cardHolderServices.loadCardsByHolderID(userID))
-                .build();
-        return currentStack;
-    }
 
     @Override
     public Stack loadFreeStack(String userID) {
@@ -56,6 +48,15 @@ public class StackHandlerImpl extends AbstractDBTable implements StackHandler {
     /*******************************************************************/
     /**                     Datenbank - Operatoren                    **/
     /*******************************************************************/
+    @Override
+    public Stack getItemById(String userID) {
+
+        Stack currentStack = StackImpl.builder()
+                .userID(userID)
+                .stack(this.cardHolderServices.loadCardsByHolderID(userID))
+                .build();
+        return currentStack;
+    }
 
     /**
      * --> Fügt CARDHOLDER in die Datenbank
@@ -71,7 +72,6 @@ public class StackHandlerImpl extends AbstractDBTable implements StackHandler {
 
     @Override
     public Stack update(Stack item) {
-
         this.setStatement("UPDATE " + this.tableName + " SET user_id = ?, card_id_1 = ?, card_id_2 = ?,card_id_3 = ?, card_id_4 = ? " + "WHERE user_id = '" + 2 + "' ;", this.parameter);
         return null;
     }

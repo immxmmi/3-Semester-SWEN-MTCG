@@ -9,6 +9,7 @@ import at.technikum.model.card.cardTypes.CardType;
 import java.util.ArrayList;
 import java.util.HashMap;
 
+// TODO: 23.01.2022 Fertig 
 public interface CardHandler {
     /** --> wandelt getAllCards in ArrayListen um **/
     ArrayList<Card> getAllCardsList();
@@ -20,7 +21,7 @@ public interface CardHandler {
     Card cardBuilder(String cardID, String cardName, CardType cardTyp, String cardElement, String cardPower);
 
     /** Liefert eine Karte mithilfe --> ID aus der Datenbank **/
-    Card getCardById(String cardID);
+    Card getItemById(String cardID);
 
     /** Liefert eine Karte mithilfe --> Name aus der Datenbank **/
     Card getCardByName(String cardName);

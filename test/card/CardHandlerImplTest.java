@@ -22,7 +22,7 @@ class CardHandlerImplTest {
     private Card createTestCard(){
         Card card = cardHandler.addCardByData("TEST",CardName.Dragon,CardType.MONSTER,CardElement.NORMAL,200.00);
         assertNotNull(card);
-        card = cardHandler.getCardById(card.getCardID());
+        card = cardHandler.getItemById(card.getCardID());
         assertNotNull(card);
         return card;
     }
@@ -44,7 +44,7 @@ class CardHandlerImplTest {
     @Test
     void getCardById() {
         Card card = createTestCard();
-        assertNotNull(cardHandler.getCardById(card.getCardID()));
+        assertNotNull(cardHandler.getItemById(card.getCardID()));
         delete(card);
     }
 
@@ -129,9 +129,9 @@ class CardHandlerImplTest {
 
     private void delete(Card card){
         // DELETE
-        assertNotNull(cardHandler.getCardById(card.getCardID()));
+        assertNotNull(cardHandler.getItemById(card.getCardID()));
         cardHandler.delete(card);
-        assertEquals(cardHandler.getCardById(card.getCardID()),null);
+        assertEquals(cardHandler.getItemById(card.getCardID()),null);
     }
 
 

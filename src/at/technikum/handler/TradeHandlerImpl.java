@@ -1,7 +1,9 @@
 package at.technikum.handler;
 
 import at.technikum.database.AbstractDBTable;
+import at.technikum.handler.repository.CardHandler;
 import at.technikum.handler.repository.CardHolderHandler;
+import at.technikum.handler.repository.Repository;
 import at.technikum.handler.repository.TradeHandler;
 import at.technikum.model.TradeImpl;
 import at.technikum.model.card.Card;
@@ -13,11 +15,11 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.ArrayList;
 
-public class TradeHandlerImpl extends AbstractDBTable implements TradeHandler {
+public class TradeHandlerImpl extends AbstractDBTable implements TradeHandler, Repository<Trade> {
 
 
 
-    private CardHandlerImpl cardHandlerImpl = new CardHandlerImpl();
+    private CardHandler cardHandler = new CardHandlerImpl();
     private CardHolderHandler cardHolderHandler = new CardHolderHandlerImpl();
 
     /*******************************************************************/
@@ -40,9 +42,9 @@ public class TradeHandlerImpl extends AbstractDBTable implements TradeHandler {
                 Trade trade = (Trade) TradeImpl.builder()
                         .tradeID(result.getString("trade_id"))
                         .userID(result.getString("user_id"))
-                        .card(cardHandlerImpl.getCardById(result.getString("card_id")))
+                        .card(cardHandler.getItemById(result.getString("card_id")))
                         .cardTyp(CardType.valueOf(result.getString("card_typ")))
-                        .minPower(convertToDouble(result.getString("card_min_power")))
+                        .minPower( this.tools.convertToDouble(result.getString("card_min_power")))
                         .build();
                 this.closeStatement();
 
@@ -60,7 +62,7 @@ public class TradeHandlerImpl extends AbstractDBTable implements TradeHandler {
 
 
     private boolean checkCardByID(String cardID){
-        if(cardHandlerImpl.getCardById(cardID) == null){
+        if(cardHandler.getItemById(cardID) == null){
             return false;
         }
         return true;
@@ -76,7 +78,7 @@ public class TradeHandlerImpl extends AbstractDBTable implements TradeHandler {
 
     @Override
     public boolean checkTradeRequirement(Trade trade, String cardID){
-        Card card = cardHandlerImpl.getCardById(cardID);
+        Card card = cardHandler.getItemById(cardID);
         if(trade.getMinPower() > card.getCardPower()){
             return false;
         }
@@ -93,39 +95,32 @@ public class TradeHandlerImpl extends AbstractDBTable implements TradeHandler {
     @Override
     public Trade addTrade(String tradeID, String userID, String cardID, CardType cardType, double cardPower) {
 
-        String transactionID = this.tokenSupplier.get();
-        CardHolder cardHolder = checkCardHolderByID(userID,cardID);
-        if(tradeID == ""){
-            tradeID = transactionID;
-        }
-
-        tradeID  = "T-" + tradeID;
-
-        if(getTradeByID(tradeID) != null){return null;}
+        if(getItemById(tradeID) != null){return null;}
         if(!checkCardByID(cardID)){return null;}
-        if(cardHolder == null){
-            return null;
+
+        CardHolder cardHolder = checkCardHolderByID(userID,cardID);
+        if(cardHolder == null){return null;}
+
+        if(tradeID == ""){
+            tradeID = "T-" + tools.tokenSupplier.get();
+        }else{
+            tradeID  = "T-" + tradeID;
         }
 
-        this.parameter = new String[]{
-                tradeID,
-                userID,
-                cardID,
-                "" + cardType,
-                "" + cardPower
-        };
+        Trade trade = TradeImpl.builder()
+                .tradeID( this.tools.tokenSupplier.get())
+                .userID(userID)
+                .card(cardHandler.getItemById(cardID))
+                .cardTyp(cardType)
+                .build();
 
-        this.setStatement(
-                "INSERT INTO "+this.tableName+" (trade_id, user_id, card_id, card_typ , card_min_power) values ( ?,?,?,?,?)",
-                this.parameter
-        );
-
+        insert(trade);
         cardHolderHandler.updateLocked(cardHolder,true);
 
-        return getTradeByID(tradeID);
+        return getItemById(tradeID);
     }
     @Override
-    public Trade getTradeByID(String tradeID){
+    public Trade getItemById(String tradeID){
         this.parameter = new String[]{tradeID};
         this.setStatement(
                 "SELECT * FROM " + this.tableName + " WHERE trade_id = ? " + ";",
@@ -134,6 +129,32 @@ public class TradeHandlerImpl extends AbstractDBTable implements TradeHandler {
 
         return tradeBuilder(this.result);
     }
+
+    @Override
+    public Trade insert(Trade item) {
+        //System.out.println(ANSI_BLUE + "#INSERT:" + ANSI_RESET);
+        if (item == null) {
+            return null;
+        }
+        this.parameter = new String[]{
+                "" + item.getTradeID(),
+                "" + item.getUserID(),
+                "" + item.getCard().getCardID(),
+                "" + item.getCardTyp(),
+                "" + item.getMinPower()
+        };
+        this.setStatement(
+                "INSERT INTO "+this.tableName+" (trade_id, user_id, card_id, card_typ , card_min_power) values ( ?,?,?,?,?)",
+                this.parameter
+        );
+        return getItemById(item.getUserID());
+    }
+
+    @Override
+    public Trade update(Trade item) {
+        return null;
+    }
+
     @Override
     public ArrayList<Trade> getAllTradeByUserID(String userID) {
         ArrayList<Trade> trades = new ArrayList<>();
@@ -143,9 +164,9 @@ public class TradeHandlerImpl extends AbstractDBTable implements TradeHandler {
         try {
             while (this.result.next()) {
                String tradeID = result.getString("trade_id");
-               Card card = cardHandlerImpl.getCardById(result.getString("card_id"));
+               Card card = cardHandler.getItemById(result.getString("card_id"));
                CardType cardType = CardType.valueOf(result.getString("card_typ"));
-               Double minPower = convertToDouble(result.getString("card_min_power"));
+               Double minPower =  this.tools.convertToDouble(result.getString("card_min_power"));
                Trade trade = TradeImpl.builder()
                        .tradeID(tradeID)
                        .card(card)
@@ -160,8 +181,9 @@ public class TradeHandlerImpl extends AbstractDBTable implements TradeHandler {
         this.closeStatement();
         return trades;
     }
+
     @Override
-    public boolean deleteByID(Trade trade) {
+    public boolean delete(Trade trade) {
         // System.out.println("#DELETE ITEM");
 
         CardHolder cardHolder = checkCardHolderByID(trade.getUserID(),trade.getCard().getCardID());
@@ -172,10 +194,7 @@ public class TradeHandlerImpl extends AbstractDBTable implements TradeHandler {
         cardHolderHandler.updateLocked(cardHolder,false);
         return true;
     }
-    private void updatePrice(String transactionID, int newPrice) {
-        this.parameter = new String[]{"" + newPrice, transactionID};
-        setStatement("UPDATE  \"" + this.tableName + "\" SET  price = ? WHERE  transaction_id= ?;", this.parameter);
-    }
+
     /*******************************************************************/
 
 

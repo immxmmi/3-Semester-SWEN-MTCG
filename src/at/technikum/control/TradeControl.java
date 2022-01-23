@@ -122,7 +122,7 @@ public class TradeControl {
         /** --> TRADE ID **/
         String tradeID = "T-" + requestImpl.getPath().split("/tradings/")[1];
         String cardID = "C-" + requestImpl.getBody().replace("\"","");
-        Trade currentTrade = trade.getTradeByID(tradeID);
+        Trade currentTrade = trade.getItemById(tradeID);
 
         /** --> TRADE CHECK - USER != TRADE OWNER**/
         if (currentTrade == null) {
@@ -167,7 +167,7 @@ public class TradeControl {
 
         String tradeID = "T-" + requestImpl.getPath().split("/tradings/")[1];
 
-        Trade currentTrade = trade.getTradeByID(tradeID);
+        Trade currentTrade = trade.getItemById(tradeID);
         if (currentTrade == null) {
             //System.out.println(textColor.ANSI_RED + "DELETE - TRADE NOT FOUND" + textColor.ANSI_RESET);
             loggerStatic.log("\nDELETE - TRADE NOT FOUND\n");
@@ -181,7 +181,7 @@ public class TradeControl {
             return new ResponseBuilderImpl().statusUnAuthorized(tradeSerializer.message("UNAUTHORIZED").toString());
         }
 
-        if (trade.deleteByID(currentTrade)) {
+        if (trade.delete(currentTrade)) {
             //System.out.println(textColor.ANSI_GREEN + "DELETE - SUCCESS" + textColor.ANSI_RESET);
             loggerStatic.log("\nDELETE - SUCCESS\n");
             return new ResponseBuilderImpl().statusOK(tradeSerializer.message("DELETE - SUCCESS").toString());

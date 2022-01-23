@@ -2,6 +2,7 @@ package at.technikum.handler;
 
 import at.technikum.database.AbstractDBTable;
 import at.technikum.handler.repository.CardHandler;
+import at.technikum.handler.repository.Repository;
 import at.technikum.logger.LoggerStatic;
 import at.technikum.model.card.Card;
 import at.technikum.model.card.cardTypes.*;
@@ -11,7 +12,8 @@ import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.HashMap;
 
-public class CardHandlerImpl extends AbstractDBTable implements CardHandler {
+// TODO: 23.01.2022 Fertig
+public class CardHandlerImpl extends AbstractDBTable implements CardHandler, Repository<Card> {
 
     private static CardHandlerImpl instance;
     private LoggerStatic loggerStatic;
@@ -121,7 +123,7 @@ public class CardHandlerImpl extends AbstractDBTable implements CardHandler {
                         .cardTyp(CardType.MONSTER)
                         .cardName(CardName.valueOf(cardName))
                         .cardElement(CardElement.valueOf(cardElement))
-                        .cardPower(convertToDouble(cardPower))
+                        .cardPower(this.tools.convertToDouble(cardPower))
                         .build();
                 return card;
             case SPELL:
@@ -130,7 +132,7 @@ public class CardHandlerImpl extends AbstractDBTable implements CardHandler {
                         .cardTyp(CardType.SPELL)
                         .cardName(CardName.valueOf(cardName))
                         .cardElement(CardElement.valueOf(cardElement))
-                        .cardPower(convertToDouble(cardPower))
+                        .cardPower(this.tools.convertToDouble(cardPower))
                         .build();
                 return card;
         }
@@ -180,7 +182,7 @@ public class CardHandlerImpl extends AbstractDBTable implements CardHandler {
     }
     @Override
     /** Liefert eine Karte mithilfe --> ID aus der Datenbank **/
-    public Card getCardById(String cardID) {
+    public Card getItemById(String cardID) {
         this.parameter = new String[] {cardID};
         this.setStatement(
                 "SELECT * FROM " + this.tableName + " WHERE card_id = ? "+";",
@@ -256,7 +258,7 @@ public class CardHandlerImpl extends AbstractDBTable implements CardHandler {
         Card card;
 
         if(cardID == ""){
-            cardID = "C-"+this.tokenSupplier.get();
+            cardID = "C-"+ this.tools.tokenSupplier.get();
         }
         switch (cardTyp){
             case MONSTER -> {
@@ -302,7 +304,7 @@ public class CardHandlerImpl extends AbstractDBTable implements CardHandler {
             return null;
         }
 
-        if(getCardById(""+newCard.getCardID()) == null) {
+        if(getItemById(""+newCard.getCardID()) == null) {
            // System.out.println("NewCard --> add to Database");
             this.parameter = new String[]{
                     newCard.getCardID(),
@@ -312,7 +314,7 @@ public class CardHandlerImpl extends AbstractDBTable implements CardHandler {
                     String.valueOf(newCard.getCardPower()),
             };
             this.setStatement("INSERT INTO " + this.tableName + "(card_id,card_typ,card_name,card_element,card_power)VALUES(?,?,?,?,?);", this.parameter);
-            return getCardById(newCard.getCardID());
+            return getItemById(newCard.getCardID());
         }
         loggerStatic.log("Card already exist");
         //System.out.println(TextColor.ANSI_RED +"Card already exist" + TextColor.ANSI_RESET);
@@ -341,13 +343,13 @@ public class CardHandlerImpl extends AbstractDBTable implements CardHandler {
                 ,this.parameter
         );
 
-        return getCardById(currentCard.getCardID());
+        return getItemById(currentCard.getCardID());
     }
     @Override
     /** Löscht die Karte **/
     public boolean delete(Card currentCard) {
       //  System.out.println("#DELETE:");
-        if(getCardById(currentCard.getCardID()) == null){
+        if(getItemById(currentCard.getCardID()) == null){
             return false;
         }
         this.parameter = new String[]{

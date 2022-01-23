@@ -17,7 +17,7 @@ import java.util.Random;
 import java.util.UUID;
 import java.util.function.Supplier;
 
-public class Tools extends TextColor {
+public class Tools{
 
     /**
      * HASH STRING
@@ -86,7 +86,7 @@ public class Tools extends TextColor {
     }
 
     // DATUM
-    protected String formatDate(int format) {
+    public String formatDate(int format) {
         LocalDate date = LocalDate.now();
         DateTimeFormatter df = null;
 
@@ -116,7 +116,7 @@ public class Tools extends TextColor {
      * RANDOM
      ***************************************************/
     // TOKEN GENERATOR --> erstellt einzigartige IDs
-    protected Supplier<String> tokenSupplier = () -> {
+    public Supplier<String> tokenSupplier = () -> {
         StringBuilder token = new StringBuilder();
         long currentTimeInMilisecond = Instant.now().toEpochMilli();
         return token.append(currentTimeInMilisecond).append("-")
@@ -135,17 +135,17 @@ public class Tools extends TextColor {
      * CONVERTING
      ***********************************************/
     // CONVERT TO NUMBER - Double
-    protected Double convertToDouble(String text) {
+    public Double convertToDouble(String text) {
         return Double.parseDouble(text);
     }
 
     // CONVERT TO NUMBER - Integer
-    protected Integer convertToInt(String text) {
+    public Integer convertToInt(String text) {
         return Integer.parseInt(text);
     }
 
     // CONVERT TO BOOLEAN
-    protected boolean convertToBoolean(String text) {
+    public boolean convertToBoolean(String text) {
         return Boolean.parseBoolean(text);
     }
 

@@ -8,7 +8,7 @@ import java.sql.DriverManager;
 import java.sql.SQLException;
 
 
-public class DBConnectImpl extends Tools implements Cloneable, DBConnect { // TODO: 07.01.2022 fertig
+public class DBConnectImpl implements Cloneable, DBConnect { // TODO: 07.01.2022 fertig
 
 
     private String databaseName;

@@ -3,6 +3,7 @@ package at.technikum.handler;
 import at.technikum.database.AbstractDBTable;
 import at.technikum.handler.repository.PlayerHandler;
 import at.technikum.handler.repository.ProfilHandler;
+import at.technikum.handler.repository.Repository;
 import at.technikum.model.ProfilImpl;
 import at.technikum.model.repository.Player;
 import at.technikum.model.repository.Profil;
@@ -11,7 +12,7 @@ import at.technikum.utils.TextColor;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 
-public class ProfilHandlerImpl extends AbstractDBTable implements ProfilHandler {
+public class ProfilHandlerImpl extends AbstractDBTable implements ProfilHandler, Repository<Profil> {
 
 
 

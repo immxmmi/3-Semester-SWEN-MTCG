@@ -145,7 +145,7 @@ public class StoreServices {
                 System.out.println(
                         "##|" + count +
                                 "|" + seller.getItemById(i.getSellerID()).getUsername() + "               " +
-                                "|" + card.getCardById(i.getItemID()).getCardName() + "               " +
+                                "|" + card.getItemById(i.getItemID()).getCardName() + "               " +
                                 "|   " + i.getPrice() + "   " +
                                 //"|"+i.getTimeStamp()+"      |"
                                 "|  DATE    |" +
@@ -195,7 +195,7 @@ public class StoreServices {
             System.out.println("-----------------------------------------------------");
             System.out.println("# number " + number);
             System.out.println(transaction.getTransactionID());
-            System.out.println(card.getCardById(transaction.getItemID()).getCardName());
+            System.out.println(card.getItemById(transaction.getItemID()).getCardName());
             System.out.println(transaction.getPrice());
             System.out.println("-----------------------------------------------------");
             number++;

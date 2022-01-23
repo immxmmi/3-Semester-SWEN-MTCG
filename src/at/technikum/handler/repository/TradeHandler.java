@@ -13,9 +13,9 @@ public interface TradeHandler {
 
     Trade addTrade(String tradeID, String userID, String cardID, CardType cardType, double cardPower);
 
-    Trade getTradeByID(String tradeID);
+    Trade getItemById(String tradeID);
 
     ArrayList<Trade> getAllTradeByUserID(String userID);
 
-    boolean deleteByID(Trade trade);
+    boolean delete(Trade trade);
 }

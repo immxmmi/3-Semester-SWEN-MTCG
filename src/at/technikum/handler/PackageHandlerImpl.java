@@ -26,7 +26,7 @@ public class PackageHandlerImpl extends AbstractDBTable implements PackageHandle
     public PackageHandlerImpl() {
         this.cardHolderServices = new CardHolderHandlerImpl();
         this.currentPackage = PackageImpl.builder()
-                .packageID("PK-" + this.tokenSupplier.get())
+                .packageID("PK-" + this.tools.tokenSupplier.get())
                 .price(5)
                 .build();
         this.tableName = "package";
@@ -168,7 +168,7 @@ public class PackageHandlerImpl extends AbstractDBTable implements PackageHandle
         }
         this.parameter = new String[]{
                 newPackage.getPackageID(),
-                "" + formatDate(2)
+                "" + this.tools.formatDate(2)
         };
         this.setStatement("INSERT INTO " + this.tableName + "(\"package_id\", \"date\")VALUES(?,?);", this.parameter);
         return newPackage;
@@ -182,7 +182,7 @@ public class PackageHandlerImpl extends AbstractDBTable implements PackageHandle
         }
         this.parameter = new String[]{
                 newPackage.getPackageID(),
-                "" + formatDate(2)
+                "" + this.tools.formatDate(2)
         };
         this.setStatement("INSERT INTO " + this.tableName + "(\"package_id\", \"date\")VALUES(?,?);", this.parameter);
         return newPackage;
