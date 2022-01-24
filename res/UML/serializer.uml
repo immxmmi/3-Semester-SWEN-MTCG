@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Diagram>
+  <ID>JAVA</ID>
+  <OriginalElement>at.technikum.serializer</OriginalElement>
+  <nodes>
+    <node x="811.0" y="106.0">at.technikum.serializer.ProfilSerializer</node>
+    <node x="558.5" y="0.0">at.technikum.serializer.AbstractSerializer</node>
+    <node x="487.0" y="106.0">at.technikum.serializer.StoreSerializer</node>
+    <node x="159.0" y="106.0">at.technikum.serializer.PlayerSerializer</node>
+    <node x="324.0" y="106.0">at.technikum.serializer.BattleSerializer</node>
+    <node x="648.0" y="106.0">at.technikum.serializer.TradeSerializer</node>
+    <node x="1151.0" y="106.0">at.technikum.serializer.StackSerializer</node>
+    <node x="971.0" y="106.0">at.technikum.serializer.PackageSerializer</node>
+    <node x="0.0" y="106.0">at.technikum.serializer.DeckSerializer</node>
+  </nodes>
+  <notes />
+  <edges>
+    <edge source="at.technikum.serializer.DeckSerializer" target="at.technikum.serializer.AbstractSerializer" relationship="GENERALIZATION">
+      <point x="0.0" y="-28.0" />
+      <point x="69.5" y="81.0" />
+      <point x="638.5" y="81.0" />
+      <point x="0.0" y="28.0" />
+    </edge>
+    <edge source="at.technikum.serializer.ProfilSerializer" target="at.technikum.serializer.AbstractSerializer" relationship="GENERALIZATION">
+      <point x="0.0" y="-28.0" />
+      <point x="881.0" y="81.0" />
+      <point x="638.5" y="81.0" />
+      <point x="0.0" y="28.0" />
+    </edge>
+    <edge source="at.technikum.serializer.TradeSerializer" target="at.technikum.serializer.AbstractSerializer" relationship="GENERALIZATION">
+      <point x="0.0" y="-28.0" />
+      <point x="719.5" y="81.0" />
+      <point x="638.5" y="81.0" />
+      <point x="0.0" y="28.0" />
+    </edge>
+    <edge source="at.technikum.serializer.StackSerializer" target="at.technikum.serializer.AbstractSerializer" relationship="GENERALIZATION">
+      <point x="0.0" y="-28.0" />
+      <point x="1221.5" y="81.0" />
+      <point x="638.5" y="81.0" />
+      <point x="0.0" y="28.0" />
+    </edge>
+    <edge source="at.technikum.serializer.StoreSerializer" target="at.technikum.serializer.AbstractSerializer" relationship="GENERALIZATION">
+      <point x="0.0" y="-28.0" />
+      <point x="557.5" y="81.0" />
+      <point x="638.5" y="81.0" />
+      <point x="0.0" y="28.0" />
+    </edge>
+    <edge source="at.technikum.serializer.BattleSerializer" target="at.technikum.serializer.AbstractSerializer" relationship="GENERALIZATION">
+      <point x="0.0" y="-28.0" />
+      <point x="395.5" y="81.0" />
+      <point x="638.5" y="81.0" />
+      <point x="0.0" y="28.0" />
+    </edge>
+    <edge source="at.technikum.serializer.PlayerSerializer" target="at.technikum.serializer.AbstractSerializer" relationship="GENERALIZATION">
+      <point x="0.0" y="-28.0" />
+      <point x="231.5" y="81.0" />
+      <point x="638.5" y="81.0" />
+      <point x="0.0" y="28.0" />
+    </edge>
+    <edge source="at.technikum.serializer.PackageSerializer" target="at.technikum.serializer.AbstractSerializer" relationship="GENERALIZATION">
+      <point x="0.0" y="-28.0" />
+      <point x="1051.0" y="81.0" />
+      <point x="638.5" y="81.0" />
+      <point x="0.0" y="28.0" />
+    </edge>
+  </edges>
+  <settings layout="Hierarchic" zoom="0.9557926829268293" showDependencies="false" x="646.0" y="81.0" />
+  <SelectedNodes>
+    <node>at.technikum.serializer.ProfilSerializer</node>
+    <node>at.technikum.serializer.AbstractSerializer</node>
+    <node>at.technikum.serializer.StoreSerializer</node>
+    <node>at.technikum.serializer.PlayerSerializer</node>
+    <node>at.technikum.serializer.BattleSerializer</node>
+    <node>at.technikum.serializer.TradeSerializer</node>
+    <node>at.technikum.serializer.StackSerializer</node>
+    <node>at.technikum.serializer.PackageSerializer</node>
+    <node>at.technikum.serializer.DeckSerializer</node>
+  </SelectedNodes>
+  <Categories>
+    <Category>Constructors</Category>
+    <Category>Fields</Category>
+    <Category>Inner Classes</Category>
+    <Category>Properties</Category>
+  </Categories>
+  <SCOPE>All</SCOPE>
+  <VISIBILITY>public</VISIBILITY>
+</Diagram>
+

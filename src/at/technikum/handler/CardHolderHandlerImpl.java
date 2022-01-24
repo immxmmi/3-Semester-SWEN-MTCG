@@ -1,7 +1,6 @@
 package at.technikum.handler;
 
 import at.technikum.database.AbstractDBTable;
-import at.technikum.handler.repository.CardHandler;
 import at.technikum.handler.repository.CardHolderHandler;
 import at.technikum.handler.repository.PackageHandler;
 import at.technikum.handler.repository.Repository;

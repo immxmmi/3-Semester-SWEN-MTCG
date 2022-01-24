@@ -1,6 +1,9 @@
 package stack;
 
-import at.technikum.handler.*;
+import at.technikum.handler.CardHandlerImpl;
+import at.technikum.handler.CardHolderHandlerImpl;
+import at.technikum.handler.PlayerHandlerImpl;
+import at.technikum.handler.StackHandlerImpl;
 import at.technikum.handler.repository.CardHandler;
 import at.technikum.handler.repository.CardHolderHandler;
 import at.technikum.handler.repository.PlayerHandler;
@@ -14,7 +17,8 @@ import at.technikum.model.repository.Stack;
 import org.junit.jupiter.api.Test;
 import org.mockito.Mock;
 
-import static org.junit.jupiter.api.Assertions.*;
+import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertNotNull;
 
 class StackHandlerImplTest {
 

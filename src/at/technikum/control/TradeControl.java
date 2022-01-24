@@ -1,24 +1,29 @@
 package at.technikum.control;
 
+import at.technikum.control.repository.Delete;
+import at.technikum.control.repository.Get;
+import at.technikum.control.repository.Post;
+import at.technikum.handler.CardHolderHandlerImpl;
+import at.technikum.handler.PlayerHandlerImpl;
+import at.technikum.handler.TradeHandlerImpl;
 import at.technikum.handler.repository.CardHolderHandler;
 import at.technikum.handler.repository.PlayerHandler;
 import at.technikum.handler.repository.TradeHandler;
 import at.technikum.logger.LoggerStatic;
+import at.technikum.model.card.cardTypes.CardType;
 import at.technikum.model.repository.Player;
 import at.technikum.model.repository.Trade;
-import at.technikum.handler.*;
 import at.technikum.serializer.TradeSerializer;
 import at.technikum.server.request.RequestImpl;
 import at.technikum.server.response.ResponseBuilderImpl;
 import at.technikum.server.response.ResponseImpl;
-import at.technikum.model.card.cardTypes.CardType;
 import at.technikum.utils.TextColor;
 import com.google.gson.Gson;
 import com.google.gson.JsonElement;
 import com.google.gson.JsonObject;
 import com.google.gson.JsonParser;
 
-public class TradeControl {
+public class TradeControl implements Get, Post, Delete {
 
     private CardHolderHandler cardHolderHandler;
     private PlayerHandler playerHandler;

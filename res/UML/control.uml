@@ -1,0 +1,109 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Diagram>
+  <ID>JAVA</ID>
+  <OriginalElement>at.technikum.control</OriginalElement>
+  <nodes>
+    <node x="1264.0" y="180.0">at.technikum.control.BattleControl</node>
+    <node x="258.0" y="169.0">at.technikum.control.ProfilControl</node>
+    <node x="1509.0" y="180.0">at.technikum.control.StoreControl</node>
+    <node x="736.0" y="147.0">at.technikum.control.TradeControl</node>
+    <node x="767.1041666666667" y="0.0">at.technikum.control.repository.Delete</node>
+    <node x="497.00000000000006" y="0.0">at.technikum.control.repository.Get</node>
+    <node x="1264.0" y="0.0">at.technikum.control.repository.Post</node>
+    <node x="497.00000000000006" y="180.0">at.technikum.control.StackControl</node>
+    <node x="0.0" y="158.0">at.technikum.control.DeckControl</node>
+    <node x="991.0" y="136.0">at.technikum.control.PlayerControl</node>
+    <node x="1754.0" y="180.0">at.technikum.control.PackageControl</node>
+    <node x="81.0" y="0.0">at.technikum.control.repository.Put</node>
+  </nodes>
+  <notes />
+  <edges>
+    <edge source="at.technikum.control.PlayerControl" target="at.technikum.control.repository.Post" relationship="REALIZATION">
+      <point x="0.0" y="-72.0" />
+      <point x="1117.5" y="116.0" />
+      <point x="1376.5" y="116.0" />
+      <point x="0.0" y="28.0" />
+    </edge>
+    <edge source="at.technikum.control.ProfilControl" target="at.technikum.control.repository.Get" relationship="REALIZATION">
+      <point x="0.0" y="-39.0" />
+      <point x="367.5" y="116.0" />
+      <point x="606.5" y="116.0" />
+      <point x="0.0" y="28.0" />
+    </edge>
+    <edge source="at.technikum.control.ProfilControl" target="at.technikum.control.repository.Put" relationship="REALIZATION">
+      <point x="0.0" y="-39.0" />
+      <point x="367.5" y="86.0" />
+      <point x="190.5" y="86.0" />
+      <point x="0.0" y="28.0" />
+    </edge>
+    <edge source="at.technikum.control.PackageControl" target="at.technikum.control.repository.Post" relationship="REALIZATION">
+      <point x="0.0" y="-28.0" />
+      <point x="1866.5" y="96.0" />
+      <point x="1376.5" y="96.0" />
+      <point x="0.0" y="28.0" />
+    </edge>
+    <edge source="at.technikum.control.PlayerControl" target="at.technikum.control.repository.Get" relationship="REALIZATION">
+      <point x="0.0" y="-72.0" />
+      <point x="1117.5" y="76.0" />
+      <point x="606.5" y="76.0" />
+      <point x="0.0" y="28.0" />
+    </edge>
+    <edge source="at.technikum.control.StackControl" target="at.technikum.control.repository.Get" relationship="REALIZATION">
+      <point x="0.0" y="-28.0" />
+      <point x="0.0" y="28.0" />
+    </edge>
+    <edge source="at.technikum.control.TradeControl" target="at.technikum.control.repository.Delete" relationship="REALIZATION">
+      <point x="0.0" y="-61.0" />
+      <point x="853.5" y="96.0" />
+      <point x="884.6041666666667" y="96.0" />
+      <point x="0.0" y="28.0" />
+    </edge>
+    <edge source="at.technikum.control.DeckControl" target="at.technikum.control.repository.Get" relationship="REALIZATION">
+      <point x="0.0" y="-50.0" />
+      <point x="119.0" y="106.0" />
+      <point x="606.5" y="106.0" />
+      <point x="0.0" y="28.0" />
+    </edge>
+    <edge source="at.technikum.control.StoreControl" target="at.technikum.control.repository.Post" relationship="REALIZATION">
+      <point x="0.0" y="-28.0" />
+      <point x="1621.5" y="96.0" />
+      <point x="1376.5" y="96.0" />
+      <point x="0.0" y="28.0" />
+    </edge>
+    <edge source="at.technikum.control.TradeControl" target="at.technikum.control.repository.Get" relationship="REALIZATION">
+      <point x="0.0" y="-61.0" />
+      <point x="853.5" y="86.0" />
+      <point x="606.5" y="86.0" />
+      <point x="0.0" y="28.0" />
+    </edge>
+    <edge source="at.technikum.control.BattleControl" target="at.technikum.control.repository.Post" relationship="REALIZATION">
+      <point x="0.0" y="-28.0" />
+      <point x="0.0" y="28.0" />
+    </edge>
+    <edge source="at.technikum.control.DeckControl" target="at.technikum.control.repository.Put" relationship="REALIZATION">
+      <point x="0.0" y="-50.0" />
+      <point x="119.0" y="96.0" />
+      <point x="190.5" y="96.0" />
+      <point x="0.0" y="28.0" />
+    </edge>
+    <edge source="at.technikum.control.TradeControl" target="at.technikum.control.repository.Post" relationship="REALIZATION">
+      <point x="0.0" y="-61.0" />
+      <point x="853.5" y="106.0" />
+      <point x="1376.5" y="106.0" />
+      <point x="0.0" y="28.0" />
+    </edge>
+  </edges>
+  <settings layout="Hierarchic" zoom="0.6008004002001001" showDependencies="false" x="989.5" y="139.99999999999994" />
+  <SelectedNodes>
+    <node>at.technikum.control.repository.Post</node>
+  </SelectedNodes>
+  <Categories>
+    <Category>Fields</Category>
+    <Category>Inner Classes</Category>
+    <Category>Methods</Category>
+    <Category>Properties</Category>
+  </Categories>
+  <SCOPE>All</SCOPE>
+  <VISIBILITY>public</VISIBILITY>
+</Diagram>
+

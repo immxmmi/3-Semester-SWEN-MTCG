@@ -1,13 +1,7 @@
 package player;
 
-import at.technikum.handler.CardHandlerImpl;
 import at.technikum.handler.PlayerHandlerImpl;
-import at.technikum.handler.repository.CardHandler;
 import at.technikum.model.PlayerImpl;
-import at.technikum.model.card.Card;
-import at.technikum.model.card.cardTypes.CardElement;
-import at.technikum.model.card.cardTypes.CardName;
-import at.technikum.model.card.cardTypes.CardType;
 import at.technikum.model.repository.Player;
 import at.technikum.utils.Tools;
 import org.junit.jupiter.api.DisplayName;

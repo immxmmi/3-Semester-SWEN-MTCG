@@ -1,14 +1,14 @@
 package at.technikum.handler;
 
+import at.technikum.database.AbstractDBTable;
 import at.technikum.handler.repository.BattleHandler;
 import at.technikum.handler.repository.PlayerHandler;
-import at.technikum.model.repository.Battle;
-import at.technikum.model.repository.Player;
-import at.technikum.database.AbstractDBTable;
-import at.technikum.model.*;
 import at.technikum.handler.repository.Repository;
 import at.technikum.logic.BattleLogic;
 import at.technikum.logic.BattleLogicImpl;
+import at.technikum.model.BattleImpl;
+import at.technikum.model.repository.Battle;
+import at.technikum.model.repository.Player;
 
 import java.sql.ResultSet;
 import java.sql.SQLException;
