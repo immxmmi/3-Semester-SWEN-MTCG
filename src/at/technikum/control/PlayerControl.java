@@ -23,7 +23,6 @@ import java.util.regex.Pattern;
 // https://www.delftstack.com/de/howto/java/java-json-to-object/
 public class PlayerControl implements Post, Get {
 
-
     private Pattern p;
     private Gson gson;
     private Printer print;
@@ -83,7 +82,6 @@ public class PlayerControl implements Post, Get {
             return responseImpl;
         }
 
-
         /** --> Erstellt ein Player Objekt **/
         Player newPlayer = gson.fromJson(requestImpl.getBody(), PlayerImpl.class);
         /** --> User versucht sich zu registrieren **/
@@ -103,6 +101,29 @@ public class PlayerControl implements Post, Get {
         loggerStatic.log("\n REGISTER SUCCESS\n");
         return new ResponseBuilderImpl().statusCreated(player.toString());
     }
+
+    /*** --> LOGOUT **/
+    public ResponseImpl logout(RequestImpl requestImpl) {
+        // System.out.println("# LOGIN ");
+        loggerStatic.log("\n# LOGOUT\n");
+        /** --> WENN REQUEST LEER IST --> WENN AUTH LEER IST --> WENN USER NICHT EXISTIERT **/
+        ResponseImpl responseImpl = new ResponseBuilderImpl().requestErrorHandler(requestImpl, true, false, true);
+        if (responseImpl != null) {
+            return responseImpl;
+        }
+
+        /** --> User versucht sich einzuloggen **/
+        Player currentPlayer = this.playerHandler.getItemById(requestImpl.getAuth());
+        playerHandler.logout(currentPlayer);
+        currentPlayer = this.playerHandler.getItemById(requestImpl.getAuth());
+        /** --> JSON OBJECT **/
+        JsonObject jsonObject = playerSerializer.convertPlayerToJson(currentPlayer,true,true,false,false,true,false, false,false,false);
+        /** --> STATUS OK **/
+        loggerStatic.log("\n LOGIN SUCCESS\n");
+        return new ResponseBuilderImpl().statusOK(jsonObject.toString());
+    }
+
+
 
     /*** --> STATUS**/
     @Override

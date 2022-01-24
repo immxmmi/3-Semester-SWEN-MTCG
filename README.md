@@ -4,7 +4,7 @@
   - docker pull immxmmi/3-semester-swen-mtcg
   -  Server starten
       - Klasse Main - function main() ausführen.
-      - Server hört auf den Port:10001 IP: 127.0.0.1 oder localhost max 5 Client können sich verbinden.
+      - Server hört auf den Port: 10001 IP: 127.0.0.1 oder localhost max 5 Client können sich verbinden.
       - Es ist möglich den PORT IP und CLIENT anzahl zu verändern im main
       
 ## Ressourcen

@@ -64,6 +64,8 @@ public class ServerHandler {
             this.route.put("^POST /tradings?$", TradeControl.class.getDeclaredMethod("post", RequestImpl.class));
            // USER - TRADE
             this.route.put("^POST /tradings/?$", TradeControl.class.getDeclaredMethod("trade", RequestImpl.class));
+            //LOGOUT
+            this.route.put("^POST /logout?$", PlayerControl.class.getDeclaredMethod("logout", RequestImpl.class));
 
 
         } catch (NoSuchMethodException e) {

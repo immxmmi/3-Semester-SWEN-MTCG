@@ -14729,3 +14729,2784 @@ Jän. 24, 2022 1:52:03 AM at.technikum.logger.LoggerStatic log
 INFO: 
 NO TRADING
 
+Jän. 24, 2022 2:10:27 AM at.technikum.logger.LoggerStatic log
+INFO: 
+# REGISTER
+
+Jän. 24, 2022 2:10:27 AM at.technikum.logger.LoggerStatic log
+INFO: 
+ REGISTER SUCCESS
+
+Jän. 24, 2022 2:10:27 AM at.technikum.logger.LoggerStatic log
+INFO: 
+# REGISTER
+
+Jän. 24, 2022 2:10:27 AM at.technikum.logger.LoggerStatic log
+INFO: 
+ REGISTER SUCCESS
+
+Jän. 24, 2022 2:10:27 AM at.technikum.logger.LoggerStatic log
+INFO: 
+# REGISTER
+
+Jän. 24, 2022 2:10:27 AM at.technikum.logger.LoggerStatic log
+INFO: 
+ REGISTER SUCCESS
+
+Jän. 24, 2022 2:10:27 AM at.technikum.logger.LoggerStatic log
+INFO: 
+# REGISTER
+
+Jän. 24, 2022 2:10:27 AM at.technikum.logger.LoggerStatic log
+INFO: Username exist already
+Jän. 24, 2022 2:10:27 AM at.technikum.logger.LoggerStatic log
+INFO: 
+# REGISTER
+
+Jän. 24, 2022 2:10:27 AM at.technikum.logger.LoggerStatic log
+INFO: Username exist already
+Jän. 24, 2022 2:10:27 AM at.technikum.logger.LoggerStatic log
+INFO: 
+# LOGIN
+
+Jän. 24, 2022 2:10:27 AM at.technikum.logger.LoggerStatic log
+INFO: 
+ LOGIN SUCCESS
+
+Jän. 24, 2022 2:10:27 AM at.technikum.logger.LoggerStatic log
+INFO: 
+# LOGIN
+
+Jän. 24, 2022 2:10:27 AM at.technikum.logger.LoggerStatic log
+INFO: 
+ LOGIN SUCCESS
+
+Jän. 24, 2022 2:10:27 AM at.technikum.logger.LoggerStatic log
+INFO: 
+# LOGIN
+
+Jän. 24, 2022 2:10:27 AM at.technikum.logger.LoggerStatic log
+INFO: 
+ LOGIN SUCCESS
+
+Jän. 24, 2022 2:10:27 AM at.technikum.logger.LoggerStatic log
+INFO: 
+# LOGIN
+
+Jän. 24, 2022 2:10:27 AM at.technikum.logger.LoggerStatic log
+INFO: ERROR - Password is wrong! 
+Jän. 24, 2022 2:10:27 AM at.technikum.logger.LoggerStatic log
+INFO: 
+USER NOT FOUND
+
+Jän. 24, 2022 2:10:27 AM at.technikum.logger.LoggerStatic log
+INFO: 
+CREATE PACKAGE
+
+Jän. 24, 2022 2:10:27 AM at.technikum.logger.LoggerStatic log
+INFO: 
+PACKAGE CREATED - OK
+
+Jän. 24, 2022 2:10:27 AM at.technikum.logger.LoggerStatic log
+INFO: 
+CREATE PACKAGE
+
+Jän. 24, 2022 2:10:27 AM at.technikum.logger.LoggerStatic log
+INFO: 
+PACKAGE CREATED - OK
+
+Jän. 24, 2022 2:10:27 AM at.technikum.logger.LoggerStatic log
+INFO: 
+CREATE PACKAGE
+
+Jän. 24, 2022 2:10:27 AM at.technikum.logger.LoggerStatic log
+INFO: 
+PACKAGE CREATED - OK
+
+Jän. 24, 2022 2:10:27 AM at.technikum.logger.LoggerStatic log
+INFO: 
+CREATE PACKAGE
+
+Jän. 24, 2022 2:10:27 AM at.technikum.logger.LoggerStatic log
+INFO: 
+PACKAGE CREATED - OK
+
+Jän. 24, 2022 2:10:27 AM at.technikum.logger.LoggerStatic log
+INFO: 
+CREATE PACKAGE
+
+Jän. 24, 2022 2:10:28 AM at.technikum.logger.LoggerStatic log
+INFO: 
+PACKAGE CREATED - OK
+
+Jän. 24, 2022 2:10:28 AM at.technikum.logger.LoggerStatic log
+INFO: 
+CREATE PACKAGE
+
+Jän. 24, 2022 2:10:28 AM at.technikum.logger.LoggerStatic log
+INFO: 
+PACKAGE CREATED - OK
+
+Jän. 24, 2022 2:10:28 AM at.technikum.logger.LoggerStatic log
+INFO: 
+# PACKAGE - BUY
+
+Jän. 24, 2022 2:10:28 AM at.technikum.logger.LoggerStatic log
+INFO: 
+PACKAGE SOLD!
+
+Jän. 24, 2022 2:10:28 AM at.technikum.logger.LoggerStatic log
+INFO: 
+# PACKAGE - BUY
+
+Jän. 24, 2022 2:10:28 AM at.technikum.logger.LoggerStatic log
+INFO: 
+PACKAGE SOLD!
+
+Jän. 24, 2022 2:10:28 AM at.technikum.logger.LoggerStatic log
+INFO: 
+# PACKAGE - BUY
+
+Jän. 24, 2022 2:10:28 AM at.technikum.logger.LoggerStatic log
+INFO: 
+PACKAGE SOLD!
+
+Jän. 24, 2022 2:10:28 AM at.technikum.logger.LoggerStatic log
+INFO: 
+# PACKAGE - BUY
+
+Jän. 24, 2022 2:10:29 AM at.technikum.logger.LoggerStatic log
+INFO: 
+PACKAGE SOLD!
+
+Jän. 24, 2022 2:10:29 AM at.technikum.logger.LoggerStatic log
+INFO: 
+# PACKAGE - BUY
+
+Jän. 24, 2022 2:10:29 AM at.technikum.logger.LoggerStatic log
+INFO: 
+(NO MONEY)
+
+Jän. 24, 2022 2:10:29 AM at.technikum.logger.LoggerStatic log
+INFO: 
+# PACKAGE - BUY
+
+Jän. 24, 2022 2:10:29 AM at.technikum.logger.LoggerStatic log
+INFO: 
+PACKAGE SOLD!
+
+Jän. 24, 2022 2:10:29 AM at.technikum.logger.LoggerStatic log
+INFO: 
+# PACKAGE - BUY
+
+Jän. 24, 2022 2:10:29 AM at.technikum.logger.LoggerStatic log
+INFO: 
+PACKAGE SOLD!
+
+Jän. 24, 2022 2:10:29 AM at.technikum.logger.LoggerStatic log
+INFO: 
+# PACKAGE - BUY
+
+Jän. 24, 2022 2:10:30 AM at.technikum.logger.LoggerStatic log
+INFO: 
+(NO PACKAGE)
+
+Jän. 24, 2022 2:10:30 AM at.technikum.logger.LoggerStatic log
+INFO: 
+CREATE PACKAGE
+
+Jän. 24, 2022 2:10:30 AM at.technikum.logger.LoggerStatic log
+INFO: 
+PACKAGE CREATED - OK
+
+Jän. 24, 2022 2:10:30 AM at.technikum.logger.LoggerStatic log
+INFO: 
+CREATE PACKAGE
+
+Jän. 24, 2022 2:10:30 AM at.technikum.logger.LoggerStatic log
+INFO: 
+PACKAGE CREATED - OK
+
+Jän. 24, 2022 2:10:30 AM at.technikum.logger.LoggerStatic log
+INFO: 
+CREATE PACKAGE
+
+Jän. 24, 2022 2:10:30 AM at.technikum.logger.LoggerStatic log
+INFO: 
+PACKAGE CREATED - OK
+
+Jän. 24, 2022 2:10:30 AM at.technikum.logger.LoggerStatic log
+INFO: 
+# PACKAGE - BUY
+
+Jän. 24, 2022 2:10:30 AM at.technikum.logger.LoggerStatic log
+INFO: 
+PACKAGE SOLD!
+
+Jän. 24, 2022 2:10:30 AM at.technikum.logger.LoggerStatic log
+INFO: 
+# PACKAGE - BUY
+
+Jän. 24, 2022 2:10:31 AM at.technikum.logger.LoggerStatic log
+INFO: 
+PACKAGE SOLD!
+
+Jän. 24, 2022 2:10:31 AM at.technikum.logger.LoggerStatic log
+INFO: 
+# PACKAGE - BUY
+
+Jän. 24, 2022 2:10:31 AM at.technikum.logger.LoggerStatic log
+INFO: 
+(NO MONEY)
+
+Jän. 24, 2022 2:10:31 AM at.technikum.logger.LoggerStatic log
+INFO: 
+# STACK
+
+Jän. 24, 2022 2:10:31 AM at.technikum.logger.LoggerStatic log
+INFO: 
+LOADING FINISHED!
+
+Jän. 24, 2022 2:10:31 AM at.technikum.logger.LoggerStatic log
+INFO: 
+# STACK
+
+Jän. 24, 2022 2:10:31 AM at.technikum.logger.LoggerStatic log
+INFO: 
+NO TOKEN
+
+Jän. 24, 2022 2:10:31 AM at.technikum.logger.LoggerStatic log
+INFO: 
+# STACK
+
+Jän. 24, 2022 2:10:31 AM at.technikum.logger.LoggerStatic log
+INFO: 
+LOADING FINISHED!
+
+Jän. 24, 2022 2:10:31 AM at.technikum.logger.LoggerStatic log
+INFO: 
+"# LOAD DECK"
+
+Jän. 24, 2022 2:10:31 AM at.technikum.logger.LoggerStatic log
+INFO: 
+DECK EMPTY
+
+Jän. 24, 2022 2:10:31 AM at.technikum.logger.LoggerStatic log
+INFO: 
+"# LOAD DECK"
+
+Jän. 24, 2022 2:10:31 AM at.technikum.logger.LoggerStatic log
+INFO: 
+DECK EMPTY
+
+Jän. 24, 2022 2:10:31 AM at.technikum.logger.LoggerStatic log
+INFO: 
+## NEW DECK 
+
+Jän. 24, 2022 2:10:32 AM at.technikum.logger.LoggerStatic log
+INFO: 
+SET NEW DECK!
+
+Jän. 24, 2022 2:10:32 AM at.technikum.logger.LoggerStatic log
+INFO: 
+"# LOAD DECK"
+
+Jän. 24, 2022 2:10:32 AM at.technikum.logger.LoggerStatic log
+INFO: 
+"LOADING FINISHED!"
+
+Jän. 24, 2022 2:10:32 AM at.technikum.logger.LoggerStatic log
+INFO: 
+## NEW DECK 
+
+Jän. 24, 2022 2:10:32 AM at.technikum.logger.LoggerStatic log
+INFO: 
+SET NEW DECK!
+
+Jän. 24, 2022 2:10:32 AM at.technikum.logger.LoggerStatic log
+INFO: 
+"# LOAD DECK"
+
+Jän. 24, 2022 2:10:32 AM at.technikum.logger.LoggerStatic log
+INFO: 
+"LOADING FINISHED!"
+
+Jän. 24, 2022 2:10:32 AM at.technikum.logger.LoggerStatic log
+INFO: 
+## NEW DECK 
+
+Jän. 24, 2022 2:10:32 AM at.technikum.logger.LoggerStatic log
+INFO: 
+SET NEW DECK - ERROR
+
+Jän. 24, 2022 2:10:32 AM at.technikum.logger.LoggerStatic log
+INFO: 
+"# LOAD DECK"
+
+Jän. 24, 2022 2:10:32 AM at.technikum.logger.LoggerStatic log
+INFO: 
+"LOADING FINISHED!"
+
+Jän. 24, 2022 2:10:32 AM at.technikum.logger.LoggerStatic log
+INFO: 
+## NEW DECK 
+
+Jän. 24, 2022 2:10:32 AM at.technikum.logger.LoggerStatic log
+INFO: 
+SET NEW DECK - ERROR
+
+Jän. 24, 2022 2:10:32 AM at.technikum.logger.LoggerStatic log
+INFO: 
+"# LOAD DECK"
+
+Jän. 24, 2022 2:10:33 AM at.technikum.logger.LoggerStatic log
+INFO: 
+"LOADING FINISHED!"
+
+Jän. 24, 2022 2:10:33 AM at.technikum.logger.LoggerStatic log
+INFO: 
+"# LOAD DECK"
+
+Jän. 24, 2022 2:10:33 AM at.technikum.logger.LoggerStatic log
+INFO: 
+"LOADING FINISHED!"
+
+Jän. 24, 2022 2:10:33 AM at.technikum.logger.LoggerStatic log
+INFO: 
+LOAD DECK
+
+Jän. 24, 2022 2:10:33 AM at.technikum.logger.LoggerStatic log
+INFO: 
+LOADING FINISHED!
+
+Jän. 24, 2022 2:10:33 AM at.technikum.logger.LoggerStatic log
+INFO: 
+LOAD DECK
+
+Jän. 24, 2022 2:10:33 AM at.technikum.logger.LoggerStatic log
+INFO: 
+LOADING FINISHED!
+
+Jän. 24, 2022 2:10:33 AM at.technikum.logger.LoggerStatic log
+INFO: 
+# Profil 
+
+Jän. 24, 2022 2:10:33 AM at.technikum.logger.LoggerStatic log
+INFO: 
+LOADING FINISHED!
+
+Jän. 24, 2022 2:10:33 AM at.technikum.logger.LoggerStatic log
+INFO: 
+# Profil 
+
+Jän. 24, 2022 2:10:33 AM at.technikum.logger.LoggerStatic log
+INFO: 
+LOADING FINISHED!
+
+Jän. 24, 2022 2:10:33 AM at.technikum.logger.LoggerStatic log
+INFO: 
+#SET NEW PLAYER INFO 
+
+Jän. 24, 2022 2:10:33 AM at.technikum.logger.LoggerStatic log
+INFO: 
+LOADING FINISHED! 
+
+Jän. 24, 2022 2:10:33 AM at.technikum.logger.LoggerStatic log
+INFO: 
+#SET NEW PLAYER INFO 
+
+Jän. 24, 2022 2:10:33 AM at.technikum.logger.LoggerStatic log
+INFO: 
+LOADING FINISHED! 
+
+Jän. 24, 2022 2:10:33 AM at.technikum.logger.LoggerStatic log
+INFO: 
+# Profil 
+
+Jän. 24, 2022 2:10:34 AM at.technikum.logger.LoggerStatic log
+INFO: 
+LOADING FINISHED!
+
+Jän. 24, 2022 2:10:34 AM at.technikum.logger.LoggerStatic log
+INFO: 
+# Profil 
+
+Jän. 24, 2022 2:10:34 AM at.technikum.logger.LoggerStatic log
+INFO: 
+LOADING FINISHED!
+
+Jän. 24, 2022 2:10:34 AM at.technikum.logger.LoggerStatic log
+INFO: 
+# Profil 
+
+Jän. 24, 2022 2:10:34 AM at.technikum.logger.LoggerStatic log
+INFO: 
+USER NOT AUTH
+
+Jän. 24, 2022 2:10:34 AM at.technikum.logger.LoggerStatic log
+INFO: 
+# Profil 
+
+Jän. 24, 2022 2:10:34 AM at.technikum.logger.LoggerStatic log
+INFO: 
+USER NOT AUTH
+
+Jän. 24, 2022 2:10:34 AM at.technikum.logger.LoggerStatic log
+INFO: 
+#SET NEW PLAYER INFO 
+
+Jän. 24, 2022 2:10:34 AM at.technikum.logger.LoggerStatic log
+INFO: 
+USER NOT AUTH 
+
+Jän. 24, 2022 2:10:34 AM at.technikum.logger.LoggerStatic log
+INFO: 
+#SET NEW PLAYER INFO 
+
+Jän. 24, 2022 2:10:34 AM at.technikum.logger.LoggerStatic log
+INFO: 
+USER NOT AUTH 
+
+Jän. 24, 2022 2:10:34 AM at.technikum.logger.LoggerStatic log
+INFO: 
+# Profil 
+
+Jän. 24, 2022 2:10:34 AM at.technikum.logger.LoggerStatic log
+INFO: 
+USER NOT AUTH
+
+Jän. 24, 2022 2:10:34 AM at.technikum.logger.LoggerStatic log
+INFO: 
+ # STATUS
+
+Jän. 24, 2022 2:10:35 AM at.technikum.logger.LoggerStatic log
+INFO: 
+LOADING FINISHED!
+
+Jän. 24, 2022 2:10:35 AM at.technikum.logger.LoggerStatic log
+INFO: 
+ # STATUS
+
+Jän. 24, 2022 2:10:35 AM at.technikum.logger.LoggerStatic log
+INFO: 
+LOADING FINISHED!
+
+Jän. 24, 2022 2:10:35 AM at.technikum.logger.LoggerStatic log
+INFO: 
+ # SCORE 
+
+Jän. 24, 2022 2:10:35 AM at.technikum.logger.LoggerStatic log
+INFO: 
+LOADING FINISHED!
+
+Jän. 24, 2022 2:10:35 AM at.technikum.logger.LoggerStatic log
+INFO: 
+START GAME
+
+Jän. 24, 2022 2:10:35 AM at.technikum.logger.LoggerStatic log
+INFO: 
+START GAME
+
+Jän. 24, 2022 2:10:35 AM at.technikum.logger.LoggerStatic log
+INFO: 
+BATTLE - SEARCHING ...
+
+Jän. 24, 2022 2:10:35 AM at.technikum.logger.LoggerStatic log
+INFO: 
+.................................
+at.technikum.model.PlayerImpl@50a4ce5f
+Jän. 24, 2022 2:10:35 AM at.technikum.logger.LoggerStatic log
+INFO: 
+. PLAYER 1 : altenhof
+Jän. 24, 2022 2:10:35 AM at.technikum.logger.LoggerStatic log
+INFO: 
+. PLAYER 2 : kienboec
+Jän. 24, 2022 2:10:35 AM at.technikum.logger.LoggerStatic log
+INFO: 
+................................. 
+at.technikum.model.PlayerImpl@50a4ce5f
+Jän. 24, 2022 2:10:36 AM at.technikum.logger.LoggerStatic log
+INFO: ROUND:0
+Jän. 24, 2022 2:10:36 AM at.technikum.logger.LoggerStatic log
+INFO: PlayerA: Knight(20.0)VS PlayerB: RegularSpell(28.0)
+Jän. 24, 2022 2:10:36 AM at.technikum.logger.LoggerStatic log
+INFO: Winner is Player B
+Jän. 24, 2022 2:10:36 AM at.technikum.logger.LoggerStatic log
+INFO: ROUND:1
+Jän. 24, 2022 2:10:36 AM at.technikum.logger.LoggerStatic log
+INFO: PlayerA: RegularSpell(50.0)VS PlayerB: Knight(20.0)
+Jän. 24, 2022 2:10:36 AM at.technikum.logger.LoggerStatic log
+INFO: Winner is Player A
+Jän. 24, 2022 2:10:36 AM at.technikum.logger.LoggerStatic log
+INFO: ROUND:2
+Jän. 24, 2022 2:10:36 AM at.technikum.logger.LoggerStatic log
+INFO: PlayerA: WaterSpell(22.0)VS PlayerB: RegularSpell(28.0)
+Jän. 24, 2022 2:10:36 AM at.technikum.logger.LoggerStatic log
+INFO: normal -> water
+Jän. 24, 2022 2:10:36 AM at.technikum.logger.LoggerStatic log
+INFO: Winner is Player B
+Jän. 24, 2022 2:10:36 AM at.technikum.logger.LoggerStatic log
+INFO: ROUND:3
+Jän. 24, 2022 2:10:36 AM at.technikum.logger.LoggerStatic log
+INFO: PlayerA: RegularSpell(45.0)VS PlayerB: RegularSpell(28.0)
+Jän. 24, 2022 2:10:36 AM at.technikum.logger.LoggerStatic log
+INFO: Winner is Player A
+Jän. 24, 2022 2:10:36 AM at.technikum.logger.LoggerStatic log
+INFO: ROUND:4
+Jän. 24, 2022 2:10:36 AM at.technikum.logger.LoggerStatic log
+INFO: PlayerA: RegularSpell(28.0)VS PlayerB: WaterSpell(22.0)
+Jän. 24, 2022 2:10:36 AM at.technikum.logger.LoggerStatic log
+INFO: normal -> water
+Jän. 24, 2022 2:10:36 AM at.technikum.logger.LoggerStatic log
+INFO: Winner is Player A
+Jän. 24, 2022 2:10:36 AM at.technikum.logger.LoggerStatic log
+INFO: ROUND:5
+Jän. 24, 2022 2:10:36 AM at.technikum.logger.LoggerStatic log
+INFO: PlayerA: RegularSpell(28.0)VS PlayerB: WaterSpell(20.0)
+Jän. 24, 2022 2:10:36 AM at.technikum.logger.LoggerStatic log
+INFO: normal -> water
+Jän. 24, 2022 2:10:36 AM at.technikum.logger.LoggerStatic log
+INFO: Winner is Player A
+Jän. 24, 2022 2:10:36 AM at.technikum.logger.LoggerStatic log
+INFO: ROUND:6
+Jän. 24, 2022 2:10:36 AM at.technikum.logger.LoggerStatic log
+INFO: PlayerA: RegularSpell(28.0)VS PlayerB: Dragon(50.0)
+Jän. 24, 2022 2:10:36 AM at.technikum.logger.LoggerStatic log
+INFO: Winner is Player B
+Jän. 24, 2022 2:10:36 AM at.technikum.logger.LoggerStatic log
+INFO: ROUND:7
+Jän. 24, 2022 2:10:36 AM at.technikum.logger.LoggerStatic log
+INFO: PlayerA: RegularSpell(50.0)VS PlayerB: Dragon(50.0)
+Jän. 24, 2022 2:10:36 AM at.technikum.logger.LoggerStatic log
+INFO: The game is a draw
+Jän. 24, 2022 2:10:36 AM at.technikum.logger.LoggerStatic log
+INFO: ROUND:8
+Jän. 24, 2022 2:10:36 AM at.technikum.logger.LoggerStatic log
+INFO: PlayerA: RegularSpell(50.0)VS PlayerB: WaterGoblin(10.0)
+Jän. 24, 2022 2:10:36 AM at.technikum.logger.LoggerStatic log
+INFO: normal -> water
+Jän. 24, 2022 2:10:36 AM at.technikum.logger.LoggerStatic log
+INFO: Winner is Player A
+Jän. 24, 2022 2:10:36 AM at.technikum.logger.LoggerStatic log
+INFO: ROUND:9
+Jän. 24, 2022 2:10:36 AM at.technikum.logger.LoggerStatic log
+INFO: PlayerA: RegularSpell(45.0)VS PlayerB: Dragon(50.0)
+Jän. 24, 2022 2:10:36 AM at.technikum.logger.LoggerStatic log
+INFO: Winner is Player B
+Jän. 24, 2022 2:10:36 AM at.technikum.logger.LoggerStatic log
+INFO: ROUND:10
+Jän. 24, 2022 2:10:36 AM at.technikum.logger.LoggerStatic log
+INFO: PlayerA: Knight(20.0)VS PlayerB: RegularSpell(28.0)
+Jän. 24, 2022 2:10:36 AM at.technikum.logger.LoggerStatic log
+INFO: Winner is Player B
+Jän. 24, 2022 2:10:36 AM at.technikum.logger.LoggerStatic log
+INFO: ROUND:11
+Jän. 24, 2022 2:10:36 AM at.technikum.logger.LoggerStatic log
+INFO: PlayerA: WaterGoblin(10.0)VS PlayerB: RegularSpell(45.0)
+Jän. 24, 2022 2:10:36 AM at.technikum.logger.LoggerStatic log
+INFO: normal -> water
+Jän. 24, 2022 2:10:36 AM at.technikum.logger.LoggerStatic log
+INFO: Winner is Player B
+Jän. 24, 2022 2:10:36 AM at.technikum.logger.LoggerStatic log
+INFO: ROUND:12
+Jän. 24, 2022 2:10:36 AM at.technikum.logger.LoggerStatic log
+INFO: PlayerA: WaterSpell(20.0)VS PlayerB: Knight(20.0)
+Jän. 24, 2022 2:10:36 AM at.technikum.logger.LoggerStatic log
+INFO: The armor of Knights is so heavy that WaterSpells make them drown them instantly.
+Jän. 24, 2022 2:10:36 AM at.technikum.logger.LoggerStatic log
+INFO: Winner is Player A
+Jän. 24, 2022 2:10:36 AM at.technikum.logger.LoggerStatic log
+INFO: ROUND:13
+Jän. 24, 2022 2:10:36 AM at.technikum.logger.LoggerStatic log
+INFO: PlayerA: WaterSpell(20.0)VS PlayerB: Dragon(50.0)
+Jän. 24, 2022 2:10:36 AM at.technikum.logger.LoggerStatic log
+INFO: normal -> water
+Jän. 24, 2022 2:10:36 AM at.technikum.logger.LoggerStatic log
+INFO: Winner is Player B
+Jän. 24, 2022 2:10:36 AM at.technikum.logger.LoggerStatic log
+INFO: ROUND:14
+Jän. 24, 2022 2:10:36 AM at.technikum.logger.LoggerStatic log
+INFO: PlayerA: RegularSpell(50.0)VS PlayerB: RegularSpell(45.0)
+Jän. 24, 2022 2:10:36 AM at.technikum.logger.LoggerStatic log
+INFO: Winner is Player A
+Jän. 24, 2022 2:10:36 AM at.technikum.logger.LoggerStatic log
+INFO: ROUND:15
+Jän. 24, 2022 2:10:36 AM at.technikum.logger.LoggerStatic log
+INFO: PlayerA: RegularSpell(45.0)VS PlayerB: WaterGoblin(10.0)
+Jän. 24, 2022 2:10:36 AM at.technikum.logger.LoggerStatic log
+INFO: normal -> water
+Jän. 24, 2022 2:10:36 AM at.technikum.logger.LoggerStatic log
+INFO: Winner is Player A
+Jän. 24, 2022 2:10:36 AM at.technikum.logger.LoggerStatic log
+INFO: ROUND:16
+Jän. 24, 2022 2:10:36 AM at.technikum.logger.LoggerStatic log
+INFO: PlayerA: Knight(20.0)VS PlayerB: Dragon(50.0)
+Jän. 24, 2022 2:10:36 AM at.technikum.logger.LoggerStatic log
+INFO: Winner is Player B
+Jän. 24, 2022 2:10:36 AM at.technikum.logger.LoggerStatic log
+INFO: ROUND:17
+Jän. 24, 2022 2:10:36 AM at.technikum.logger.LoggerStatic log
+INFO: PlayerA: RegularSpell(50.0)VS PlayerB: Dragon(50.0)
+Jän. 24, 2022 2:10:36 AM at.technikum.logger.LoggerStatic log
+INFO: The game is a draw
+Jän. 24, 2022 2:10:36 AM at.technikum.logger.LoggerStatic log
+INFO: ROUND:18
+Jän. 24, 2022 2:10:36 AM at.technikum.logger.LoggerStatic log
+INFO: PlayerA: WaterGoblin(10.0)VS PlayerB: Knight(20.0)
+Jän. 24, 2022 2:10:36 AM at.technikum.logger.LoggerStatic log
+INFO: normal -> water
+Jän. 24, 2022 2:10:36 AM at.technikum.logger.LoggerStatic log
+INFO: Winner is Player B
+Jän. 24, 2022 2:10:36 AM at.technikum.logger.LoggerStatic log
+INFO: ROUND:19
+Jän. 24, 2022 2:10:36 AM at.technikum.logger.LoggerStatic log
+INFO: PlayerA: RegularSpell(45.0)VS PlayerB: Dragon(50.0)
+Jän. 24, 2022 2:10:36 AM at.technikum.logger.LoggerStatic log
+INFO: Winner is Player B
+Jän. 24, 2022 2:10:36 AM at.technikum.logger.LoggerStatic log
+INFO: ROUND:20
+Jän. 24, 2022 2:10:36 AM at.technikum.logger.LoggerStatic log
+INFO: PlayerA: WaterSpell(22.0)VS PlayerB: Knight(20.0)
+Jän. 24, 2022 2:10:36 AM at.technikum.logger.LoggerStatic log
+INFO: The armor of Knights is so heavy that WaterSpells make them drown them instantly.
+Jän. 24, 2022 2:10:36 AM at.technikum.logger.LoggerStatic log
+INFO: Winner is Player A
+Jän. 24, 2022 2:10:36 AM at.technikum.logger.LoggerStatic log
+INFO: ROUND:21
+Jän. 24, 2022 2:10:36 AM at.technikum.logger.LoggerStatic log
+INFO: PlayerA: RegularSpell(50.0)VS PlayerB: WaterGoblin(10.0)
+Jän. 24, 2022 2:10:36 AM at.technikum.logger.LoggerStatic log
+INFO: normal -> water
+Jän. 24, 2022 2:10:36 AM at.technikum.logger.LoggerStatic log
+INFO: Winner is Player A
+Jän. 24, 2022 2:10:36 AM at.technikum.logger.LoggerStatic log
+INFO: ROUND:22
+Jän. 24, 2022 2:10:36 AM at.technikum.logger.LoggerStatic log
+INFO: PlayerA: WaterSpell(22.0)VS PlayerB: Dragon(50.0)
+Jän. 24, 2022 2:10:36 AM at.technikum.logger.LoggerStatic log
+INFO: normal -> water
+Jän. 24, 2022 2:10:36 AM at.technikum.logger.LoggerStatic log
+INFO: Winner is Player B
+Jän. 24, 2022 2:10:36 AM at.technikum.logger.LoggerStatic log
+INFO: ROUND:23
+Jän. 24, 2022 2:10:36 AM at.technikum.logger.LoggerStatic log
+INFO: PlayerA: WaterGoblin(10.0)VS PlayerB: WaterSpell(20.0)
+Jän. 24, 2022 2:10:36 AM at.technikum.logger.LoggerStatic log
+INFO: Winner is Player B
+Jän. 24, 2022 2:10:36 AM at.technikum.logger.LoggerStatic log
+INFO: ROUND:24
+Jän. 24, 2022 2:10:36 AM at.technikum.logger.LoggerStatic log
+INFO: PlayerA: RegularSpell(50.0)VS PlayerB: RegularSpell(45.0)
+Jän. 24, 2022 2:10:36 AM at.technikum.logger.LoggerStatic log
+INFO: Winner is Player A
+Jän. 24, 2022 2:10:36 AM at.technikum.logger.LoggerStatic log
+INFO: ROUND:25
+Jän. 24, 2022 2:10:36 AM at.technikum.logger.LoggerStatic log
+INFO: PlayerA: RegularSpell(45.0)VS PlayerB: WaterSpell(22.0)
+Jän. 24, 2022 2:10:36 AM at.technikum.logger.LoggerStatic log
+INFO: normal -> water
+Jän. 24, 2022 2:10:36 AM at.technikum.logger.LoggerStatic log
+INFO: Winner is Player A
+Jän. 24, 2022 2:10:36 AM at.technikum.logger.LoggerStatic log
+INFO: ROUND:26
+Jän. 24, 2022 2:10:36 AM at.technikum.logger.LoggerStatic log
+INFO: PlayerA: Knight(20.0)VS PlayerB: WaterGoblin(10.0)
+Jän. 24, 2022 2:10:36 AM at.technikum.logger.LoggerStatic log
+INFO: normal -> water
+Jän. 24, 2022 2:10:36 AM at.technikum.logger.LoggerStatic log
+INFO: Winner is Player A
+Jän. 24, 2022 2:10:36 AM at.technikum.logger.LoggerStatic log
+INFO: ROUND:27
+Jän. 24, 2022 2:10:36 AM at.technikum.logger.LoggerStatic log
+INFO: PlayerA: WaterSpell(22.0)VS PlayerB: RegularSpell(28.0)
+Jän. 24, 2022 2:10:36 AM at.technikum.logger.LoggerStatic log
+INFO: normal -> water
+Jän. 24, 2022 2:10:36 AM at.technikum.logger.LoggerStatic log
+INFO: Winner is Player B
+Jän. 24, 2022 2:10:36 AM at.technikum.logger.LoggerStatic log
+INFO: ROUND:28
+Jän. 24, 2022 2:10:36 AM at.technikum.logger.LoggerStatic log
+INFO: PlayerA: Knight(20.0)VS PlayerB: WaterSpell(20.0)
+Jän. 24, 2022 2:10:36 AM at.technikum.logger.LoggerStatic log
+INFO: The armor of Knights is so heavy that WaterSpells make them drown them instantly.
+Jän. 24, 2022 2:10:36 AM at.technikum.logger.LoggerStatic log
+INFO: Winner is Player B
+Jän. 24, 2022 2:10:36 AM at.technikum.logger.LoggerStatic log
+INFO: ROUND:29
+Jän. 24, 2022 2:10:36 AM at.technikum.logger.LoggerStatic log
+INFO: PlayerA: WaterGoblin(10.0)VS PlayerB: Knight(20.0)
+Jän. 24, 2022 2:10:36 AM at.technikum.logger.LoggerStatic log
+INFO: normal -> water
+Jän. 24, 2022 2:10:36 AM at.technikum.logger.LoggerStatic log
+INFO: Winner is Player B
+Jän. 24, 2022 2:10:36 AM at.technikum.logger.LoggerStatic log
+INFO: ROUND:30
+Jän. 24, 2022 2:10:36 AM at.technikum.logger.LoggerStatic log
+INFO: PlayerA: RegularSpell(45.0)VS PlayerB: RegularSpell(28.0)
+Jän. 24, 2022 2:10:36 AM at.technikum.logger.LoggerStatic log
+INFO: Winner is Player A
+Jän. 24, 2022 2:10:36 AM at.technikum.logger.LoggerStatic log
+INFO: ROUND:31
+Jän. 24, 2022 2:10:36 AM at.technikum.logger.LoggerStatic log
+INFO: PlayerA: RegularSpell(28.0)VS PlayerB: WaterSpell(20.0)
+Jän. 24, 2022 2:10:36 AM at.technikum.logger.LoggerStatic log
+INFO: normal -> water
+Jän. 24, 2022 2:10:36 AM at.technikum.logger.LoggerStatic log
+INFO: Winner is Player A
+Jän. 24, 2022 2:10:36 AM at.technikum.logger.LoggerStatic log
+INFO: ROUND:32
+Jän. 24, 2022 2:10:36 AM at.technikum.logger.LoggerStatic log
+INFO: PlayerA: WaterSpell(20.0)VS PlayerB: Dragon(50.0)
+Jän. 24, 2022 2:10:36 AM at.technikum.logger.LoggerStatic log
+INFO: normal -> water
+Jän. 24, 2022 2:10:36 AM at.technikum.logger.LoggerStatic log
+INFO: Winner is Player B
+Jän. 24, 2022 2:10:36 AM at.technikum.logger.LoggerStatic log
+INFO: ROUND:33
+Jän. 24, 2022 2:10:36 AM at.technikum.logger.LoggerStatic log
+INFO: PlayerA: RegularSpell(45.0)VS PlayerB: WaterGoblin(10.0)
+Jän. 24, 2022 2:10:36 AM at.technikum.logger.LoggerStatic log
+INFO: normal -> water
+Jän. 24, 2022 2:10:36 AM at.technikum.logger.LoggerStatic log
+INFO: Winner is Player A
+Jän. 24, 2022 2:10:36 AM at.technikum.logger.LoggerStatic log
+INFO: ROUND:34
+Jän. 24, 2022 2:10:36 AM at.technikum.logger.LoggerStatic log
+INFO: PlayerA: RegularSpell(50.0)VS PlayerB: WaterSpell(22.0)
+Jän. 24, 2022 2:10:36 AM at.technikum.logger.LoggerStatic log
+INFO: normal -> water
+Jän. 24, 2022 2:10:36 AM at.technikum.logger.LoggerStatic log
+INFO: Winner is Player A
+Jän. 24, 2022 2:10:36 AM at.technikum.logger.LoggerStatic log
+INFO: ROUND:35
+Jän. 24, 2022 2:10:36 AM at.technikum.logger.LoggerStatic log
+INFO: PlayerA: RegularSpell(50.0)VS PlayerB: WaterSpell(20.0)
+Jän. 24, 2022 2:10:36 AM at.technikum.logger.LoggerStatic log
+INFO: normal -> water
+Jän. 24, 2022 2:10:36 AM at.technikum.logger.LoggerStatic log
+INFO: Winner is Player A
+Jän. 24, 2022 2:10:36 AM at.technikum.logger.LoggerStatic log
+INFO: ROUND:36
+Jän. 24, 2022 2:10:36 AM at.technikum.logger.LoggerStatic log
+INFO: PlayerA: RegularSpell(28.0)VS PlayerB: Knight(20.0)
+Jän. 24, 2022 2:10:36 AM at.technikum.logger.LoggerStatic log
+INFO: Winner is Player A
+Jän. 24, 2022 2:10:36 AM at.technikum.logger.LoggerStatic log
+INFO: ROUND:37
+Jän. 24, 2022 2:10:36 AM at.technikum.logger.LoggerStatic log
+INFO: PlayerA: WaterSpell(22.0)VS PlayerB: Dragon(50.0)
+Jän. 24, 2022 2:10:36 AM at.technikum.logger.LoggerStatic log
+INFO: normal -> water
+Jän. 24, 2022 2:10:36 AM at.technikum.logger.LoggerStatic log
+INFO: Winner is Player B
+Jän. 24, 2022 2:10:36 AM at.technikum.logger.LoggerStatic log
+INFO: ROUND:38
+Jän. 24, 2022 2:10:36 AM at.technikum.logger.LoggerStatic log
+INFO: PlayerA: RegularSpell(45.0)VS PlayerB: WaterSpell(22.0)
+Jän. 24, 2022 2:10:36 AM at.technikum.logger.LoggerStatic log
+INFO: normal -> water
+Jän. 24, 2022 2:10:36 AM at.technikum.logger.LoggerStatic log
+INFO: Winner is Player A
+Jän. 24, 2022 2:10:36 AM at.technikum.logger.LoggerStatic log
+INFO: ROUND:39
+Jän. 24, 2022 2:10:36 AM at.technikum.logger.LoggerStatic log
+INFO: PlayerA: RegularSpell(50.0)VS PlayerB: Dragon(50.0)
+Jän. 24, 2022 2:10:36 AM at.technikum.logger.LoggerStatic log
+INFO: The game is a draw
+Jän. 24, 2022 2:10:36 AM at.technikum.logger.LoggerStatic log
+INFO: ROUND:40
+Jän. 24, 2022 2:10:36 AM at.technikum.logger.LoggerStatic log
+INFO: PlayerA: WaterSpell(20.0)VS PlayerB: Dragon(50.0)
+Jän. 24, 2022 2:10:36 AM at.technikum.logger.LoggerStatic log
+INFO: normal -> water
+Jän. 24, 2022 2:10:36 AM at.technikum.logger.LoggerStatic log
+INFO: Winner is Player B
+Jän. 24, 2022 2:10:36 AM at.technikum.logger.LoggerStatic log
+INFO: ROUND:41
+Jän. 24, 2022 2:10:36 AM at.technikum.logger.LoggerStatic log
+INFO: PlayerA: Knight(20.0)VS PlayerB: WaterSpell(20.0)
+Jän. 24, 2022 2:10:36 AM at.technikum.logger.LoggerStatic log
+INFO: The armor of Knights is so heavy that WaterSpells make them drown them instantly.
+Jän. 24, 2022 2:10:36 AM at.technikum.logger.LoggerStatic log
+INFO: Winner is Player B
+Jän. 24, 2022 2:10:36 AM at.technikum.logger.LoggerStatic log
+INFO: ROUND:42
+Jän. 24, 2022 2:10:36 AM at.technikum.logger.LoggerStatic log
+INFO: PlayerA: RegularSpell(50.0)VS PlayerB: Knight(20.0)
+Jän. 24, 2022 2:10:36 AM at.technikum.logger.LoggerStatic log
+INFO: Winner is Player A
+Jän. 24, 2022 2:10:36 AM at.technikum.logger.LoggerStatic log
+INFO: ROUND:43
+Jän. 24, 2022 2:10:36 AM at.technikum.logger.LoggerStatic log
+INFO: PlayerA: RegularSpell(50.0)VS PlayerB: Dragon(50.0)
+Jän. 24, 2022 2:10:36 AM at.technikum.logger.LoggerStatic log
+INFO: The game is a draw
+Jän. 24, 2022 2:10:36 AM at.technikum.logger.LoggerStatic log
+INFO: ROUND:44
+Jän. 24, 2022 2:10:36 AM at.technikum.logger.LoggerStatic log
+INFO: PlayerA: WaterGoblin(10.0)VS PlayerB: Dragon(50.0)
+Jän. 24, 2022 2:10:36 AM at.technikum.logger.LoggerStatic log
+INFO: normal -> water
+Jän. 24, 2022 2:10:36 AM at.technikum.logger.LoggerStatic log
+INFO: Winner is Player B
+Jän. 24, 2022 2:10:36 AM at.technikum.logger.LoggerStatic log
+INFO: ROUND:45
+Jän. 24, 2022 2:10:36 AM at.technikum.logger.LoggerStatic log
+INFO: PlayerA: WaterSpell(22.0)VS PlayerB: Dragon(50.0)
+Jän. 24, 2022 2:10:36 AM at.technikum.logger.LoggerStatic log
+INFO: normal -> water
+Jän. 24, 2022 2:10:36 AM at.technikum.logger.LoggerStatic log
+INFO: Winner is Player B
+Jän. 24, 2022 2:10:36 AM at.technikum.logger.LoggerStatic log
+INFO: ROUND:46
+Jän. 24, 2022 2:10:36 AM at.technikum.logger.LoggerStatic log
+INFO: PlayerA: Knight(20.0)VS PlayerB: WaterGoblin(10.0)
+Jän. 24, 2022 2:10:36 AM at.technikum.logger.LoggerStatic log
+INFO: normal -> water
+Jän. 24, 2022 2:10:36 AM at.technikum.logger.LoggerStatic log
+INFO: Winner is Player A
+Jän. 24, 2022 2:10:36 AM at.technikum.logger.LoggerStatic log
+INFO: ROUND:47
+Jän. 24, 2022 2:10:36 AM at.technikum.logger.LoggerStatic log
+INFO: PlayerA: RegularSpell(50.0)VS PlayerB: WaterSpell(20.0)
+Jän. 24, 2022 2:10:36 AM at.technikum.logger.LoggerStatic log
+INFO: normal -> water
+Jän. 24, 2022 2:10:36 AM at.technikum.logger.LoggerStatic log
+INFO: Winner is Player A
+Jän. 24, 2022 2:10:36 AM at.technikum.logger.LoggerStatic log
+INFO: ROUND:48
+Jän. 24, 2022 2:10:36 AM at.technikum.logger.LoggerStatic log
+INFO: PlayerA: RegularSpell(50.0)VS PlayerB: Dragon(50.0)
+Jän. 24, 2022 2:10:36 AM at.technikum.logger.LoggerStatic log
+INFO: The game is a draw
+Jän. 24, 2022 2:10:36 AM at.technikum.logger.LoggerStatic log
+INFO: ROUND:49
+Jän. 24, 2022 2:10:36 AM at.technikum.logger.LoggerStatic log
+INFO: PlayerA: WaterGoblin(10.0)VS PlayerB: WaterSpell(22.0)
+Jän. 24, 2022 2:10:36 AM at.technikum.logger.LoggerStatic log
+INFO: Winner is Player B
+Jän. 24, 2022 2:10:36 AM at.technikum.logger.LoggerStatic log
+INFO: ROUND:50
+Jän. 24, 2022 2:10:36 AM at.technikum.logger.LoggerStatic log
+INFO: PlayerA: Knight(20.0)VS PlayerB: WaterSpell(22.0)
+Jän. 24, 2022 2:10:36 AM at.technikum.logger.LoggerStatic log
+INFO: The armor of Knights is so heavy that WaterSpells make them drown them instantly.
+Jän. 24, 2022 2:10:36 AM at.technikum.logger.LoggerStatic log
+INFO: Winner is Player B
+Jän. 24, 2022 2:10:36 AM at.technikum.logger.LoggerStatic log
+INFO: ROUND:51
+Jän. 24, 2022 2:10:36 AM at.technikum.logger.LoggerStatic log
+INFO: PlayerA: RegularSpell(50.0)VS PlayerB: Dragon(50.0)
+Jän. 24, 2022 2:10:36 AM at.technikum.logger.LoggerStatic log
+INFO: The game is a draw
+Jän. 24, 2022 2:10:36 AM at.technikum.logger.LoggerStatic log
+INFO: ROUND:52
+Jän. 24, 2022 2:10:36 AM at.technikum.logger.LoggerStatic log
+INFO: PlayerA: RegularSpell(45.0)VS PlayerB: Knight(20.0)
+Jän. 24, 2022 2:10:36 AM at.technikum.logger.LoggerStatic log
+INFO: Winner is Player A
+Jän. 24, 2022 2:10:36 AM at.technikum.logger.LoggerStatic log
+INFO: ROUND:53
+Jän. 24, 2022 2:10:36 AM at.technikum.logger.LoggerStatic log
+INFO: PlayerA: WaterSpell(20.0)VS PlayerB: Dragon(50.0)
+Jän. 24, 2022 2:10:36 AM at.technikum.logger.LoggerStatic log
+INFO: normal -> water
+Jän. 24, 2022 2:10:36 AM at.technikum.logger.LoggerStatic log
+INFO: Winner is Player B
+Jän. 24, 2022 2:10:36 AM at.technikum.logger.LoggerStatic log
+INFO: ROUND:54
+Jän. 24, 2022 2:10:36 AM at.technikum.logger.LoggerStatic log
+INFO: PlayerA: RegularSpell(45.0)VS PlayerB: WaterSpell(20.0)
+Jän. 24, 2022 2:10:36 AM at.technikum.logger.LoggerStatic log
+INFO: normal -> water
+Jän. 24, 2022 2:10:36 AM at.technikum.logger.LoggerStatic log
+INFO: Winner is Player A
+Jän. 24, 2022 2:10:36 AM at.technikum.logger.LoggerStatic log
+INFO: ROUND:55
+Jän. 24, 2022 2:10:36 AM at.technikum.logger.LoggerStatic log
+INFO: PlayerA: Knight(20.0)VS PlayerB: Dragon(50.0)
+Jän. 24, 2022 2:10:36 AM at.technikum.logger.LoggerStatic log
+INFO: Winner is Player B
+Jän. 24, 2022 2:10:36 AM at.technikum.logger.LoggerStatic log
+INFO: ROUND:56
+Jän. 24, 2022 2:10:36 AM at.technikum.logger.LoggerStatic log
+INFO: PlayerA: RegularSpell(28.0)VS PlayerB: WaterSpell(22.0)
+Jän. 24, 2022 2:10:36 AM at.technikum.logger.LoggerStatic log
+INFO: normal -> water
+Jän. 24, 2022 2:10:36 AM at.technikum.logger.LoggerStatic log
+INFO: Winner is Player A
+Jän. 24, 2022 2:10:36 AM at.technikum.logger.LoggerStatic log
+INFO: ROUND:57
+Jän. 24, 2022 2:10:36 AM at.technikum.logger.LoggerStatic log
+INFO: PlayerA: WaterSpell(22.0)VS PlayerB: Dragon(50.0)
+Jän. 24, 2022 2:10:36 AM at.technikum.logger.LoggerStatic log
+INFO: normal -> water
+Jän. 24, 2022 2:10:36 AM at.technikum.logger.LoggerStatic log
+INFO: Winner is Player B
+Jän. 24, 2022 2:10:36 AM at.technikum.logger.LoggerStatic log
+INFO: ROUND:58
+Jän. 24, 2022 2:10:36 AM at.technikum.logger.LoggerStatic log
+INFO: PlayerA: RegularSpell(50.0)VS PlayerB: Knight(20.0)
+Jän. 24, 2022 2:10:36 AM at.technikum.logger.LoggerStatic log
+INFO: Winner is Player A
+Jän. 24, 2022 2:10:36 AM at.technikum.logger.LoggerStatic log
+INFO: ROUND:59
+Jän. 24, 2022 2:10:36 AM at.technikum.logger.LoggerStatic log
+INFO: PlayerA: Knight(20.0)VS PlayerB: Dragon(50.0)
+Jän. 24, 2022 2:10:36 AM at.technikum.logger.LoggerStatic log
+INFO: Winner is Player B
+Jän. 24, 2022 2:10:36 AM at.technikum.logger.LoggerStatic log
+INFO: ROUND:60
+Jän. 24, 2022 2:10:36 AM at.technikum.logger.LoggerStatic log
+INFO: PlayerA: RegularSpell(28.0)VS PlayerB: Knight(20.0)
+Jän. 24, 2022 2:10:36 AM at.technikum.logger.LoggerStatic log
+INFO: Winner is Player A
+Jän. 24, 2022 2:10:36 AM at.technikum.logger.LoggerStatic log
+INFO: ROUND:61
+Jän. 24, 2022 2:10:36 AM at.technikum.logger.LoggerStatic log
+INFO: PlayerA: WaterSpell(20.0)VS PlayerB: Dragon(50.0)
+Jän. 24, 2022 2:10:36 AM at.technikum.logger.LoggerStatic log
+INFO: normal -> water
+Jän. 24, 2022 2:10:36 AM at.technikum.logger.LoggerStatic log
+INFO: Winner is Player B
+Jän. 24, 2022 2:10:36 AM at.technikum.logger.LoggerStatic log
+INFO: ROUND:62
+Jän. 24, 2022 2:10:36 AM at.technikum.logger.LoggerStatic log
+INFO: PlayerA: Knight(20.0)VS PlayerB: WaterGoblin(10.0)
+Jän. 24, 2022 2:10:36 AM at.technikum.logger.LoggerStatic log
+INFO: normal -> water
+Jän. 24, 2022 2:10:36 AM at.technikum.logger.LoggerStatic log
+INFO: Winner is Player A
+Jän. 24, 2022 2:10:36 AM at.technikum.logger.LoggerStatic log
+INFO: ROUND:63
+Jän. 24, 2022 2:10:36 AM at.technikum.logger.LoggerStatic log
+INFO: PlayerA: WaterGoblin(10.0)VS PlayerB: WaterSpell(22.0)
+Jän. 24, 2022 2:10:36 AM at.technikum.logger.LoggerStatic log
+INFO: Winner is Player B
+Jän. 24, 2022 2:10:36 AM at.technikum.logger.LoggerStatic log
+INFO: ROUND:64
+Jän. 24, 2022 2:10:36 AM at.technikum.logger.LoggerStatic log
+INFO: PlayerA: Knight(20.0)VS PlayerB: WaterSpell(20.0)
+Jän. 24, 2022 2:10:36 AM at.technikum.logger.LoggerStatic log
+INFO: The armor of Knights is so heavy that WaterSpells make them drown them instantly.
+Jän. 24, 2022 2:10:36 AM at.technikum.logger.LoggerStatic log
+INFO: Winner is Player B
+Jän. 24, 2022 2:10:36 AM at.technikum.logger.LoggerStatic log
+INFO: ROUND:65
+Jän. 24, 2022 2:10:36 AM at.technikum.logger.LoggerStatic log
+INFO: PlayerA: RegularSpell(50.0)VS PlayerB: WaterGoblin(10.0)
+Jän. 24, 2022 2:10:36 AM at.technikum.logger.LoggerStatic log
+INFO: normal -> water
+Jän. 24, 2022 2:10:36 AM at.technikum.logger.LoggerStatic log
+INFO: Winner is Player A
+Jän. 24, 2022 2:10:36 AM at.technikum.logger.LoggerStatic log
+INFO: ROUND:66
+Jän. 24, 2022 2:10:36 AM at.technikum.logger.LoggerStatic log
+INFO: PlayerA: RegularSpell(45.0)VS PlayerB: Knight(20.0)
+Jän. 24, 2022 2:10:36 AM at.technikum.logger.LoggerStatic log
+INFO: Winner is Player A
+Jän. 24, 2022 2:10:36 AM at.technikum.logger.LoggerStatic log
+INFO: ROUND:67
+Jän. 24, 2022 2:10:36 AM at.technikum.logger.LoggerStatic log
+INFO: PlayerA: RegularSpell(45.0)VS PlayerB: WaterSpell(22.0)
+Jän. 24, 2022 2:10:36 AM at.technikum.logger.LoggerStatic log
+INFO: normal -> water
+Jän. 24, 2022 2:10:36 AM at.technikum.logger.LoggerStatic log
+INFO: Winner is Player A
+Jän. 24, 2022 2:10:36 AM at.technikum.logger.LoggerStatic log
+INFO: ROUND:68
+Jän. 24, 2022 2:10:36 AM at.technikum.logger.LoggerStatic log
+INFO: PlayerA: WaterSpell(22.0)VS PlayerB: WaterSpell(20.0)
+Jän. 24, 2022 2:10:36 AM at.technikum.logger.LoggerStatic log
+INFO: Winner is Player A
+Jän. 24, 2022 2:10:36 AM at.technikum.logger.LoggerStatic log
+INFO: ROUND:69
+Jän. 24, 2022 2:10:36 AM at.technikum.logger.LoggerStatic log
+INFO: PlayerA: WaterGoblin(10.0)VS PlayerB: Dragon(50.0)
+Jän. 24, 2022 2:10:36 AM at.technikum.logger.LoggerStatic log
+INFO: normal -> water
+Jän. 24, 2022 2:10:36 AM at.technikum.logger.LoggerStatic log
+INFO: Winner is Player B
+Jän. 24, 2022 2:10:36 AM at.technikum.logger.LoggerStatic log
+INFO: ROUND:70
+Jän. 24, 2022 2:10:36 AM at.technikum.logger.LoggerStatic log
+INFO: PlayerA: RegularSpell(28.0)VS PlayerB: WaterGoblin(10.0)
+Jän. 24, 2022 2:10:36 AM at.technikum.logger.LoggerStatic log
+INFO: normal -> water
+Jän. 24, 2022 2:10:36 AM at.technikum.logger.LoggerStatic log
+INFO: Winner is Player A
+Jän. 24, 2022 2:10:36 AM at.technikum.logger.LoggerStatic log
+INFO: ROUND:71
+Jän. 24, 2022 2:10:36 AM at.technikum.logger.LoggerStatic log
+INFO: PlayerA: WaterSpell(20.0)VS PlayerB: Dragon(50.0)
+Jän. 24, 2022 2:10:36 AM at.technikum.logger.LoggerStatic log
+INFO: normal -> water
+Jän. 24, 2022 2:10:36 AM at.technikum.logger.LoggerStatic log
+INFO: Winner is Player B
+Jän. 24, 2022 2:10:36 AM at.technikum.logger.LoggerStatic log
+INFO: ROUND:72
+Jän. 24, 2022 2:10:36 AM at.technikum.logger.LoggerStatic log
+INFO: PlayerA: RegularSpell(50.0)VS PlayerB: Dragon(50.0)
+Jän. 24, 2022 2:10:36 AM at.technikum.logger.LoggerStatic log
+INFO: The game is a draw
+Jän. 24, 2022 2:10:36 AM at.technikum.logger.LoggerStatic log
+INFO: ROUND:73
+Jän. 24, 2022 2:10:36 AM at.technikum.logger.LoggerStatic log
+INFO: PlayerA: RegularSpell(45.0)VS PlayerB: Dragon(50.0)
+Jän. 24, 2022 2:10:36 AM at.technikum.logger.LoggerStatic log
+INFO: Winner is Player B
+Jän. 24, 2022 2:10:36 AM at.technikum.logger.LoggerStatic log
+INFO: ROUND:74
+Jän. 24, 2022 2:10:36 AM at.technikum.logger.LoggerStatic log
+INFO: PlayerA: WaterGoblin(10.0)VS PlayerB: Dragon(50.0)
+Jän. 24, 2022 2:10:36 AM at.technikum.logger.LoggerStatic log
+INFO: normal -> water
+Jän. 24, 2022 2:10:36 AM at.technikum.logger.LoggerStatic log
+INFO: Winner is Player B
+Jän. 24, 2022 2:10:36 AM at.technikum.logger.LoggerStatic log
+INFO: ROUND:75
+Jän. 24, 2022 2:10:36 AM at.technikum.logger.LoggerStatic log
+INFO: PlayerA: RegularSpell(28.0)VS PlayerB: Dragon(50.0)
+Jän. 24, 2022 2:10:36 AM at.technikum.logger.LoggerStatic log
+INFO: Winner is Player B
+Jän. 24, 2022 2:10:36 AM at.technikum.logger.LoggerStatic log
+INFO: ROUND:76
+Jän. 24, 2022 2:10:36 AM at.technikum.logger.LoggerStatic log
+INFO: PlayerA: RegularSpell(50.0)VS PlayerB: RegularSpell(45.0)
+Jän. 24, 2022 2:10:36 AM at.technikum.logger.LoggerStatic log
+INFO: Winner is Player A
+Jän. 24, 2022 2:10:36 AM at.technikum.logger.LoggerStatic log
+INFO: ROUND:77
+Jän. 24, 2022 2:10:36 AM at.technikum.logger.LoggerStatic log
+INFO: PlayerA: RegularSpell(50.0)VS PlayerB: WaterSpell(20.0)
+Jän. 24, 2022 2:10:36 AM at.technikum.logger.LoggerStatic log
+INFO: normal -> water
+Jän. 24, 2022 2:10:36 AM at.technikum.logger.LoggerStatic log
+INFO: Winner is Player A
+Jän. 24, 2022 2:10:36 AM at.technikum.logger.LoggerStatic log
+INFO: ROUND:78
+Jän. 24, 2022 2:10:36 AM at.technikum.logger.LoggerStatic log
+INFO: PlayerA: Knight(20.0)VS PlayerB: WaterGoblin(10.0)
+Jän. 24, 2022 2:10:36 AM at.technikum.logger.LoggerStatic log
+INFO: normal -> water
+Jän. 24, 2022 2:10:36 AM at.technikum.logger.LoggerStatic log
+INFO: Winner is Player A
+Jän. 24, 2022 2:10:36 AM at.technikum.logger.LoggerStatic log
+INFO: ROUND:79
+Jän. 24, 2022 2:10:36 AM at.technikum.logger.LoggerStatic log
+INFO: PlayerA: RegularSpell(45.0)VS PlayerB: RegularSpell(28.0)
+Jän. 24, 2022 2:10:36 AM at.technikum.logger.LoggerStatic log
+INFO: Winner is Player A
+Jän. 24, 2022 2:10:36 AM at.technikum.logger.LoggerStatic log
+INFO: ROUND:80
+Jän. 24, 2022 2:10:36 AM at.technikum.logger.LoggerStatic log
+INFO: PlayerA: RegularSpell(45.0)VS PlayerB: Dragon(50.0)
+Jän. 24, 2022 2:10:36 AM at.technikum.logger.LoggerStatic log
+INFO: Winner is Player B
+Jän. 24, 2022 2:10:36 AM at.technikum.logger.LoggerStatic log
+INFO: ROUND:81
+Jän. 24, 2022 2:10:36 AM at.technikum.logger.LoggerStatic log
+INFO: PlayerA: WaterSpell(22.0)VS PlayerB: RegularSpell(45.0)
+Jän. 24, 2022 2:10:36 AM at.technikum.logger.LoggerStatic log
+INFO: normal -> water
+Jän. 24, 2022 2:10:36 AM at.technikum.logger.LoggerStatic log
+INFO: Winner is Player B
+Jän. 24, 2022 2:10:36 AM at.technikum.logger.LoggerStatic log
+INFO: ROUND:82
+Jän. 24, 2022 2:10:36 AM at.technikum.logger.LoggerStatic log
+INFO: PlayerA: Knight(20.0)VS PlayerB: RegularSpell(45.0)
+Jän. 24, 2022 2:10:36 AM at.technikum.logger.LoggerStatic log
+INFO: Winner is Player B
+Jän. 24, 2022 2:10:36 AM at.technikum.logger.LoggerStatic log
+INFO: ROUND:83
+Jän. 24, 2022 2:10:36 AM at.technikum.logger.LoggerStatic log
+INFO: PlayerA: WaterSpell(20.0)VS PlayerB: RegularSpell(45.0)
+Jän. 24, 2022 2:10:36 AM at.technikum.logger.LoggerStatic log
+INFO: normal -> water
+Jän. 24, 2022 2:10:36 AM at.technikum.logger.LoggerStatic log
+INFO: Winner is Player B
+Jän. 24, 2022 2:10:36 AM at.technikum.logger.LoggerStatic log
+INFO: ROUND:84
+Jän. 24, 2022 2:10:36 AM at.technikum.logger.LoggerStatic log
+INFO: PlayerA: RegularSpell(28.0)VS PlayerB: Knight(20.0)
+Jän. 24, 2022 2:10:36 AM at.technikum.logger.LoggerStatic log
+INFO: Winner is Player A
+Jän. 24, 2022 2:10:36 AM at.technikum.logger.LoggerStatic log
+INFO: ROUND:85
+Jän. 24, 2022 2:10:36 AM at.technikum.logger.LoggerStatic log
+INFO: PlayerA: RegularSpell(28.0)VS PlayerB: RegularSpell(45.0)
+Jän. 24, 2022 2:10:36 AM at.technikum.logger.LoggerStatic log
+INFO: Winner is Player B
+Jän. 24, 2022 2:10:36 AM at.technikum.logger.LoggerStatic log
+INFO: ROUND:86
+Jän. 24, 2022 2:10:36 AM at.technikum.logger.LoggerStatic log
+INFO: PlayerA: RegularSpell(50.0)VS PlayerB: WaterSpell(20.0)
+Jän. 24, 2022 2:10:36 AM at.technikum.logger.LoggerStatic log
+INFO: normal -> water
+Jän. 24, 2022 2:10:36 AM at.technikum.logger.LoggerStatic log
+INFO: Winner is Player A
+Jän. 24, 2022 2:10:36 AM at.technikum.logger.LoggerStatic log
+INFO: ROUND:87
+Jän. 24, 2022 2:10:36 AM at.technikum.logger.LoggerStatic log
+INFO: PlayerA: RegularSpell(50.0)VS PlayerB: RegularSpell(45.0)
+Jän. 24, 2022 2:10:36 AM at.technikum.logger.LoggerStatic log
+INFO: Winner is Player A
+Jän. 24, 2022 2:10:36 AM at.technikum.logger.LoggerStatic log
+INFO: ROUND:88
+Jän. 24, 2022 2:10:36 AM at.technikum.logger.LoggerStatic log
+INFO: PlayerA: WaterGoblin(10.0)VS PlayerB: Dragon(50.0)
+Jän. 24, 2022 2:10:36 AM at.technikum.logger.LoggerStatic log
+INFO: normal -> water
+Jän. 24, 2022 2:10:36 AM at.technikum.logger.LoggerStatic log
+INFO: Winner is Player B
+Jän. 24, 2022 2:10:36 AM at.technikum.logger.LoggerStatic log
+INFO: ROUND:89
+Jän. 24, 2022 2:10:36 AM at.technikum.logger.LoggerStatic log
+INFO: PlayerA: RegularSpell(45.0)VS PlayerB: WaterSpell(22.0)
+Jän. 24, 2022 2:10:36 AM at.technikum.logger.LoggerStatic log
+INFO: normal -> water
+Jän. 24, 2022 2:10:36 AM at.technikum.logger.LoggerStatic log
+INFO: Winner is Player A
+Jän. 24, 2022 2:10:36 AM at.technikum.logger.LoggerStatic log
+INFO: ROUND:90
+Jän. 24, 2022 2:10:36 AM at.technikum.logger.LoggerStatic log
+INFO: PlayerA: WaterSpell(22.0)VS PlayerB: Dragon(50.0)
+Jän. 24, 2022 2:10:36 AM at.technikum.logger.LoggerStatic log
+INFO: normal -> water
+Jän. 24, 2022 2:10:36 AM at.technikum.logger.LoggerStatic log
+INFO: Winner is Player B
+Jän. 24, 2022 2:10:36 AM at.technikum.logger.LoggerStatic log
+INFO: ROUND:91
+Jän. 24, 2022 2:10:36 AM at.technikum.logger.LoggerStatic log
+INFO: PlayerA: WaterSpell(20.0)VS PlayerB: Dragon(50.0)
+Jän. 24, 2022 2:10:36 AM at.technikum.logger.LoggerStatic log
+INFO: normal -> water
+Jän. 24, 2022 2:10:36 AM at.technikum.logger.LoggerStatic log
+INFO: Winner is Player B
+Jän. 24, 2022 2:10:36 AM at.technikum.logger.LoggerStatic log
+INFO: ROUND:92
+Jän. 24, 2022 2:10:36 AM at.technikum.logger.LoggerStatic log
+INFO: PlayerA: RegularSpell(45.0)VS PlayerB: WaterSpell(22.0)
+Jän. 24, 2022 2:10:36 AM at.technikum.logger.LoggerStatic log
+INFO: normal -> water
+Jän. 24, 2022 2:10:36 AM at.technikum.logger.LoggerStatic log
+INFO: Winner is Player A
+Jän. 24, 2022 2:10:36 AM at.technikum.logger.LoggerStatic log
+INFO: ROUND:93
+Jän. 24, 2022 2:10:36 AM at.technikum.logger.LoggerStatic log
+INFO: PlayerA: RegularSpell(45.0)VS PlayerB: WaterGoblin(10.0)
+Jän. 24, 2022 2:10:36 AM at.technikum.logger.LoggerStatic log
+INFO: normal -> water
+Jän. 24, 2022 2:10:36 AM at.technikum.logger.LoggerStatic log
+INFO: Winner is Player A
+Jän. 24, 2022 2:10:36 AM at.technikum.logger.LoggerStatic log
+INFO: ROUND:94
+Jän. 24, 2022 2:10:36 AM at.technikum.logger.LoggerStatic log
+INFO: PlayerA: Knight(20.0)VS PlayerB: Dragon(50.0)
+Jän. 24, 2022 2:10:36 AM at.technikum.logger.LoggerStatic log
+INFO: Winner is Player B
+Jän. 24, 2022 2:10:36 AM at.technikum.logger.LoggerStatic log
+INFO: ROUND:95
+Jän. 24, 2022 2:10:36 AM at.technikum.logger.LoggerStatic log
+INFO: PlayerA: WaterGoblin(10.0)VS PlayerB: Dragon(50.0)
+Jän. 24, 2022 2:10:36 AM at.technikum.logger.LoggerStatic log
+INFO: normal -> water
+Jän. 24, 2022 2:10:36 AM at.technikum.logger.LoggerStatic log
+INFO: Winner is Player B
+Jän. 24, 2022 2:10:36 AM at.technikum.logger.LoggerStatic log
+INFO: ROUND:96
+Jän. 24, 2022 2:10:36 AM at.technikum.logger.LoggerStatic log
+INFO: PlayerA: RegularSpell(45.0)VS PlayerB: WaterSpell(20.0)
+Jän. 24, 2022 2:10:36 AM at.technikum.logger.LoggerStatic log
+INFO: normal -> water
+Jän. 24, 2022 2:10:36 AM at.technikum.logger.LoggerStatic log
+INFO: Winner is Player A
+Jän. 24, 2022 2:10:36 AM at.technikum.logger.LoggerStatic log
+INFO: ROUND:97
+Jän. 24, 2022 2:10:36 AM at.technikum.logger.LoggerStatic log
+INFO: PlayerA: WaterSpell(20.0)VS PlayerB: RegularSpell(28.0)
+Jän. 24, 2022 2:10:36 AM at.technikum.logger.LoggerStatic log
+INFO: normal -> water
+Jän. 24, 2022 2:10:36 AM at.technikum.logger.LoggerStatic log
+INFO: Winner is Player B
+Jän. 24, 2022 2:10:36 AM at.technikum.logger.LoggerStatic log
+INFO: ROUND:98
+Jän. 24, 2022 2:10:36 AM at.technikum.logger.LoggerStatic log
+INFO: PlayerA: RegularSpell(45.0)VS PlayerB: WaterGoblin(10.0)
+Jän. 24, 2022 2:10:36 AM at.technikum.logger.LoggerStatic log
+INFO: normal -> water
+Jän. 24, 2022 2:10:36 AM at.technikum.logger.LoggerStatic log
+INFO: Winner is Player A
+Jän. 24, 2022 2:10:36 AM at.technikum.logger.LoggerStatic log
+INFO: ROUND:99
+Jän. 24, 2022 2:10:36 AM at.technikum.logger.LoggerStatic log
+INFO: PlayerA: RegularSpell(50.0)VS PlayerB: RegularSpell(28.0)
+Jän. 24, 2022 2:10:36 AM at.technikum.logger.LoggerStatic log
+INFO: Winner is Player A
+Jän. 24, 2022 2:10:36 AM at.technikum.logger.LoggerStatic log
+INFO: 
+WINNER : altenhof
+Jän. 24, 2022 2:10:37 AM at.technikum.logger.LoggerStatic log
+INFO: 
+GAME ENDE 
+
+Jän. 24, 2022 2:10:44 AM at.technikum.logger.LoggerStatic log
+INFO: 
+ # STATUS
+
+Jän. 24, 2022 2:10:44 AM at.technikum.logger.LoggerStatic log
+INFO: 
+LOADING FINISHED!
+
+Jän. 24, 2022 2:10:44 AM at.technikum.logger.LoggerStatic log
+INFO: 
+ # STATUS
+
+Jän. 24, 2022 2:10:44 AM at.technikum.logger.LoggerStatic log
+INFO: 
+LOADING FINISHED!
+
+Jän. 24, 2022 2:10:44 AM at.technikum.logger.LoggerStatic log
+INFO: 
+ # SCORE 
+
+Jän. 24, 2022 2:10:44 AM at.technikum.logger.LoggerStatic log
+INFO: 
+LOADING FINISHED!
+
+Jän. 24, 2022 2:10:44 AM at.technikum.logger.LoggerStatic log
+INFO: 
+TRADE
+
+Jän. 24, 2022 2:10:44 AM at.technikum.logger.LoggerStatic log
+INFO: 
+NO TRADING
+
+Jän. 24, 2022 2:10:44 AM at.technikum.logger.LoggerStatic log
+INFO: 
+TRADE FAILED
+
+Jän. 24, 2022 2:10:44 AM at.technikum.logger.LoggerStatic log
+INFO: 
+TRADE
+
+Jän. 24, 2022 2:10:45 AM at.technikum.logger.LoggerStatic log
+INFO: 
+LOADING FINISHED!
+
+Jän. 24, 2022 2:10:45 AM at.technikum.logger.LoggerStatic log
+INFO: 
+TRADE
+
+Jän. 24, 2022 2:10:45 AM at.technikum.logger.LoggerStatic log
+INFO: 
+NO TRADING
+
+Jän. 24, 2022 2:10:45 AM at.technikum.logger.LoggerStatic log
+INFO: 
+DELETE
+
+Jän. 24, 2022 2:10:45 AM at.technikum.logger.LoggerStatic log
+INFO: 
+DELETE - TRADE NOT FOUND
+
+Jän. 24, 2022 2:10:45 AM at.technikum.logger.LoggerStatic log
+INFO: 
+TRADE
+
+Jän. 24, 2022 2:10:45 AM at.technikum.logger.LoggerStatic log
+INFO: 
+LOADING FINISHED!
+
+Jän. 24, 2022 2:10:45 AM at.technikum.logger.LoggerStatic log
+INFO: 
+TRADE FAILED
+
+Jän. 24, 2022 2:10:45 AM at.technikum.logger.LoggerStatic log
+INFO: 
+TRADE
+
+Jän. 24, 2022 2:10:45 AM at.technikum.logger.LoggerStatic log
+INFO: 
+LOADING FINISHED!
+
+Jän. 24, 2022 2:10:45 AM at.technikum.logger.LoggerStatic log
+INFO: 
+TRADE
+
+Jän. 24, 2022 2:10:45 AM at.technikum.logger.LoggerStatic log
+INFO: 
+NO TRADING
+
+Jän. 24, 2022 2:10:45 AM at.technikum.logger.LoggerStatic log
+INFO: 
+TRADE
+
+Jän. 24, 2022 2:10:46 AM at.technikum.logger.LoggerStatic log
+INFO: 
+TRADE NOT FOUND
+
+Jän. 24, 2022 2:10:46 AM at.technikum.logger.LoggerStatic log
+INFO: 
+TRADE
+
+Jän. 24, 2022 2:10:46 AM at.technikum.logger.LoggerStatic log
+INFO: 
+TRADE NOT FOUND
+
+Jän. 24, 2022 2:10:46 AM at.technikum.logger.LoggerStatic log
+INFO: 
+TRADE
+
+Jän. 24, 2022 2:10:46 AM at.technikum.logger.LoggerStatic log
+INFO: 
+LOADING FINISHED!
+
+Jän. 24, 2022 2:10:46 AM at.technikum.logger.LoggerStatic log
+INFO: 
+TRADE
+
+Jän. 24, 2022 2:10:46 AM at.technikum.logger.LoggerStatic log
+INFO: 
+NO TRADING
+
+Jän. 24, 2022 2:30:33 AM at.technikum.logger.LoggerStatic log
+INFO: 
+Start SERVER
+
+Jän. 24, 2022 2:31:06 AM at.technikum.logger.LoggerStatic log
+INFO: 
+# REGISTER
+
+Jän. 24, 2022 2:31:06 AM at.technikum.logger.LoggerStatic log
+INFO: Username exist already
+Jän. 24, 2022 2:31:06 AM at.technikum.logger.LoggerStatic log
+INFO: 
+# REGISTER
+
+Jän. 24, 2022 2:31:06 AM at.technikum.logger.LoggerStatic log
+INFO: Username exist already
+Jän. 24, 2022 2:31:06 AM at.technikum.logger.LoggerStatic log
+INFO: 
+# REGISTER
+
+Jän. 24, 2022 2:31:06 AM at.technikum.logger.LoggerStatic log
+INFO: Username exist already
+Jän. 24, 2022 2:31:06 AM at.technikum.logger.LoggerStatic log
+INFO: 
+# REGISTER
+
+Jän. 24, 2022 2:31:06 AM at.technikum.logger.LoggerStatic log
+INFO: Username exist already
+Jän. 24, 2022 2:31:06 AM at.technikum.logger.LoggerStatic log
+INFO: 
+# REGISTER
+
+Jän. 24, 2022 2:31:06 AM at.technikum.logger.LoggerStatic log
+INFO: Username exist already
+Jän. 24, 2022 2:31:06 AM at.technikum.logger.LoggerStatic log
+INFO: 
+# LOGIN
+
+Jän. 24, 2022 2:31:07 AM at.technikum.logger.LoggerStatic log
+INFO: 
+ LOGIN SUCCESS
+
+Jän. 24, 2022 2:31:07 AM at.technikum.logger.LoggerStatic log
+INFO: 
+# LOGIN
+
+Jän. 24, 2022 2:31:07 AM at.technikum.logger.LoggerStatic log
+INFO: 
+ LOGIN SUCCESS
+
+Jän. 24, 2022 2:31:07 AM at.technikum.logger.LoggerStatic log
+INFO: 
+# LOGIN
+
+Jän. 24, 2022 2:31:07 AM at.technikum.logger.LoggerStatic log
+INFO: 
+ LOGIN SUCCESS
+
+Jän. 24, 2022 2:31:07 AM at.technikum.logger.LoggerStatic log
+INFO: 
+# LOGIN
+
+Jän. 24, 2022 2:31:07 AM at.technikum.logger.LoggerStatic log
+INFO: ERROR - Password is wrong! 
+Jän. 24, 2022 2:31:07 AM at.technikum.logger.LoggerStatic log
+INFO: 
+USER NOT FOUND
+
+Jän. 24, 2022 2:31:07 AM at.technikum.logger.LoggerStatic log
+INFO: 
+CREATE PACKAGE
+
+Jän. 24, 2022 2:31:07 AM at.technikum.logger.LoggerStatic log
+INFO: Card already exist
+Jän. 24, 2022 2:31:07 AM at.technikum.logger.LoggerStatic log
+INFO: Card already exist
+Jän. 24, 2022 2:31:07 AM at.technikum.logger.LoggerStatic log
+INFO: Card already exist
+Jän. 24, 2022 2:31:07 AM at.technikum.logger.LoggerStatic log
+INFO: Card already exist
+Jän. 24, 2022 2:31:07 AM at.technikum.logger.LoggerStatic log
+INFO: Card already exist
+Jän. 24, 2022 2:31:07 AM at.technikum.logger.LoggerStatic log
+INFO: 
+PACKAGE CREATED - OK
+
+Jän. 24, 2022 2:31:07 AM at.technikum.logger.LoggerStatic log
+INFO: 
+CREATE PACKAGE
+
+Jän. 24, 2022 2:31:07 AM at.technikum.logger.LoggerStatic log
+INFO: Card already exist
+Jän. 24, 2022 2:31:07 AM at.technikum.logger.LoggerStatic log
+INFO: Card already exist
+Jän. 24, 2022 2:31:07 AM at.technikum.logger.LoggerStatic log
+INFO: Card already exist
+Jän. 24, 2022 2:31:07 AM at.technikum.logger.LoggerStatic log
+INFO: Card already exist
+Jän. 24, 2022 2:31:07 AM at.technikum.logger.LoggerStatic log
+INFO: Card already exist
+Jän. 24, 2022 2:31:07 AM at.technikum.logger.LoggerStatic log
+INFO: 
+PACKAGE CREATED - OK
+
+Jän. 24, 2022 2:31:07 AM at.technikum.logger.LoggerStatic log
+INFO: 
+CREATE PACKAGE
+
+Jän. 24, 2022 2:31:07 AM at.technikum.logger.LoggerStatic log
+INFO: Card already exist
+Jän. 24, 2022 2:31:07 AM at.technikum.logger.LoggerStatic log
+INFO: Card already exist
+Jän. 24, 2022 2:31:07 AM at.technikum.logger.LoggerStatic log
+INFO: Card already exist
+Jän. 24, 2022 2:31:07 AM at.technikum.logger.LoggerStatic log
+INFO: Card already exist
+Jän. 24, 2022 2:31:07 AM at.technikum.logger.LoggerStatic log
+INFO: Card already exist
+Jän. 24, 2022 2:31:07 AM at.technikum.logger.LoggerStatic log
+INFO: 
+PACKAGE CREATED - OK
+
+Jän. 24, 2022 2:31:07 AM at.technikum.logger.LoggerStatic log
+INFO: 
+CREATE PACKAGE
+
+Jän. 24, 2022 2:31:07 AM at.technikum.logger.LoggerStatic log
+INFO: Card already exist
+Jän. 24, 2022 2:31:07 AM at.technikum.logger.LoggerStatic log
+INFO: Card already exist
+Jän. 24, 2022 2:31:07 AM at.technikum.logger.LoggerStatic log
+INFO: Card already exist
+Jän. 24, 2022 2:31:07 AM at.technikum.logger.LoggerStatic log
+INFO: Card already exist
+Jän. 24, 2022 2:31:07 AM at.technikum.logger.LoggerStatic log
+INFO: Card already exist
+Jän. 24, 2022 2:31:07 AM at.technikum.logger.LoggerStatic log
+INFO: 
+PACKAGE CREATED - OK
+
+Jän. 24, 2022 2:31:07 AM at.technikum.logger.LoggerStatic log
+INFO: 
+CREATE PACKAGE
+
+Jän. 24, 2022 2:31:07 AM at.technikum.logger.LoggerStatic log
+INFO: Card already exist
+Jän. 24, 2022 2:31:07 AM at.technikum.logger.LoggerStatic log
+INFO: Card already exist
+Jän. 24, 2022 2:31:07 AM at.technikum.logger.LoggerStatic log
+INFO: Card already exist
+Jän. 24, 2022 2:31:07 AM at.technikum.logger.LoggerStatic log
+INFO: Card already exist
+Jän. 24, 2022 2:31:07 AM at.technikum.logger.LoggerStatic log
+INFO: Card already exist
+Jän. 24, 2022 2:31:07 AM at.technikum.logger.LoggerStatic log
+INFO: 
+PACKAGE CREATED - OK
+
+Jän. 24, 2022 2:31:07 AM at.technikum.logger.LoggerStatic log
+INFO: 
+CREATE PACKAGE
+
+Jän. 24, 2022 2:31:07 AM at.technikum.logger.LoggerStatic log
+INFO: Card already exist
+Jän. 24, 2022 2:31:07 AM at.technikum.logger.LoggerStatic log
+INFO: Card already exist
+Jän. 24, 2022 2:31:07 AM at.technikum.logger.LoggerStatic log
+INFO: Card already exist
+Jän. 24, 2022 2:31:07 AM at.technikum.logger.LoggerStatic log
+INFO: Card already exist
+Jän. 24, 2022 2:31:07 AM at.technikum.logger.LoggerStatic log
+INFO: Card already exist
+Jän. 24, 2022 2:31:07 AM at.technikum.logger.LoggerStatic log
+INFO: 
+PACKAGE CREATED - OK
+
+Jän. 24, 2022 2:31:07 AM at.technikum.logger.LoggerStatic log
+INFO: 
+# PACKAGE - BUY
+
+Jän. 24, 2022 2:31:08 AM at.technikum.logger.LoggerStatic log
+INFO: 
+(NO MONEY)
+
+Jän. 24, 2022 2:31:08 AM at.technikum.logger.LoggerStatic log
+INFO: 
+# PACKAGE - BUY
+
+Jän. 24, 2022 2:31:08 AM at.technikum.logger.LoggerStatic log
+INFO: 
+(NO MONEY)
+
+Jän. 24, 2022 2:31:08 AM at.technikum.logger.LoggerStatic log
+INFO: 
+# PACKAGE - BUY
+
+Jän. 24, 2022 2:31:08 AM at.technikum.logger.LoggerStatic log
+INFO: 
+(NO MONEY)
+
+Jän. 24, 2022 2:31:08 AM at.technikum.logger.LoggerStatic log
+INFO: 
+# PACKAGE - BUY
+
+Jän. 24, 2022 2:31:08 AM at.technikum.logger.LoggerStatic log
+INFO: 
+(NO MONEY)
+
+Jän. 24, 2022 2:31:08 AM at.technikum.logger.LoggerStatic log
+INFO: 
+# PACKAGE - BUY
+
+Jän. 24, 2022 2:31:09 AM at.technikum.logger.LoggerStatic log
+INFO: 
+(NO MONEY)
+
+Jän. 24, 2022 2:31:09 AM at.technikum.logger.LoggerStatic log
+INFO: 
+# PACKAGE - BUY
+
+Jän. 24, 2022 2:31:09 AM at.technikum.logger.LoggerStatic log
+INFO: 
+(NO MONEY)
+
+Jän. 24, 2022 2:31:09 AM at.technikum.logger.LoggerStatic log
+INFO: 
+# PACKAGE - BUY
+
+Jän. 24, 2022 2:31:09 AM at.technikum.logger.LoggerStatic log
+INFO: 
+(NO MONEY)
+
+Jän. 24, 2022 2:31:09 AM at.technikum.logger.LoggerStatic log
+INFO: 
+# PACKAGE - BUY
+
+Jän. 24, 2022 2:31:09 AM at.technikum.logger.LoggerStatic log
+INFO: 
+(NO MONEY)
+
+Jän. 24, 2022 2:31:09 AM at.technikum.logger.LoggerStatic log
+INFO: 
+CREATE PACKAGE
+
+Jän. 24, 2022 2:31:09 AM at.technikum.logger.LoggerStatic log
+INFO: Card already exist
+Jän. 24, 2022 2:31:09 AM at.technikum.logger.LoggerStatic log
+INFO: Card already exist
+Jän. 24, 2022 2:31:09 AM at.technikum.logger.LoggerStatic log
+INFO: Card already exist
+Jän. 24, 2022 2:31:09 AM at.technikum.logger.LoggerStatic log
+INFO: Card already exist
+Jän. 24, 2022 2:31:09 AM at.technikum.logger.LoggerStatic log
+INFO: Card already exist
+Jän. 24, 2022 2:31:09 AM at.technikum.logger.LoggerStatic log
+INFO: 
+PACKAGE CREATED - OK
+
+Jän. 24, 2022 2:31:09 AM at.technikum.logger.LoggerStatic log
+INFO: 
+CREATE PACKAGE
+
+Jän. 24, 2022 2:31:09 AM at.technikum.logger.LoggerStatic log
+INFO: Card already exist
+Jän. 24, 2022 2:31:09 AM at.technikum.logger.LoggerStatic log
+INFO: Card already exist
+Jän. 24, 2022 2:31:09 AM at.technikum.logger.LoggerStatic log
+INFO: Card already exist
+Jän. 24, 2022 2:31:09 AM at.technikum.logger.LoggerStatic log
+INFO: Card already exist
+Jän. 24, 2022 2:31:09 AM at.technikum.logger.LoggerStatic log
+INFO: Card already exist
+Jän. 24, 2022 2:31:09 AM at.technikum.logger.LoggerStatic log
+INFO: 
+PACKAGE CREATED - OK
+
+Jän. 24, 2022 2:31:09 AM at.technikum.logger.LoggerStatic log
+INFO: 
+CREATE PACKAGE
+
+Jän. 24, 2022 2:31:09 AM at.technikum.logger.LoggerStatic log
+INFO: Card already exist
+Jän. 24, 2022 2:31:09 AM at.technikum.logger.LoggerStatic log
+INFO: Card already exist
+Jän. 24, 2022 2:31:09 AM at.technikum.logger.LoggerStatic log
+INFO: Card already exist
+Jän. 24, 2022 2:31:09 AM at.technikum.logger.LoggerStatic log
+INFO: Card already exist
+Jän. 24, 2022 2:31:09 AM at.technikum.logger.LoggerStatic log
+INFO: Card already exist
+Jän. 24, 2022 2:31:09 AM at.technikum.logger.LoggerStatic log
+INFO: 
+PACKAGE CREATED - OK
+
+Jän. 24, 2022 2:31:10 AM at.technikum.logger.LoggerStatic log
+INFO: 
+# PACKAGE - BUY
+
+Jän. 24, 2022 2:31:10 AM at.technikum.logger.LoggerStatic log
+INFO: 
+(NO MONEY)
+
+Jän. 24, 2022 2:31:10 AM at.technikum.logger.LoggerStatic log
+INFO: 
+# PACKAGE - BUY
+
+Jän. 24, 2022 2:31:10 AM at.technikum.logger.LoggerStatic log
+INFO: 
+(NO MONEY)
+
+Jän. 24, 2022 2:31:10 AM at.technikum.logger.LoggerStatic log
+INFO: 
+# PACKAGE - BUY
+
+Jän. 24, 2022 2:31:10 AM at.technikum.logger.LoggerStatic log
+INFO: 
+(NO MONEY)
+
+Jän. 24, 2022 2:31:10 AM at.technikum.logger.LoggerStatic log
+INFO: 
+# STACK
+
+Jän. 24, 2022 2:31:10 AM at.technikum.logger.LoggerStatic log
+INFO: 
+LOADING FINISHED!
+
+Jän. 24, 2022 2:31:10 AM at.technikum.logger.LoggerStatic log
+INFO: 
+# STACK
+
+Jän. 24, 2022 2:31:10 AM at.technikum.logger.LoggerStatic log
+INFO: 
+NO TOKEN
+
+Jän. 24, 2022 2:31:10 AM at.technikum.logger.LoggerStatic log
+INFO: 
+# STACK
+
+Jän. 24, 2022 2:31:10 AM at.technikum.logger.LoggerStatic log
+INFO: 
+LOADING FINISHED!
+
+Jän. 24, 2022 2:31:11 AM at.technikum.logger.LoggerStatic log
+INFO: 
+"# LOAD DECK"
+
+Jän. 24, 2022 2:31:11 AM at.technikum.logger.LoggerStatic log
+INFO: 
+"LOADING FINISHED!"
+
+Jän. 24, 2022 2:31:11 AM at.technikum.logger.LoggerStatic log
+INFO: 
+"# LOAD DECK"
+
+Jän. 24, 2022 2:31:11 AM at.technikum.logger.LoggerStatic log
+INFO: 
+"LOADING FINISHED!"
+
+Jän. 24, 2022 2:31:11 AM at.technikum.logger.LoggerStatic log
+INFO: 
+## NEW DECK 
+
+Jän. 24, 2022 2:31:11 AM at.technikum.logger.LoggerStatic log
+INFO: 
+SET NEW DECK!
+
+Jän. 24, 2022 2:31:11 AM at.technikum.logger.LoggerStatic log
+INFO: 
+"# LOAD DECK"
+
+Jän. 24, 2022 2:31:11 AM at.technikum.logger.LoggerStatic log
+INFO: 
+"LOADING FINISHED!"
+
+Jän. 24, 2022 2:31:11 AM at.technikum.logger.LoggerStatic log
+INFO: 
+## NEW DECK 
+
+Jän. 24, 2022 2:31:12 AM at.technikum.logger.LoggerStatic log
+INFO: 
+SET NEW DECK!
+
+Jän. 24, 2022 2:31:12 AM at.technikum.logger.LoggerStatic log
+INFO: 
+"# LOAD DECK"
+
+Jän. 24, 2022 2:31:12 AM at.technikum.logger.LoggerStatic log
+INFO: 
+"LOADING FINISHED!"
+
+Jän. 24, 2022 2:31:12 AM at.technikum.logger.LoggerStatic log
+INFO: 
+## NEW DECK 
+
+Jän. 24, 2022 2:31:12 AM at.technikum.logger.LoggerStatic log
+INFO: 
+SET NEW DECK - ERROR
+
+Jän. 24, 2022 2:31:12 AM at.technikum.logger.LoggerStatic log
+INFO: 
+"# LOAD DECK"
+
+Jän. 24, 2022 2:31:12 AM at.technikum.logger.LoggerStatic log
+INFO: 
+"LOADING FINISHED!"
+
+Jän. 24, 2022 2:31:12 AM at.technikum.logger.LoggerStatic log
+INFO: 
+## NEW DECK 
+
+Jän. 24, 2022 2:31:12 AM at.technikum.logger.LoggerStatic log
+INFO: 
+SET NEW DECK - ERROR
+
+Jän. 24, 2022 2:31:12 AM at.technikum.logger.LoggerStatic log
+INFO: 
+"# LOAD DECK"
+
+Jän. 24, 2022 2:31:12 AM at.technikum.logger.LoggerStatic log
+INFO: 
+"LOADING FINISHED!"
+
+Jän. 24, 2022 2:31:12 AM at.technikum.logger.LoggerStatic log
+INFO: 
+"# LOAD DECK"
+
+Jän. 24, 2022 2:31:12 AM at.technikum.logger.LoggerStatic log
+INFO: 
+"LOADING FINISHED!"
+
+Jän. 24, 2022 2:31:12 AM at.technikum.logger.LoggerStatic log
+INFO: 
+LOAD DECK
+
+Jän. 24, 2022 2:31:12 AM at.technikum.logger.LoggerStatic log
+INFO: 
+LOADING FINISHED!
+
+Jän. 24, 2022 2:31:12 AM at.technikum.logger.LoggerStatic log
+INFO: 
+LOAD DECK
+
+Jän. 24, 2022 2:31:13 AM at.technikum.logger.LoggerStatic log
+INFO: 
+LOADING FINISHED!
+
+Jän. 24, 2022 2:31:13 AM at.technikum.logger.LoggerStatic log
+INFO: 
+# Profil 
+
+Jän. 24, 2022 2:31:13 AM at.technikum.logger.LoggerStatic log
+INFO: 
+LOADING FINISHED!
+
+Jän. 24, 2022 2:31:13 AM at.technikum.logger.LoggerStatic log
+INFO: 
+# Profil 
+
+Jän. 24, 2022 2:31:13 AM at.technikum.logger.LoggerStatic log
+INFO: 
+LOADING FINISHED!
+
+Jän. 24, 2022 2:31:13 AM at.technikum.logger.LoggerStatic log
+INFO: 
+#SET NEW PLAYER INFO 
+
+Jän. 24, 2022 2:31:13 AM at.technikum.logger.LoggerStatic log
+INFO: 
+LOADING FINISHED! 
+
+Jän. 24, 2022 2:31:13 AM at.technikum.logger.LoggerStatic log
+INFO: 
+#SET NEW PLAYER INFO 
+
+Jän. 24, 2022 2:31:13 AM at.technikum.logger.LoggerStatic log
+INFO: 
+LOADING FINISHED! 
+
+Jän. 24, 2022 2:31:13 AM at.technikum.logger.LoggerStatic log
+INFO: 
+# Profil 
+
+Jän. 24, 2022 2:31:13 AM at.technikum.logger.LoggerStatic log
+INFO: 
+LOADING FINISHED!
+
+Jän. 24, 2022 2:31:13 AM at.technikum.logger.LoggerStatic log
+INFO: 
+# Profil 
+
+Jän. 24, 2022 2:31:13 AM at.technikum.logger.LoggerStatic log
+INFO: 
+LOADING FINISHED!
+
+Jän. 24, 2022 2:31:13 AM at.technikum.logger.LoggerStatic log
+INFO: 
+# Profil 
+
+Jän. 24, 2022 2:31:14 AM at.technikum.logger.LoggerStatic log
+INFO: 
+USER NOT AUTH
+
+Jän. 24, 2022 2:31:14 AM at.technikum.logger.LoggerStatic log
+INFO: 
+# Profil 
+
+Jän. 24, 2022 2:31:14 AM at.technikum.logger.LoggerStatic log
+INFO: 
+USER NOT AUTH
+
+Jän. 24, 2022 2:31:14 AM at.technikum.logger.LoggerStatic log
+INFO: 
+#SET NEW PLAYER INFO 
+
+Jän. 24, 2022 2:31:14 AM at.technikum.logger.LoggerStatic log
+INFO: 
+USER NOT AUTH 
+
+Jän. 24, 2022 2:31:14 AM at.technikum.logger.LoggerStatic log
+INFO: 
+#SET NEW PLAYER INFO 
+
+Jän. 24, 2022 2:31:14 AM at.technikum.logger.LoggerStatic log
+INFO: 
+USER NOT AUTH 
+
+Jän. 24, 2022 2:31:14 AM at.technikum.logger.LoggerStatic log
+INFO: 
+# Profil 
+
+Jän. 24, 2022 2:31:14 AM at.technikum.logger.LoggerStatic log
+INFO: 
+USER NOT AUTH
+
+Jän. 24, 2022 2:31:14 AM at.technikum.logger.LoggerStatic log
+INFO: 
+ # STATUS
+
+Jän. 24, 2022 2:31:14 AM at.technikum.logger.LoggerStatic log
+INFO: 
+LOADING FINISHED!
+
+Jän. 24, 2022 2:31:14 AM at.technikum.logger.LoggerStatic log
+INFO: 
+ # STATUS
+
+Jän. 24, 2022 2:31:14 AM at.technikum.logger.LoggerStatic log
+INFO: 
+LOADING FINISHED!
+
+Jän. 24, 2022 2:31:14 AM at.technikum.logger.LoggerStatic log
+INFO: 
+ # SCORE 
+
+Jän. 24, 2022 2:31:14 AM at.technikum.logger.LoggerStatic log
+INFO: 
+LOADING FINISHED!
+
+Jän. 24, 2022 2:31:15 AM at.technikum.logger.LoggerStatic log
+INFO: 
+START GAME
+
+Jän. 24, 2022 2:31:15 AM at.technikum.logger.LoggerStatic log
+INFO: 
+START GAME
+
+Jän. 24, 2022 2:31:15 AM at.technikum.logger.LoggerStatic log
+INFO: 
+.................................
+null
+Jän. 24, 2022 2:31:15 AM at.technikum.logger.LoggerStatic log
+INFO: 
+. PLAYER 1 : kienboec
+Jän. 24, 2022 2:31:15 AM at.technikum.logger.LoggerStatic log
+INFO: 
+.................................
+at.technikum.model.PlayerImpl@35473f80
+Jän. 24, 2022 2:31:15 AM at.technikum.logger.LoggerStatic log
+INFO: 
+. PLAYER 1 : kienboec
+Jän. 24, 2022 2:31:15 AM at.technikum.logger.LoggerStatic log
+INFO: 
+. PLAYER 2 : altenhof
+Jän. 24, 2022 2:31:15 AM at.technikum.logger.LoggerStatic log
+INFO: 
+................................. 
+at.technikum.model.PlayerImpl@35473f80
+Jän. 24, 2022 2:31:16 AM at.technikum.logger.LoggerStatic log
+INFO: ROUND:0
+Jän. 24, 2022 2:31:16 AM at.technikum.logger.LoggerStatic log
+INFO: PlayerA: WaterSpell(20.0)VS PlayerB: RegularSpell(45.0)
+Jän. 24, 2022 2:31:16 AM at.technikum.logger.LoggerStatic log
+INFO: normal -> water
+Jän. 24, 2022 2:31:16 AM at.technikum.logger.LoggerStatic log
+INFO: Winner is Player B
+Jän. 24, 2022 2:31:16 AM at.technikum.logger.LoggerStatic log
+INFO: ROUND:1
+Jän. 24, 2022 2:31:16 AM at.technikum.logger.LoggerStatic log
+INFO: PlayerA: RegularSpell(28.0)VS PlayerB: WaterSpell(20.0)
+Jän. 24, 2022 2:31:16 AM at.technikum.logger.LoggerStatic log
+INFO: normal -> water
+Jän. 24, 2022 2:31:16 AM at.technikum.logger.LoggerStatic log
+INFO: Winner is Player A
+Jän. 24, 2022 2:31:16 AM at.technikum.logger.LoggerStatic log
+INFO: ROUND:2
+Jän. 24, 2022 2:31:16 AM at.technikum.logger.LoggerStatic log
+INFO: PlayerA: WaterGoblin(10.0)VS PlayerB: RegularSpell(45.0)
+Jän. 24, 2022 2:31:16 AM at.technikum.logger.LoggerStatic log
+INFO: normal -> water
+Jän. 24, 2022 2:31:16 AM at.technikum.logger.LoggerStatic log
+INFO: Winner is Player B
+Jän. 24, 2022 2:31:16 AM at.technikum.logger.LoggerStatic log
+INFO: ROUND:3
+Jän. 24, 2022 2:31:16 AM at.technikum.logger.LoggerStatic log
+INFO: PlayerA: Dragon(50.0)VS PlayerB: WaterSpell(22.0)
+Jän. 24, 2022 2:31:16 AM at.technikum.logger.LoggerStatic log
+INFO: normal -> water
+Jän. 24, 2022 2:31:16 AM at.technikum.logger.LoggerStatic log
+INFO: Winner is Player A
+Jän. 24, 2022 2:31:16 AM at.technikum.logger.LoggerStatic log
+INFO: ROUND:4
+Jän. 24, 2022 2:31:16 AM at.technikum.logger.LoggerStatic log
+INFO: PlayerA: WaterSpell(20.0)VS PlayerB: Knight(20.0)
+Jän. 24, 2022 2:31:16 AM at.technikum.logger.LoggerStatic log
+INFO: The armor of Knights is so heavy that WaterSpells make them drown them instantly.
+Jän. 24, 2022 2:31:16 AM at.technikum.logger.LoggerStatic log
+INFO: Winner is Player A
+Jän. 24, 2022 2:31:16 AM at.technikum.logger.LoggerStatic log
+INFO: ROUND:5
+Jän. 24, 2022 2:31:16 AM at.technikum.logger.LoggerStatic log
+INFO: PlayerA: Dragon(50.0)VS PlayerB: RegularSpell(50.0)
+Jän. 24, 2022 2:31:16 AM at.technikum.logger.LoggerStatic log
+INFO: The game is a draw
+Jän. 24, 2022 2:31:16 AM at.technikum.logger.LoggerStatic log
+INFO: ROUND:6
+Jän. 24, 2022 2:31:16 AM at.technikum.logger.LoggerStatic log
+INFO: PlayerA: RegularSpell(28.0)VS PlayerB: RegularSpell(50.0)
+Jän. 24, 2022 2:31:16 AM at.technikum.logger.LoggerStatic log
+INFO: Winner is Player B
+Jän. 24, 2022 2:31:16 AM at.technikum.logger.LoggerStatic log
+INFO: ROUND:7
+Jän. 24, 2022 2:31:16 AM at.technikum.logger.LoggerStatic log
+INFO: PlayerA: WaterSpell(20.0)VS PlayerB: RegularSpell(28.0)
+Jän. 24, 2022 2:31:16 AM at.technikum.logger.LoggerStatic log
+INFO: normal -> water
+Jän. 24, 2022 2:31:16 AM at.technikum.logger.LoggerStatic log
+INFO: Winner is Player B
+Jän. 24, 2022 2:31:16 AM at.technikum.logger.LoggerStatic log
+INFO: ROUND:8
+Jän. 24, 2022 2:31:16 AM at.technikum.logger.LoggerStatic log
+INFO: PlayerA: WaterSpell(22.0)VS PlayerB: RegularSpell(50.0)
+Jän. 24, 2022 2:31:16 AM at.technikum.logger.LoggerStatic log
+INFO: normal -> water
+Jän. 24, 2022 2:31:16 AM at.technikum.logger.LoggerStatic log
+INFO: Winner is Player B
+Jän. 24, 2022 2:31:16 AM at.technikum.logger.LoggerStatic log
+INFO: ROUND:9
+Jän. 24, 2022 2:31:16 AM at.technikum.logger.LoggerStatic log
+INFO: PlayerA: Dragon(50.0)VS PlayerB: WaterSpell(22.0)
+Jän. 24, 2022 2:31:16 AM at.technikum.logger.LoggerStatic log
+INFO: normal -> water
+Jän. 24, 2022 2:31:16 AM at.technikum.logger.LoggerStatic log
+INFO: Winner is Player A
+Jän. 24, 2022 2:31:16 AM at.technikum.logger.LoggerStatic log
+INFO: ROUND:10
+Jän. 24, 2022 2:31:16 AM at.technikum.logger.LoggerStatic log
+INFO: PlayerA: Dragon(50.0)VS PlayerB: RegularSpell(50.0)
+Jän. 24, 2022 2:31:16 AM at.technikum.logger.LoggerStatic log
+INFO: The game is a draw
+Jän. 24, 2022 2:31:16 AM at.technikum.logger.LoggerStatic log
+INFO: ROUND:11
+Jän. 24, 2022 2:31:16 AM at.technikum.logger.LoggerStatic log
+INFO: PlayerA: Knight(20.0)VS PlayerB: RegularSpell(50.0)
+Jän. 24, 2022 2:31:16 AM at.technikum.logger.LoggerStatic log
+INFO: Winner is Player B
+Jän. 24, 2022 2:31:16 AM at.technikum.logger.LoggerStatic log
+INFO: ROUND:12
+Jän. 24, 2022 2:31:16 AM at.technikum.logger.LoggerStatic log
+INFO: PlayerA: WaterSpell(22.0)VS PlayerB: RegularSpell(45.0)
+Jän. 24, 2022 2:31:16 AM at.technikum.logger.LoggerStatic log
+INFO: normal -> water
+Jän. 24, 2022 2:31:16 AM at.technikum.logger.LoggerStatic log
+INFO: Winner is Player B
+Jän. 24, 2022 2:31:16 AM at.technikum.logger.LoggerStatic log
+INFO: ROUND:13
+Jän. 24, 2022 2:31:16 AM at.technikum.logger.LoggerStatic log
+INFO: PlayerA: Dragon(50.0)VS PlayerB: Knight(20.0)
+Jän. 24, 2022 2:31:16 AM at.technikum.logger.LoggerStatic log
+INFO: Winner is Player A
+Jän. 24, 2022 2:31:16 AM at.technikum.logger.LoggerStatic log
+INFO: ROUND:14
+Jän. 24, 2022 2:31:16 AM at.technikum.logger.LoggerStatic log
+INFO: PlayerA: Dragon(50.0)VS PlayerB: RegularSpell(45.0)
+Jän. 24, 2022 2:31:16 AM at.technikum.logger.LoggerStatic log
+INFO: Winner is Player A
+Jän. 24, 2022 2:31:16 AM at.technikum.logger.LoggerStatic log
+INFO: ROUND:15
+Jän. 24, 2022 2:31:16 AM at.technikum.logger.LoggerStatic log
+INFO: PlayerA: RegularSpell(45.0)VS PlayerB: WaterSpell(20.0)
+Jän. 24, 2022 2:31:16 AM at.technikum.logger.LoggerStatic log
+INFO: normal -> water
+Jän. 24, 2022 2:31:16 AM at.technikum.logger.LoggerStatic log
+INFO: Winner is Player A
+Jän. 24, 2022 2:31:16 AM at.technikum.logger.LoggerStatic log
+INFO: ROUND:16
+Jän. 24, 2022 2:31:16 AM at.technikum.logger.LoggerStatic log
+INFO: PlayerA: RegularSpell(45.0)VS PlayerB: RegularSpell(50.0)
+Jän. 24, 2022 2:31:16 AM at.technikum.logger.LoggerStatic log
+INFO: Winner is Player B
+Jän. 24, 2022 2:31:16 AM at.technikum.logger.LoggerStatic log
+INFO: ROUND:17
+Jän. 24, 2022 2:31:16 AM at.technikum.logger.LoggerStatic log
+INFO: PlayerA: Knight(20.0)VS PlayerB: RegularSpell(50.0)
+Jän. 24, 2022 2:31:16 AM at.technikum.logger.LoggerStatic log
+INFO: Winner is Player B
+Jän. 24, 2022 2:31:16 AM at.technikum.logger.LoggerStatic log
+INFO: ROUND:18
+Jän. 24, 2022 2:31:16 AM at.technikum.logger.LoggerStatic log
+INFO: PlayerA: WaterSpell(20.0)VS PlayerB: Knight(20.0)
+Jän. 24, 2022 2:31:16 AM at.technikum.logger.LoggerStatic log
+INFO: The armor of Knights is so heavy that WaterSpells make them drown them instantly.
+Jän. 24, 2022 2:31:16 AM at.technikum.logger.LoggerStatic log
+INFO: Winner is Player A
+Jän. 24, 2022 2:31:16 AM at.technikum.logger.LoggerStatic log
+INFO: ROUND:19
+Jän. 24, 2022 2:31:16 AM at.technikum.logger.LoggerStatic log
+INFO: PlayerA: Knight(20.0)VS PlayerB: RegularSpell(45.0)
+Jän. 24, 2022 2:31:16 AM at.technikum.logger.LoggerStatic log
+INFO: Winner is Player B
+Jän. 24, 2022 2:31:16 AM at.technikum.logger.LoggerStatic log
+INFO: ROUND:20
+Jän. 24, 2022 2:31:16 AM at.technikum.logger.LoggerStatic log
+INFO: PlayerA: WaterSpell(20.0)VS PlayerB: WaterGoblin(10.0)
+Jän. 24, 2022 2:31:16 AM at.technikum.logger.LoggerStatic log
+INFO: Winner is Player A
+Jän. 24, 2022 2:31:16 AM at.technikum.logger.LoggerStatic log
+INFO: ROUND:21
+Jän. 24, 2022 2:31:16 AM at.technikum.logger.LoggerStatic log
+INFO: PlayerA: WaterSpell(20.0)VS PlayerB: Knight(20.0)
+Jän. 24, 2022 2:31:16 AM at.technikum.logger.LoggerStatic log
+INFO: The armor of Knights is so heavy that WaterSpells make them drown them instantly.
+Jän. 24, 2022 2:31:16 AM at.technikum.logger.LoggerStatic log
+INFO: Winner is Player A
+Jän. 24, 2022 2:31:16 AM at.technikum.logger.LoggerStatic log
+INFO: ROUND:22
+Jän. 24, 2022 2:31:16 AM at.technikum.logger.LoggerStatic log
+INFO: PlayerA: WaterSpell(20.0)VS PlayerB: WaterSpell(22.0)
+Jän. 24, 2022 2:31:16 AM at.technikum.logger.LoggerStatic log
+INFO: Winner is Player B
+Jän. 24, 2022 2:31:16 AM at.technikum.logger.LoggerStatic log
+INFO: ROUND:23
+Jän. 24, 2022 2:31:16 AM at.technikum.logger.LoggerStatic log
+INFO: PlayerA: Knight(20.0)VS PlayerB: RegularSpell(50.0)
+Jän. 24, 2022 2:31:16 AM at.technikum.logger.LoggerStatic log
+INFO: Winner is Player B
+Jän. 24, 2022 2:31:16 AM at.technikum.logger.LoggerStatic log
+INFO: ROUND:24
+Jän. 24, 2022 2:31:16 AM at.technikum.logger.LoggerStatic log
+INFO: PlayerA: Dragon(50.0)VS PlayerB: RegularSpell(50.0)
+Jän. 24, 2022 2:31:16 AM at.technikum.logger.LoggerStatic log
+INFO: The game is a draw
+Jän. 24, 2022 2:31:16 AM at.technikum.logger.LoggerStatic log
+INFO: ROUND:25
+Jän. 24, 2022 2:31:16 AM at.technikum.logger.LoggerStatic log
+INFO: PlayerA: WaterGoblin(10.0)VS PlayerB: WaterSpell(22.0)
+Jän. 24, 2022 2:31:16 AM at.technikum.logger.LoggerStatic log
+INFO: Winner is Player B
+Jän. 24, 2022 2:31:16 AM at.technikum.logger.LoggerStatic log
+INFO: ROUND:26
+Jän. 24, 2022 2:31:16 AM at.technikum.logger.LoggerStatic log
+INFO: PlayerA: Dragon(50.0)VS PlayerB: RegularSpell(50.0)
+Jän. 24, 2022 2:31:16 AM at.technikum.logger.LoggerStatic log
+INFO: The game is a draw
+Jän. 24, 2022 2:31:16 AM at.technikum.logger.LoggerStatic log
+INFO: ROUND:27
+Jän. 24, 2022 2:31:16 AM at.technikum.logger.LoggerStatic log
+INFO: PlayerA: Dragon(50.0)VS PlayerB: Knight(20.0)
+Jän. 24, 2022 2:31:16 AM at.technikum.logger.LoggerStatic log
+INFO: Winner is Player A
+Jän. 24, 2022 2:31:16 AM at.technikum.logger.LoggerStatic log
+INFO: ROUND:28
+Jän. 24, 2022 2:31:16 AM at.technikum.logger.LoggerStatic log
+INFO: PlayerA: Knight(20.0)VS PlayerB: WaterSpell(20.0)
+Jän. 24, 2022 2:31:16 AM at.technikum.logger.LoggerStatic log
+INFO: The armor of Knights is so heavy that WaterSpells make them drown them instantly.
+Jän. 24, 2022 2:31:16 AM at.technikum.logger.LoggerStatic log
+INFO: Winner is Player B
+Jän. 24, 2022 2:31:16 AM at.technikum.logger.LoggerStatic log
+INFO: ROUND:29
+Jän. 24, 2022 2:31:16 AM at.technikum.logger.LoggerStatic log
+INFO: PlayerA: Dragon(50.0)VS PlayerB: RegularSpell(50.0)
+Jän. 24, 2022 2:31:16 AM at.technikum.logger.LoggerStatic log
+INFO: The game is a draw
+Jän. 24, 2022 2:31:16 AM at.technikum.logger.LoggerStatic log
+INFO: ROUND:30
+Jän. 24, 2022 2:31:16 AM at.technikum.logger.LoggerStatic log
+INFO: PlayerA: Dragon(50.0)VS PlayerB: RegularSpell(28.0)
+Jän. 24, 2022 2:31:16 AM at.technikum.logger.LoggerStatic log
+INFO: Winner is Player A
+Jän. 24, 2022 2:31:16 AM at.technikum.logger.LoggerStatic log
+INFO: ROUND:31
+Jän. 24, 2022 2:31:16 AM at.technikum.logger.LoggerStatic log
+INFO: PlayerA: RegularSpell(28.0)VS PlayerB: WaterSpell(22.0)
+Jän. 24, 2022 2:31:16 AM at.technikum.logger.LoggerStatic log
+INFO: normal -> water
+Jän. 24, 2022 2:31:16 AM at.technikum.logger.LoggerStatic log
+INFO: Winner is Player A
+Jän. 24, 2022 2:31:16 AM at.technikum.logger.LoggerStatic log
+INFO: ROUND:32
+Jän. 24, 2022 2:31:16 AM at.technikum.logger.LoggerStatic log
+INFO: PlayerA: Dragon(50.0)VS PlayerB: WaterSpell(20.0)
+Jän. 24, 2022 2:31:16 AM at.technikum.logger.LoggerStatic log
+INFO: normal -> water
+Jän. 24, 2022 2:31:16 AM at.technikum.logger.LoggerStatic log
+INFO: Winner is Player A
+Jän. 24, 2022 2:31:16 AM at.technikum.logger.LoggerStatic log
+INFO: ROUND:33
+Jän. 24, 2022 2:31:16 AM at.technikum.logger.LoggerStatic log
+INFO: PlayerA: Dragon(50.0)VS PlayerB: RegularSpell(45.0)
+Jän. 24, 2022 2:31:16 AM at.technikum.logger.LoggerStatic log
+INFO: Winner is Player A
+Jän. 24, 2022 2:31:16 AM at.technikum.logger.LoggerStatic log
+INFO: ROUND:34
+Jän. 24, 2022 2:31:16 AM at.technikum.logger.LoggerStatic log
+INFO: PlayerA: WaterSpell(20.0)VS PlayerB: WaterGoblin(10.0)
+Jän. 24, 2022 2:31:16 AM at.technikum.logger.LoggerStatic log
+INFO: Winner is Player A
+Jän. 24, 2022 2:31:16 AM at.technikum.logger.LoggerStatic log
+INFO: ROUND:35
+Jän. 24, 2022 2:31:16 AM at.technikum.logger.LoggerStatic log
+INFO: PlayerA: WaterSpell(22.0)VS PlayerB: RegularSpell(50.0)
+Jän. 24, 2022 2:31:16 AM at.technikum.logger.LoggerStatic log
+INFO: normal -> water
+Jän. 24, 2022 2:31:16 AM at.technikum.logger.LoggerStatic log
+INFO: Winner is Player B
+Jän. 24, 2022 2:31:16 AM at.technikum.logger.LoggerStatic log
+INFO: ROUND:36
+Jän. 24, 2022 2:31:16 AM at.technikum.logger.LoggerStatic log
+INFO: PlayerA: WaterGoblin(10.0)VS PlayerB: Knight(20.0)
+Jän. 24, 2022 2:31:16 AM at.technikum.logger.LoggerStatic log
+INFO: normal -> water
+Jän. 24, 2022 2:31:16 AM at.technikum.logger.LoggerStatic log
+INFO: Winner is Player B
+Jän. 24, 2022 2:31:16 AM at.technikum.logger.LoggerStatic log
+INFO: ROUND:37
+Jän. 24, 2022 2:31:16 AM at.technikum.logger.LoggerStatic log
+INFO: PlayerA: RegularSpell(28.0)VS PlayerB: WaterSpell(22.0)
+Jän. 24, 2022 2:31:16 AM at.technikum.logger.LoggerStatic log
+INFO: normal -> water
+Jän. 24, 2022 2:31:16 AM at.technikum.logger.LoggerStatic log
+INFO: Winner is Player A
+Jän. 24, 2022 2:31:16 AM at.technikum.logger.LoggerStatic log
+INFO: ROUND:38
+Jän. 24, 2022 2:31:16 AM at.technikum.logger.LoggerStatic log
+INFO: PlayerA: Dragon(50.0)VS PlayerB: WaterGoblin(10.0)
+Jän. 24, 2022 2:31:16 AM at.technikum.logger.LoggerStatic log
+INFO: normal -> water
+Jän. 24, 2022 2:31:16 AM at.technikum.logger.LoggerStatic log
+INFO: Winner is Player A
+Jän. 24, 2022 2:31:16 AM at.technikum.logger.LoggerStatic log
+INFO: ROUND:39
+Jän. 24, 2022 2:31:16 AM at.technikum.logger.LoggerStatic log
+INFO: PlayerA: WaterSpell(22.0)VS PlayerB: Knight(20.0)
+Jän. 24, 2022 2:31:16 AM at.technikum.logger.LoggerStatic log
+INFO: The armor of Knights is so heavy that WaterSpells make them drown them instantly.
+Jän. 24, 2022 2:31:16 AM at.technikum.logger.LoggerStatic log
+INFO: Winner is Player A
+Jän. 24, 2022 2:31:16 AM at.technikum.logger.LoggerStatic log
+INFO: ROUND:40
+Jän. 24, 2022 2:31:16 AM at.technikum.logger.LoggerStatic log
+INFO: PlayerA: Knight(20.0)VS PlayerB: RegularSpell(50.0)
+Jän. 24, 2022 2:31:16 AM at.technikum.logger.LoggerStatic log
+INFO: Winner is Player B
+Jän. 24, 2022 2:31:16 AM at.technikum.logger.LoggerStatic log
+INFO: ROUND:41
+Jän. 24, 2022 2:31:16 AM at.technikum.logger.LoggerStatic log
+INFO: PlayerA: RegularSpell(45.0)VS PlayerB: RegularSpell(50.0)
+Jän. 24, 2022 2:31:16 AM at.technikum.logger.LoggerStatic log
+INFO: Winner is Player B
+Jän. 24, 2022 2:31:16 AM at.technikum.logger.LoggerStatic log
+INFO: ROUND:42
+Jän. 24, 2022 2:31:16 AM at.technikum.logger.LoggerStatic log
+INFO: PlayerA: Dragon(50.0)VS PlayerB: RegularSpell(45.0)
+Jän. 24, 2022 2:31:16 AM at.technikum.logger.LoggerStatic log
+INFO: Winner is Player A
+Jän. 24, 2022 2:31:16 AM at.technikum.logger.LoggerStatic log
+INFO: ROUND:43
+Jän. 24, 2022 2:31:16 AM at.technikum.logger.LoggerStatic log
+INFO: PlayerA: RegularSpell(28.0)VS PlayerB: RegularSpell(50.0)
+Jän. 24, 2022 2:31:16 AM at.technikum.logger.LoggerStatic log
+INFO: Winner is Player B
+Jän. 24, 2022 2:31:16 AM at.technikum.logger.LoggerStatic log
+INFO: ROUND:44
+Jän. 24, 2022 2:31:16 AM at.technikum.logger.LoggerStatic log
+INFO: PlayerA: RegularSpell(45.0)VS PlayerB: Knight(20.0)
+Jän. 24, 2022 2:31:16 AM at.technikum.logger.LoggerStatic log
+INFO: Winner is Player A
+Jän. 24, 2022 2:31:16 AM at.technikum.logger.LoggerStatic log
+INFO: ROUND:45
+Jän. 24, 2022 2:31:16 AM at.technikum.logger.LoggerStatic log
+INFO: PlayerA: RegularSpell(45.0)VS PlayerB: RegularSpell(28.0)
+Jän. 24, 2022 2:31:16 AM at.technikum.logger.LoggerStatic log
+INFO: Winner is Player A
+Jän. 24, 2022 2:31:16 AM at.technikum.logger.LoggerStatic log
+INFO: ROUND:46
+Jän. 24, 2022 2:31:16 AM at.technikum.logger.LoggerStatic log
+INFO: PlayerA: WaterSpell(22.0)VS PlayerB: RegularSpell(50.0)
+Jän. 24, 2022 2:31:16 AM at.technikum.logger.LoggerStatic log
+INFO: normal -> water
+Jän. 24, 2022 2:31:16 AM at.technikum.logger.LoggerStatic log
+INFO: Winner is Player B
+Jän. 24, 2022 2:31:16 AM at.technikum.logger.LoggerStatic log
+INFO: ROUND:47
+Jän. 24, 2022 2:31:16 AM at.technikum.logger.LoggerStatic log
+INFO: PlayerA: WaterGoblin(10.0)VS PlayerB: RegularSpell(50.0)
+Jän. 24, 2022 2:31:16 AM at.technikum.logger.LoggerStatic log
+INFO: normal -> water
+Jän. 24, 2022 2:31:16 AM at.technikum.logger.LoggerStatic log
+INFO: Winner is Player B
+Jän. 24, 2022 2:31:16 AM at.technikum.logger.LoggerStatic log
+INFO: ROUND:48
+Jän. 24, 2022 2:31:16 AM at.technikum.logger.LoggerStatic log
+INFO: PlayerA: Dragon(50.0)VS PlayerB: WaterSpell(22.0)
+Jän. 24, 2022 2:31:16 AM at.technikum.logger.LoggerStatic log
+INFO: normal -> water
+Jän. 24, 2022 2:31:16 AM at.technikum.logger.LoggerStatic log
+INFO: Winner is Player A
+Jän. 24, 2022 2:31:16 AM at.technikum.logger.LoggerStatic log
+INFO: ROUND:49
+Jän. 24, 2022 2:31:16 AM at.technikum.logger.LoggerStatic log
+INFO: PlayerA: WaterSpell(22.0)VS PlayerB: WaterGoblin(10.0)
+Jän. 24, 2022 2:31:16 AM at.technikum.logger.LoggerStatic log
+INFO: Winner is Player A
+Jän. 24, 2022 2:31:16 AM at.technikum.logger.LoggerStatic log
+INFO: ROUND:50
+Jän. 24, 2022 2:31:16 AM at.technikum.logger.LoggerStatic log
+INFO: PlayerA: Knight(20.0)VS PlayerB: RegularSpell(50.0)
+Jän. 24, 2022 2:31:16 AM at.technikum.logger.LoggerStatic log
+INFO: Winner is Player B
+Jän. 24, 2022 2:31:16 AM at.technikum.logger.LoggerStatic log
+INFO: ROUND:51
+Jän. 24, 2022 2:31:16 AM at.technikum.logger.LoggerStatic log
+INFO: PlayerA: WaterSpell(22.0)VS PlayerB: Knight(20.0)
+Jän. 24, 2022 2:31:16 AM at.technikum.logger.LoggerStatic log
+INFO: The armor of Knights is so heavy that WaterSpells make them drown them instantly.
+Jän. 24, 2022 2:31:16 AM at.technikum.logger.LoggerStatic log
+INFO: Winner is Player A
+Jän. 24, 2022 2:31:16 AM at.technikum.logger.LoggerStatic log
+INFO: ROUND:52
+Jän. 24, 2022 2:31:16 AM at.technikum.logger.LoggerStatic log
+INFO: PlayerA: Dragon(50.0)VS PlayerB: RegularSpell(50.0)
+Jän. 24, 2022 2:31:16 AM at.technikum.logger.LoggerStatic log
+INFO: The game is a draw
+Jän. 24, 2022 2:31:16 AM at.technikum.logger.LoggerStatic log
+INFO: ROUND:53
+Jän. 24, 2022 2:31:16 AM at.technikum.logger.LoggerStatic log
+INFO: PlayerA: Dragon(50.0)VS PlayerB: RegularSpell(50.0)
+Jän. 24, 2022 2:31:16 AM at.technikum.logger.LoggerStatic log
+INFO: The game is a draw
+Jän. 24, 2022 2:31:16 AM at.technikum.logger.LoggerStatic log
+INFO: ROUND:54
+Jän. 24, 2022 2:31:16 AM at.technikum.logger.LoggerStatic log
+INFO: PlayerA: RegularSpell(45.0)VS PlayerB: RegularSpell(50.0)
+Jän. 24, 2022 2:31:16 AM at.technikum.logger.LoggerStatic log
+INFO: Winner is Player B
+Jän. 24, 2022 2:31:16 AM at.technikum.logger.LoggerStatic log
+INFO: ROUND:55
+Jän. 24, 2022 2:31:16 AM at.technikum.logger.LoggerStatic log
+INFO: PlayerA: WaterSpell(20.0)VS PlayerB: RegularSpell(45.0)
+Jän. 24, 2022 2:31:16 AM at.technikum.logger.LoggerStatic log
+INFO: normal -> water
+Jän. 24, 2022 2:31:16 AM at.technikum.logger.LoggerStatic log
+INFO: Winner is Player B
+Jän. 24, 2022 2:31:16 AM at.technikum.logger.LoggerStatic log
+INFO: ROUND:56
+Jän. 24, 2022 2:31:16 AM at.technikum.logger.LoggerStatic log
+INFO: PlayerA: WaterGoblin(10.0)VS PlayerB: RegularSpell(50.0)
+Jän. 24, 2022 2:31:16 AM at.technikum.logger.LoggerStatic log
+INFO: normal -> water
+Jän. 24, 2022 2:31:16 AM at.technikum.logger.LoggerStatic log
+INFO: Winner is Player B
+Jän. 24, 2022 2:31:16 AM at.technikum.logger.LoggerStatic log
+INFO: ROUND:57
+Jän. 24, 2022 2:31:16 AM at.technikum.logger.LoggerStatic log
+INFO: PlayerA: WaterSpell(22.0)VS PlayerB: WaterGoblin(10.0)
+Jän. 24, 2022 2:31:16 AM at.technikum.logger.LoggerStatic log
+INFO: Winner is Player A
+Jän. 24, 2022 2:31:16 AM at.technikum.logger.LoggerStatic log
+INFO: ROUND:58
+Jän. 24, 2022 2:31:16 AM at.technikum.logger.LoggerStatic log
+INFO: PlayerA: WaterSpell(22.0)VS PlayerB: WaterSpell(20.0)
+Jän. 24, 2022 2:31:16 AM at.technikum.logger.LoggerStatic log
+INFO: Winner is Player A
+Jän. 24, 2022 2:31:16 AM at.technikum.logger.LoggerStatic log
+INFO: ROUND:59
+Jän. 24, 2022 2:31:16 AM at.technikum.logger.LoggerStatic log
+INFO: PlayerA: Dragon(50.0)VS PlayerB: RegularSpell(45.0)
+Jän. 24, 2022 2:31:16 AM at.technikum.logger.LoggerStatic log
+INFO: Winner is Player A
+Jän. 24, 2022 2:31:16 AM at.technikum.logger.LoggerStatic log
+INFO: ROUND:60
+Jän. 24, 2022 2:31:16 AM at.technikum.logger.LoggerStatic log
+INFO: PlayerA: RegularSpell(28.0)VS PlayerB: RegularSpell(50.0)
+Jän. 24, 2022 2:31:16 AM at.technikum.logger.LoggerStatic log
+INFO: Winner is Player B
+Jän. 24, 2022 2:31:16 AM at.technikum.logger.LoggerStatic log
+INFO: ROUND:61
+Jän. 24, 2022 2:31:16 AM at.technikum.logger.LoggerStatic log
+INFO: PlayerA: RegularSpell(45.0)VS PlayerB: RegularSpell(28.0)
+Jän. 24, 2022 2:31:16 AM at.technikum.logger.LoggerStatic log
+INFO: Winner is Player A
+Jän. 24, 2022 2:31:16 AM at.technikum.logger.LoggerStatic log
+INFO: ROUND:62
+Jän. 24, 2022 2:31:16 AM at.technikum.logger.LoggerStatic log
+INFO: PlayerA: RegularSpell(45.0)VS PlayerB: RegularSpell(50.0)
+Jän. 24, 2022 2:31:16 AM at.technikum.logger.LoggerStatic log
+INFO: Winner is Player B
+Jän. 24, 2022 2:31:16 AM at.technikum.logger.LoggerStatic log
+INFO: ROUND:63
+Jän. 24, 2022 2:31:16 AM at.technikum.logger.LoggerStatic log
+INFO: PlayerA: WaterSpell(22.0)VS PlayerB: RegularSpell(45.0)
+Jän. 24, 2022 2:31:16 AM at.technikum.logger.LoggerStatic log
+INFO: normal -> water
+Jän. 24, 2022 2:31:16 AM at.technikum.logger.LoggerStatic log
+INFO: Winner is Player B
+Jän. 24, 2022 2:31:16 AM at.technikum.logger.LoggerStatic log
+INFO: ROUND:64
+Jän. 24, 2022 2:31:16 AM at.technikum.logger.LoggerStatic log
+INFO: PlayerA: WaterSpell(20.0)VS PlayerB: WaterSpell(22.0)
+Jän. 24, 2022 2:31:16 AM at.technikum.logger.LoggerStatic log
+INFO: Winner is Player B
+Jän. 24, 2022 2:31:16 AM at.technikum.logger.LoggerStatic log
+INFO: ROUND:65
+Jän. 24, 2022 2:31:16 AM at.technikum.logger.LoggerStatic log
+INFO: PlayerA: Knight(20.0)VS PlayerB: WaterSpell(20.0)
+Jän. 24, 2022 2:31:16 AM at.technikum.logger.LoggerStatic log
+INFO: The armor of Knights is so heavy that WaterSpells make them drown them instantly.
+Jän. 24, 2022 2:31:16 AM at.technikum.logger.LoggerStatic log
+INFO: Winner is Player B
+Jän. 24, 2022 2:31:16 AM at.technikum.logger.LoggerStatic log
+INFO: ROUND:66
+Jän. 24, 2022 2:31:16 AM at.technikum.logger.LoggerStatic log
+INFO: PlayerA: RegularSpell(28.0)VS PlayerB: Knight(20.0)
+Jän. 24, 2022 2:31:16 AM at.technikum.logger.LoggerStatic log
+INFO: Winner is Player A
+Jän. 24, 2022 2:31:16 AM at.technikum.logger.LoggerStatic log
+INFO: ROUND:67
+Jän. 24, 2022 2:31:16 AM at.technikum.logger.LoggerStatic log
+INFO: PlayerA: WaterGoblin(10.0)VS PlayerB: WaterSpell(22.0)
+Jän. 24, 2022 2:31:16 AM at.technikum.logger.LoggerStatic log
+INFO: Winner is Player B
+Jän. 24, 2022 2:31:16 AM at.technikum.logger.LoggerStatic log
+INFO: ROUND:68
+Jän. 24, 2022 2:31:16 AM at.technikum.logger.LoggerStatic log
+INFO: PlayerA: RegularSpell(28.0)VS PlayerB: RegularSpell(50.0)
+Jän. 24, 2022 2:31:16 AM at.technikum.logger.LoggerStatic log
+INFO: Winner is Player B
+Jän. 24, 2022 2:31:16 AM at.technikum.logger.LoggerStatic log
+INFO: ROUND:69
+Jän. 24, 2022 2:31:16 AM at.technikum.logger.LoggerStatic log
+INFO: PlayerA: Dragon(50.0)VS PlayerB: WaterSpell(20.0)
+Jän. 24, 2022 2:31:16 AM at.technikum.logger.LoggerStatic log
+INFO: normal -> water
+Jän. 24, 2022 2:31:16 AM at.technikum.logger.LoggerStatic log
+INFO: Winner is Player A
+Jän. 24, 2022 2:31:16 AM at.technikum.logger.LoggerStatic log
+INFO: ROUND:70
+Jän. 24, 2022 2:31:16 AM at.technikum.logger.LoggerStatic log
+INFO: PlayerA: WaterSpell(20.0)VS PlayerB: RegularSpell(28.0)
+Jän. 24, 2022 2:31:16 AM at.technikum.logger.LoggerStatic log
+INFO: normal -> water
+Jän. 24, 2022 2:31:16 AM at.technikum.logger.LoggerStatic log
+INFO: Winner is Player B
+Jän. 24, 2022 2:31:16 AM at.technikum.logger.LoggerStatic log
+INFO: ROUND:71
+Jän. 24, 2022 2:31:16 AM at.technikum.logger.LoggerStatic log
+INFO: PlayerA: Dragon(50.0)VS PlayerB: WaterSpell(20.0)
+Jän. 24, 2022 2:31:16 AM at.technikum.logger.LoggerStatic log
+INFO: normal -> water
+Jän. 24, 2022 2:31:16 AM at.technikum.logger.LoggerStatic log
+INFO: Winner is Player A
+Jän. 24, 2022 2:31:16 AM at.technikum.logger.LoggerStatic log
+INFO: ROUND:72
+Jän. 24, 2022 2:31:16 AM at.technikum.logger.LoggerStatic log
+INFO: PlayerA: Knight(20.0)VS PlayerB: WaterGoblin(10.0)
+Jän. 24, 2022 2:31:16 AM at.technikum.logger.LoggerStatic log
+INFO: normal -> water
+Jän. 24, 2022 2:31:16 AM at.technikum.logger.LoggerStatic log
+INFO: Winner is Player A
+Jän. 24, 2022 2:31:16 AM at.technikum.logger.LoggerStatic log
+INFO: ROUND:73
+Jän. 24, 2022 2:31:16 AM at.technikum.logger.LoggerStatic log
+INFO: PlayerA: Knight(20.0)VS PlayerB: RegularSpell(28.0)
+Jän. 24, 2022 2:31:16 AM at.technikum.logger.LoggerStatic log
+INFO: Winner is Player B
+Jän. 24, 2022 2:31:16 AM at.technikum.logger.LoggerStatic log
+INFO: ROUND:74
+Jän. 24, 2022 2:31:16 AM at.technikum.logger.LoggerStatic log
+INFO: PlayerA: Dragon(50.0)VS PlayerB: RegularSpell(28.0)
+Jän. 24, 2022 2:31:16 AM at.technikum.logger.LoggerStatic log
+INFO: Winner is Player A
+Jän. 24, 2022 2:31:16 AM at.technikum.logger.LoggerStatic log
+INFO: ROUND:75
+Jän. 24, 2022 2:31:16 AM at.technikum.logger.LoggerStatic log
+INFO: PlayerA: WaterGoblin(10.0)VS PlayerB: RegularSpell(50.0)
+Jän. 24, 2022 2:31:16 AM at.technikum.logger.LoggerStatic log
+INFO: normal -> water
+Jän. 24, 2022 2:31:16 AM at.technikum.logger.LoggerStatic log
+INFO: Winner is Player B
+Jän. 24, 2022 2:31:16 AM at.technikum.logger.LoggerStatic log
+INFO: ROUND:76
+Jän. 24, 2022 2:31:16 AM at.technikum.logger.LoggerStatic log
+INFO: PlayerA: RegularSpell(28.0)VS PlayerB: WaterGoblin(10.0)
+Jän. 24, 2022 2:31:16 AM at.technikum.logger.LoggerStatic log
+INFO: normal -> water
+Jän. 24, 2022 2:31:16 AM at.technikum.logger.LoggerStatic log
+INFO: Winner is Player A
+Jän. 24, 2022 2:31:16 AM at.technikum.logger.LoggerStatic log
+INFO: ROUND:77
+Jän. 24, 2022 2:31:16 AM at.technikum.logger.LoggerStatic log
+INFO: PlayerA: WaterSpell(20.0)VS PlayerB: RegularSpell(50.0)
+Jän. 24, 2022 2:31:16 AM at.technikum.logger.LoggerStatic log
+INFO: normal -> water
+Jän. 24, 2022 2:31:16 AM at.technikum.logger.LoggerStatic log
+INFO: Winner is Player B
+Jän. 24, 2022 2:31:16 AM at.technikum.logger.LoggerStatic log
+INFO: ROUND:78
+Jän. 24, 2022 2:31:16 AM at.technikum.logger.LoggerStatic log
+INFO: PlayerA: Dragon(50.0)VS PlayerB: WaterSpell(22.0)
+Jän. 24, 2022 2:31:16 AM at.technikum.logger.LoggerStatic log
+INFO: normal -> water
+Jän. 24, 2022 2:31:16 AM at.technikum.logger.LoggerStatic log
+INFO: Winner is Player A
+Jän. 24, 2022 2:31:16 AM at.technikum.logger.LoggerStatic log
+INFO: ROUND:79
+Jän. 24, 2022 2:31:16 AM at.technikum.logger.LoggerStatic log
+INFO: PlayerA: WaterGoblin(10.0)VS PlayerB: Knight(20.0)
+Jän. 24, 2022 2:31:16 AM at.technikum.logger.LoggerStatic log
+INFO: normal -> water
+Jän. 24, 2022 2:31:16 AM at.technikum.logger.LoggerStatic log
+INFO: Winner is Player B
+Jän. 24, 2022 2:31:16 AM at.technikum.logger.LoggerStatic log
+INFO: ROUND:80
+Jän. 24, 2022 2:31:16 AM at.technikum.logger.LoggerStatic log
+INFO: PlayerA: RegularSpell(28.0)VS PlayerB: RegularSpell(45.0)
+Jän. 24, 2022 2:31:16 AM at.technikum.logger.LoggerStatic log
+INFO: Winner is Player B
+Jän. 24, 2022 2:31:16 AM at.technikum.logger.LoggerStatic log
+INFO: ROUND:81
+Jän. 24, 2022 2:31:16 AM at.technikum.logger.LoggerStatic log
+INFO: PlayerA: WaterSpell(22.0)VS PlayerB: RegularSpell(50.0)
+Jän. 24, 2022 2:31:16 AM at.technikum.logger.LoggerStatic log
+INFO: normal -> water
+Jän. 24, 2022 2:31:16 AM at.technikum.logger.LoggerStatic log
+INFO: Winner is Player B
+Jän. 24, 2022 2:31:16 AM at.technikum.logger.LoggerStatic log
+INFO: ROUND:82
+Jän. 24, 2022 2:31:16 AM at.technikum.logger.LoggerStatic log
+INFO: PlayerA: Dragon(50.0)VS PlayerB: RegularSpell(45.0)
+Jän. 24, 2022 2:31:16 AM at.technikum.logger.LoggerStatic log
+INFO: Winner is Player A
+Jän. 24, 2022 2:31:16 AM at.technikum.logger.LoggerStatic log
+INFO: ROUND:83
+Jän. 24, 2022 2:31:16 AM at.technikum.logger.LoggerStatic log
+INFO: PlayerA: Dragon(50.0)VS PlayerB: WaterSpell(20.0)
+Jän. 24, 2022 2:31:16 AM at.technikum.logger.LoggerStatic log
+INFO: normal -> water
+Jän. 24, 2022 2:31:16 AM at.technikum.logger.LoggerStatic log
+INFO: Winner is Player A
+Jän. 24, 2022 2:31:16 AM at.technikum.logger.LoggerStatic log
+INFO: ROUND:84
+Jän. 24, 2022 2:31:16 AM at.technikum.logger.LoggerStatic log
+INFO: PlayerA: Dragon(50.0)VS PlayerB: RegularSpell(50.0)
+Jän. 24, 2022 2:31:16 AM at.technikum.logger.LoggerStatic log
+INFO: The game is a draw
+Jän. 24, 2022 2:31:16 AM at.technikum.logger.LoggerStatic log
+INFO: ROUND:85
+Jän. 24, 2022 2:31:16 AM at.technikum.logger.LoggerStatic log
+INFO: PlayerA: Dragon(50.0)VS PlayerB: RegularSpell(28.0)
+Jän. 24, 2022 2:31:16 AM at.technikum.logger.LoggerStatic log
+INFO: Winner is Player A
+Jän. 24, 2022 2:31:16 AM at.technikum.logger.LoggerStatic log
+INFO: ROUND:86
+Jän. 24, 2022 2:31:16 AM at.technikum.logger.LoggerStatic log
+INFO: PlayerA: WaterSpell(20.0)VS PlayerB: WaterGoblin(10.0)
+Jän. 24, 2022 2:31:16 AM at.technikum.logger.LoggerStatic log
+INFO: Winner is Player A
+Jän. 24, 2022 2:31:16 AM at.technikum.logger.LoggerStatic log
+INFO: ROUND:87
+Jän. 24, 2022 2:31:16 AM at.technikum.logger.LoggerStatic log
+INFO: PlayerA: Dragon(50.0)VS PlayerB: Knight(20.0)
+Jän. 24, 2022 2:31:16 AM at.technikum.logger.LoggerStatic log
+INFO: Winner is Player A
+Jän. 24, 2022 2:31:16 AM at.technikum.logger.LoggerStatic log
+INFO: ROUND:88
+Jän. 24, 2022 2:31:16 AM at.technikum.logger.LoggerStatic log
+INFO: PlayerA: RegularSpell(28.0)VS PlayerB: RegularSpell(50.0)
+Jän. 24, 2022 2:31:16 AM at.technikum.logger.LoggerStatic log
+INFO: Winner is Player B
+Jän. 24, 2022 2:31:16 AM at.technikum.logger.LoggerStatic log
+INFO: ROUND:89
+Jän. 24, 2022 2:31:16 AM at.technikum.logger.LoggerStatic log
+INFO: PlayerA: WaterGoblin(10.0)VS PlayerB: WaterSpell(22.0)
+Jän. 24, 2022 2:31:16 AM at.technikum.logger.LoggerStatic log
+INFO: Winner is Player B
+Jän. 24, 2022 2:31:16 AM at.technikum.logger.LoggerStatic log
+INFO: ROUND:90
+Jän. 24, 2022 2:31:16 AM at.technikum.logger.LoggerStatic log
+INFO: PlayerA: Dragon(50.0)VS PlayerB: RegularSpell(50.0)
+Jän. 24, 2022 2:31:16 AM at.technikum.logger.LoggerStatic log
+INFO: The game is a draw
+Jän. 24, 2022 2:31:16 AM at.technikum.logger.LoggerStatic log
+INFO: ROUND:91
+Jän. 24, 2022 2:31:16 AM at.technikum.logger.LoggerStatic log
+INFO: PlayerA: RegularSpell(45.0)VS PlayerB: RegularSpell(28.0)
+Jän. 24, 2022 2:31:16 AM at.technikum.logger.LoggerStatic log
+INFO: Winner is Player A
+Jän. 24, 2022 2:31:16 AM at.technikum.logger.LoggerStatic log
+INFO: ROUND:92
+Jän. 24, 2022 2:31:16 AM at.technikum.logger.LoggerStatic log
+INFO: PlayerA: Dragon(50.0)VS PlayerB: WaterGoblin(10.0)
+Jän. 24, 2022 2:31:16 AM at.technikum.logger.LoggerStatic log
+INFO: normal -> water
+Jän. 24, 2022 2:31:16 AM at.technikum.logger.LoggerStatic log
+INFO: Winner is Player A
+Jän. 24, 2022 2:31:16 AM at.technikum.logger.LoggerStatic log
+INFO: ROUND:93
+Jän. 24, 2022 2:31:16 AM at.technikum.logger.LoggerStatic log
+INFO: PlayerA: Knight(20.0)VS PlayerB: RegularSpell(50.0)
+Jän. 24, 2022 2:31:16 AM at.technikum.logger.LoggerStatic log
+INFO: Winner is Player B
+Jän. 24, 2022 2:31:16 AM at.technikum.logger.LoggerStatic log
+INFO: ROUND:94
+Jän. 24, 2022 2:31:16 AM at.technikum.logger.LoggerStatic log
+INFO: PlayerA: WaterSpell(20.0)VS PlayerB: RegularSpell(50.0)
+Jän. 24, 2022 2:31:16 AM at.technikum.logger.LoggerStatic log
+INFO: normal -> water
+Jän. 24, 2022 2:31:16 AM at.technikum.logger.LoggerStatic log
+INFO: Winner is Player B
+Jän. 24, 2022 2:31:16 AM at.technikum.logger.LoggerStatic log
+INFO: ROUND:95
+Jän. 24, 2022 2:31:16 AM at.technikum.logger.LoggerStatic log
+INFO: PlayerA: WaterGoblin(10.0)VS PlayerB: Knight(20.0)
+Jän. 24, 2022 2:31:16 AM at.technikum.logger.LoggerStatic log
+INFO: normal -> water
+Jän. 24, 2022 2:31:16 AM at.technikum.logger.LoggerStatic log
+INFO: Winner is Player B
+Jän. 24, 2022 2:31:16 AM at.technikum.logger.LoggerStatic log
+INFO: ROUND:96
+Jän. 24, 2022 2:31:16 AM at.technikum.logger.LoggerStatic log
+INFO: PlayerA: Dragon(50.0)VS PlayerB: Knight(20.0)
+Jän. 24, 2022 2:31:16 AM at.technikum.logger.LoggerStatic log
+INFO: Winner is Player A
+Jän. 24, 2022 2:31:16 AM at.technikum.logger.LoggerStatic log
+INFO: ROUND:97
+Jän. 24, 2022 2:31:16 AM at.technikum.logger.LoggerStatic log
+INFO: PlayerA: Knight(20.0)VS PlayerB: RegularSpell(50.0)
+Jän. 24, 2022 2:31:16 AM at.technikum.logger.LoggerStatic log
+INFO: Winner is Player B
+Jän. 24, 2022 2:31:16 AM at.technikum.logger.LoggerStatic log
+INFO: ROUND:98
+Jän. 24, 2022 2:31:16 AM at.technikum.logger.LoggerStatic log
+INFO: PlayerA: Dragon(50.0)VS PlayerB: WaterGoblin(10.0)
+Jän. 24, 2022 2:31:16 AM at.technikum.logger.LoggerStatic log
+INFO: normal -> water
+Jän. 24, 2022 2:31:16 AM at.technikum.logger.LoggerStatic log
+INFO: Winner is Player A
+Jän. 24, 2022 2:31:16 AM at.technikum.logger.LoggerStatic log
+INFO: ROUND:99
+Jän. 24, 2022 2:31:16 AM at.technikum.logger.LoggerStatic log
+INFO: PlayerA: Dragon(50.0)VS PlayerB: Knight(20.0)
+Jän. 24, 2022 2:31:16 AM at.technikum.logger.LoggerStatic log
+INFO: Winner is Player A
+Jän. 24, 2022 2:31:16 AM at.technikum.logger.LoggerStatic log
+INFO: 
+WINNER : kienboec
+Jän. 24, 2022 2:31:17 AM at.technikum.logger.LoggerStatic log
+INFO: 
+GAME ENDE 
+
+Jän. 24, 2022 2:31:24 AM at.technikum.logger.LoggerStatic log
+INFO: 
+ # STATUS
+
+Jän. 24, 2022 2:31:24 AM at.technikum.logger.LoggerStatic log
+INFO: 
+LOADING FINISHED!
+
+Jän. 24, 2022 2:31:24 AM at.technikum.logger.LoggerStatic log
+INFO: 
+ # STATUS
+
+Jän. 24, 2022 2:31:24 AM at.technikum.logger.LoggerStatic log
+INFO: 
+LOADING FINISHED!
+
+Jän. 24, 2022 2:31:24 AM at.technikum.logger.LoggerStatic log
+INFO: 
+ # SCORE 
+
+Jän. 24, 2022 2:31:24 AM at.technikum.logger.LoggerStatic log
+INFO: 
+LOADING FINISHED!
+
+Jän. 24, 2022 2:31:24 AM at.technikum.logger.LoggerStatic log
+INFO: 
+TRADE
+
+Jän. 24, 2022 2:31:24 AM at.technikum.logger.LoggerStatic log
+INFO: 
+LOADING FINISHED!
+
+Jän. 24, 2022 2:31:24 AM at.technikum.logger.LoggerStatic log
+INFO: 
+TRADE FAILED
+
+Jän. 24, 2022 2:31:24 AM at.technikum.logger.LoggerStatic log
+INFO: 
+TRADE
+
+Jän. 24, 2022 2:31:24 AM at.technikum.logger.LoggerStatic log
+INFO: 
+LOADING FINISHED!
+
+Jän. 24, 2022 2:31:24 AM at.technikum.logger.LoggerStatic log
+INFO: 
+TRADE
+
+Jän. 24, 2022 2:31:25 AM at.technikum.logger.LoggerStatic log
+INFO: 
+NO TRADING
+
+Jän. 24, 2022 2:31:25 AM at.technikum.logger.LoggerStatic log
+INFO: 
+DELETE
+
+Jän. 24, 2022 2:31:25 AM at.technikum.logger.LoggerStatic log
+INFO: 
+DELETE - TRADE NOT FOUND
+
+Jän. 24, 2022 2:31:25 AM at.technikum.logger.LoggerStatic log
+INFO: 
+TRADE
+
+Jän. 24, 2022 2:31:25 AM at.technikum.logger.LoggerStatic log
+INFO: 
+LOADING FINISHED!
+
+Jän. 24, 2022 2:31:25 AM at.technikum.logger.LoggerStatic log
+INFO: 
+TRADE FAILED
+
+Jän. 24, 2022 2:31:25 AM at.technikum.logger.LoggerStatic log
+INFO: 
+TRADE
+
+Jän. 24, 2022 2:31:25 AM at.technikum.logger.LoggerStatic log
+INFO: 
+LOADING FINISHED!
+
+Jän. 24, 2022 2:31:25 AM at.technikum.logger.LoggerStatic log
+INFO: 
+TRADE
+
+Jän. 24, 2022 2:31:25 AM at.technikum.logger.LoggerStatic log
+INFO: 
+NO TRADING
+
+Jän. 24, 2022 2:31:25 AM at.technikum.logger.LoggerStatic log
+INFO: 
+TRADE
+
+Jän. 24, 2022 2:31:26 AM at.technikum.logger.LoggerStatic log
+INFO: 
+TRADE NOT FOUND
+
+Jän. 24, 2022 2:31:26 AM at.technikum.logger.LoggerStatic log
+INFO: 
+TRADE
+
+Jän. 24, 2022 2:31:26 AM at.technikum.logger.LoggerStatic log
+INFO: 
+TRADE NOT FOUND
+
+Jän. 24, 2022 2:31:26 AM at.technikum.logger.LoggerStatic log
+INFO: 
+TRADE
+
+Jän. 24, 2022 2:31:26 AM at.technikum.logger.LoggerStatic log
+INFO: 
+LOADING FINISHED!
+
+Jän. 24, 2022 2:31:26 AM at.technikum.logger.LoggerStatic log
+INFO: 
+TRADE
+
+Jän. 24, 2022 2:31:26 AM at.technikum.logger.LoggerStatic log
+INFO: 
+NO TRADING
+
+Jän. 24, 2022 2:31:26 AM at.technikum.logger.LoggerStatic log
+INFO: 
+# LOGOUT
+
+Jän. 24, 2022 2:31:26 AM at.technikum.logger.LoggerStatic log
+INFO: 
+ LOGIN SUCCESS
+
+Jän. 24, 2022 2:31:26 AM at.technikum.logger.LoggerStatic log
+INFO: 
+# LOGOUT
+
+Jän. 24, 2022 2:31:26 AM at.technikum.logger.LoggerStatic log
+INFO: 
+ LOGIN SUCCESS
+
+Jän. 24, 2022 2:31:26 AM at.technikum.logger.LoggerStatic log
+INFO: 
+# LOGOUT
+
+Jän. 24, 2022 2:31:27 AM at.technikum.logger.LoggerStatic log
+INFO: 
+ LOGIN SUCCESS
+
+Jän. 24, 2022 2:31:27 AM at.technikum.logger.LoggerStatic log
+INFO: 
+# LOGOUT
+
+Jän. 24, 2022 2:31:27 AM at.technikum.logger.LoggerStatic log
+INFO: 
+USER NOT FOUND
+
+Jän. 24, 2022 2:31:27 AM at.technikum.logger.LoggerStatic log
+INFO: 
+# LOGOUT
+
+Jän. 24, 2022 2:31:27 AM at.technikum.logger.LoggerStatic log
+INFO: 
+USER NOT FOUND
+
