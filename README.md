@@ -2,7 +2,8 @@
  ## Installation
   - git clone https://github.com/immxmmi/3-Semester-SWEN-MTCG.git
   - docker pull immxmmi/3-semester-swen-mtcg
-  -  Server starten
+  - Datenbank - Username: swe1user PW: swe1pw
+  - Server starten
       - Klasse Main - function main() ausführen.
       - Server hört auf den Port: 10001 IP: 127.0.0.1 oder localhost max 5 Client können sich verbinden.
       - Es ist möglich den PORT IP und CLIENT anzahl zu verändern im main
@@ -56,10 +57,14 @@
     - Spieler
         - Jeder Spieler bekommt nachdem Registrieren 20 coins.
         - Mit den coins kann der Spieler sich Packages kaufen.
-        - Jedes Packages kostet momentan 5 coins und besitzt 4 Karten.
+        - Jedes Packages kostet momentan 5 coins und besitzt 5 Karten.
         - Diese Karten werden, dann in der Karten Sammlung gespeichert (= Stack)
         - um Spielen zu können benötiogt jeder User ein Deck, welches man aus seiner eigenen Karten Sammlung erstellen kann
-        - Ein Deck besteht aus 4 Karten die jeder User selber aus dem Stack ausuchen kann
+        - Ein Deck besteht aus 4 Karten die jeder User selber aus dem Stack aussuchen kann
+        - Jeder User hat zu Beginn 100 ELO punkte ( = Spieler LEVEL)
+        - Verliert man eine Runde so bekommt der Gegner während dem Spiel die Karte aus dem Deck
+        - Der erste Spieler der alle 8 Karten hat gewinnt
+        - Kommt es öfters zu unenschieden, oder die 100 Runden überschritten werden, so gewinnt, der der öfters gewonnen hat
         
     - Regeln 
         - Goblins are too afraid of Dragons to attack.
@@ -85,7 +90,7 @@
          PlayerA: RegularSpell (10 Damage) vs PlayerB: WaterGoblin (10 Damage) => 10 vs 10 > 20 vs 05 => Knight wins
          PlayerA: RegularSpell (10 Damage) vs PlayerB: Knight (15 Damage) => 10 vs 15 -> 10 vs 15 => Knight wins 
 
-## Ausführliche Installation
+## Ausführliche Installation ohne DockerHub
     - 1.Schritt: Git
        -  git clone https://github.com/immxmmi/3-Semester-SWEN-MTCG.git
        
