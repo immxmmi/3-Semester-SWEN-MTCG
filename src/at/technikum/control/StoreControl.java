@@ -15,7 +15,6 @@ import at.technikum.server.response.ResponseBuilderImpl;
 import at.technikum.server.response.ResponseImpl;
 
 public class StoreControl implements Post {
-
     private PackageHandler packageHandler;
     private PlayerHandler playerHandler;
     private StoreSerializer storeSerializer;
@@ -75,8 +74,6 @@ public class StoreControl implements Post {
         return new ResponseBuilderImpl().statusOK(storeSerializer.message("PACKAGE SOLD!").toString());
 
     }
-
-
 
 
 }

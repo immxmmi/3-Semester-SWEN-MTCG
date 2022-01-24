@@ -3,6 +3,7 @@ package at.technikum.control;
 import at.technikum.control.repository.Post;
 import at.technikum.handler.CardHandlerImpl;
 import at.technikum.handler.PackageHandlerImpl;
+import at.technikum.handler.repository.CardHandler;
 import at.technikum.handler.repository.PackageHandler;
 import at.technikum.logger.LoggerStatic;
 import at.technikum.model.card.cardTypes.CardElement;
@@ -21,10 +22,9 @@ import com.google.gson.JsonParser;
 
 public class PackageControl implements Post {
 
-
     /** --> INSTANCE **/
     private TextColor textColor;
-    private CardHandlerImpl cardHandlerImpl;
+    private CardHandler cardHandler;
     private PackageHandler packageHandler;
     private PackageSerializer packageSerializer;
     private LoggerStatic loggerStatic;
@@ -33,7 +33,7 @@ public class PackageControl implements Post {
     public PackageControl() {
         this.packageHandler = new PackageHandlerImpl();
         this.packageSerializer = new PackageSerializer();
-        this.cardHandlerImpl = new CardHandlerImpl();
+        this.cardHandler = new CardHandlerImpl();
         this.textColor = new TextColor();
         this.loggerStatic = LoggerStatic.getInstance();
     }
@@ -72,14 +72,14 @@ public class PackageControl implements Post {
             JsonObject cardObject = element.getAsJsonObject();
             String cardID = "C-" + cardObject.get("Id").getAsString();
             CardName cardName = CardName.valueOf(cardObject.get("Name").getAsString());
-            CardElement cardElement = this.cardHandlerImpl.filterCardElement(cardName);
-            CardType cardType = this.cardHandlerImpl.filterCardType(cardName);
+            CardElement cardElement = this.cardHandler.filterCardElement(cardName);
+            CardType cardType = this.cardHandler.filterCardType(cardName);
             float cardPower = cardObject.get("Damage").getAsFloat();
-            newPackage.getCards().add(this.cardHandlerImpl.addCardByData(cardID, cardName, cardType, cardElement, cardPower));
+            newPackage.getCards().add(this.cardHandler.addCardByData(cardID, cardName, cardType, cardElement, cardPower));
         }
 
         /** --> neu erstelltes Package in die Datenbank hinzufügen und nach der ID fragn **/
-        String packageID = this.packageHandler.insert(newPackage).getPackageID();
+        String packageID = this.packageHandler.insertPackage(newPackage).getPackageID();
 
         Package currentPackage = this.packageHandler.getItemById(packageID);
 
@@ -97,6 +97,4 @@ public class PackageControl implements Post {
         JsonObject packages = this.packageSerializer.convertPackageToJson(currentPackage,true,false,false,false);
         return new ResponseBuilderImpl().statusCreated(packages.toString());
     }
-
-
 }
