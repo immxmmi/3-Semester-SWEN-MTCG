@@ -30,7 +30,8 @@ public final class LoggerStatic {
     }
 
     public void log(String logMessage){
-        logData.log(Level.INFO,logMessage);
+
+        //logData.log(Level.INFO,logMessage);
     }
 
     public static LoggerStatic getInstance() {

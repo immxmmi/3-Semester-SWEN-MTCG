@@ -29,7 +29,7 @@ public interface CardHolderHandler {
      **/
     void changeCardHolder(String new_holderID, String old_holderID, String cardID);
 
-    void switchCardHolder(String holderID_1, String holderID_2, String cardID_1, String cardID_2);
+    boolean switchCardHolder(String holderID_1, String holderID_2, String cardID_1, String cardID_2);
 
     void packageToNewHolder(String packageID, String new_holderID);
 

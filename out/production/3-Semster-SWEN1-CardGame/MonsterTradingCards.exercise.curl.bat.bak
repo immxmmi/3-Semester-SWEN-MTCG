@@ -23,7 +23,7 @@ echo.
 curl -X POST http://localhost:10001/users --header "Content-Type: application/json" -d "{\"Username\":\"kienboec\", \"Password\":\"different\"}"
 echo. 
 echo.
-
+echo.
 REM --------------------------------------------------
 echo 2) Login Users
 curl -X POST http://localhost:10001/sessions --header "Content-Type: application/json" -d "{\"Username\":\"kienboec\", \"Password\":\"daniel\"}"
@@ -143,6 +143,7 @@ echo.
 echo should fail ... only 3 cards set
 curl -X PUT http://localhost:10001/deck --header "Content-Type: application/json" --header "Authorization: Basic altenhof-mtcgToken" -d "[\"aa9999a0-734c-49c6-8f4a-651864b14e62\", \"d6e9c720-9b5a-40c7-a6b2-bc34752e3463\", \"d60e23cf-2238-4d49-844f-c7589ee5342e\"]"
 echo.
+echo.
 
 
 REM --------------------------------------------------
@@ -210,8 +211,10 @@ echo.
 REM --------------------------------------------------
 echo 17) battle
 start /b "kienboec battle" curl -X POST http://localhost:10001/battles --header "Authorization: Basic kienboec-mtcgToken"
+ping localhost -n 2 >NUL 2>NUL
 start /b "altenhof battle" curl -X POST http://localhost:10001/battles --header "Authorization: Basic altenhof-mtcgToken"
 ping localhost -n 10 >NUL 2>NUL
+
 
 REM --------------------------------------------------
 echo 18) Stats 
@@ -223,12 +226,14 @@ curl -X GET http://localhost:10001/stats --header "Authorization: Basic altenhof
 echo.
 echo.
 
+echo.
 REM --------------------------------------------------
 echo 19) scoreboard
 curl -X GET http://localhost:10001/score --header "Authorization: Basic kienboec-mtcgToken"
 echo.
 echo.
 
+echo.
 REM --------------------------------------------------
 echo 20) trade
 echo check trading deals
@@ -247,6 +252,7 @@ curl -X DELETE http://localhost:10001/tradings/6cd85277-4590-49d4-b0cf-ba0a921fa
 echo.
 echo.
 
+echo.
 REM --------------------------------------------------
 echo 21) check trading deals
 curl -X GET http://localhost:10001/tradings  --header "Authorization: Basic kienboec-mtcgToken"
@@ -269,6 +275,8 @@ echo.
 curl -X GET http://localhost:10001/tradings --header "Authorization: Basic altenhof-mtcgToken"
 echo.
 
+
+echo.
 echo 22) logout
 echo.
 curl -X POST http://localhost:10001/logout --header "Authorization: Basic altenhof-mtcgToken"

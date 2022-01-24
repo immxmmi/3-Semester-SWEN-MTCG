@@ -210,7 +210,6 @@ echo.
 REM --------------------------------------------------
 echo 17) battle
 start /b "kienboec battle" curl -X POST http://localhost:10001/battles --header "Authorization: Basic kienboec-mtcgToken"
-ping localhost -n 2 >NUL 2>NUL
 start /b "altenhof battle" curl -X POST http://localhost:10001/battles --header "Authorization: Basic altenhof-mtcgToken"
 ping localhost -n 10 >NUL 2>NUL
 
@@ -273,14 +272,19 @@ echo.
 echo 22) logout
 echo.
 curl -X POST http://localhost:10001/logout --header "Authorization: Basic altenhof-mtcgToken"
+echo.
 curl -X POST http://localhost:10001/logout --header "Authorization: Basic admin-mtcgToken"
+echo.
 curl -X POST http://localhost:10001/logout --header "Authorization: Basic altenhof-mtcgToken"
 echo.
 echo should fail:
+echo.
 curl -X POST http://localhost:10001/logout --header "Authorization: Basic tets-mtcgToken"
+echo.
 curl -X POST http://localhost:10001/logout --header "Authorization: Basic gg-mtcgToken"
-
-
+echo.
+echo.
+echo.
 
 REM --------------------------------------------------
 echo end...

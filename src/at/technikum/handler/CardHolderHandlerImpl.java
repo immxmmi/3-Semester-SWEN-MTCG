@@ -184,9 +184,10 @@ public class CardHolderHandlerImpl extends AbstractDBTable implements CardHolder
      * --> Karten tausch
      **/
     @Override
-    public void switchCardHolder(String holderID_1, String holderID_2, String cardID_1, String cardID_2) {
+    public boolean switchCardHolder(String holderID_1, String holderID_2, String cardID_1, String cardID_2) {
         changeCardHolder(holderID_1, holderID_2, cardID_2);
         changeCardHolder(holderID_2, holderID_1, cardID_1);
+        return true;
     }
 
     /**

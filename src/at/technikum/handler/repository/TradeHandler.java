@@ -18,4 +18,5 @@ public interface TradeHandler {
     ArrayList<Trade> getAllTradeByUserID(String userID);
 
     boolean delete(Trade trade);
+
 }
