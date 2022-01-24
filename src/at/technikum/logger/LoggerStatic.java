@@ -29,6 +29,7 @@ public final class LoggerStatic {
         logData.addHandler(history);
     }
 
+    /** -LOG - MSG  **/
     public void log(String logMessage){
         logData.log(Level.INFO,logMessage);
     }

@@ -105,25 +105,23 @@ public class PlayerControl implements Post, Get {
     /*** --> LOGOUT **/
     public ResponseImpl logout(RequestImpl requestImpl) {
         // System.out.println("# LOGIN ");
-        loggerStatic.log("\n# LOGOUT\n");
+        loggerStatic.log("\n# LOGOUT \n");
         /** --> WENN REQUEST LEER IST --> WENN AUTH LEER IST --> WENN USER NICHT EXISTIERT **/
         ResponseImpl responseImpl = new ResponseBuilderImpl().requestErrorHandler(requestImpl, true, false, true);
         if (responseImpl != null) {
             return responseImpl;
         }
 
-        /** --> User versucht sich einzuloggen **/
+        /** --> User versucht sich auszuloggen **/
         Player currentPlayer = this.playerHandler.getItemById(requestImpl.getAuth());
         playerHandler.logout(currentPlayer);
         currentPlayer = this.playerHandler.getItemById(requestImpl.getAuth());
         /** --> JSON OBJECT **/
         JsonObject jsonObject = playerSerializer.convertPlayerToJson(currentPlayer,true,true,false,false,true,false, false,false,false);
         /** --> STATUS OK **/
-        loggerStatic.log("\n LOGIN SUCCESS\n");
+        loggerStatic.log("\n LOGOUT SUCCESS\n");
         return new ResponseBuilderImpl().statusOK(jsonObject.toString());
     }
-
-
 
     /*** --> STATUS**/
     @Override
@@ -140,7 +138,7 @@ public class PlayerControl implements Post, Get {
         Player currentPlayer = this.playerHandler.getItemById(requestImpl.getAuth());
 
         /** --> JSON OPJEKT **/
-        JsonObject player = playerSerializer.convertPlayerToJson(currentPlayer,false,true,false,false,true,false,false, false,false);
+        JsonObject player = playerSerializer.convertPlayerToJson(currentPlayer,false,true,false,false,true,false,false, false,true);
 
         /** --> STATUS OK **/
         loggerStatic.log("\nLOADING FINISHED!\n");
@@ -161,12 +159,11 @@ public class PlayerControl implements Post, Get {
         //Player currentPlayer = this.playerRepository.getPlayerById(requestImpl.getAuth());
 
         String list = playerHandler.getHighScoreList().toString();
-        print.printHighscoreList(playerHandler.getHighScoreList());
+        //print.printHighscoreList(playerHandler.getHighScoreList());
        // System.out.println(this.textColor.ANSI_GREEN + "LOADING FINISHED!" + this.textColor.ANSI_RESET);
+        loggerStatic.log(list.toString());
         loggerStatic.log("\nLOADING FINISHED!\n");
-        return new ResponseBuilderImpl().statusOK(playerSerializer.message(list).toString()); // TODO: 07.01.2022 HighScore Klasse
+        return new ResponseBuilderImpl().statusOK(playerSerializer.message(list).toString());
     }
-
-
 
 }

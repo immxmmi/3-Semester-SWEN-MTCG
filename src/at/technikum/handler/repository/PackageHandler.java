@@ -4,7 +4,7 @@ import at.technikum.model.repository.Package;
 
 import java.util.ArrayList;
 
-public interface PackageHandler extends Repository<Package> {
+public interface PackageHandler {
 
     Package getCurrentPackage();
 

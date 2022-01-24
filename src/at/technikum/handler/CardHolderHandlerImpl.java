@@ -166,13 +166,13 @@ public class CardHolderHandlerImpl extends AbstractDBTable implements CardHolder
 
         double number = getCardHolderNumber(old_holderID, cardID, true);
 
-        System.out.println("NUMBER DAVOR: " + number);
+        //System.out.println("NUMBER DAVOR: " + number);
 
         if (number < 2) {
             delete(this.getCardHolder(old_holderID, cardID));
         } else {
             number--;
-            System.out.println("NUMBER: " + number);
+           // System.out.println("NUMBER: " + number);
             this.parameter = new String[]{"" + number, old_holderID, cardID};
             this.setStatement("UPDATE  \"" + this.tableName + "\" SET  number = ? WHERE holder_id = ? AND card_id = ?;", this.parameter);
         }

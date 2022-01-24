@@ -3,6 +3,7 @@ package at.technikum.handler;
 import at.technikum.database.AbstractDBTable;
 import at.technikum.handler.repository.CardHandler;
 import at.technikum.handler.repository.CardHolderHandler;
+import at.technikum.handler.repository.Repository;
 import at.technikum.handler.repository.TradeHandler;
 import at.technikum.model.TradeImpl;
 import at.technikum.model.card.Card;
@@ -14,7 +15,7 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.ArrayList;
 
-public class TradeHandlerImpl extends AbstractDBTable implements TradeHandler{
+public class TradeHandlerImpl extends AbstractDBTable implements TradeHandler, Repository<Trade> {
 
 
     private CardHandler cardHandler = new CardHandlerImpl();
@@ -93,10 +94,10 @@ public class TradeHandlerImpl extends AbstractDBTable implements TradeHandler{
     @Override
     public Trade addTrade(String tradeID, String userID, String cardID, CardType cardType, double cardPower) {
 
-        String transactionID = this.tools.tokenSupplier.get();
+        String genTradeID = this.tools.tokenSupplier.get();
         CardHolder cardHolder = checkCardHolderByID(userID,cardID);
         if(tradeID == ""){
-            tradeID = transactionID;
+            tradeID = genTradeID;
         }
 
         tradeID  = "T-" + tradeID;
@@ -107,19 +108,17 @@ public class TradeHandlerImpl extends AbstractDBTable implements TradeHandler{
             return null;
         }
 
-        this.parameter = new String[]{
-                tradeID,
-                userID,
-                cardID,
-                "" + cardType,
-                "" + cardPower
-        };
+       Trade trade = TradeImpl.builder()
+                .tradeID(tradeID)
+                .userID(userID)
+                .card(cardHandler.getItemById(cardID))
+                .cardTyp(cardType)
+                .minPower(cardPower)
+                .build();
 
-        this.setStatement(
-                "INSERT INTO "+this.tableName+" (trade_id, user_id, card_id, card_typ , card_min_power) values ( ?,?,?,?,?)",
-                this.parameter
-        );
 
+
+        insert(trade);
         cardHolderHandler.updateLocked(cardHolder,true);
 
         return getItemById(tradeID);
@@ -134,6 +133,31 @@ public class TradeHandlerImpl extends AbstractDBTable implements TradeHandler{
 
         return tradeBuilder(this.result);
     }
+
+    @Override
+    public Trade insert(Trade trade) {
+
+        this.parameter = new String[]{
+                trade.getTradeID(),
+                trade.getUserID(),
+                trade.getCard().getCardID(),
+                "" + trade.getCardTyp(),
+                "" + trade.getMinPower()
+        };
+
+        this.setStatement(
+                "INSERT INTO "+this.tableName+" (trade_id, user_id, card_id, card_typ , card_min_power) values ( ?,?,?,?,?)",
+                this.parameter
+        );
+
+        return getItemById(trade.getTradeID());
+    }
+
+    @Override
+    public Trade update(Trade item) {
+        return null;
+    }
+
     @Override
     public ArrayList<Trade> getAllTradeByUserID(String userID) {
         ArrayList<Trade> trades = new ArrayList<>();
@@ -169,7 +193,7 @@ public class TradeHandlerImpl extends AbstractDBTable implements TradeHandler{
         if(cardHolder == null){return false;}
         this.parameter = new String[]{trade.getTradeID()};
         this.setStatement("DELETE FROM " + this.tableName + " WHERE trade_id = ? ;", this.parameter);
-        System.out.println(this.statement);
+        //System.out.println(this.statement);
         this.closeStatement();
         cardHolderHandler.updateLocked(cardHolder,false);
         return true;

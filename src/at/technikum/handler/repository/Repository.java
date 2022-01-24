@@ -1,6 +1,6 @@
 package at.technikum.handler.repository;
 
-public interface Repository<T> { // TODO: 07.01.2022 fertig
+public interface Repository<T> {
 
     T getItemById(String itemID);
 

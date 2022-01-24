@@ -3,6 +3,7 @@ package at.technikum.handler;
 import at.technikum.database.AbstractDBTable;
 import at.technikum.handler.repository.CardHolderHandler;
 import at.technikum.handler.repository.PackageHandler;
+import at.technikum.handler.repository.Repository;
 import at.technikum.handler.repository.StoreHandler;
 import at.technikum.model.PackageImpl;
 import at.technikum.model.card.Card;
@@ -12,7 +13,7 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.ArrayList;
 
-public class PackageHandlerImpl extends AbstractDBTable implements PackageHandler {
+public class PackageHandlerImpl extends AbstractDBTable implements PackageHandler, Repository<Package> {
 
     private final static int packagePrice = 5;
     private static PackageHandlerImpl instance;

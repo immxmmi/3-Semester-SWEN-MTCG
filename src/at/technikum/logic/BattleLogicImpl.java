@@ -25,7 +25,6 @@ public class BattleLogicImpl extends Tools implements BattleLogic {
         return this.fight(battle);
     }
 
-
     private Battle fight(Battle battle) {
         List<Card> deckA = battle.getPlayer1().getDeck().getDeckList();
         List<Card> deckB = battle.getPlayer2().getDeck().getDeckList();
@@ -104,7 +103,6 @@ public class BattleLogicImpl extends Tools implements BattleLogic {
         return battle;
     }
 
-
     private void round(Card CardA, Card CardB) {
         String msg = "PlayerA: " + CardA.getCardName() + "(" + CardA.getCardPower() + ")" + "VS PlayerB: " + CardB.getCardName() + "(" + CardB.getCardPower() + ")";
         loggerStatic.log(msg);
@@ -119,7 +117,6 @@ public class BattleLogicImpl extends Tools implements BattleLogic {
     }
 
     public Card rules(Card CardA, Card CardB) {
-
 
         if(CardA.getCardName() == CardName.Dragon && CardB.getCardName() == CardName.Goblin){
             //System.out.println("Goblins are too afraid of Dragons to attack.");
@@ -240,7 +237,6 @@ public class BattleLogicImpl extends Tools implements BattleLogic {
 
     return null;
     }
-
 
 
 }

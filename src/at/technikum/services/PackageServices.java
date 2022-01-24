@@ -57,7 +57,7 @@ public class PackageServices extends Tools {
         // Fügt Package zur Datenbank hinzu
         if (cards != null) {
             if (cards.size() > 0) {
-                packageHandler.insert(pack);
+                packageHandler.insertPackage(pack);
                 store.addPackageToStore(pack.getPackageID(), packageHandler.getPackagePrice());
 
                 for (int i = 0; i < 5; i++) {

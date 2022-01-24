@@ -4,6 +4,7 @@ import at.technikum.database.AbstractDBTable;
 import at.technikum.handler.repository.CardHandler;
 import at.technikum.handler.repository.CardHolderHandler;
 import at.technikum.handler.repository.StoreHandler;
+import at.technikum.logger.LoggerStatic;
 import at.technikum.model.repository.Player;
 import at.technikum.model.repository.Store;
 import at.technikum.model.StoreImpl;
@@ -21,6 +22,7 @@ public class StoreHandlerImpl extends AbstractDBTable implements StoreHandler {
     private Player currentPlayer;
     private PlayerHandlerImpl playerRepositoryImpl = new PlayerHandlerImpl();
     private CardHandler cardHandler = new CardHandlerImpl();
+    private LoggerStatic loggerStatic = LoggerStatic.getInstance();
 
 
     /*******************************************************************/
@@ -134,8 +136,8 @@ public class StoreHandlerImpl extends AbstractDBTable implements StoreHandler {
                 holder.changeCardHolder(this.currentPlayer.getUserID(), seller.getUserID(), item.getItemID());
             }
             deleteByID(item.getTransactionID());
-            System.out.println("ITEM: " + item.getItemID() + " sold to " + currentPlayer.getUsername());
-
+           // System.out.println("ITEM: " + item.getItemID() + " sold to " + currentPlayer.getUsername());
+            loggerStatic.log("ITEM: " + item.getItemID() + " sold to " + currentPlayer.getUsername());
         } else {
             //System.out.println(TextColor.ANSI_RED + "NOT ENOUGH MONEY" + TextColor.ANSI_RESET);
             return false;
