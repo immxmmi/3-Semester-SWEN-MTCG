@@ -1,4 +1,4 @@
-﻿# 3-Semester-SWEN1-CardGame
+﻿# 3-Semester-SWEN-MTCG
  ## Installation
   - git clone https://github.com/immxmmi/3-Semester-SWEN-MTCG.git
   - docker pull immxmmi/3-semester-swen-mtcg
@@ -13,7 +13,7 @@
      - Test-Script
      - Datenbank - SQL Code
      - Datenbank - Diagramm
-     - UML - Diagramm
+     - UML - Diagramme
      - History
    
 
