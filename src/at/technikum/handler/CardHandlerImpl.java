@@ -12,7 +12,7 @@ import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.HashMap;
 
-// TODO: 23.01.2022 Fertig
+
 public class CardHandlerImpl extends AbstractDBTable implements CardHandler, Repository<Card> {
 
     private static CardHandlerImpl instance;

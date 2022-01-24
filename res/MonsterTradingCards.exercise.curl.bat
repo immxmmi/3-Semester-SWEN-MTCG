@@ -9,6 +9,7 @@ echo.
 
 REM --------------------------------------------------
 echo 1) Create Users (Registration)
+echo.
 REM Create User
 curl -X POST http://localhost:10001/users --header "Content-Type: application/json" -d "{\"Username\":\"kienboec\", \"Password\":\"daniel\"}"
 echo.
@@ -16,8 +17,10 @@ curl -X POST http://localhost:10001/users --header "Content-Type: application/js
 echo.
 curl -X POST http://localhost:10001/users --header "Content-Type: application/json" -d "{\"Username\":\"admin\",    \"Password\":\"istrator\"}"
 echo.
+echo.
 
 echo should fail:
+echo.
 curl -X POST http://localhost:10001/users --header "Content-Type: application/json" -d "{\"Username\":\"kienboec\", \"Password\":\"daniel\"}"
 echo.
 curl -X POST http://localhost:10001/users --header "Content-Type: application/json" -d "{\"Username\":\"kienboec\", \"Password\":\"different\"}"
@@ -26,20 +29,24 @@ echo.
 
 REM --------------------------------------------------
 echo 2) Login Users
+echo.
 curl -X POST http://localhost:10001/sessions --header "Content-Type: application/json" -d "{\"Username\":\"kienboec\", \"Password\":\"daniel\"}"
 echo.
 curl -X POST http://localhost:10001/sessions --header "Content-Type: application/json" -d "{\"Username\":\"altenhof\", \"Password\":\"markus\"}"
 echo.
 curl -X POST http://localhost:10001/sessions --header "Content-Type: application/json" -d "{\"Username\":\"admin\",    \"Password\":\"istrator\"}"
 echo.
+echo.
 
 echo should fail:
+echo.
 curl -X POST http://localhost:10001/sessions --header "Content-Type: application/json" -d "{\"Username\":\"kienboec\", \"Password\":\"different\"}"
 echo.
 echo.
 
 REM --------------------------------------------------
 echo 3) create packages (done by "admin")
+echo.
 curl -X POST http://localhost:10001/packages --header "Content-Type: application/json" --header "Authorization: Basic admin-mtcgToken" -d "[{\"Id\":\"845f0dc7-37d0-426e-994e-43fc3ac83c08\", \"Name\":\"WaterGoblin\", \"Damage\": 10.0}, {\"Id\":\"99f8f8dc-e25e-4a95-aa2c-782823f36e2a\", \"Name\":\"Dragon\", \"Damage\": 50.0}, {\"Id\":\"e85e3976-7c86-4d06-9a80-641c2019a79f\", \"Name\":\"WaterSpell\", \"Damage\": 20.0}, {\"Id\":\"1cb6ab86-bdb2-47e5-b6e4-68c5ab389334\", \"Name\":\"Ork\", \"Damage\": 45.0}, {\"Id\":\"dfdd758f-649c-40f9-ba3a-8657f4b3439f\", \"Name\":\"FireSpell\",    \"Damage\": 25.0}]"
 echo.																																																																																		 				    
 curl -X POST http://localhost:10001/packages --header "Content-Type: application/json" --header "Authorization: Basic admin-mtcgToken" -d "[{\"Id\":\"644808c2-f87a-4600-b313-122b02322fd5\", \"Name\":\"WaterGoblin\", \"Damage\":  9.0}, {\"Id\":\"4a2757d6-b1c3-47ac-b9a3-91deab093531\", \"Name\":\"Dragon\", \"Damage\": 55.0}, {\"Id\":\"91a6471b-1426-43f6-ad65-6fc473e16f9f\", \"Name\":\"WaterSpell\", \"Damage\": 21.0}, {\"Id\":\"4ec8b269-0dfa-4f97-809a-2c63fe2a0025\", \"Name\":\"Ork\", \"Damage\": 55.0}, {\"Id\":\"f8043c23-1534-4487-b66b-238e0c3c39b5\", \"Name\":\"WaterSpell\",   \"Damage\": 23.0}]"
@@ -56,32 +63,39 @@ echo.
 
 REM --------------------------------------------------
 echo 4) acquire packages kienboec
-curl -X POST http://localhost:10001/transactions/packages --header "Content-Type: application/json" --header "Authorization: Basic kienboec-mtcgToken" -d ""
 echo.
 curl -X POST http://localhost:10001/transactions/packages --header "Content-Type: application/json" --header "Authorization: Basic kienboec-mtcgToken" -d ""
 echo.
 curl -X POST http://localhost:10001/transactions/packages --header "Content-Type: application/json" --header "Authorization: Basic kienboec-mtcgToken" -d ""
 echo.
 curl -X POST http://localhost:10001/transactions/packages --header "Content-Type: application/json" --header "Authorization: Basic kienboec-mtcgToken" -d ""
+echo.
+curl -X POST http://localhost:10001/transactions/packages --header "Content-Type: application/json" --header "Authorization: Basic kienboec-mtcgToken" -d ""
+echo.
 echo.
 echo should fail (no money):
+echo.
 curl -X POST http://localhost:10001/transactions/packages --header "Content-Type: application/json" --header "Authorization: Basic kienboec-mtcgToken" -d ""
 echo.
 echo.
 
 REM --------------------------------------------------
 echo 5) acquire packages altenhof
+echo.
 curl -X POST http://localhost:10001/transactions/packages --header "Content-Type: application/json" --header "Authorization: Basic altenhof-mtcgToken" -d ""
 echo.
 curl -X POST http://localhost:10001/transactions/packages --header "Content-Type: application/json" --header "Authorization: Basic altenhof-mtcgToken" -d ""
+echo.
 echo.
 echo should fail (no package):
+echo.
 curl -X POST http://localhost:10001/transactions/packages --header "Content-Type: application/json" --header "Authorization: Basic altenhof-mtcgToken" -d ""
 echo.
 echo.
 
 REM --------------------------------------------------
 echo 6) add new packages
+echo.
 curl -X POST http://localhost:10001/packages --header "Content-Type: application/json" --header "Authorization: Basic admin-mtcgToken" -d "[{\"Id\":\"67f9048f-99b8-4ae4-b866-d8008d00c53d\", \"Name\":\"WaterGoblin\", \"Damage\": 10.0}, {\"Id\":\"aa9999a0-734c-49c6-8f4a-651864b14e62\", \"Name\":\"RegularSpell\", \"Damage\": 50.0}, {\"Id\":\"d6e9c720-9b5a-40c7-a6b2-bc34752e3463\", \"Name\":\"Knight\", \"Damage\": 20.0}, {\"Id\":\"02a9c76e-b17d-427f-9240-2dd49b0d3bfd\", \"Name\":\"RegularSpell\", \"Damage\": 45.0}, {\"Id\":\"2508bf5c-20d7-43b4-8c77-bc677decadef\", \"Name\":\"FireElf\", \"Damage\": 25.0}]"
 echo.
 curl -X POST http://localhost:10001/packages --header "Content-Type: application/json" --header "Authorization: Basic admin-mtcgToken" -d "[{\"Id\":\"70962948-2bf7-44a9-9ded-8c68eeac7793\", \"Name\":\"WaterGoblin\", \"Damage\":  9.0}, {\"Id\":\"74635fae-8ad3-4295-9139-320ab89c2844\", \"Name\":\"FireSpell\", \"Damage\": 55.0}, {\"Id\":\"ce6bcaee-47e1-4011-a49e-5a4d7d4245f3\", \"Name\":\"Knight\", \"Damage\": 21.0}, {\"Id\":\"a6fde738-c65a-4b10-b400-6fef0fdb28ba\", \"Name\":\"FireSpell\", \"Damage\": 55.0}, {\"Id\":\"a1618f1e-4f4c-4e09-9647-87e16f1edd2d\", \"Name\":\"FireElf\", \"Damage\": 23.0}]"
@@ -92,31 +106,40 @@ echo.
 
 REM --------------------------------------------------
 echo 7) acquire newly created packages altenhof
+echo.
 curl -X POST http://localhost:10001/transactions/packages --header "Content-Type: application/json" --header "Authorization: Basic altenhof-mtcgToken" -d ""
 echo.
 curl -X POST http://localhost:10001/transactions/packages --header "Content-Type: application/json" --header "Authorization: Basic altenhof-mtcgToken" -d ""
 echo.
 echo should fail (no money):
+echo.
+echo.
 curl -X POST http://localhost:10001/transactions/packages --header "Content-Type: application/json" --header "Authorization: Basic altenhof-mtcgToken" -d ""
 echo.
 echo.
 
 REM --------------------------------------------------
 echo 8) show all acquired cards kienboec
+echo.
 curl -X GET http://localhost:10001/cards --header "Authorization: Basic kienboec-mtcgToken"
+echo.
+echo.
 echo should fail (no token)
+echo.
 curl -X GET http://localhost:10001/cards 
 echo.
 echo.
 
 REM --------------------------------------------------
 echo 9) show all acquired cards altenhof
+echo.
 curl -X GET http://localhost:10001/cards --header "Authorization: Basic altenhof-mtcgToken"
 echo.
 echo.
 
 REM --------------------------------------------------
 echo 10) show unconfigured deck
+echo.
 curl -X GET http://localhost:10001/deck --header "Authorization: Basic kienboec-mtcgToken"
 echo.
 curl -X GET http://localhost:10001/deck --header "Authorization: Basic altenhof-mtcgToken"
@@ -125,6 +148,7 @@ echo.
 
 REM --------------------------------------------------
 echo 11) configure deck
+echo.
 curl -X PUT http://localhost:10001/deck --header "Content-Type: application/json" --header "Authorization: Basic kienboec-mtcgToken" -d "[\"845f0dc7-37d0-426e-994e-43fc3ac83c08\", \"99f8f8dc-e25e-4a95-aa2c-782823f36e2a\", \"e85e3976-7c86-4d06-9a80-641c2019a79f\", \"171f6076-4eb5-4a7d-b3f2-2d650cc3d237\"]"
 echo.
 curl -X GET http://localhost:10001/deck --header "Authorization: Basic kienboec-mtcgToken"
@@ -135,18 +159,21 @@ curl -X GET http://localhost:10001/deck --header "Authorization: Basic altenhof-
 echo.
 echo.
 echo should fail and show original from before:
+echo.
 curl -X PUT http://localhost:10001/deck --header "Content-Type: application/json" --header "Authorization: Basic altenhof-mtcgToken" -d "[\"845f0dc7-37d0-426e-994e-43fc3ac83c08\", \"99f8f8dc-e25e-4a95-aa2c-782823f36e2a\", \"e85e3976-7c86-4d06-9a80-641c2019a79f\", \"171f6076-4eb5-4a7d-b3f2-2d650cc3d237\"]"
 echo.
 curl -X GET http://localhost:10001/deck --header "Authorization: Basic altenhof-mtcgToken"
 echo.
 echo.
 echo should fail ... only 3 cards set
+echo.
 curl -X PUT http://localhost:10001/deck --header "Content-Type: application/json" --header "Authorization: Basic altenhof-mtcgToken" -d "[\"aa9999a0-734c-49c6-8f4a-651864b14e62\", \"d6e9c720-9b5a-40c7-a6b2-bc34752e3463\", \"d60e23cf-2238-4d49-844f-c7589ee5342e\"]"
 echo.
 
 
 REM --------------------------------------------------
-echo 12) show configured deck 
+echo 12) show configured deck
+echo.
 curl -X GET http://localhost:10001/deck --header "Authorization: Basic kienboec-mtcgToken"
 echo.
 curl -X GET http://localhost:10001/deck --header "Authorization: Basic altenhof-mtcgToken"
@@ -156,6 +183,7 @@ echo.
 REM --------------------------------------------------
 echo 13) show configured deck different representation
 echo kienboec
+echo.
 curl -X GET http://localhost:10001/deck?format=plain --header "Authorization: Basic kienboec-mtcgToken"
 echo.
 echo.
@@ -166,6 +194,7 @@ echo.
 
 REM --------------------------------------------------
 echo 14) edit user data
+echo.
 echo.
 curl -X GET http://localhost:10001/users/kienboec --header "Authorization: Basic kienboec-mtcgToken"
 echo.
@@ -181,6 +210,7 @@ curl -X GET http://localhost:10001/users/altenhof --header "Authorization: Basic
 echo.
 echo.
 echo should fail:
+echo.
 curl -X GET http://localhost:10001/users/altenhof --header "Authorization: Basic kienboec-mtcgToken"
 echo.
 curl -X GET http://localhost:10001/users/kienboec --header "Authorization: Basic altenhof-mtcgToken"
@@ -195,6 +225,7 @@ echo.
 
 REM --------------------------------------------------
 echo 15) stats
+echo.
 curl -X GET http://localhost:10001/stats --header "Authorization: Basic kienboec-mtcgToken"
 echo.
 curl -X GET http://localhost:10001/stats --header "Authorization: Basic altenhof-mtcgToken"
@@ -203,62 +234,85 @@ echo.
 
 REM --------------------------------------------------
 echo 16) scoreboard
+echo.
 curl -X GET http://localhost:10001/score --header "Authorization: Basic kienboec-mtcgToken"
 echo.
 echo.
 
 REM --------------------------------------------------
 echo 17) battle
+echo.
 start /b "kienboec battle" curl -X POST http://localhost:10001/battles --header "Authorization: Basic kienboec-mtcgToken"
+ping localhost -n 1 >NUL 2>NUL
 start /b "altenhof battle" curl -X POST http://localhost:10001/battles --header "Authorization: Basic altenhof-mtcgToken"
 ping localhost -n 10 >NUL 2>NUL
 
 REM --------------------------------------------------
-echo 18) Stats 
+echo.
+echo.
+echo 18) Stats
 echo kienboec
+echo.
 curl -X GET http://localhost:10001/stats --header "Authorization: Basic kienboec-mtcgToken"
 echo.
 echo altenhof
+echo.
 curl -X GET http://localhost:10001/stats --header "Authorization: Basic altenhof-mtcgToken"
 echo.
 echo.
 
 REM --------------------------------------------------
 echo 19) scoreboard
+echo.
 curl -X GET http://localhost:10001/score --header "Authorization: Basic kienboec-mtcgToken"
 echo.
 echo.
 
 REM --------------------------------------------------
 echo 20) trade
+echo.
 echo check trading deals
+echo.
 curl -X GET http://localhost:10001/tradings --header "Authorization: Basic kienboec-mtcgToken"
 echo.
+echo.
 echo create trading deal
+echo.
 curl -X POST http://localhost:10001/tradings --header "Content-Type: application/json" --header "Authorization: Basic kienboec-mtcgToken" -d "{\"Id\": \"6cd85277-4590-49d4-b0cf-ba0a921faad0\", \"CardToTrade\": \"1cb6ab86-bdb2-47e5-b6e4-68c5ab389334\", \"Type\": \"monster\", \"MinimumDamage\": 15}"
 echo.
+echo.
 echo check trading deals
+echo.
 curl -X GET http://localhost:10001/tradings --header "Authorization: Basic kienboec-mtcgToken"
 echo.
 curl -X GET http://localhost:10001/tradings --header "Authorization: Basic altenhof-mtcgToken"
 echo.
+echo.
 echo delete trading deals
+echo.
 curl -X DELETE http://localhost:10001/tradings/6cd85277-4590-49d4-b0cf-ba0a921faad0 --header "Authorization: Basic kienboec-mtcgToken"
 echo.
 echo.
 
 REM --------------------------------------------------
 echo 21) check trading deals
+echo.
 curl -X GET http://localhost:10001/tradings  --header "Authorization: Basic kienboec-mtcgToken"
 echo.
 curl -X POST http://localhost:10001/tradings --header "Content-Type: application/json" --header "Authorization: Basic kienboec-mtcgToken" -d "{\"Id\": \"6cd85277-4590-49d4-b0cf-ba0a921faad0\", \"CardToTrade\": \"1cb6ab86-bdb2-47e5-b6e4-68c5ab389334\", \"Type\": \"monster\", \"MinimumDamage\": 15}"
+echo.
+echo.
 echo check trading deals
+echo.
 curl -X GET http://localhost:10001/tradings  --header "Authorization: Basic kienboec-mtcgToken"
 echo.
 curl -X GET http://localhost:10001/tradings  --header "Authorization: Basic altenhof-mtcgToken"
 echo.
+echo.
 echo try to trade with yourself (should fail)
+echo.
 curl -X POST http://localhost:10001/tradings/6cd85277-4590-49d4-b0cf-ba0a921faad0 --header "Content-Type: application/json" --header "Authorization: Basic kienboec-mtcgToken" -d "\"4ec8b269-0dfa-4f97-809a-2c63fe2a0025\""
+echo.
 echo.
 echo try to trade 
 echo.
@@ -268,6 +322,8 @@ curl -X GET http://localhost:10001/tradings --header "Authorization: Basic kienb
 echo.
 curl -X GET http://localhost:10001/tradings --header "Authorization: Basic altenhof-mtcgToken"
 echo.
+echo.
+echo.
 
 echo 22) logout
 echo.
@@ -276,6 +332,7 @@ echo.
 curl -X POST http://localhost:10001/logout --header "Authorization: Basic admin-mtcgToken"
 echo.
 curl -X POST http://localhost:10001/logout --header "Authorization: Basic altenhof-mtcgToken"
+echo.
 echo.
 echo should fail:
 echo.

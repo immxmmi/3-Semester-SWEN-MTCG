@@ -359,6 +359,9 @@ public class CardHolderHandlerImpl extends AbstractDBTable implements CardHolder
     @Override
     public boolean delete(CardHolder item) {
         //  System.out.println("DELETE ITEM - ID "+ item.getCardHolderID());
+        if (item == null){
+            return false;
+        }
         this.parameter = new String[]{item.getCardHolderID()};
         this.setStatement("DELETE FROM \"" + this.tableName + "\" WHERE \"cardHolder_id\" = ? ;", this.parameter);
         return true;
