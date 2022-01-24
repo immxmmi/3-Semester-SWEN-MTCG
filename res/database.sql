@@ -48,9 +48,7 @@ create table "cardHolder"
     "cardHolder_id" text not null
         constraint cardholder_pk
             primary key,
-    card_id         text not null
-        constraint cardholder_card_card_id_fk
-            references card,
+    card_id         text not null,
     holder_id       text not null,
     number          text not null,
     locked          text not null
@@ -67,19 +65,37 @@ alter table "cardHolder"
 create unique index cardholder_cardholder_id_uindex
     on "cardHolder" ("cardHolder_id");
 
+create table store
+(
+    transaction_id text not null
+        constraint store_pk
+            primary key,
+    seller_id      text not null,
+    item_id        text not null,
+    price          text not null,
+    date           text
+);
+
+alter table store
+    owner to swe1user;
+
+create unique index store_transaction_id_uindex
+    on store (transaction_id);
+
 create table deck
 (
-    user_id   text not null
+    user_id    text not null
         constraint deck_pk
             primary key
         constraint deck_player_user_id_fk
             references player,
-    card_id_1 text not null
+    card_id_1  text not null
         constraint deck_card_card_id_fk
             references card,
-    card_id_2 text not null,
-    card_id_3 text not null,
-    card_id_4 text not null
+    card_id_2  text not null,
+    card_id_3  text not null,
+    card_id_4  text not null,
+    new_column integer
 );
 
 alter table deck
@@ -98,27 +114,6 @@ create table package
 
 alter table package
     owner to swe1user;
-
-create table store
-(
-    transaction_id text not null
-        constraint store_pk
-            primary key,
-    seller_id      text not null,
-    item_id        text not null
-        constraint store_card_card_id_fk
-            references card
-        constraint store_package_package_id_fk
-            references package,
-    price          text not null,
-    date           text
-);
-
-alter table store
-    owner to swe1user;
-
-create unique index store_transaction_id_uindex
-    on store (transaction_id);
 
 create unique index package_package_id_uindex
     on package (package_id);
@@ -157,12 +152,8 @@ create table trade
     trade_id       text not null
         constraint trading_pk
             primary key,
-    user_id        text not null
-        constraint trade_player_user_id_fk
-            references player,
-    card_id        text not null
-        constraint trade_card_card_id_fk
-            references card,
+    user_id        text not null,
+    card_id        text not null,
     card_min_power text not null,
     card_typ       text not null
 );
@@ -178,9 +169,7 @@ create table battle
     battle_id text not null
         constraint battle_pk
             primary key,
-    player1   text not null
-        constraint battle_player_user_id_fk
-            references player,
+    player1   text not null,
     player2   text,
     round     text,
     winner    text,

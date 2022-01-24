@@ -130,6 +130,7 @@ class BattleHandlerImplTest {
         ArrayList<Player> players = createTestPlayers();
         assertNotNull(players.get(0));
         assertNotNull(players.get(1));
+
         return BattleImpl.builder()
                 .player1(players.get(0))
                 .player2(players.get(1))
@@ -145,14 +146,14 @@ class BattleHandlerImplTest {
         Battle battle = createTestBattle();
         assertNotNull(battle.getPlayer1());
         assertNotNull(battle.getPlayer2());
-        battle = insert(battle);
-        assertNotNull(battle);
-        battle =  battleHandler.playGame(battle);
-        assertFalse(battle.isSearching());
-        assertNotEquals(battle.getRound(),0);
-        assertEquals(battle.getWinner().getUserID(),battle.getPlayer1().getUserID());
-        delete(battle);
-    }
+            battle = insert(battle);
+              assertNotNull(battle);
+            battle =  battleHandler.playGame(battle);
+            assertFalse(battle.isSearching());
+          assertNotEquals(battle.getRound(),0);
+          assertEquals(battle.getWinner().getUserID(),battle.getPlayer1().getUserID());
+          delete(battle);
+   }
 
 
     private Battle insert(Battle testBattle) {

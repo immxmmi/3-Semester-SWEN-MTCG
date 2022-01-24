@@ -156,10 +156,17 @@ public class BattleHandlerImpl extends AbstractDBTable implements BattleHandler,
     }
     @Override
     public Battle insert(Battle newBattle){
+        String battleID = "B-"+this.tools.tokenSupplier.get();
+        String player2 = "null";
+
+        if(newBattle.getPlayer2() != null){
+            player2 = newBattle.getPlayer2().getUserID();
+        }
+
         this.parameter = new String[]{
-                "B-"+this.tools.tokenSupplier.get(),
+                battleID,
                 newBattle.getPlayer1().getUserID(),
-                "null",
+                player2,
                 ""+newBattle.getRound(),
                 "noWinner",
                 ""+newBattle.isSearching()
@@ -168,7 +175,7 @@ public class BattleHandlerImpl extends AbstractDBTable implements BattleHandler,
                 "INSERT INTO "+this.tableName+" (battle_id, player1, player2, round , winner, searching) values ( ?,?,?,?,?,?)",
                 this.parameter
         );
-        return this.getItemById(newBattle.getBattleID());
+        return this.getItemById(battleID);
     }
     @Override
     public Battle update(Battle newBattle) {
