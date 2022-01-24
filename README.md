@@ -1,4 +1,4 @@
-﻿# 3-Semster-SWEN1-CardGame
+﻿# 3-Semester-SWEN1-CardGame
  ## Installation
   - git clone https://github.com/immxmmi/3-Semester-SWEN-MTCG.git
   - docker pull immxmmi/3-semester-swen-mtcg
@@ -17,7 +17,7 @@
      - History
    
 
-## Funkitonen
+## Funkitionen
     - Admin:
         - Admin kann Packages erstellen und im Store hinzufügen
         
