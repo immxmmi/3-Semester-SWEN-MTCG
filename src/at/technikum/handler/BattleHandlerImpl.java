@@ -68,6 +68,7 @@ public class BattleHandlerImpl extends AbstractDBTable implements BattleHandler,
             System.out.println(this.textColor.ANSI_GREEN + "BATTLE - SEARCHING ..." + this.textColor.ANSI_RESET);
             return null;
         }
+
         Battle currentBattle = createBattle(player);
 
         return  currentBattle;
@@ -79,11 +80,16 @@ public class BattleHandlerImpl extends AbstractDBTable implements BattleHandler,
         } catch (InterruptedException e) {
             e.printStackTrace();
         }
+
         BattleLogic battleLogic = new BattleLogicImpl();
         update(battleLogic.start(currentBattle));
         return getItemById(currentBattle.getBattleID());
     }
     private Battle createBattle(Player player) {
+        if(checkSearching(player) != null){
+            return checkSearching(player);
+        }
+
         if(getAllActiveBattle().size() > 0){
             for(int i = 0; i < getAllActiveBattle().size(); i++){
                 if(!player.getUserID().equals(getAllActiveBattle().get(i).getPlayer1().getUserID())) {
@@ -107,6 +113,7 @@ public class BattleHandlerImpl extends AbstractDBTable implements BattleHandler,
         this.setStatement("SELECT * FROM " + this.tableName + " WHERE player1 = ? AND searching = ? ;", this.parameter);
         return battleBuilder(this.result);
     }
+
 
     /*******************************************************************/
 

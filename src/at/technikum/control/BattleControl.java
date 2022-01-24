@@ -52,15 +52,12 @@ public class BattleControl implements Post {
         }
 
         Battle currentBattle = battleHandler.startBattle(currentPlayer);
-        if(currentBattle == null){
+
+
+        if(currentBattle.getPlayer2() == null){
             loggerStatic.log("\nBATTLE - SEARCHING ...\n");
             return new ResponseBuilderImpl().statusOK(battleSerializer.message("BATTLE - SEARCHING ...").toString());
         }
-
-        loggerStatic.log("\n.................................\n" + currentBattle.getPlayer2());
-        loggerStatic.log("\n. PLAYER 1 : " + currentBattle.getPlayer1().getUsername());
-        loggerStatic.log("\n. PLAYER 2 : " + currentBattle.getPlayer2().getUsername());
-        loggerStatic.log("\n................................. \n" + currentBattle.getPlayer2());
 
         currentBattle = battleHandler.playGame(currentBattle);
 
